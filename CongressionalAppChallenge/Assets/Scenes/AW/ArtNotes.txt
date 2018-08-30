@@ -1,0 +1,7 @@
+Attack - Red
+Defense - Orange
+Resources - Grey
+Production - Black
+Civilization - Blue
+
+Light Source is from Above and directly in front
