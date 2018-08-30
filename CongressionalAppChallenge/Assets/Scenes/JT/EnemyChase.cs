@@ -33,7 +33,6 @@ public class EnemyChase : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Base")
         {
-            Debug.Log("foo");
             Destroy(this.gameObject);
         }
     }
