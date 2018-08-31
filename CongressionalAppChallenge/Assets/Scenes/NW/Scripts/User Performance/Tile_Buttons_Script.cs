@@ -13,25 +13,15 @@ public class Tile_Buttons_Script : MonoBehaviour {
     public int oreNeeded;
     public int steelNeeded;
 
+    public GameObject structureType;
+
+    void Start()
+    {
+        infoHub = GetComponentInParent<Tile_Scripts>().infoHub;
+    }
+
     void OnMouseUpAsButton()
     {
-        // if()
-        GetComponentInParent<Tile_Scripts>().buildingID = setID;
-    }
-
-
-
-    public void SpawnBuilding(int stoneNeeded, int woodNeeded, int steelNeeded)
-    {
-
-    }
-
-    public void ForgeSteel(int woodNeeded, int oreNeeded)
-    {
-        if (infoHub.GetComponent<User_Interaction>().storedOre >= oreNeeded &&
-                infoHub.GetComponent<User_Interaction>().storedWood >= woodNeeded)
-        {
-
-        }
+        GetComponentInParent<Tile_Scripts>().SpawnBuilding(structureType, stoneNeeded, woodNeeded, steelNeeded, setID);
     }
 }

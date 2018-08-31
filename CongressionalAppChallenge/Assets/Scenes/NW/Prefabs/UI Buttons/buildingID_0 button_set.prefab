@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4510539844735312}
   - component: {fileID: 212462156559665728}
   - component: {fileID: 61811550308168956}
-  - component: {fileID: 114646226942078174}
+  - component: {fileID: 114673823433137394}
   m_Layer: 0
   m_Name: ButtonPlaceholders_0
   m_TagString: Untagged
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4132330682971792}
   - component: {fileID: 212255838571717954}
   - component: {fileID: 61635355756232390}
-  - component: {fileID: 114933636495935980}
+  - component: {fileID: 114377403157847422}
   m_Layer: 0
   m_Name: ButtonPlaceholders_1
   m_TagString: Untagged
@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1117155277740136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4510539844735312}
@@ -165,24 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8005e9dbd26d33499ff87181d4c54b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114646226942078174
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1136482839235080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e05983eb75612e849b026e7f256e0d5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoHub: {fileID: 0}
-  setID: 0
-  stoneNeeded: 0
-  woodNeeded: 0
-  oreNeeded: 0
-  steelNeeded: 0
---- !u!114 &114933636495935980
+--- !u!114 &114377403157847422
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,6 +182,26 @@ MonoBehaviour:
   woodNeeded: 0
   oreNeeded: 0
   steelNeeded: 0
+  structureType: {fileID: 0}
+--- !u!114 &114673823433137394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136482839235080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05983eb75612e849b026e7f256e0d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoHub: {fileID: 0}
+  setID: 0
+  stoneNeeded: 0
+  woodNeeded: 0
+  oreNeeded: 0
+  steelNeeded: 0
+  structureType: {fileID: 1915289754343480, guid: a76b2c6499bbe664d9b82e9aa0668a3b,
+    type: 2}
 --- !u!212 &212255838571717954
 SpriteRenderer:
   m_ObjectHideFlags: 1

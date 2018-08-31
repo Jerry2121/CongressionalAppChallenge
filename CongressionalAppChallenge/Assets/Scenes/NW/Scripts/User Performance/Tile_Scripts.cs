@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Tile_Scripts : MonoBehaviour {
 
@@ -23,13 +22,19 @@ public class Tile_Scripts : MonoBehaviour {
         Debug.Log(gameObject.transform.position);
         GameObject temporaryUI;
 
+        if (GameObject.Find("temporaryUI") == true)
+        {
+            Destroy(GameObject.Find("temporaryUI"));
+            return;
+        }
 
         switch (buildingID)
         {   
 
             case 0:
-                temporaryUI = Instantiate(tileButtonSet0);
+                temporaryUI = Instantiate(tileButtonSet0, GetComponentInParent<Transform>());
                 temporaryUI.name = "temporaryUI";
+                temporaryUI.transform.position = GetComponent<Transform>().position;
                 break;
 
             case 1:
@@ -49,5 +54,26 @@ public class Tile_Scripts : MonoBehaviour {
         }
     }
 
-    
+    public void SpawnBuilding(GameObject structureType, int stoneConsumed, int woodConsumed, int steelConsumed, int setID)
+    {
+        if (stoneConsumed < infoHub.GetComponent<Info_Hub>().stoneAcquired && woodConsumed < infoHub.GetComponent<Info_Hub>().woodAcquired &&
+                steelConsumed < infoHub.GetComponent<Info_Hub>().steelAcquired)
+        {
+            infoHub.GetComponent<Info_Hub>().stoneAcquired -= stoneConsumed;
+            infoHub.GetComponent<Info_Hub>().woodAcquired -= woodConsumed;
+            infoHub.GetComponent<Info_Hub>().steelAcquired -= steelConsumed;
+
+            Instantiate(structureType, GetComponentInParent<Transform>());
+
+            buildingID = setID;
+
+            Destroy(GameObject.Find("temporaryUI"));
+        }
+
+        else
+        {
+
+            return;
+        }
+    }
 }
