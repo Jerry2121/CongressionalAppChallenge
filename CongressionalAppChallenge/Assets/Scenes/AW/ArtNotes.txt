@@ -1,7 +1,9 @@
+Type - Color - Middle Color Hex Code
 Attack - Red
 Defense - Orange
 Resources - Grey
 Production - Black
-Civilization - Blue
+Civilization - Blue - #002fe0
 
-Light Source is from Above and directly in front
+
+Light Source is from Above and front right
