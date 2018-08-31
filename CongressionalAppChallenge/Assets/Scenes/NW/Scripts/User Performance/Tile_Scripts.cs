@@ -32,9 +32,10 @@ public class Tile_Scripts : MonoBehaviour {
         {   
 
             case 0:
+                Debug.Log("I PRESSED THE BUTTON");
                 temporaryUI = Instantiate(tileButtonSet0, GetComponentInParent<Transform>());
+                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y, -1);
                 temporaryUI.name = "temporaryUI";
-                temporaryUI.transform.position = GetComponent<Transform>().position;
                 break;
 
             case 1:
@@ -56,6 +57,8 @@ public class Tile_Scripts : MonoBehaviour {
 
     public void SpawnBuilding(GameObject structureType, int stoneConsumed, int woodConsumed, int steelConsumed, int setID)
     {
+        Debug.Log("I PUSHED ANOTHER BUTTON");
+
         if (stoneConsumed < infoHub.GetComponent<Info_Hub>().stoneAcquired && woodConsumed < infoHub.GetComponent<Info_Hub>().woodAcquired &&
                 steelConsumed < infoHub.GetComponent<Info_Hub>().steelAcquired)
         {

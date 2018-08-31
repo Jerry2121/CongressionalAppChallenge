@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoHub: {fileID: 0}
-  setID: 0
+  setID: 2
   stoneNeeded: 0
   woodNeeded: 0
   oreNeeded: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoHub: {fileID: 0}
-  setID: 0
+  setID: 1
   stoneNeeded: 0
   woodNeeded: 0
   oreNeeded: 0
