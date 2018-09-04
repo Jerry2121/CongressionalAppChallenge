@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4322304497118818}
-  - component: {fileID: 114006514828458366}
   m_Layer: 0
   m_Name: buildingID_0 button_set
   m_TagString: Undefined
@@ -154,17 +153,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114006514828458366
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1117155277740136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8005e9dbd26d33499ff87181d4c54b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114377403157847422
 MonoBehaviour:
   m_ObjectHideFlags: 1

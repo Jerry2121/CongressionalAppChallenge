@@ -22,6 +22,6 @@ public class Tile_Buttons_Script : MonoBehaviour {
 
     void OnMouseUpAsButton()
     {
-        GetComponentInParent<Tile_Scripts>().SpawnBuilding(structureType, stoneNeeded, woodNeeded, steelNeeded, setID);
+      GetComponentInParent<Tile_Scripts>().SpawnBuilding(structureType, stoneNeeded, woodNeeded, steelNeeded, setID);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tile_Scripts : MonoBehaviour {
 
     public GameObject infoHub;
+    public GameObject childSprite;
 
     public GameObject tileButtonSet0;
     public GameObject tileButtonSet1;
@@ -16,14 +17,26 @@ public class Tile_Scripts : MonoBehaviour {
     // Building IDs: 0 - Empty, 1 - Town Hall, 2 - Quarry, 3 - Sawmill, 4 - Mine, 5 - Forge, 
     public int buildingID;
 
+    void Update()
+    {
+        ShowTilePlacement();
+    }
+
     // This is for PC only, will have to create a different function for mobile
     void OnMouseUpAsButton()
     {
-        Debug.Log(gameObject.transform.position);
+
+        if (infoHub.GetComponent<Info_Hub>().editMode == false)
+        {
+            Debug.Log("editMode isn't active!");
+            return;
+        }
+        
         GameObject temporaryUI;
 
         if (GameObject.Find("temporaryUI") == true)
         {
+            Debug.Log("TemporaryUI found!");
             Destroy(GameObject.Find("temporaryUI"));
             return;
         }
@@ -34,7 +47,7 @@ public class Tile_Scripts : MonoBehaviour {
             case 0:
                 Debug.Log("I PRESSED THE BUTTON");
                 temporaryUI = Instantiate(tileButtonSet0, GetComponentInParent<Transform>());
-                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y, -1);
+                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
                 temporaryUI.name = "temporaryUI";
                 break;
 
@@ -77,6 +90,24 @@ public class Tile_Scripts : MonoBehaviour {
         {
 
             return;
+        }
+    }
+
+    public void ShowTilePlacement()
+    {
+        if (infoHub.GetComponent<Info_Hub>().editMode == true)
+        {
+            childSprite.SetActive(true);
+        }
+
+        else if (infoHub.GetComponent<Info_Hub>().editMode == false)
+        {
+            childSprite.SetActive(false);
+        }
+
+        else
+        {
+            Debug.Log("Something's amiss here...");
         }
     }
 }

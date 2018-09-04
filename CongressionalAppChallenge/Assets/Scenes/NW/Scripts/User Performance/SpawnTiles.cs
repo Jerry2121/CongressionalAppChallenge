@@ -8,6 +8,7 @@ public class SpawnTiles : MonoBehaviour {
     public int x_size;
 
     public GameObject tilePrefab;
+    public GameObject townHallTilePrefab;
 
     private void Start()
     {
@@ -17,10 +18,20 @@ public class SpawnTiles : MonoBehaviour {
         {
             for (int ix = 0; ix < x_size; ix++)
             {
-                Instantiate(tilePrefab, GetComponentInParent<Transform>());
-                tilePrefab.transform.position = new Vector3(ix, iy, 0);
-                tilePrefab.name = "Tile(" + ix + ", " + iy + ")";
-                tilePrefab.GetComponent<Tile_Scripts>().infoHub = GameObject.Find("InfoHub");
+                if (ix == x_size / 2 && iy == y_size / 2)
+                {
+                    Instantiate(townHallTilePrefab, GetComponentInParent<Transform>());
+                    townHallTilePrefab.transform.position = new Vector3(ix, iy, 0);
+                    townHallTilePrefab.name = "TownHallTile";
+                }
+
+                else
+                {
+                    Instantiate(tilePrefab, GetComponentInParent<Transform>());
+                    tilePrefab.transform.position = new Vector3(ix, iy, 0);
+                    tilePrefab.name = "Tile(" + ix + ", " + iy + ")";
+                    tilePrefab.GetComponent<Tile_Scripts>().infoHub = GameObject.Find("InfoHub");
+                }
             }            
         }
     }
