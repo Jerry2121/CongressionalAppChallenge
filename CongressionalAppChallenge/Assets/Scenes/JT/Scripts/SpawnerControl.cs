@@ -22,7 +22,7 @@ public class SpawnerControl : MonoBehaviour {
         SpawnTime = 0.0f;
         bspawntime = 0.0f;
 	}
-    private IEnumerator SpawnEnemies(int enemies, GameObject enemyToSpawn)
+    /*private IEnumerator SpawnEnemies(int enemies, GameObject enemyToSpawn)
     {
         for (int i = 0; i < enemies; i++)
         {
@@ -33,15 +33,16 @@ public class SpawnerControl : MonoBehaviour {
 
         }
         enemyCount = 0;
-    }
+    }*/
 	// Update is called once per frame
 	void Update () {
         SpawnTime += Time.deltaTime;
-		if (SpawnTime >= 3)
+        bspawntime += Time.deltaTime;
+        if (SpawnTime >= 3)
         {
             //bspawntime += Time.deltaTime;
-            if (enemyCount == 0)
-            {
+           // if (enemyCount == 0)
+           // {
                 d1 = Random.Range(0, 5);
                 if (d1 == 1)
                 {
@@ -59,39 +60,39 @@ public class SpawnerControl : MonoBehaviour {
                 {
                     spawnPos = SpawnerBot.transform.position;
                 }
-            }
+           // }
             //Instantiate(Enemy1, spawnPos, Quaternion.identity);
-            StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy1));
-            SpawnTime = 0;
-            /*
-                if (bspawntime >= 1 && enemyCount < 1)
+            //StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy1));
+            //SpawnTime = 0;
+            
+                if (bspawntime >= 1)
                 {
                     Instantiate(Enemy1, spawnPos, Quaternion.identity);
                     enemyCount++;
                 }
-                else if (bspawntime >= 2 && enemyCount < 2)
+                else if (bspawntime >= 2)
                 {
                     Instantiate(Enemy2, spawnPos, Quaternion.identity);
                     enemyCount++;
                 }
-                else if (bspawntime >= 3 && enemyCount < 3)
+                else if (bspawntime >= 3)
                 {
                     Instantiate(Enemy3, spawnPos, Quaternion.identity);
                     enemyCount++;
                 }
-                else if (bspawntime >= 4 && enemyCount < 4)
+                else if (bspawntime >= 4)
                 {
                     Instantiate(Enemy4, spawnPos, Quaternion.identity);
                     enemyCount++;
                 }
-                else if (bspawntime >= 5 && enemyCount < 5)
+                else if (bspawntime >= 5)
                 {
                     Instantiate(Enemy1, spawnPos, Quaternion.identity);
                     enemyCount = 0;
                     bspawntime = 0;
                     SpawnTime = 0;
                 }
-                */
+                
 
             /*  if (d1 == 2)
               {
