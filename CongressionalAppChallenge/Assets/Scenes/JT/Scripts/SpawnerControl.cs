@@ -14,57 +14,89 @@ public class SpawnerControl : MonoBehaviour {
     public float SpawnTime;
     public float bspawntime;
     private int d1;
+    public int enemiesToSpawn = 5;
     private int enemyCount = 0;
     private Vector3 spawnPos;
-    public int enemiesToSpawn = 3;
-	// Use this for initialization
-	void Start () {
+    public bool canSpawnTop;
+    public bool canSpawnLeft;
+    public bool canSpawnRight;
+    public bool canSpawnBot;
+    // Use this for initialization
+    void Start () {
         SpawnTime = 0.0f;
         bspawntime = 0.0f;
-	}
-    /*private IEnumerator SpawnEnemies(int enemies, GameObject enemyToSpawn)
+        canSpawnTop = true;
+        canSpawnLeft = true;
+        canSpawnRight = true;
+        canSpawnBot = true;
+    }
+    private IEnumerator SpawnEnemies(int enemies, GameObject enemyToSpawn, Vector3 spawn)
     {
+        int count = 0;
+        Color c = Random.ColorHSV();
         for (int i = 0; i < enemies; i++)
         {
-            Instantiate(enemyToSpawn, spawnPos, Quaternion.identity);
-            enemyCount++;
+            GameObject g = Instantiate(enemyToSpawn, spawn, Quaternion.identity);
+            g.GetComponent<SpriteRenderer>().color = c;
+            count++;
             yield return new WaitForSeconds(1);
             Debug.Log(enemyCount);
 
         }
-        enemyCount = 0;
-    }*/
+        if (spawn == SpawnerTop.transform.position)
+        {
+            canSpawnTop = true;
+        }
+        else if (spawn == SpawnerLeft.transform.position)
+        {
+            canSpawnLeft = true;
+        }
+        else if (spawn == SpawnerRight.transform.position)
+        {
+            canSpawnRight = true;
+        }
+        else if(spawn == SpawnerBot.transform.position)
+        {
+            canSpawnBot = true;
+        }
+        count = 0;
+    }
 	// Update is called once per frame
 	void Update () {
         SpawnTime += Time.deltaTime;
-        bspawntime += Time.deltaTime;
+        
         if (SpawnTime >= 3)
         {
             //bspawntime += Time.deltaTime;
            // if (enemyCount == 0)
            // {
                 d1 = Random.Range(0, 5);
-                if (d1 == 1)
+                if (d1 == 1 && canSpawnTop)
                 {
                     spawnPos = SpawnerTop.transform.position;
+                    canSpawnTop = false;
                 }
-                if (d1 == 2)
+                if (d1 == 2 && canSpawnLeft)
                 {
                     spawnPos = SpawnerLeft.transform.position;
-                }
-                if (d1 == 3)
+                    canSpawnLeft = false;
+            }
+                if (d1 == 3 && canSpawnRight)
                 {
                     spawnPos = SpawnerRight.transform.position;
-                }
-                if (d1 == 4)
+                    canSpawnRight = false;
+            }
+                if (d1 == 4 && canSpawnBot)
                 {
                     spawnPos = SpawnerBot.transform.position;
-                }
+                    canSpawnBot = false;
+            }
            // }
             //Instantiate(Enemy1, spawnPos, Quaternion.identity);
-            //StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy1));
+            StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy1, spawnPos));
+            SpawnTime = 0;
             //SpawnTime = 0;
-            
+            /*
                 if (bspawntime >= 1)
                 {
                     Instantiate(Enemy1, spawnPos, Quaternion.identity);
@@ -93,7 +125,7 @@ public class SpawnerControl : MonoBehaviour {
                     SpawnTime = 0;
                 }
                 
-
+        */
             /*  if (d1 == 2)
               {
                   Instantiate(Enemy2, SpawnerTop.transform.position, Quaternion.identity);

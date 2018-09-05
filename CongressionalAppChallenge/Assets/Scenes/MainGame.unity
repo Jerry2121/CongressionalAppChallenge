@@ -1533,7 +1533,11 @@ MonoBehaviour:
   Enemy4: {fileID: 1625940490435442, guid: e7927b1fa11c7ed40b2e0620e00cd2cf, type: 2}
   SpawnTime: 0
   bspawntime: 0
-  enemiesToSpawn: 3
+  enemiesToSpawn: 5
+  canSpawnTop: 0
+  canSpawnLeft: 0
+  canSpawnRight: 0
+  canSpawnBot: 0
 --- !u!1 &1157747716
 GameObject:
   m_ObjectHideFlags: 0
