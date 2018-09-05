@@ -12,7 +12,7 @@ public class SpawnTiles : MonoBehaviour {
 
     private void Start()
     {
-        GetComponent<Transform>().position = new Vector3(- x_size / 2, - y_size / 2, 0);
+        GetComponent<Transform>().position = new Vector3(- x_size / 2 + 0.5f, - y_size / 2 + 0.5f, 0);
 
         for (int iy = 0; iy < y_size; iy++)
         {

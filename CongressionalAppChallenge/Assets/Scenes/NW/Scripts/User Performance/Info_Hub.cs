@@ -20,7 +20,7 @@ public class Info_Hub : MonoBehaviour {
     void Start()
     {
         editMode = false;
-        editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit mode";
+        //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit mode";
     }
 
     public void EditModeButton()
@@ -28,7 +28,7 @@ public class Info_Hub : MonoBehaviour {
         if (editMode == false)
         {
             editMode = true;
-            editModeButton.GetComponent<TextMeshPro>().text = "Exit \n Edit Mode";
+            //editModeButton.GetComponent<TextMeshPro>().text = "Exit \n Edit Mode";
             Hammer.SetActive(false);
             X.SetActive(true);
         }
@@ -36,7 +36,7 @@ public class Info_Hub : MonoBehaviour {
         else if (editMode == true)
         {
             editMode = false;
-            editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit Mode";
+            //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit Mode";
             Hammer.SetActive(true);
             X.SetActive(false);
             Destroy(GameObject.Find("temporaryUI"));

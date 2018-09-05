@@ -45,25 +45,45 @@ public class Tile_Scripts : MonoBehaviour {
         {   
 
             case 0:
-                Debug.Log("I PRESSED THE BUTTON");
+                Debug.Log("This is an empty tile");
                 temporaryUI = Instantiate(tileButtonSet0, GetComponentInParent<Transform>());
                 temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
                 temporaryUI.name = "temporaryUI";
                 break;
 
             case 1:
+                Debug.Log("This is an occupied tile; buildingType1");
+                temporaryUI = Instantiate(tileButtonSet1, GetComponentInParent<Transform>());
+                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
+                temporaryUI.name = "temporaryUI";
                 break;
 
             case 2:
+                Debug.Log("This is an occupied tile; buildingType2");
+                temporaryUI = Instantiate(tileButtonSet2, GetComponentInParent<Transform>());
+                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
+                temporaryUI.name = "temporaryUI";
                 break;
 
             case 3:
+                Debug.Log("This is an occupied tile; buildingType3");
+                temporaryUI = Instantiate(tileButtonSet3, GetComponentInParent<Transform>());
+                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
+                temporaryUI.name = "temporaryUI";
                 break;
 
             case 4:
+                Debug.Log("This is an occupied tile; buildingType4");
+                temporaryUI = Instantiate(tileButtonSet4, GetComponentInParent<Transform>());
+                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
+                temporaryUI.name = "temporaryUI";
                 break;
 
             case 5:
+                Debug.Log("This is an occupied tile; buildingType5");
+                temporaryUI = Instantiate(tileButtonSet5, GetComponentInParent<Transform>());
+                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
+                temporaryUI.name = "temporaryUI";
                 break;
         }
     }
