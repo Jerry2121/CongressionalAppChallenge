@@ -1,9 +1,12 @@
 Type - Color - Middle Color Hex Code
 Attack - Red
 Defense - Orange
-Resources - Grey
-Production - Black
+Resources - Light Grey #6f6f6f
+Production - Dark Grey
 Civilization - Blue - #002fe0
+
+Other Colors
+Building Walls - Greyish - #79877a
 
 
 Light Source is from Above and front right
