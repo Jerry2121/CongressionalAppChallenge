@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Tile_Scripts : MonoBehaviour {
 
+    public GameObject townHallPrefab;
+
     public GameObject infoHub;
-    public GameObject childSprite;
+    public Sprite EmptyTileIndicator;
+    public GameObject childStructure;
+
+    public Vector2 originalLocation;
+    public bool spaceOccupied;
 
     public GameObject tileButtonSet0;
     public GameObject tileButtonSet1;
@@ -16,6 +22,11 @@ public class Tile_Scripts : MonoBehaviour {
 
     // Building IDs: 0 - Empty, 1 - Town Hall, 2 - Quarry, 3 - Sawmill, 4 - Mine, 5 - Forge, 
     public int buildingID;
+
+    void Start()
+    {
+        originalLocation = gameObject.transform.position;
+    }
 
     void Update()
     {
@@ -113,16 +124,22 @@ public class Tile_Scripts : MonoBehaviour {
         }
     }
 
+    public void SpawnTownHall(float pos_x, float pos_y)
+    {
+
+        Instantiate(townHallPrefab, GetComponent<Transform>());
+    }
+
     public void ShowTilePlacement()
     {
-        if (infoHub.GetComponent<Info_Hub>().editMode == true)
+        if (infoHub.GetComponent<Info_Hub>().editMode == true && spaceOccupied == false)
         {
-            childSprite.SetActive(true);
+            GetComponent<SpriteRenderer>().sprite = EmptyTileIndicator;
         }
 
         else if (infoHub.GetComponent<Info_Hub>().editMode == false)
         {
-            childSprite.SetActive(false);
+            GetComponent<SpriteRenderer>().sprite = null;
         }
 
         else
