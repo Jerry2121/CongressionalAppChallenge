@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Base
   - Undefined
+  - EmptyTile
   layers:
   - Default
   - TransparentFX
