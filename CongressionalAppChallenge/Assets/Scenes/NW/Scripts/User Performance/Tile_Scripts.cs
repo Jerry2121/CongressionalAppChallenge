@@ -9,9 +9,11 @@ public class Tile_Scripts : MonoBehaviour {
     public GameObject infoHub;
     public Sprite EmptyTileIndicator;
     public GameObject childStructure;
-
     public Vector2 originalLocation;
     public bool spaceOccupied;
+
+    // 1 = 1x1 tile occupation ; 2 = 2x2 tile occupation ; 
+    public int sizeID;
 
     public GameObject tileButtonSet0;
     public GameObject tileButtonSet1;
@@ -28,6 +30,8 @@ public class Tile_Scripts : MonoBehaviour {
         originalLocation = gameObject.transform.position;
     }
 
+    
+
     void Update()
     {
         ShowTilePlacement();
@@ -36,7 +40,10 @@ public class Tile_Scripts : MonoBehaviour {
     // This is for PC only, will have to create a different function for mobile
     void OnMouseUpAsButton()
     {
-
+        if (spaceOccupied == true)
+        {
+            return;
+        }
         if (infoHub.GetComponent<Info_Hub>().editMode == false)
         {
             Debug.Log("editMode isn't active!");
@@ -124,10 +131,16 @@ public class Tile_Scripts : MonoBehaviour {
         }
     }
 
-    public void SpawnTownHall(float pos_x, float pos_y)
+    public void SpawnTownHall()
     {
 
         Instantiate(townHallPrefab, GetComponent<Transform>());
+        townHallPrefab.transform.position = new Vector3 (0.5f, 0.5f, 0);
+        spaceOccupied = true;
+
+        GameObject.Find("Tile(" + (originalLocation.x + 1) + ", " + originalLocation.y + ")").GetComponent<Tile_Scripts>().spaceOccupied = true;
+        GameObject.Find("Tile(" + originalLocation.x + ", " + (originalLocation.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied = true;
+        GameObject.Find("Tile(" + (originalLocation.x + 1) + ", " + (originalLocation.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied = true;
     }
 
     public void ShowTilePlacement()
@@ -136,8 +149,7 @@ public class Tile_Scripts : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().sprite = EmptyTileIndicator;
         }
-
-        else if (infoHub.GetComponent<Info_Hub>().editMode == false)
+        else if (infoHub.GetComponent<Info_Hub>().editMode == false || spaceOccupied)
         {
             GetComponent<SpriteRenderer>().sprite = null;
         }

@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 61729593754389782}
   - component: {fileID: 114416898211434076}
   - component: {fileID: 212987124286173530}
+  - component: {fileID: 114434168048683154}
   m_Layer: 0
-  m_Name: Tile(49, 29)
+  m_Name: TileEmpty
   m_TagString: EmptyTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,6 +86,7 @@ MonoBehaviour:
   childStructure: {fileID: 0}
   originalLocation: {x: 0, y: 0}
   spaceOccupied: 0
+  sizeID: 0
   tileButtonSet0: {fileID: 1117155277740136, guid: bb265d52807cfda4c9a311e1de342517,
     type: 2}
   tileButtonSet1: {fileID: 0}
@@ -93,6 +95,17 @@ MonoBehaviour:
   tileButtonSet4: {fileID: 0}
   tileButtonSet5: {fileID: 0}
   buildingID: 0
+--- !u!114 &114434168048683154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413424312435840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1beea7fb27cf3764a8c55c0290bcd787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212987124286173530
 SpriteRenderer:
   m_ObjectHideFlags: 1

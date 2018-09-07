@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c69f3fd65bbf2e4dbeeb2d1db66f2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1034934419258644, guid: c3a31e0f89076ec4db48a90bc140bd12, type: 2}
+  target: {fileID: 1641856209188398, guid: cef25fa0f86041e459a30c547cec21e5, type: 2}
   chaseSpeed: 2
   maxMoveDistance: 10
   chaseTriggerDistance: 1

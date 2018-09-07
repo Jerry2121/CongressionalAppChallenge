@@ -8,7 +8,10 @@ public class SpawnTiles : MonoBehaviour {
     public int x_size;
     bool townHallSpawned = false;
     public GameObject emptyTilePrefab;
-    //public GameObject townHallParent;
+
+    public GameObject townHallParent;
+    public Vector3 townHallParentLoc;
+
     public GameObject townHallPrefab;
 
     private void Start()
@@ -28,12 +31,15 @@ public class SpawnTiles : MonoBehaviour {
                 tilePrefab.GetComponent<Tile_Scripts>().infoHub = GameObject.Find("InfoHub");
                 if (ix == 0 && iy == 0 && !townHallSpawned)
                 {
-                    tilePrefab.GetComponent<Tile_Scripts>().SpawnTownHall(ix, iy);
-                    Debug.Log(tilePrefab.name);
+                    townHallParent = tilePrefab;
+
                     townHallSpawned = true;
                 }
             }
                         
         }
+
+        townHallParent.GetComponent<Tile_Scripts>().SpawnTownHall();
+        Debug.Log(townHallParent.name);
     }
 }
