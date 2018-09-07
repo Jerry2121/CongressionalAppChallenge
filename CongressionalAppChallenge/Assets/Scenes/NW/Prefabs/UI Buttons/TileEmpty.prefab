@@ -23,8 +23,17 @@ GameObject:
   - component: {fileID: 114416898211434076}
   - component: {fileID: 212987124286173530}
   m_Layer: 0
+<<<<<<< HEAD
   m_Name: TileEmpty
+=======
+<<<<<<< HEAD
+  m_Name: TileEmpty
+  m_TagString: Untagged
+=======
+  m_Name: Tile(49, 29)
+>>>>>>> 14ca56421654382dc1c47aa992c659629949f8a5
   m_TagString: EmptyTile
+>>>>>>> 7b2fd94e69602eddaaf49b2290994f0548167dee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
