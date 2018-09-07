@@ -6,7 +6,7 @@ public class Tile_Scripts : MonoBehaviour {
 
     public GameObject townHallPrefab;
 
-    public GameObject infoHub;
+    public GameObject GameManager;
     public Sprite EmptyTileIndicator;
     public GameObject childStructure;
     public Vector2 originalLocation;
@@ -44,7 +44,7 @@ public class Tile_Scripts : MonoBehaviour {
         {
             return;
         }
-        if (infoHub.GetComponent<Info_Hub>().editMode == false)
+        if (GameManager.GetComponent<GameManager>().editMode == false)
         {
             Debug.Log("editMode isn't active!");
             return;
@@ -110,12 +110,12 @@ public class Tile_Scripts : MonoBehaviour {
     {
         Debug.Log("I PUSHED ANOTHER BUTTON");
 
-        if (stoneConsumed < infoHub.GetComponent<Info_Hub>().stoneAcquired && woodConsumed < infoHub.GetComponent<Info_Hub>().woodAcquired &&
-                steelConsumed < infoHub.GetComponent<Info_Hub>().steelAcquired)
+        if (stoneConsumed < GameManager.GetComponent<GameManager>().stoneAcquired && woodConsumed < GameManager.GetComponent<GameManager>().woodAcquired &&
+                steelConsumed < GameManager.GetComponent<GameManager>().steelAcquired)
         {
-            infoHub.GetComponent<Info_Hub>().stoneAcquired -= stoneConsumed;
-            infoHub.GetComponent<Info_Hub>().woodAcquired -= woodConsumed;
-            infoHub.GetComponent<Info_Hub>().steelAcquired -= steelConsumed;
+            GameManager.GetComponent<GameManager>().stoneAcquired -= stoneConsumed;
+            GameManager.GetComponent<GameManager>().woodAcquired -= woodConsumed;
+            GameManager.GetComponent<GameManager>().steelAcquired -= steelConsumed;
 
             Instantiate(structureType, GetComponentInParent<Transform>());
 
@@ -145,11 +145,11 @@ public class Tile_Scripts : MonoBehaviour {
 
     public void ShowTilePlacement()
     {
-        if (infoHub.GetComponent<Info_Hub>().editMode == true && spaceOccupied == false)
+        if (GameManager.GetComponent<GameManager>().editMode == true && spaceOccupied == false)
         {
             GetComponent<SpriteRenderer>().sprite = EmptyTileIndicator;
         }
-        else if (infoHub.GetComponent<Info_Hub>().editMode == false || spaceOccupied)
+        else if (GameManager.GetComponent<GameManager>().editMode == false || spaceOccupied)
         {
             GetComponent<SpriteRenderer>().sprite = null;
         }

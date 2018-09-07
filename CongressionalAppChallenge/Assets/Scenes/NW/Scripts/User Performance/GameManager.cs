@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Info_Hub : MonoBehaviour {
+public class GameManager : MonoBehaviour {
 
     public bool editMode;
 

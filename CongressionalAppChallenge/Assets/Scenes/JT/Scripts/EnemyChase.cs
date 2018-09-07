@@ -16,20 +16,21 @@ public class EnemyChase : MonoBehaviour {
 
 	void Start () {
 		homePos = transform.position;
+        
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-		Vector3 playerPosition = target.transform.position;
+		Vector3 playerPosition = GameObject.Find("TownHallTile(Clone)").transform.position;
 		moveDirection = new Vector2 (0 - transform.position.x, 0 - transform.position.y);
 
         moveDirection.Normalize();
         home = false;
         GetComponent<Rigidbody2D>().velocity = moveDirection * chaseSpeed;
 	}
-    public void OnCollisionStay2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Base")
         {

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50587726793373480}
   - component: {fileID: 58879963943019564}
   - component: {fileID: 114469165118588392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.020958776, y: 0}

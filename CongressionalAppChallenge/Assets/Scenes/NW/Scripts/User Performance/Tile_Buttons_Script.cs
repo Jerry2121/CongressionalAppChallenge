@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tile_Buttons_Script : MonoBehaviour {
 
-    public GameObject infoHub;
+    public GameObject GameManager;
 
     public int actionType;
 
@@ -29,7 +29,7 @@ public class Tile_Buttons_Script : MonoBehaviour {
 
     void Start()
     {
-        infoHub = GetComponentInParent<Tile_Scripts>().infoHub;
+        GameManager = GetComponentInParent<Tile_Scripts>().GameManager;
     }
 
     void OnMouseUpAsButton()

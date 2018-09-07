@@ -28,7 +28,7 @@ public class SpawnTiles : MonoBehaviour {
                 tilePrefab.transform.position = new Vector3(ix, iy, 0);
                 tilePrefab.name = "Tile(" + ix + ", " + iy + ")";
                 tilePrefab.tag = "EmptyTile";
-                tilePrefab.GetComponent<Tile_Scripts>().infoHub = GameObject.Find("InfoHub");
+                tilePrefab.GetComponent<Tile_Scripts>().GameManager = GameObject.Find("GameManager");
                 if (ix == 0 && iy == 0 && !townHallSpawned)
                 {
                     townHallParent = tilePrefab;
