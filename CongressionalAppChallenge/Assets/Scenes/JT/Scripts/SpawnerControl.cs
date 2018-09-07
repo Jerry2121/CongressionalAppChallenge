@@ -12,35 +12,56 @@ public class SpawnerControl : MonoBehaviour {
     public GameObject Enemy3;
     public GameObject Enemy4;
     public float SpawnTime;
-    public float bspawntime;
     private int d1;
     public int enemiesToSpawn = 5;
     private int enemyCount = 0;
+    private int log = 0;
     private Vector3 spawnPos;
     public bool canSpawnTop;
     public bool canSpawnLeft;
     public bool canSpawnRight;
     public bool canSpawnBot;
+    List<Wave> myWaves;
+    private int waveCount = 0;
+
     // Use this for initialization
     void Start () {
+        myWaves = new List<Wave>();
+        myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy1, Enemy1));
+        myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy1, Enemy2));
+        myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy2, Enemy2));
+        myWaves.Add(new Wave(Enemy1, Enemy1, Enemy2, Enemy2, Enemy2));
+        myWaves.Add(new Wave(Enemy2, Enemy2, Enemy2, Enemy2, Enemy2));
+
+        myWaves.Add(new Wave(Enemy2, Enemy2, Enemy3, Enemy2, Enemy1));
+        myWaves.Add(new Wave(Enemy3, Enemy3, Enemy1, Enemy2, Enemy4));
+        myWaves.Add(new Wave(Enemy4, Enemy3, Enemy2, Enemy1, Enemy3));
+        myWaves.Add(new Wave(Enemy1, Enemy4, Enemy4, Enemy4, Enemy3));
+        myWaves.Add(new Wave(Enemy1, Enemy1, Enemy3, Enemy4, Enemy4));
+
+        myWaves.Add(new Wave(Enemy4, Enemy4, Enemy4, Enemy4, Enemy4));
+        myWaves.Add(new Wave(Enemy3, Enemy1, Enemy4, Enemy4, Enemy4));
+
         SpawnTime = 0.0f;
-        bspawntime = 0.0f;
         canSpawnTop = true;
         canSpawnLeft = true;
         canSpawnRight = true;
         canSpawnBot = true;
     }
+
     private IEnumerator SpawnEnemies(int enemies, GameObject enemyToSpawn, Vector3 spawn)
     {
+        log++;
+        Debug.Log("IEnumerator Started " + log + " times");
         int count = 0;
-        Color c = Random.ColorHSV();
+        waveCount++;
+        //Color c = Random.ColorHSV();
         for (int i = 0; i < enemies; i++)
         {
-            GameObject g = Instantiate(enemyToSpawn, spawn, Quaternion.identity);
-            g.GetComponent<SpriteRenderer>().color = c;
+            GameObject g = Instantiate(myWaves[waveCount].enemies[i], spawn, Quaternion.identity);
+            //g.GetComponent<SpriteRenderer>().color = c;
             count++;
             yield return new WaitForSeconds(1);
-            Debug.Log(enemyCount);
 
         }
         if (spawn == SpawnerTop.transform.position)
@@ -61,147 +82,60 @@ public class SpawnerControl : MonoBehaviour {
         }
         count = 0;
     }
+
 	// Update is called once per frame
 	void Update () {
-        SpawnTime += Time.deltaTime;
         
-        if (SpawnTime >= 3)
+        SpawnTime += Time.deltaTime;
+        if (waveCount % 5 == 0 && SpawnTime < 20)
         {
-            //bspawntime += Time.deltaTime;
-           // if (enemyCount == 0)
-           // {
-                d1 = Random.Range(0, 5);
-                if (d1 == 1 && canSpawnTop)
-                {
-                    spawnPos = SpawnerTop.transform.position;
-                    canSpawnTop = false;
-                }
-                if (d1 == 2 && canSpawnLeft)
-                {
-                    spawnPos = SpawnerLeft.transform.position;
-                    canSpawnLeft = false;
+            return;
+        }
+        if (SpawnTime >= 3.2)
+        {
+            d1 = Random.Range(0, 5);
+            if (d1 == 1 && canSpawnTop)
+            {
+                canSpawnTop = false;
+                spawnPos = SpawnerTop.transform.position;
+                SpawnTime = 0;
+                StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy1, spawnPos));
             }
-                if (d1 == 3 && canSpawnRight)
-                {
-                    spawnPos = SpawnerRight.transform.position;
-                    canSpawnRight = false;
+            if (d1 == 2 && canSpawnLeft)
+            {
+                canSpawnLeft = false;
+                spawnPos = SpawnerLeft.transform.position;
+                SpawnTime = 0;
+                StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy2, spawnPos));
             }
-                if (d1 == 4 && canSpawnBot)
-                {
-                    spawnPos = SpawnerBot.transform.position;
-                    canSpawnBot = false;
+            if (d1 == 3 && canSpawnRight)
+            {
+                canSpawnRight = false;
+                spawnPos = SpawnerRight.transform.position;
+                SpawnTime = 0;
+                StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy3, spawnPos));
             }
-           // }
-            //Instantiate(Enemy1, spawnPos, Quaternion.identity);
-            StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy1, spawnPos));
-            SpawnTime = 0;
-            //SpawnTime = 0;
-            /*
-                if (bspawntime >= 1)
-                {
-                    Instantiate(Enemy1, spawnPos, Quaternion.identity);
-                    enemyCount++;
-                }
-                else if (bspawntime >= 2)
-                {
-                    Instantiate(Enemy2, spawnPos, Quaternion.identity);
-                    enemyCount++;
-                }
-                else if (bspawntime >= 3)
-                {
-                    Instantiate(Enemy3, spawnPos, Quaternion.identity);
-                    enemyCount++;
-                }
-                else if (bspawntime >= 4)
-                {
-                    Instantiate(Enemy4, spawnPos, Quaternion.identity);
-                    enemyCount++;
-                }
-                else if (bspawntime >= 5)
-                {
-                    Instantiate(Enemy1, spawnPos, Quaternion.identity);
-                    enemyCount = 0;
-                    bspawntime = 0;
-                    SpawnTime = 0;
-                }
-                
-        */
-            /*  if (d1 == 2)
-              {
-                  Instantiate(Enemy2, SpawnerTop.transform.position, Quaternion.identity);
-                  if (bspawntime >= 1 && bspawntime <= 2)
-                  {
-                      Instantiate(Enemy2, SpawnerTop.transform.position, Quaternion.identity);
-                      if (bspawntime >= 2 && bspawntime <= 3)
-                      {
-                          Instantiate(Enemy2, SpawnerTop.transform.position, Quaternion.identity);
-                          if (bspawntime >= 3 && bspawntime <= 4)
-                          {
-                              Instantiate(Enemy2, SpawnerTop.transform.position, Quaternion.identity);
-                              if (bspawntime >= 4 && bspawntime <= 5)
-                              {
-                                  Instantiate(Enemy2, SpawnerTop.transform.position, Quaternion.identity);
-                                  if (bspawntime >= 5 && bspawntime <= 6)
-                                  {
-                                      Instantiate(Enemy2, SpawnerTop.transform.position, Quaternion.identity);
-                                      SpawnTime = 0;
-                                  }
-                              }
-                          }
-                      }
-                  }
-              }
-              if (d1 == 3)
-              {
-                  Instantiate(Enemy3, SpawnerTop.transform.position, Quaternion.identity);
-                  if (bspawntime >= 1 && bspawntime <= 2)
-                  {
-                      Instantiate(Enemy3, SpawnerTop.transform.position, Quaternion.identity);
-                      if (bspawntime >= 2 && bspawntime <= 3)
-                      {
-                          Instantiate(Enemy3, SpawnerTop.transform.position, Quaternion.identity);
-                          if (bspawntime >= 3 && bspawntime <= 4)
-                          {
-                              Instantiate(Enemy3, SpawnerTop.transform.position, Quaternion.identity);
-                              if (bspawntime >= 4 && bspawntime <= 5)
-                              {
-                                  Instantiate(Enemy3, SpawnerTop.transform.position, Quaternion.identity);
-                                  if (bspawntime >= 5 && bspawntime <= 6)
-                                  {
-                                      Instantiate(Enemy3, SpawnerTop.transform.position, Quaternion.identity);
-                                      SpawnTime = 0;
-                                  }
-                              }
-                          }
-                      }
-                  }
-              }
-              if (d1 == 4)
-              {
-                  Instantiate(Enemy4, SpawnerTop.transform.position, Quaternion.identity);
-                  if (bspawntime >= 1 && bspawntime <= 2)
-                  {
-                      Instantiate(Enemy4, SpawnerTop.transform.position, Quaternion.identity);
-                      if (bspawntime >= 2 && bspawntime <= 3)
-                      {
-                          Instantiate(Enemy4, SpawnerTop.transform.position, Quaternion.identity);
-                          if (bspawntime >= 3 && bspawntime <= 4)
-                          {
-                              Instantiate(Enemy4, SpawnerTop.transform.position, Quaternion.identity);
-                              if (bspawntime >= 4 && bspawntime <= 5)
-                              {
-                                  Instantiate(Enemy4, SpawnerTop.transform.position, Quaternion.identity);
-                                  if (bspawntime >= 5 && bspawntime <= 6)
-                                  {
-                                      Instantiate(Enemy4, SpawnerTop.transform.position, Quaternion.identity);
-                                      SpawnTime = 0;
-                                  }
-                              }
-                          }
-                      }
-                  }
-              }*/
-
+            if (d1 == 4 && canSpawnBot)
+            {
+                canSpawnBot = false;
+                spawnPos = SpawnerBot.transform.position;
+                SpawnTime = 0;
+                StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy4, spawnPos));
+            }
         }
 	}
+}
+public class Wave
+{
+    public GameObject[] enemies;
+
+    public Wave(GameObject s1, GameObject s2, GameObject s3, GameObject s4, GameObject s5)
+    {
+        enemies = new GameObject[5];
+        enemies[0] = s1;
+        enemies[1] = s2;
+        enemies[2] = s3;
+        enemies[3] = s4;
+        enemies[4] = s5;
+    }
 }
