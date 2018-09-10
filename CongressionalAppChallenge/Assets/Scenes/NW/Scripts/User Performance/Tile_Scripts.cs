@@ -1,10 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Tile_Scripts : MonoBehaviour {
 
     public GameObject townHallPrefab;
+
+    public GameObject buildMenu;
+    public bool buildMenuActive;
+
+    public GameObject structureTypeSelectMenu;
+    public GameObject productionStructuresMenu;
+    public GameObject villageStructureMenu;
+    public GameObject attackStructureMenu;
+    public GameObject defenseStructureMenu;
 
     public GameObject GameManager;
     public Sprite EmptyTileIndicator;
@@ -14,13 +24,6 @@ public class Tile_Scripts : MonoBehaviour {
 
     // 1 = 1x1 tile occupation ; 2 = 2x2 tile occupation ; 
     public int sizeID;
-
-    public GameObject tileButtonSet0;
-    public GameObject tileButtonSet1;
-    public GameObject tileButtonSet2;
-    public GameObject tileButtonSet3;
-    public GameObject tileButtonSet4;
-    public GameObject tileButtonSet5;
 
     // Building IDs: 0 - Empty, 1 - Town Hall, 2 - Quarry, 3 - Sawmill, 4 - Mine, 5 - Forge, 
     public int buildingID;
@@ -40,22 +43,25 @@ public class Tile_Scripts : MonoBehaviour {
     // This is for PC only, will have to create a different function for mobile
     void OnMouseUpAsButton()
     {
+        MenuDisplayFunction();
+
+        GameManager.GetComponent<GameManager>().selectedTile = gameObject;
+
+        if (GameManager.GetComponent<GameManager>().cancelTileInteraction)
+        {
+            Debug.Log("I've canceled tile interaction. You're welcome.");
+            GameManager.GetComponent<GameManager>().cancelTileInteraction = false;
+            return;
+        }
+        
         if (spaceOccupied == true)
         {
             return;
         }
+
         if (GameManager.GetComponent<GameManager>().editMode == false)
         {
             Debug.Log("editMode isn't active!");
-            return;
-        }
-        
-        GameObject temporaryUI;
-
-        if (GameObject.Find("temporaryUI") == true)
-        {
-            Debug.Log("TemporaryUI found!");
-            Destroy(GameObject.Find("temporaryUI"));
             return;
         }
 
@@ -64,44 +70,26 @@ public class Tile_Scripts : MonoBehaviour {
 
             case 0:
                 Debug.Log("This is an empty tile");
-                temporaryUI = Instantiate(tileButtonSet0, GetComponentInParent<Transform>());
-                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
-                temporaryUI.name = "temporaryUI";
                 break;
 
             case 1:
                 Debug.Log("This is an occupied tile; buildingType1");
-                temporaryUI = Instantiate(tileButtonSet1, GetComponentInParent<Transform>());
-                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
-                temporaryUI.name = "temporaryUI";
                 break;
 
             case 2:
                 Debug.Log("This is an occupied tile; buildingType2");
-                temporaryUI = Instantiate(tileButtonSet2, GetComponentInParent<Transform>());
-                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
-                temporaryUI.name = "temporaryUI";
                 break;
 
             case 3:
                 Debug.Log("This is an occupied tile; buildingType3");
-                temporaryUI = Instantiate(tileButtonSet3, GetComponentInParent<Transform>());
-                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
-                temporaryUI.name = "temporaryUI";
                 break;
 
             case 4:
                 Debug.Log("This is an occupied tile; buildingType4");
-                temporaryUI = Instantiate(tileButtonSet4, GetComponentInParent<Transform>());
-                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
-                temporaryUI.name = "temporaryUI";
                 break;
 
             case 5:
                 Debug.Log("This is an occupied tile; buildingType5");
-                temporaryUI = Instantiate(tileButtonSet5, GetComponentInParent<Transform>());
-                temporaryUI.transform.position = new Vector3(GetComponentInParent<Transform>().position.x, GetComponentInParent<Transform>().position.y);
-                temporaryUI.name = "temporaryUI";
                 break;
         }
     }
@@ -141,6 +129,28 @@ public class Tile_Scripts : MonoBehaviour {
         GameObject.Find("Tile(" + (originalLocation.x + 1) + ", " + originalLocation.y + ")").GetComponent<Tile_Scripts>().spaceOccupied = true;
         GameObject.Find("Tile(" + originalLocation.x + ", " + (originalLocation.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied = true;
         GameObject.Find("Tile(" + (originalLocation.x + 1) + ", " + (originalLocation.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied = true;
+    }
+
+    public void MenuDisplayFunction()
+    {
+        if (GameManager.GetComponent<GameManager>().editMode == false)
+        {
+            buildMenu.SetActive(false);
+            return;
+        }
+
+        if (!buildMenuActive)
+        {
+            buildMenu.SetActive(true);
+            buildMenuActive = true;
+            
+        }
+
+        else if (buildMenuActive)
+        {
+            buildMenu.SetActive(false);
+            buildMenuActive = false;
+        }
     }
 
     public void ShowTilePlacement()

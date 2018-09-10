@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour {
 
     public bool editMode;
 
+    public GameObject selectedTile;
+
+    public bool cancelTileInteraction;
+
     public GameObject editModeButton;
     public GameObject Hammer;
     public GameObject X;
@@ -21,6 +25,12 @@ public class GameManager : MonoBehaviour {
     {
         editMode = false;
         //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit mode";
+    }
+
+    public void CancelTileInteraction()
+    {
+        Debug.Log("Preparing to cancel tile interaction!");
+        cancelTileInteraction = true;
     }
 
     public void EditModeButton()

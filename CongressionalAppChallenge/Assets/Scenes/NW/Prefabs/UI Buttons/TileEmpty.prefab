@@ -81,19 +81,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   townHallPrefab: {fileID: 1641856209188398, guid: cef25fa0f86041e459a30c547cec21e5,
     type: 2}
-  infoHub: {fileID: 0}
+  buildMenu: {fileID: 0}
+  GameManager: {fileID: 0}
   EmptyTileIndicator: {fileID: 21300000, guid: 273f6e598c18d2f418327203c133c339, type: 3}
   childStructure: {fileID: 0}
   originalLocation: {x: 0, y: 0}
   spaceOccupied: 0
   sizeID: 0
-  tileButtonSet0: {fileID: 1117155277740136, guid: bb265d52807cfda4c9a311e1de342517,
-    type: 2}
-  tileButtonSet1: {fileID: 0}
-  tileButtonSet2: {fileID: 0}
-  tileButtonSet3: {fileID: 0}
-  tileButtonSet4: {fileID: 0}
-  tileButtonSet5: {fileID: 0}
   buildingID: 0
 --- !u!114 &114434168048683154
 MonoBehaviour:
