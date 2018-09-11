@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
 
     public bool cancelTileInteraction;
 
+    public GameObject menuCanvas;
+
     public GameObject editModeButton;
     public GameObject Hammer;
     public GameObject X;
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour {
             Hammer.SetActive(true);
             X.SetActive(false);
             Destroy(GameObject.Find("temporaryUI"));
+            menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
         }
     }
     

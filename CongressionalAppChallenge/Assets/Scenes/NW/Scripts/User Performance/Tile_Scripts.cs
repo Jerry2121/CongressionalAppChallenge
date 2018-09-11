@@ -7,14 +7,7 @@ public class Tile_Scripts : MonoBehaviour {
 
     public GameObject townHallPrefab;
 
-    public GameObject buildMenu;
-    public bool buildMenuActive;
-
-    public GameObject structureTypeSelectMenu;
-    public GameObject productionStructuresMenu;
-    public GameObject villageStructureMenu;
-    public GameObject attackStructureMenu;
-    public GameObject defenseStructureMenu;
+    public GameObject menuCanvas;
 
     public GameObject GameManager;
     public Sprite EmptyTileIndicator;
@@ -43,21 +36,28 @@ public class Tile_Scripts : MonoBehaviour {
     // This is for PC only, will have to create a different function for mobile
     void OnMouseUpAsButton()
     {
-        MenuDisplayFunction();
-
-        GameManager.GetComponent<GameManager>().selectedTile = gameObject;
-
         if (GameManager.GetComponent<GameManager>().cancelTileInteraction)
         {
             Debug.Log("I've canceled tile interaction. You're welcome.");
             GameManager.GetComponent<GameManager>().cancelTileInteraction = false;
             return;
         }
-        
-        if (spaceOccupied == true)
+
+        if (GameManager.GetComponent<GameManager>().selectedTile == null)
         {
-            return;
+            GameManager.GetComponent<GameManager>().selectedTile = gameObject;
         }
+
+        else if (GameManager.GetComponent<GameManager>().selectedTile != null)
+        {
+            GameManager.GetComponent<GameManager>().selectedTile = null;
+        }
+
+        
+        //if (spaceOccupied == true)
+        //{
+        //    return;
+        //}
 
         if (GameManager.GetComponent<GameManager>().editMode == false)
         {
@@ -70,6 +70,7 @@ public class Tile_Scripts : MonoBehaviour {
 
             case 0:
                 Debug.Log("This is an empty tile");
+                menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
                 break;
 
             case 1:
@@ -91,7 +92,14 @@ public class Tile_Scripts : MonoBehaviour {
             case 5:
                 Debug.Log("This is an occupied tile; buildingType5");
                 break;
+
+            case -1:
+                Debug.Log("This is your town hall");
+                menuCanvas.GetComponent<BuildStructureMenu>().MenuHardFalse();
+                break;
         }
+
+        
     }
 
     public void SpawnBuilding(GameObject structureType, int stoneConsumed, int woodConsumed, int steelConsumed, int setID)
@@ -125,36 +133,36 @@ public class Tile_Scripts : MonoBehaviour {
         Instantiate(townHallPrefab, GetComponent<Transform>());
         townHallPrefab.transform.position = new Vector3 (0.5f, 0.5f, 0);
         spaceOccupied = true;
+        buildingID = -1;
 
-        GameObject.Find("Tile(" + (originalLocation.x + 1) + ", " + originalLocation.y + ")").GetComponent<Tile_Scripts>().spaceOccupied = true;
-        GameObject.Find("Tile(" + originalLocation.x + ", " + (originalLocation.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied = true;
-        GameObject.Find("Tile(" + (originalLocation.x + 1) + ", " + (originalLocation.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied = true;
+        GameObject tempTile;
+        tempTile = GameObject.Find("Tile(" + (originalLocation.x + 1) + ", " + originalLocation.y + ")");
+        tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+        tempTile.GetComponent<Tile_Scripts>().buildingID = -1;
+
+        tempTile = GameObject.Find("Tile(" + originalLocation.x + ", " + (originalLocation.y + 1) + ")");
+        tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+        tempTile.GetComponent<Tile_Scripts>().buildingID = -1;
+
+        tempTile = GameObject.Find("Tile(" + (originalLocation.x + 1) + ", " + (originalLocation.y + 1) + ")");
+        tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+        tempTile.GetComponent<Tile_Scripts>().buildingID = -1;
     }
 
-    public void MenuDisplayFunction()
-    {
-        if (GameManager.GetComponent<GameManager>().editMode == false)
-        {
-            buildMenu.SetActive(false);
-            return;
-        }
-
-        if (!buildMenuActive)
-        {
-            buildMenu.SetActive(true);
-            buildMenuActive = true;
-            
-        }
-
-        else if (buildMenuActive)
-        {
-            buildMenu.SetActive(false);
-            buildMenuActive = false;
-        }
-    }
+    
 
     public void ShowTilePlacement()
     {
+        if (GameManager.GetComponent<GameManager>().selectedTile != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = null;
+            if (GameManager.GetComponent<GameManager>().selectedTile == gameObject)
+            {
+                GetComponent<SpriteRenderer>().sprite = EmptyTileIndicator;
+            }
+            return;
+        }
+
         if (GameManager.GetComponent<GameManager>().editMode == true && spaceOccupied == false)
         {
             GetComponent<SpriteRenderer>().sprite = EmptyTileIndicator;
