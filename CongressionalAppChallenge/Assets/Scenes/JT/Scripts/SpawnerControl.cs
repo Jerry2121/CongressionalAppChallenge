@@ -87,11 +87,12 @@ public class SpawnerControl : MonoBehaviour {
 	void Update () {
         
         SpawnTime += Time.deltaTime;
-        if (waveCount % 5 == 0 && SpawnTime < 20)
+        if (waveCount % 5 == 0 && GetComponent<GameManagerScript>().canSpawnNextWave == true)
         {
+            GetComponent<GameManagerScript>().canSpawnNextWave = false;
             return;
         }
-        if (SpawnTime >= 3.2)
+        if (SpawnTime >= 3.2 && GetComponent<GameManagerScript>().canSpawnNextWave == true)
         {
             d1 = Random.Range(0, 5);
             if (d1 == 1 && canSpawnTop)
