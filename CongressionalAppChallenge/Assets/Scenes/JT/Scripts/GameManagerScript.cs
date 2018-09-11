@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManagerScript : MonoBehaviour {
+    public GameObject ButtonText;
     public GameObject Button;
     public bool canSpawnNextWave;
     public bool isFirstInstance;
-    private float cooldownTimer;
+    public float cooldownTimer;
 	// Use this for initialization
 	void Start () {
         canSpawnNextWave = false;
@@ -16,29 +17,34 @@ public class GameManagerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         cooldownTimer += Time.deltaTime;
-        if (cooldownTimer >= 5)
-        {
-            canSpawnNextWave = false;
-        }
         if (isFirstInstance == true)
         {
-            Button.GetComponent<Text>().text = "Start Wave";
+            ButtonText.GetComponent<Text>().text = "Start Wave";
+        }
+        else if (canSpawnNextWave == true)
+        {
+            ButtonText.SetActive(false);
+            Button.SetActive(false);
+        }
+        if (canSpawnNextWave == false && GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft <= 0)
+        {
+            ButtonText.SetActive(true);
+            Button.SetActive(true);
         }
         if (canSpawnNextWave && isFirstInstance)
         {
-            Button.GetComponent<Text>().text = "Next Wave";
+            ButtonText.GetComponent<Text>().text = "Next Wave";
             isFirstInstance = false;
             canSpawnNextWave = true;
         }
-        else if (canSpawnNextWave == true) {
-            Button.SetActive(false);
-        }
-        else
+        if (GetComponent<SpawnerControl>().waveCount % 5 == 0 && cooldownTimer >= 5)
         {
-            Button.SetActive(true);
+            GetComponent<GameManagerScript>().canSpawnNextWave = false;
+            return;
         }
-	}
+    }
     public void NextWaveButton()
     {
         canSpawnNextWave = true;

@@ -21,12 +21,14 @@ public class SpawnerControl : MonoBehaviour {
     public bool canSpawnLeft;
     public bool canSpawnRight;
     public bool canSpawnBot;
+    public bool Spawn;
     List<Wave> myWaves;
-    private int waveCount = 0;
+    public int waveCount = 0;
 
     // Use this for initialization
     void Start () {
         myWaves = new List<Wave>();
+        GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft = 25;
         myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy1, Enemy1));
         myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy1, Enemy2));
         myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy2, Enemy2));
@@ -43,6 +45,7 @@ public class SpawnerControl : MonoBehaviour {
         myWaves.Add(new Wave(Enemy3, Enemy1, Enemy4, Enemy4, Enemy4));
 
         SpawnTime = 0.0f;
+        Spawn = true;
         canSpawnTop = true;
         canSpawnLeft = true;
         canSpawnRight = true;
@@ -80,18 +83,14 @@ public class SpawnerControl : MonoBehaviour {
         {
             canSpawnBot = true;
         }
+        Spawn = false;
         count = 0;
     }
 
 	// Update is called once per frame
 	void Update () {
-        
+        Debug.Log("The Wave Count Number is... " + waveCount);
         SpawnTime += Time.deltaTime;
-        if (waveCount % 5 == 0 && GetComponent<GameManagerScript>().canSpawnNextWave == true)
-        {
-            GetComponent<GameManagerScript>().canSpawnNextWave = false;
-            return;
-        }
         if (SpawnTime >= 3.2 && GetComponent<GameManagerScript>().canSpawnNextWave == true)
         {
             d1 = Random.Range(0, 5);

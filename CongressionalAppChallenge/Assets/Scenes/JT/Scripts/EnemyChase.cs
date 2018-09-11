@@ -30,11 +30,4 @@ public class EnemyChase : MonoBehaviour {
         home = false;
         GetComponent<Rigidbody2D>().velocity = moveDirection * chaseSpeed;
 	}
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Base")
-        {
-            Destroy(this.gameObject);
-        }
-    }
 }
