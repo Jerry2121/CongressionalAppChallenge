@@ -1,17 +1,20 @@
 Buildings
--Sawmill
--Quarry
--Mine
--Forge/Blacksmith
--Townhall
+-Sawmill/Trees**
+-Quarry*
+-Mine*
+-Forge/Blacksmith*
+-Townhall**
 -House
 -Wall
--Archer Tower
+-Archer Tower*
 -Fire Tower
 -Catapult
 -Cannon
 
 Units
--Melee Unit (swordsman, rogue)
--Ranged Unit (archer, mage)
--Boss Unit(s) ()
+-Melee Unit (swordsman**, rogue)
+-Ranged Unit (archer*, mage)
+-Boss Unit(s) (templar)
+
+*required
+**mostly finished
