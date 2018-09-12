@@ -50,8 +50,10 @@ public class BuildStructureMenu : MonoBehaviour {
 
     // int buttonType
     // 1 = OpenProductionStructuresMenu ; 2 = OpenVillageStructureMenu ; 3 = OpenAttackStructureMenu ; 4 = OpenDefenseStructureMenu
-    public void MenuButtonClick(int buttonType)
+   /* public void MenuButtonClick(int buttonType)
     {
+        Debug.Log("A build mode menu button has been pressed!");
+
         switch (buttonType)
         {
             case 1:
@@ -74,5 +76,5 @@ public class BuildStructureMenu : MonoBehaviour {
                 defenseStructureMenu.SetActive(true);
                 break;
         }
-    }
+    }*/
 }

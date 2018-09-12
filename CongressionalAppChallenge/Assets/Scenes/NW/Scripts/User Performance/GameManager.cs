@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour {
 
     public void EditModeButton()
     {
+        //selectedTile = null;
+
         if (editMode == false)
         {
             editMode = true;

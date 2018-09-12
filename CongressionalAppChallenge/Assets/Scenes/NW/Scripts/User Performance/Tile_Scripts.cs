@@ -9,11 +9,14 @@ public class Tile_Scripts : MonoBehaviour {
 
     public GameObject menuCanvas;
 
+    public bool selectedTile;
+
     public GameObject GameManager;
     public Sprite EmptyTileIndicator;
     public GameObject childStructure;
     public Vector2 originalLocation;
     public bool spaceOccupied;
+    public bool clicked;
 
     // 1 = 1x1 tile occupation ; 2 = 2x2 tile occupation ; 
     public int sizeID;
@@ -26,22 +29,45 @@ public class Tile_Scripts : MonoBehaviour {
         originalLocation = gameObject.transform.position;
     }
 
-    
+
 
     void Update()
     {
         ShowTilePlacement();
+        if (selectedTile && clicked)
+        {
+            this.gameObject.SetActive(true);
+        }
+        else if (selectedTile && !clicked)
+        {
+            this.gameObject.SetActive(true);
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        selectedTile = false;
+        clicked = false;
     }
 
     // This is for PC only, will have to create a different function for mobile
     void OnMouseUpAsButton()
     {
+        selectedTile = true;
+
+        clicked = true;
+
         if (GameManager.GetComponent<GameManager>().cancelTileInteraction)
         {
             Debug.Log("I've canceled tile interaction. You're welcome.");
             GameManager.GetComponent<GameManager>().cancelTileInteraction = false;
             return;
         }
+
 
         if (GameManager.GetComponent<GameManager>().selectedTile == null)
         {
@@ -53,7 +79,7 @@ public class Tile_Scripts : MonoBehaviour {
             GameManager.GetComponent<GameManager>().selectedTile = null;
         }
 
-        
+
         //if (spaceOccupied == true)
         //{
         //    return;
@@ -66,11 +92,11 @@ public class Tile_Scripts : MonoBehaviour {
         }
 
         switch (buildingID)
-        {   
+        {
 
             case 0:
                 Debug.Log("This is an empty tile");
-                menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
+                //menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
                 break;
 
             case 1:
@@ -99,7 +125,7 @@ public class Tile_Scripts : MonoBehaviour {
                 break;
         }
 
-        
+
     }
 
     public void SpawnBuilding(GameObject structureType, int stoneConsumed, int woodConsumed, int steelConsumed, int setID)
@@ -153,6 +179,9 @@ public class Tile_Scripts : MonoBehaviour {
 
     public void ShowTilePlacement()
     {
+        
+
+        /*
         if (GameManager.GetComponent<GameManager>().selectedTile != null)
         {
             GetComponent<SpriteRenderer>().sprite = null;
@@ -162,6 +191,7 @@ public class Tile_Scripts : MonoBehaviour {
             }
             return;
         }
+        */
 
         if (GameManager.GetComponent<GameManager>().editMode == true && spaceOccupied == false)
         {
