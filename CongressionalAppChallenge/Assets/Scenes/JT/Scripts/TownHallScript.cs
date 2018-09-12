@@ -6,7 +6,7 @@ public class TownHallScript : MonoBehaviour {
     public int Enemiesleft;
 	// Use this for initialization
 	void Start () {
-        Enemiesleft = 0;
+        Enemiesleft = 25;
 	}
 	
 	// Update is called once per frame

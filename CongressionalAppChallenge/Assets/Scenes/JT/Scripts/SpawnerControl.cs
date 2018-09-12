@@ -28,7 +28,6 @@ public class SpawnerControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
         myWaves = new List<Wave>();
-        GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft = 25;
         myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy1, Enemy1));
         myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy1, Enemy2));
         myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy2, Enemy2));
