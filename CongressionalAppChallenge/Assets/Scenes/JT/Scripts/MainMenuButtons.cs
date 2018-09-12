@@ -16,7 +16,7 @@ public class MainMenuButtons : MonoBehaviour {
 	}
     public void StartB ()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("JT");
     }
     public void QuitA ()
     {
