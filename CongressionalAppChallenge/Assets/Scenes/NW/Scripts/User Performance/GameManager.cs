@@ -29,12 +29,6 @@ public class GameManager : MonoBehaviour {
         //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit mode";
     }
 
-    public void CancelTileInteraction()
-    {
-        Debug.Log("Preparing to cancel tile interaction!");
-        cancelTileInteraction = true;
-    }
-
     public void EditModeButton()
     {
         //selectedTile = null;
