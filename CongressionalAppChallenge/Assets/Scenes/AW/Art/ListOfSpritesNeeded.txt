@@ -1,8 +1,8 @@
 Buildings
 -Sawmill/Trees**
--Quarry*
--Mine*
--Forge/Blacksmith*
+-Quarry
+-Mine
+-Forge/Blacksmith
 -Townhall**
 -House
 -Wall
@@ -15,6 +15,9 @@ Units
 -Melee Unit (swordsman**, rogue)
 -Ranged Unit (archer*, mage)
 -Boss Unit(s) (templar)
+
+Other
+-Ground* (grass)
 
 *required
 **mostly finished
