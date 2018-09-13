@@ -43,13 +43,6 @@ public class Tile_Scripts : MonoBehaviour {
             Debug.Log("Aaron is veryvery smart");
             return;
         }
-        if (GameManager.GetComponent<GameManager>().cancelTileInteraction)
-        {
-            Debug.Log("I've canceled tile interaction. You're welcome.");
-            GameManager.GetComponent<GameManager>().cancelTileInteraction = false;
-            return;
-        }
-
 
         if (GameManager.GetComponent<GameManager>().selectedTile == null)
         {
@@ -59,6 +52,9 @@ public class Tile_Scripts : MonoBehaviour {
         else if (GameManager.GetComponent<GameManager>().selectedTile != null)
         {
             GameManager.GetComponent<GameManager>().selectedTile = null;
+            //This might break things
+            menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
+            return;
         }
 
         if (GameManager.GetComponent<GameManager>().editMode == false)
@@ -75,24 +71,24 @@ public class Tile_Scripts : MonoBehaviour {
                 menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
                 break;
 
-            case 1:
-                Debug.Log("This is an occupied tile; buildingType1");
+            case 11:
+                Debug.Log("This is an occupied tile; buildingType = ID-11, Quarry");
+                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                 break;
 
-            case 2:
-                Debug.Log("This is an occupied tile; buildingType2");
+            case 12:
+                Debug.Log("This is an occupied tile; buildingType = ID-12, Sawmill");
+                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                 break;
 
-            case 3:
-                Debug.Log("This is an occupied tile; buildingType3");
+            case 13:
+                Debug.Log("This is an occupied tile; buildingType = ID-13, Mine");
+                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                 break;
 
-            case 4:
-                Debug.Log("This is an occupied tile; buildingType4");
-                break;
-
-            case 5:
-                Debug.Log("This is an occupied tile; buildingType5");
+            case 14:
+                Debug.Log("This is an occupied tile; buildingType = ID-14, Forge");
+                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                 break;
 
             case -1:
@@ -124,10 +120,12 @@ public class Tile_Scripts : MonoBehaviour {
         tempTile.GetComponent<Tile_Scripts>().buildingID = -1;
     }
 
-    public void SpawnBuilding(GameObject buildingType)
+    public void SpawnBuilding(GameObject buildingType, int recievedBuildingID)
     {
         Instantiate(buildingType, GetComponent<Transform>());
         buildingType.transform.position = new Vector3(0, 0, 5);
+        spaceOccupied = true;
+        buildingID = recievedBuildingID;
     }
 
     public void ShowTilePlacement()
@@ -135,7 +133,7 @@ public class Tile_Scripts : MonoBehaviour {
         if (GameManager.GetComponent<GameManager>().selectedTile != null)
         {
             GetComponent<SpriteRenderer>().sprite = null;
-            if (GameManager.GetComponent<GameManager>().selectedTile == gameObject)
+            if (GameManager.GetComponent<GameManager>().selectedTile == gameObject && !spaceOccupied)
             {
                 GetComponent<SpriteRenderer>().sprite = EmptyTileIndicator;
             }
