@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1733655284807348}
+  m_IsPrefabAsset: 1
+--- !u!1 &1733655284807348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4131604232346148}
+  - component: {fileID: 114411192973498740}
+  - component: {fileID: 114400164246344998}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4131604232346148
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733655284807348}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114400164246344998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733655284807348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053657c0d1fa76845bea536b3f327bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonText: {fileID: 0}
+  Button: {fileID: 0}
+  canSpawnNextWave: 0
+  isFirstInstance: 0
+  cooldownTimer: 0
+--- !u!114 &114411192973498740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733655284807348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b43c6fdd4f1aa46b159c7cb41c35d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnerTop: {fileID: 0}
+  SpawnerLeft: {fileID: 0}
+  SpawnerRight: {fileID: 0}
+  SpawnerBot: {fileID: 0}
+  Enemy1: {fileID: 1625940490435442, guid: b91fd9ec49dcf3e4b87c2ed9b8417fae, type: 2}
+  Enemy2: {fileID: 1625940490435442, guid: 5f0abffa67fa49f48a5a2673838e2cd1, type: 2}
+  Enemy3: {fileID: 1336370272244178, guid: 1698c9c9aede9c3498b65c5cc805ff36, type: 2}
+  Enemy4: {fileID: 1843917499119642, guid: e7927b1fa11c7ed40b2e0620e00cd2cf, type: 2}
+  Enemy5: {fileID: 1843917499119642, guid: f0c9b23827242c54b8c9610967ddedce, type: 2}
+  SpawnTime: 0
+  enemiesToSpawn: 5
+  canSpawnTop: 0
+  canSpawnLeft: 0
+  canSpawnRight: 0
+  canSpawnBot: 0
+  Spawn: 0
+  waveCount: 0
