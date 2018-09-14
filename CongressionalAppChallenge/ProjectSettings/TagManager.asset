@@ -7,6 +7,7 @@ TagManager:
   - Base
   - Undefined
   - EmptyTile
+  - Enemies
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 212749039756349814}
   - component: {fileID: 114651265025357758}
   - component: {fileID: 61832920135763772}
+  - component: {fileID: 114910665598093728}
   m_Layer: 8
   m_Name: TownHallTile
   m_TagString: Base
@@ -52,7 +53,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -104,6 +105,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f132e645f3730f3419bdaf36fcf97d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114910665598093728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1641856209188398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7843574c0dd322d4d9de47474ea6bfc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemiesleft: 0
 --- !u!212 &212749039756349814
 SpriteRenderer:
   m_ObjectHideFlags: 1

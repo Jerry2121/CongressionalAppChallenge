@@ -37,7 +37,7 @@ public class BuildStructureMenu : MonoBehaviour {
             buildStructureMenu.SetActive(false);
             return;
         }
-
+        Debug.Log("Build structure = " + !buildStructureMenuActive + " and selected tile != null = " + (GameManager.GetComponent<GameManager>().selectedTile != null));
         if (!buildStructureMenuActive && GameManager.GetComponent<GameManager>().selectedTile != null)
         {
             buildStructureMenu.SetActive(true);

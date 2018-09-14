@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour {
 
         if (editMode == false)
         {
+
             editMode = true;
             //editModeButton.GetComponent<TextMeshPro>().text = "Exit \n Edit Mode";
             Hammer.SetActive(false);
