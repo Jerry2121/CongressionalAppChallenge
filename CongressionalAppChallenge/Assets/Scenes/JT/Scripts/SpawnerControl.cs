@@ -11,8 +11,14 @@ public class SpawnerControl : MonoBehaviour {
     public GameObject Enemy2;
     public GameObject Enemy3;
     public GameObject Enemy4;
+    public GameObject Enemy5;
     public float SpawnTime;
     private int d1;
+    private int d2;
+    private int d3;
+    private int d4;
+    private int d5;
+    private int d6;
     public int enemiesToSpawn = 5;
     private int enemyCount = 0;
     private int log = 0;
@@ -28,6 +34,7 @@ public class SpawnerControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
         myWaves = new List<Wave>();
+
         myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy1, Enemy1));
         myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy1, Enemy2));
         myWaves.Add(new Wave(Enemy1, Enemy1, Enemy1, Enemy2, Enemy2));
@@ -42,6 +49,11 @@ public class SpawnerControl : MonoBehaviour {
 
         myWaves.Add(new Wave(Enemy4, Enemy4, Enemy4, Enemy4, Enemy4));
         myWaves.Add(new Wave(Enemy3, Enemy1, Enemy4, Enemy4, Enemy4));
+        myWaves.Add(new Wave(Enemy3, Enemy1, Enemy4, Enemy4, Enemy4));
+        myWaves.Add(new Wave(Enemy3, Enemy1, Enemy4, Enemy4, Enemy4));
+        myWaves.Add(new Wave(Enemy3, Enemy1, Enemy4, Enemy4, Enemy4));
+
+        RandomWave();
 
         SpawnTime = 0.0f;
         Spawn = true;
@@ -51,16 +63,17 @@ public class SpawnerControl : MonoBehaviour {
         canSpawnBot = true;
     }
 
-    private IEnumerator SpawnEnemies(int enemies, GameObject enemyToSpawn, Vector3 spawn)
+    private IEnumerator SpawnEnemies(int enemies, int myWave, Vector3 spawn)
     {
         log++;
         Debug.Log("IEnumerator Started " + log + " times");
+        int myWaveCount = myWave;
         int count = 0;
         waveCount++;
         //Color c = Random.ColorHSV();
         for (int i = 0; i < enemies; i++)
         {
-            GameObject g = Instantiate(myWaves[waveCount].enemies[i], spawn, Quaternion.identity);
+            GameObject g = Instantiate(myWaves[myWaveCount].enemies[i], spawn, Quaternion.identity);
             //g.GetComponent<SpriteRenderer>().color = c;
             count++;
             yield return new WaitForSeconds(1);
@@ -92,37 +105,164 @@ public class SpawnerControl : MonoBehaviour {
         SpawnTime += Time.deltaTime;
         if (SpawnTime >= 3.2 && GetComponent<GameManagerScript>().canSpawnNextWave == true)
         {
-            d1 = Random.Range(0, 5);
-            if (d1 == 1 && canSpawnTop)
+            if (waveCount < myWaves.Count)
             {
-                canSpawnTop = false;
-                spawnPos = SpawnerTop.transform.position;
-                SpawnTime = 0;
-                StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy1, spawnPos));
-            }
-            if (d1 == 2 && canSpawnLeft)
-            {
-                canSpawnLeft = false;
-                spawnPos = SpawnerLeft.transform.position;
-                SpawnTime = 0;
-                StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy2, spawnPos));
-            }
-            if (d1 == 3 && canSpawnRight)
-            {
-                canSpawnRight = false;
-                spawnPos = SpawnerRight.transform.position;
-                SpawnTime = 0;
-                StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy3, spawnPos));
-            }
-            if (d1 == 4 && canSpawnBot)
-            {
-                canSpawnBot = false;
-                spawnPos = SpawnerBot.transform.position;
-                SpawnTime = 0;
-                StartCoroutine(SpawnEnemies(enemiesToSpawn, Enemy4, spawnPos));
+                d1 = Random.Range(0, 5);
+                if (d1 == 1 && canSpawnTop)
+                {
+                    canSpawnTop = false;
+                    spawnPos = SpawnerTop.transform.position;
+                    SpawnTime = 0;
+                    StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
+                    
+                }
+                if (d1 == 2 && canSpawnLeft)
+                {
+                    canSpawnLeft = false;
+                    spawnPos = SpawnerLeft.transform.position;
+                    SpawnTime = 0;
+                    StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
+                    
+                }
+                if (d1 == 3 && canSpawnRight)
+                {
+                    canSpawnRight = false;
+                    spawnPos = SpawnerRight.transform.position;
+                    SpawnTime = 0;
+                    StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
+                    
+                }
+                if (d1 == 4 && canSpawnBot)
+                {
+                    canSpawnBot = false;
+                    spawnPos = SpawnerBot.transform.position;
+                    SpawnTime = 0;
+                    StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
+                    
+                }
             }
         }
 	}
+    public void RandomWave ()
+    {
+        Debug.Log("Random Initalized");
+        //SS1
+        GameObject e1 = Enemy1;
+        d2 = Random.Range(1, 6);
+        if (d2 == 1)
+        {
+            e1 = Enemy1;
+        }
+        if (d2 == 2)
+        {
+            e1 = Enemy2;
+        }
+        if (d2 == 3)
+        {
+            e1 = Enemy3;
+        }
+        if (d2 == 4)
+        {
+            e1 = Enemy4;
+        }
+        if (d2 == 5)
+        {
+            e1 = Enemy5;
+        }
+        //SS2
+        GameObject e2 = Enemy2;
+        d3 = Random.Range(1, 6);
+        if (d3 == 1)
+        {
+            e2 = Enemy1;
+        }
+        if (d3 == 2)
+        {
+            e2 = Enemy2;
+        }
+        if (d3 == 3)
+        {
+            e2 = Enemy3;
+        }
+        if (d3 == 4)
+        {
+            e2 = Enemy4;
+        }
+        if (d3 == 5)
+        {
+            e2 = Enemy5;
+        }
+        //SS3
+        GameObject e3 = Enemy3;
+        d4 = Random.Range(1, 6);
+        if (d4 == 1)
+        {
+            e3 = Enemy1;
+        }
+        if (d4 == 2)
+        {
+            e3 = Enemy2;
+        }
+        if (d4 == 3)
+        {
+            e3 = Enemy3;
+        }
+        if (d4 == 4)
+        {
+            e3 = Enemy4;
+        }
+        if (d4 == 5)
+        {
+            e3 = Enemy5;
+        }
+        //SS4
+        GameObject e4 = Enemy4;
+        d5 = Random.Range(1, 6);
+        if (d5 == 1)
+        {
+            e4 = Enemy1;
+        }
+        if (d5 == 2)
+        {
+            e4 = Enemy2;
+        }
+        if (d5 == 3)
+        {
+            e4 = Enemy3;
+        }
+        if (d5 == 4)
+        {
+            e4 = Enemy4;
+        }
+        if (d5 == 5)
+        {
+            e4 = Enemy5;
+        }
+        //SS5
+        GameObject e5 = Enemy5;
+        d6 = Random.Range(1, 6);
+        if (d6 == 1)
+        {
+            e5 = Enemy1;
+        }
+        if (d6 == 2)
+        {
+            e5 = Enemy2;
+        }
+        if (d6 == 3)
+        {
+            e5 = Enemy3;
+        }
+        if (d6 == 4)
+        {
+            e5 = Enemy4;
+        }
+        if (d6 == 5)
+        {
+            e5 = Enemy5;
+        }
+        myWaves.Add(new Wave(e1, e2, e3, e4, e5));
+    }
 }
 public class Wave
 {

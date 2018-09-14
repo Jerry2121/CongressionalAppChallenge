@@ -48,6 +48,7 @@ public class GameManagerScript : MonoBehaviour {
     public void NextWaveButton()
     {
         canSpawnNextWave = true;
+        GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft = 25;
         cooldownTimer = 0;
     }
 }
