@@ -317,7 +317,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 167411359}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -716,7 +716,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 319225837}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -871,7 +871,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 350108910}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -1368,7 +1368,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 636980499}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -1491,6 +1491,7 @@ MonoBehaviour:
   Enemy2: {fileID: 1625940490435442, guid: 5f0abffa67fa49f48a5a2673838e2cd1, type: 2}
   Enemy3: {fileID: 1336370272244178, guid: 1698c9c9aede9c3498b65c5cc805ff36, type: 2}
   Enemy4: {fileID: 1843917499119642, guid: e7927b1fa11c7ed40b2e0620e00cd2cf, type: 2}
+  Enemy5: {fileID: 0}
   SpawnTime: 0
   enemiesToSpawn: 5
   canSpawnTop: 0
@@ -1884,7 +1885,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 802999796}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -2396,7 +2397,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 1070946079}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -2551,7 +2552,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 1085001888}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -2918,7 +2919,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 1164567524}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -3073,7 +3074,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 1241728841}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -4265,7 +4266,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 1693214321}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -4495,7 +4496,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 1750507603}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -4778,7 +4779,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 1868682979}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -5055,7 +5056,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 1901118627}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
@@ -5431,7 +5432,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 969794185}
+      - m_Target: {fileID: 2047478670}
         m_MethodName: SubtractResources
         m_Mode: 1
         m_Arguments:
