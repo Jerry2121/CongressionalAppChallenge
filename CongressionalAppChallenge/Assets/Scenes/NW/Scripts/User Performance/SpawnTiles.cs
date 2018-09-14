@@ -28,7 +28,7 @@ public class SpawnTiles : MonoBehaviour {
             {
                 GameObject tilePrefab = 
                 Instantiate(emptyTilePrefab, GetComponentInParent<Transform>());
-                tilePrefab.transform.position = new Vector3(ix, iy, 0);
+                tilePrefab.transform.position = new Vector3(ix, iy, -5);
                 tilePrefab.name = "Tile(" + ix + ", " + iy + ")";
                 tilePrefab.tag = "EmptyTile";
                 tilePrefab.GetComponent<Tile_Scripts>().GameManager = GameManager;

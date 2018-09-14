@@ -121,15 +121,87 @@ public class BuildStructureMenu : MonoBehaviour {
                 break;
 
             case 21:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[4], 21);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
                 break;
 
             case 22:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[5], 22);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
                 break;
 
             case 23:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[6], 23);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
                 break;
 
             case 24:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[7], 24);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
+                break;
+
+            case 25:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[8], 25);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
+                break;
+
+            case 26:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[9], 26);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
+                break;
+
+            case 31:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[10], 31);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
+                break;
+
+            case 32:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[11], 32);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
+                break;
+
+            case 33:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[12], 33);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
+                break;
+
+            case 34:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[13], 34);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
+                break;
+
+            case 35:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[14], 35);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
+                break;
+
+            case 41:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[15], 41);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
+                break;
+
+            case 42:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[16], 42);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
+                break;
+
+            case 43:
+                GameManager.GetComponent<GameManager>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[17], 43);
+                MenuDisplayFunction();
+                GameManager.GetComponent<GameManager>().selectedTile = null;
                 break;
         }
     }
