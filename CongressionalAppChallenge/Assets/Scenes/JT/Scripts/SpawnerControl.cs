@@ -53,8 +53,6 @@ public class SpawnerControl : MonoBehaviour {
         myWaves.Add(new Wave(Enemy3, Enemy1, Enemy4, Enemy4, Enemy4));
         myWaves.Add(new Wave(Enemy3, Enemy1, Enemy4, Enemy4, Enemy4));
 
-        RandomWave();
-
         SpawnTime = 0.0f;
         Spawn = true;
         canSpawnTop = true;
@@ -105,42 +103,40 @@ public class SpawnerControl : MonoBehaviour {
         SpawnTime += Time.deltaTime;
         if (SpawnTime >= 3.2 && GetComponent<GameManagerScript>().canSpawnNextWave == true)
         {
-            if (waveCount < myWaves.Count)
+            if (waveCount == myWaves.Count)
             {
-                d1 = Random.Range(0, 5);
-                if (d1 == 1 && canSpawnTop)
-                {
-                    canSpawnTop = false;
-                    spawnPos = SpawnerTop.transform.position;
-                    SpawnTime = 0;
-                    StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
-                    
-                }
-                if (d1 == 2 && canSpawnLeft)
-                {
-                    canSpawnLeft = false;
-                    spawnPos = SpawnerLeft.transform.position;
-                    SpawnTime = 0;
-                    StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
-                    
-                }
-                if (d1 == 3 && canSpawnRight)
-                {
-                    canSpawnRight = false;
-                    spawnPos = SpawnerRight.transform.position;
-                    SpawnTime = 0;
-                    StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
-                    
-                }
-                if (d1 == 4 && canSpawnBot)
-                {
-                    canSpawnBot = false;
-                    spawnPos = SpawnerBot.transform.position;
-                    SpawnTime = 0;
-                    StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
-                    
-                }
+                RandomWave();
             }
+            d1 = Random.Range(0, 5);
+            if (d1 == 1 && canSpawnTop)
+            {
+                canSpawnTop = false;
+                spawnPos = SpawnerTop.transform.position;
+                SpawnTime = 0;
+                StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
+            }
+            if (d1 == 2 && canSpawnLeft)
+            {
+                canSpawnLeft = false;
+                spawnPos = SpawnerLeft.transform.position;
+                SpawnTime = 0;
+                StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
+            }
+            if (d1 == 3 && canSpawnRight)
+            {
+                canSpawnRight = false;
+                spawnPos = SpawnerRight.transform.position;
+                SpawnTime = 0;
+                StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
+            }
+            if (d1 == 4 && canSpawnBot)
+            {
+                canSpawnBot = false;
+                spawnPos = SpawnerBot.transform.position;
+                SpawnTime = 0;
+                StartCoroutine(SpawnEnemies(enemiesToSpawn, waveCount, spawnPos));
+            }
+
         }
 	}
     public void RandomWave ()
