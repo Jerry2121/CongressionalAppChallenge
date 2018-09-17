@@ -16,41 +16,41 @@ public class BaseStructureScript : MonoBehaviour {
     public bool upgradeAvailable;
 
     void Start()
-    {
+    { 
         switch (buildingID)
         {
             case 11:
                 GetComponent<ProductionStructureScript>().resourceID = 1;
-                GetComponent<ProductionStructureScript>().buildingResourceProduction = 5;
-                // Upgrade requirement = 100
-                woodUpgradeRequirement = 100;
+                GetComponent<ProductionStructureScript>().buildingResourceProduction = 1;
+                // Upgrade requirement = 10
+                woodUpgradeRequirement = 10;
                 break;
 
             case 12:
                 GetComponent<ProductionStructureScript>().resourceID = 2;
-                GetComponent<ProductionStructureScript>().buildingResourceProduction = 4;
-                // Upgrade requirement = 200
-                woodUpgradeRequirement = 50;
-                stoneUpgradeRequirement = 150;
+                GetComponent<ProductionStructureScript>().buildingResourceProduction = 1;
+                // Upgrade requirement = 20
+                woodUpgradeRequirement = 5;
+                stoneUpgradeRequirement = 15;
                 break;
 
             case 13:
                 GetComponent<ProductionStructureScript>().resourceID = 3;
-                GetComponent<ProductionStructureScript>().buildingResourceProduction = 3;
-                // Upgrade requirement = 300
-                woodUpgradeRequirement = 150;
-                stoneUpgradeRequirement = 100;
-                oreUpgradeRequirement = 50;
+                GetComponent<ProductionStructureScript>().buildingResourceProduction = 1;
+                // Upgrade requirement = 30
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 10;
+                oreUpgradeRequirement = 5;
                 break;
 
             case 14:
                 GetComponent<ProductionStructureScript>().resourceID = 4;
-                GetComponent<ProductionStructureScript>().buildingResourceProduction = 2;
-                // Upgrade requirement = 400
-                woodUpgradeRequirement = 150;
-                stoneUpgradeRequirement = 50;
-                oreUpgradeRequirement = 150;
-                steelUpgradeRequirement = 50;
+                GetComponent<ProductionStructureScript>().buildingResourceProduction = 1;
+                // Upgrade requirement = 40
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 5;
+                oreUpgradeRequirement = 15;
+                steelUpgradeRequirement = 5;
                 break;
         }
     }
@@ -84,24 +84,24 @@ public class BaseStructureScript : MonoBehaviour {
                 switch (buildingLevel)
                 {
                     case 2:
-                        // Upgrade requirement = 250
-                        woodUpgradeRequirement = 200;
-                        stoneUpgradeRequirement = 50;
+                        // Upgrade requirement = 25
+                        woodUpgradeRequirement = 20;
+                        stoneUpgradeRequirement = 5;
                         break;
 
                     case 3:
-                        // Upgrade requirement = 450
-                        woodUpgradeRequirement = 300;
-                        stoneUpgradeRequirement = 100;
-                        oreUpgradeRequirement = 50;
+                        // Upgrade requirement = 45
+                        woodUpgradeRequirement = 30;
+                        stoneUpgradeRequirement = 10;
+                        oreUpgradeRequirement = 5;
                         break;
 
                     case 4:
-                        // Upgrade requirement = 700
-                        woodUpgradeRequirement = 400;
-                        stoneUpgradeRequirement = 150;
-                        oreUpgradeRequirement = 100;
-                        steelUpgradeRequirement = 50;
+                        // Upgrade requirement = 70
+                        woodUpgradeRequirement = 40;
+                        stoneUpgradeRequirement = 15;
+                        oreUpgradeRequirement = 10;
+                        steelUpgradeRequirement = 5;
                         break;
                 }
                 break;
@@ -110,24 +110,24 @@ public class BaseStructureScript : MonoBehaviour {
                 switch (buildingLevel)
                 {
                     case 2:
-                        // Upgrade requirement = 400
-                        woodUpgradeRequirement = 100;
-                        stoneUpgradeRequirement = 300;
+                        // Upgrade requirement = 40
+                        woodUpgradeRequirement = 10;
+                        stoneUpgradeRequirement = 30;
                         break;
 
                     case 3:
-                        // Upgrade requirement = 700
-                        woodUpgradeRequirement = 150;
-                        stoneUpgradeRequirement = 450;
-                        oreUpgradeRequirement = 100;
+                        // Upgrade requirement = 70
+                        woodUpgradeRequirement = 15;
+                        stoneUpgradeRequirement = 45;
+                        oreUpgradeRequirement = 10;
                         break;
 
                     case 4:
-                        // Upgrade requirement = 1100
-                        woodUpgradeRequirement = 200;
-                        stoneUpgradeRequirement = 600;
-                        oreUpgradeRequirement = 200;
-                        steelUpgradeRequirement = 100;
+                        // Upgrade requirement = 110
+                        woodUpgradeRequirement = 20;
+                        stoneUpgradeRequirement = 60;
+                        oreUpgradeRequirement = 20;
+                        steelUpgradeRequirement = 10;
                         break;
                 }
                 break;
@@ -136,26 +136,26 @@ public class BaseStructureScript : MonoBehaviour {
                 switch (buildingLevel)
                 {
                     case 2:
-                        // Upgrade requirement = 600
-                        woodUpgradeRequirement = 300;
-                        stoneUpgradeRequirement = 200;
-                        oreUpgradeRequirement = 100;
+                        // Upgrade requirement = 60
+                        woodUpgradeRequirement = 30;
+                        stoneUpgradeRequirement = 20;
+                        oreUpgradeRequirement = 10;
                         break;
 
                     case 3:
-                        // Upgrade requirement = 950
-                        woodUpgradeRequirement = 450;
-                        stoneUpgradeRequirement = 300;
-                        oreUpgradeRequirement = 150;
-                        steelUpgradeRequirement = 50;
+                        // Upgrade requirement = 95
+                        woodUpgradeRequirement = 45;
+                        stoneUpgradeRequirement = 30;
+                        oreUpgradeRequirement = 15;
+                        steelUpgradeRequirement = 5;
                         break;
 
                     case 4:
-                        // Upgrade requirement = 1300
-                        woodUpgradeRequirement = 600;
-                        stoneUpgradeRequirement = 400;
-                        oreUpgradeRequirement = 200;
-                        steelUpgradeRequirement = 100;
+                        // Upgrade requirement = 130
+                        woodUpgradeRequirement = 60;
+                        stoneUpgradeRequirement = 40;
+                        oreUpgradeRequirement = 20;
+                        steelUpgradeRequirement = 10;
                         break;
                 }
                 break;
@@ -164,27 +164,27 @@ public class BaseStructureScript : MonoBehaviour {
                 switch (buildingLevel)
                 {
                     case 2:
-                        // Upgrade requirement = 800
-                        woodUpgradeRequirement = 300;
-                        stoneUpgradeRequirement = 100;
-                        oreUpgradeRequirement = 300;
-                        steelUpgradeRequirement = 100;
+                        // Upgrade requirement = 80
+                        woodUpgradeRequirement = 30;
+                        stoneUpgradeRequirement = 10;
+                        oreUpgradeRequirement = 30;
+                        steelUpgradeRequirement = 10;
                         break;
 
                     case 3:
-                        // Upgrade requirement = 1200
-                        woodUpgradeRequirement = 450;
-                        stoneUpgradeRequirement = 150;
-                        oreUpgradeRequirement = 450;
-                        steelUpgradeRequirement = 150;
+                        // Upgrade requirement = 120
+                        woodUpgradeRequirement = 45;
+                        stoneUpgradeRequirement = 15;
+                        oreUpgradeRequirement = 45;
+                        steelUpgradeRequirement = 15;
                         break;
 
                     case 4:
-                        // Upgrade requirement = 1600
-                        woodUpgradeRequirement = 600;
-                        stoneUpgradeRequirement = 200;
-                        oreUpgradeRequirement = 600;
-                        steelUpgradeRequirement = 200;
+                        // Upgrade requirement = 160
+                        woodUpgradeRequirement = 60;
+                        stoneUpgradeRequirement = 20;
+                        oreUpgradeRequirement = 60;
+                        steelUpgradeRequirement = 20;
                         break;
                 }
                 break;

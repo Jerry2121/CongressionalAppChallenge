@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4794183262226102}
   - component: {fileID: 212993723771768720}
   - component: {fileID: 58579037557871574}
-  - component: {fileID: 114766205508322288}
+  - component: {fileID: 114166105516846930}
+  - component: {fileID: 114400848979639736}
   m_Layer: 0
   m_Name: ProductionBuilding3PH
   m_TagString: Untagged
@@ -57,7 +58,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
---- !u!114 &114766205508322288
+--- !u!114 &114166105516846930
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,9 +66,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1945898772954376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f73310d30b29184da5c48c7e00c46fc, type: 3}
+  m_Script: {fileID: 11500000, guid: bd38bf3ef05ec534f8a198eb25333bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
+  buildingLevel: 1
+  buildingID: 13
+  upgradeAvailable: 0
+--- !u!114 &114400848979639736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945898772954376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f132e645f3730f3419bdaf36fcf97d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 1733655284807348, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+    type: 2}
+  resourceID: 0
+  buildingResourceProduction: 0
+  timer: 0
+  waveActive: 0
 --- !u!212 &212993723771768720
 SpriteRenderer:
   m_ObjectHideFlags: 1

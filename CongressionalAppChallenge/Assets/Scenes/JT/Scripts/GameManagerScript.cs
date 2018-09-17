@@ -45,6 +45,26 @@ public class GameManagerScript : MonoBehaviour {
         StoneText.GetComponent<TextMeshProUGUI>().text = "Stone: " + stoneAcquired;
         OreText.GetComponent<TextMeshProUGUI>().text = "Ore: " + oreAcquired;
         SteelText.GetComponent<TextMeshProUGUI>().text = "Steel: " + steelAcquired;
+        if (HP >= 100)
+        {
+            HP = 100;
+        }
+        if (woodAcquired >= 999)
+        {
+            woodAcquired = 999;
+        }
+        if (stoneAcquired >= 999)
+        {
+            stoneAcquired = 999;
+        }
+        if (oreAcquired >= 999)
+        {
+            oreAcquired = 999;
+        }
+        if (steelAcquired >= 999)
+        {
+            steelAcquired = 999;
+        }
         cooldownTimer += Time.deltaTime;
         if (isFirstInstance == true)
         {

@@ -5,21 +5,23 @@ using UnityEngine;
 public class ProductionStructureScript : MonoBehaviour {
 
     public GameObject GameManager;
+
     public int resourceID;
+    public int buildingResourceProduction;
 
     public float timer;
-    public int buildingResourceProduction;
+    
     public bool waveActive;
 
     void Start()
     {
-        
+        GameManager = GetComponent<BaseStructureScript>().GameManager;
     }
 
     void Update()
     {
         if (waveActive)
-        {
+        {   
             timer += Time.deltaTime;
             if (timer >= 1.0f)
             {
@@ -30,12 +32,16 @@ public class ProductionStructureScript : MonoBehaviour {
                         break;
 
                     case 2:
+                        GameManager.GetComponent<GameManagerScript>().stoneAcquired += buildingResourceProduction;
                         break;
 
                     case 3:
+                        GameManager.GetComponent<GameManagerScript>().oreAcquired += buildingResourceProduction;
                         break;
 
                     case 4:
+                        GameManager.GetComponent<GameManagerScript>().steelAcquired += buildingResourceProduction;
+
                         break;
                 }
                 timer -= 1.0f;
