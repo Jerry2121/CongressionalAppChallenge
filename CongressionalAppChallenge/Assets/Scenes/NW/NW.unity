@@ -235,8 +235,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678506008}
-  - component: {fileID: 678506009}
   - component: {fileID: 678506010}
+  - component: {fileID: 678506009}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -265,14 +265,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 678506007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3894ffec918a23a429041881dfcd730b, type: 3}
+  m_Script: {fileID: 11500000, guid: 053657c0d1fa76845bea536b3f327bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ButtonText: {fileID: 0}
+  Button: {fileID: 0}
+  canSpawnNextWave: 0
+  isFirstInstance: 0
+  cooldownTimer: 0
   editMode: 0
   selectedTile: {fileID: 0}
-  cancelTileInteraction: 0
   menuCanvas: {fileID: 1100069307}
-  editModeButton: {fileID: 1611124873}
   Hammer: {fileID: 1288737484}
   X: {fileID: 737032052}
   stoneAcquired: 100
@@ -632,11 +635,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1611124873 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1470485291944838, guid: da786f8e51bd3ef46b9e73b77709bb76,
-    type: 2}
-  m_PrefabInternal: {fileID: 1659968486}
 --- !u!1001 &1659968486
 Prefab:
   m_ObjectHideFlags: 0
@@ -848,6 +846,16 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114309521163441220, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EditModeButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557639993116842, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EditModeButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da786f8e51bd3ef46b9e73b77709bb76, type: 2}
