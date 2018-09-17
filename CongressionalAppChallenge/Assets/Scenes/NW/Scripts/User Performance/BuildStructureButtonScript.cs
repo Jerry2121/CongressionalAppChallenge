@@ -16,14 +16,12 @@ public class BuildStructureButtonScript : MonoBehaviour {
 
     void Update()
     {
-<<<<<<< HEAD
         Debug.Log(name);
-        if (GameManager.GetComponent<GameManager>().stoneAcquired < stoneNeeded || GameManager.GetComponent<GameManager>().woodAcquired < woodNeeded ||
-            GameManager.GetComponent<GameManager>().oreAcquired < oreNeeded || GameManager.GetComponent<GameManager>().steelAcquired < steelNeeded)
-=======
+        if (GameManager.GetComponent<GameManagerScript>().stoneAcquired < stoneNeeded || GameManager.GetComponent<GameManager>().woodAcquired < woodNeeded ||
+            GameManager.GetComponent<GameManagerScript>().oreAcquired < oreNeeded || GameManager.GetComponent<GameManager>().steelAcquired < steelNeeded)
+
         if (GameManager.GetComponent<GameManagerScript>().stoneAcquired < stoneNeeded || GameManager.GetComponent<GameManagerScript>().woodAcquired < woodNeeded ||
             GameManager.GetComponent<GameManagerScript>().oreAcquired < oreNeeded || GameManager.GetComponent<GameManagerScript>().steelAcquired < steelNeeded)
->>>>>>> 1456e3edd4bfb001b9bd2156e5f5e5861a24635c
         {
             canBuildStructure = false;
             GetComponent<Button>().interactable = false;
