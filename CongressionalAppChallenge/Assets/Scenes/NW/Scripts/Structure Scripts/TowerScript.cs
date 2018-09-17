@@ -26,6 +26,6 @@ public class TowerScript : MonoBehaviour {
 
     void Update()
     {
-        towerTarget = enemiesInRange[0];
+        //towerTarget = enemiesInRange[0];
     }
 }

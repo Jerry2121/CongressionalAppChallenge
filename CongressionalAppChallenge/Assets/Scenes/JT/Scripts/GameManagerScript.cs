@@ -2,58 +2,67 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManagerScript : MonoBehaviour {
-    public GameObject ButtonText;
-    public GameObject Button;
-    public bool canSpawnNextWave;
-    public bool isFirstInstance;
-    public float cooldownTimer;
-
-    public bool editMode;
-
     public GameObject selectedTile;
-
     public GameObject menuCanvas;
-    
     public GameObject Hammer;
     public GameObject X;
-
+    [Space(25)]
+    public GameObject HPText;
+    public GameObject WoodText;
+    public GameObject StoneText;
+    public GameObject OreText;
+    public GameObject SteelText;
+    public GameObject WaveButtonText;
+    public GameObject WaveButton;
+    [Space(25)]
+    public bool canSpawnNextWave;
+    public bool isFirstInstance;
+    public bool editMode;
+    [Space(25)]
+    public float cooldownTimer;
+    [Space(25)]
+    public int HP;
     public int stoneAcquired;
     public int woodAcquired;
     public int oreAcquired;
-    public int steelAcquired;
+    public int steelAcquired ;
 
     // Use this for initialization
     void Start () {
         canSpawnNextWave = false;
         isFirstInstance = true;
-
         editMode = false;
         //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit mode";
     }
 
     // Update is called once per frame
     void Update () {
-
+        HPText.GetComponent<TextMeshProUGUI>().text = "HP: " + HP;
+        WoodText.GetComponent<TextMeshProUGUI>().text = "Wood: " + woodAcquired;
+        StoneText.GetComponent<TextMeshProUGUI>().text = "Stone: " + stoneAcquired;
+        OreText.GetComponent<TextMeshProUGUI>().text = "Ore: " + oreAcquired;
+        SteelText.GetComponent<TextMeshProUGUI>().text = "Steel: " + steelAcquired;
         cooldownTimer += Time.deltaTime;
         if (isFirstInstance == true)
         {
-            ButtonText.GetComponent<Text>().text = "Start Wave";
+            WaveButtonText.GetComponent<Text>().text = "Start Wave";
         }
         else if (canSpawnNextWave == true)
         {
-            ButtonText.SetActive(false);
-            Button.SetActive(false);
+            WaveButtonText.SetActive(false);
+            WaveButton.SetActive(false);
         }
         if (canSpawnNextWave == false && GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft <= 0)
         {
-            ButtonText.SetActive(true);
-            Button.SetActive(true);
+            WaveButtonText.SetActive(true);
+            WaveButton.SetActive(true);
         }
         if (canSpawnNextWave && isFirstInstance)
         {
-            ButtonText.GetComponent<Text>().text = "Next Wave";
+            WaveButtonText.GetComponent<Text>().text = "Next Wave";
             isFirstInstance = false;
             canSpawnNextWave = true;
         }
