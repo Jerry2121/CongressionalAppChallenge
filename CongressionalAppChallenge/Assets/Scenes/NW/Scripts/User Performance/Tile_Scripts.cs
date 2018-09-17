@@ -36,15 +36,15 @@ public class Tile_Scripts : MonoBehaviour {
 
     void Update()
     {
-        if (GameManager.GetComponent<GameManager>().editMode)
+        if (GameManager.GetComponent<GameManagerScript>().editMode)
         {
             ShowTilePlacement();
             rancode = 1;
         }
-        else if (!GameManager.GetComponent<GameManager>().editMode && rancode == 1)
+        else if (!GameManager.GetComponent<GameManagerScript>().editMode && rancode == 1)
         {
             GetComponent<SpriteRenderer>().sprite = null;
-            GameManager.GetComponent<GameManager>().selectedTile = null;
+            GameManager.GetComponent<GameManagerScript>().selectedTile = null;
             menuCanvas.GetComponent<BuildStructureMenu>().buildStructureMenuActive = false;
             rancode = 0;
         }
@@ -56,20 +56,20 @@ public class Tile_Scripts : MonoBehaviour {
             Debug.Log("Aaron is veryvery smart");
             return;
         }
-        if (GameManager.GetComponent<GameManager>().editMode == false)
+        if (GameManager.GetComponent<GameManagerScript>().editMode == false)
         {
             Debug.Log("editMode isn't active!");
             return;
         }
 
-        if (GameManager.GetComponent<GameManager>().selectedTile == null)
+        if (GameManager.GetComponent<GameManagerScript>().selectedTile == null)
         {
-            GameManager.GetComponent<GameManager>().selectedTile = gameObject;
+            GameManager.GetComponent<GameManagerScript>().selectedTile = gameObject;
         }
 
-        else if (GameManager.GetComponent<GameManager>().selectedTile != null)
+        else if (GameManager.GetComponent<GameManagerScript>().selectedTile != null)
         {
-            GameManager.GetComponent<GameManager>().selectedTile = null;
+            GameManager.GetComponent<GameManagerScript>().selectedTile = null;
             //This might break things
             menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
             return;
@@ -142,11 +142,11 @@ public class Tile_Scripts : MonoBehaviour {
 
     public void ShowTilePlacement()
     {        
-        if (GameManager.GetComponent<GameManager>().selectedTile != null)
+        if (GameManager.GetComponent<GameManagerScript>().selectedTile != null)
         {
            // Debug.Log("1st If Ran");
             GetComponent<SpriteRenderer>().sprite = null;
-            if (GameManager.GetComponent<GameManager>().selectedTile == gameObject && !spaceOccupied)
+            if (GameManager.GetComponent<GameManagerScript>().selectedTile == gameObject && !spaceOccupied)
             {
                // Debug.Log("2nd If Ran");
                 GetComponent<SpriteRenderer>().sprite = EmptyTileIndicator;
@@ -155,12 +155,12 @@ public class Tile_Scripts : MonoBehaviour {
         }
         
 
-        if (GameManager.GetComponent<GameManager>().editMode == true && spaceOccupied == false)
+        if (GameManager.GetComponent<GameManagerScript>().editMode == true && spaceOccupied == false)
         {
             //Debug.Log("1st/2nd If Ran");
             GetComponent<SpriteRenderer>().sprite = EmptyTileIndicator;
         }
-        else if (GameManager.GetComponent<GameManager>().editMode == false || spaceOccupied)
+        else if (GameManager.GetComponent<GameManagerScript>().editMode == false || spaceOccupied)
         {
             //Debug.Log("2nd/2nd If Ran");
             GetComponent<SpriteRenderer>().sprite = null;

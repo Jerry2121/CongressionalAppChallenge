@@ -939,6 +939,41 @@ Prefab:
       propertyPath: ButtonText
       value: 
       objectReference: {fileID: 101081555}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: menuCanvas
+      value: 
+      objectReference: {fileID: 803648708}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: Hammer
+      value: 
+      objectReference: {fileID: 1060259348}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: X
+      value: 
+      objectReference: {fileID: 661373746}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: stoneAcquired
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: woodAcquired
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: oreAcquired
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: steelAcquired
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f82fbb73ef135c40837159ec9aa0ae4, type: 2}
   m_IsPrefabAsset: 0
@@ -1036,28 +1071,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1733655284807348, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
     type: 2}
   m_PrefabInternal: {fileID: 1303990854}
---- !u!114 &1644777514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1644777511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3894ffec918a23a429041881dfcd730b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  editMode: 0
-  selectedTile: {fileID: 0}
-  cancelTileInteraction: 0
-  menuCanvas: {fileID: 803648708}
-  editModeButton: {fileID: 1060259348}
-  Hammer: {fileID: 1060259348}
-  X: {fileID: 661373746}
-  stoneAcquired: 100
-  woodAcquired: 100
-  oreAcquired: 100
-  steelAcquired: 100
 --- !u!1 &1730269514 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1159278175792910, guid: 01057831dc833794585f1b48c994ffb4,
@@ -1285,7 +1298,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1644777514}
+      objectReference: {fileID: 1980201406}
     - target: {fileID: 114309521163441220, guid: da786f8e51bd3ef46b9e73b77709bb76,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1295,7 +1308,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1644777514}
+      objectReference: {fileID: 1980201406}
     - target: {fileID: 114557639993116842, guid: da786f8e51bd3ef46b9e73b77709bb76,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
