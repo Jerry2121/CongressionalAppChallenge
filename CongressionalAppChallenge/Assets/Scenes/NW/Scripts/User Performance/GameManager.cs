@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour {
 
     public GameObject selectedTile;
 
-    public bool cancelTileInteraction;
-
     public GameObject menuCanvas;
 
     public GameObject editModeButton;

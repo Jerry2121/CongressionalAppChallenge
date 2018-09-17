@@ -16,8 +16,8 @@ public class BuildStructureButtonScript : MonoBehaviour {
 
     void Update()
     {
-        if (GameManager.GetComponent<GameManager>().stoneAcquired < stoneNeeded || GameManager.GetComponent<GameManager>().woodAcquired < woodNeeded ||
-            GameManager.GetComponent<GameManager>().oreAcquired < oreNeeded || GameManager.GetComponent<GameManager>().steelAcquired < steelNeeded)
+        if (GameManager.GetComponent<GameManagerScript>().stoneAcquired < stoneNeeded || GameManager.GetComponent<GameManagerScript>().woodAcquired < woodNeeded ||
+            GameManager.GetComponent<GameManagerScript>().oreAcquired < oreNeeded || GameManager.GetComponent<GameManagerScript>().steelAcquired < steelNeeded)
         {
             canBuildStructure = false;
             GetComponent<Button>().interactable = false;
@@ -34,9 +34,9 @@ public class BuildStructureButtonScript : MonoBehaviour {
 
     public void SubtractResources()
     {
-        GameManager.GetComponent<GameManager>().stoneAcquired -= stoneNeeded;
-        GameManager.GetComponent<GameManager>().woodAcquired -= woodNeeded;
-        GameManager.GetComponent<GameManager>().oreAcquired -= oreNeeded;
-        GameManager.GetComponent<GameManager>().steelAcquired -= steelNeeded;
+        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= stoneNeeded;
+        GameManager.GetComponent<GameManagerScript>().woodAcquired -= woodNeeded;
+        GameManager.GetComponent<GameManagerScript>().oreAcquired -= oreNeeded;
+        GameManager.GetComponent<GameManagerScript>().steelAcquired -= steelNeeded;
     }
 }

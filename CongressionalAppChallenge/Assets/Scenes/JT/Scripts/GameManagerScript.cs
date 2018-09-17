@@ -9,14 +9,32 @@ public class GameManagerScript : MonoBehaviour {
     public bool canSpawnNextWave;
     public bool isFirstInstance;
     public float cooldownTimer;
-	// Use this for initialization
-	void Start () {
+
+    public bool editMode;
+
+    public GameObject selectedTile;
+
+    public GameObject menuCanvas;
+    
+    public GameObject Hammer;
+    public GameObject X;
+
+    public int stoneAcquired;
+    public int woodAcquired;
+    public int oreAcquired;
+    public int steelAcquired;
+
+    // Use this for initialization
+    void Start () {
         canSpawnNextWave = false;
         isFirstInstance = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+        editMode = false;
+        //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit mode";
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         cooldownTimer += Time.deltaTime;
         if (isFirstInstance == true)
@@ -50,5 +68,29 @@ public class GameManagerScript : MonoBehaviour {
         canSpawnNextWave = true;
         GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft = 25;
         cooldownTimer = 0;
+    }
+
+    public void EditModeButton()
+    {
+        //selectedTile = null;
+
+        if (editMode == false)
+        {
+
+            editMode = true;
+            //editModeButton.GetComponent<TextMeshPro>().text = "Exit \n Edit Mode";
+            Hammer.SetActive(false);
+            X.SetActive(true);
+        }
+
+        else if (editMode == true)
+        {
+            editMode = false;
+            //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit Mode";
+            Hammer.SetActive(true);
+            X.SetActive(false);
+            Destroy(GameObject.Find("temporaryUI"));
+            menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
+        }
     }
 }
