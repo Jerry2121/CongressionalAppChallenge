@@ -1301,6 +1301,71 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EditModeButton
       objectReference: {fileID: 0}
+    - target: {fileID: 114763445864562072, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114472401895247114, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114207704473991202, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114288199447726944, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114663102510499530, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114778419349562792, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114338205002908356, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114803139140839950, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114218375207250514, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114342980656965612, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114694573042676480, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114994263546573718, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
+    - target: {fileID: 114614319731343872, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1644777511}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da786f8e51bd3ef46b9e73b77709bb76, type: 2}
   m_IsPrefabAsset: 0

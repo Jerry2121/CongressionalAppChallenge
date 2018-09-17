@@ -16,6 +16,7 @@ public class BuildStructureButtonScript : MonoBehaviour {
 
     void Update()
     {
+        Debug.Log(name);
         if (GameManager.GetComponent<GameManager>().stoneAcquired < stoneNeeded || GameManager.GetComponent<GameManager>().woodAcquired < woodNeeded ||
             GameManager.GetComponent<GameManager>().oreAcquired < oreNeeded || GameManager.GetComponent<GameManager>().steelAcquired < steelNeeded)
         {
