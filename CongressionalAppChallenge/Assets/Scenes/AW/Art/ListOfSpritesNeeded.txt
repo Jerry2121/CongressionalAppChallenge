@@ -1,7 +1,7 @@
 Buildings
 -Sawmill/Trees**
 -Quarry
--Mine
+-Mine**
 -Forge/Blacksmith
 -Townhall**
 -House
