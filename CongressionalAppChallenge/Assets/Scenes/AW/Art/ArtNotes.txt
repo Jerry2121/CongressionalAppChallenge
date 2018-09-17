@@ -8,6 +8,7 @@ Civilization - Blue - #002fe0
 Other Colors
 Building Walls - Greyish - #79877a
 Building Doors - Brown - #673018
+Light - Yellow - #eedd82
 
 
 Light Source is from Above and front right
