@@ -17,6 +17,8 @@ public class GameManagerScript : MonoBehaviour {
     public GameObject SteelText;
     public GameObject WaveButtonText;
     public GameObject WaveButton;
+    public Sprite StartWaveBG;
+    public Sprite NextWaveBG;
     [Space(25)]
     public bool canSpawnNextWave;
     public bool isFirstInstance;
@@ -28,13 +30,17 @@ public class GameManagerScript : MonoBehaviour {
     public int stoneAcquired;
     public int woodAcquired;
     public int oreAcquired;
-    public int steelAcquired ;
+    public int steelAcquired;
+    [Space(25)]
+    Image myImageComponent;
+
 
     // Use this for initialization
     void Start () {
         canSpawnNextWave = false;
         isFirstInstance = true;
         editMode = false;
+        myImageComponent = WaveButton.GetComponent<Image>();
         //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit mode";
     }
 
@@ -69,6 +75,7 @@ public class GameManagerScript : MonoBehaviour {
         if (isFirstInstance == true)
         {
             WaveButtonText.GetComponent<Text>().text = "Start Wave";
+            myImageComponent.sprite = StartWaveBG;
         }
         else if (canSpawnNextWave == true)
         {
@@ -83,6 +90,7 @@ public class GameManagerScript : MonoBehaviour {
         if (canSpawnNextWave && isFirstInstance)
         {
             WaveButtonText.GetComponent<Text>().text = "Next Wave";
+            myImageComponent.sprite = NextWaveBG;
             isFirstInstance = false;
             canSpawnNextWave = true;
         }

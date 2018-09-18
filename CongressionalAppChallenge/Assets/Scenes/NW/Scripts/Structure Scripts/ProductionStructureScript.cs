@@ -13,16 +13,12 @@ public class ProductionStructureScript : MonoBehaviour {
     
     public bool waveActive;
 
-    void Start()
-    {
-        GameManager = GetComponent<BaseStructureScript>().GameManager;
-    }
-
     void Update()
     {
         if (waveActive)
         {   
             timer += Time.deltaTime;
+            GameManager = GetComponent<BaseStructureScript>().GameManager;
             if (timer >= 1.0f)
             {
                 switch (resourceID)
