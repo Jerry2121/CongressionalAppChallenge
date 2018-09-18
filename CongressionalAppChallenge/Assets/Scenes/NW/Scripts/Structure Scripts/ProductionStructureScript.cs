@@ -27,32 +27,43 @@ public class ProductionStructureScript : MonoBehaviour {
                 switch (resourceID)
                 {
                     case 1:
+                        if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= 999)
+                        {
+                            GameManager.GetComponent<GameManagerScript>().woodAcquired = 999;
+                            return;
+                        }
                         GameManager.GetComponent<GameManagerScript>().woodAcquired += buildingResourceProduction;
                         break;
 
                     case 2:
+                        if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= 999)
+                        {
+                            GameManager.GetComponent<GameManagerScript>().woodAcquired = 999;
+                            return;
+                        }
                         GameManager.GetComponent<GameManagerScript>().stoneAcquired += buildingResourceProduction;
                         break;
 
                     case 3:
+                        if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= 999)
+                        {
+                            GameManager.GetComponent<GameManagerScript>().woodAcquired = 999;
+                            return;
+                        }
                         GameManager.GetComponent<GameManagerScript>().oreAcquired += buildingResourceProduction;
                         break;
 
                     case 4:
+                        if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= 999)
+                        {
+                            GameManager.GetComponent<GameManagerScript>().woodAcquired = 999;
+                            return;
+                        }
                         GameManager.GetComponent<GameManagerScript>().steelAcquired += buildingResourceProduction;
-
                         break;
                 }
                 timer -= 1.0f;
             }
         }
-        
-        else
-        {
-            return;
-        }
-
     }
-
-    // if (waveActive){  }
 }

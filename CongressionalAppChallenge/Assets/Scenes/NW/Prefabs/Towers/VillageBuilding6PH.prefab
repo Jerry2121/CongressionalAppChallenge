@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4901469325610748}
   - component: {fileID: 212068473044709268}
   - component: {fileID: 58103199725344812}
+  - component: {fileID: 114822632467191338}
   m_Layer: 0
   m_Name: VillageBuilding6PH
   m_TagString: Untagged
@@ -56,6 +57,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &114822632467191338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1074566103765210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd38bf3ef05ec534f8a198eb25333bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
+  buildingLevel: 0
+  buildingID: 0
+  woodUpgradeRequirement: 0
+  stoneUpgradeRequirement: 0
+  oreUpgradeRequirement: 0
+  steelUpgradeRequirement: 0
+  upgradeAvailable: 0
 --- !u!212 &212068473044709268
 SpriteRenderer:
   m_ObjectHideFlags: 1

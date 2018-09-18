@@ -69,10 +69,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd38bf3ef05ec534f8a198eb25333bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 1733655284807348, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
-    type: 2}
-  buildingLevel: 1
+  GameManager: {fileID: 0}
+  buildingLevel: 5
   buildingID: 11
+  woodUpgradeRequirement: 40
+  stoneUpgradeRequirement: 15
+  oreUpgradeRequirement: 10
+  steelUpgradeRequirement: 5
   upgradeAvailable: 0
 --- !u!114 &114991714991560392
 MonoBehaviour:
@@ -90,7 +93,6 @@ MonoBehaviour:
   resourceID: 0
   buildingResourceProduction: 0
   timer: 0
-  waveActive: 0
 --- !u!212 &212631258922592468
 SpriteRenderer:
   m_ObjectHideFlags: 1

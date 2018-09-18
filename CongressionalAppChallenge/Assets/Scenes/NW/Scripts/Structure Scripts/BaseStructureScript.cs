@@ -9,14 +9,17 @@ public class BaseStructureScript : MonoBehaviour {
     public int buildingLevel;
     public int buildingID;
 
-    int woodUpgradeRequirement;
-    int stoneUpgradeRequirement;
-    int oreUpgradeRequirement;
-    int steelUpgradeRequirement;
+    public int woodUpgradeRequirement;
+    public int stoneUpgradeRequirement;
+    public int oreUpgradeRequirement;
+    public int steelUpgradeRequirement;
     public bool upgradeAvailable;
 
     void Start()
-    { 
+    {
+        buildingLevel = 1;
+        GameManager = GameObject.Find("GameManager");
+
         switch (buildingID)
         {
             case 11:
@@ -55,53 +58,27 @@ public class BaseStructureScript : MonoBehaviour {
         }
     }
 
-    void UpgradeCheck()
+    void LevelUpBuilding()
     {
-        if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= woodUpgradeRequirement && GameManager.GetComponent<GameManagerScript>().stoneAcquired >= stoneUpgradeRequirement &&
-                GameManager.GetComponent<GameManagerScript>().oreAcquired >= oreUpgradeRequirement && GameManager.GetComponent<GameManagerScript>().steelAcquired >= steelUpgradeRequirement)
-        {
-            upgradeAvailable = true;
-        }
-
-        else
-        {
-            upgradeAvailable = false;
-        }
-    }
-
-    void UpgradeBuilding()
-    {
-        GameManager.GetComponent<GameManagerScript>().woodAcquired -= woodUpgradeRequirement;
-        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= stoneUpgradeRequirement;
-        GameManager.GetComponent<GameManagerScript>().oreAcquired -= oreUpgradeRequirement;
-        GameManager.GetComponent<GameManagerScript>().steelAcquired -= steelUpgradeRequirement;
-
-        buildingLevel++;
-
         switch (buildingID)
         {
             case 11:
                 switch (buildingLevel)
                 {
                     case 2:
-                        // Upgrade requirement = 25
-                        woodUpgradeRequirement = 20;
-                        stoneUpgradeRequirement = 5;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 2;
                         break;
 
                     case 3:
-                        // Upgrade requirement = 45
-                        woodUpgradeRequirement = 30;
-                        stoneUpgradeRequirement = 10;
-                        oreUpgradeRequirement = 5;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 3;
                         break;
 
                     case 4:
-                        // Upgrade requirement = 70
-                        woodUpgradeRequirement = 40;
-                        stoneUpgradeRequirement = 15;
-                        oreUpgradeRequirement = 10;
-                        steelUpgradeRequirement = 5;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 4;
+                        break;
+
+                    case 5:
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 5;
                         break;
                 }
                 break;
@@ -110,24 +87,19 @@ public class BaseStructureScript : MonoBehaviour {
                 switch (buildingLevel)
                 {
                     case 2:
-                        // Upgrade requirement = 40
-                        woodUpgradeRequirement = 10;
-                        stoneUpgradeRequirement = 30;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 2;
                         break;
 
                     case 3:
-                        // Upgrade requirement = 70
-                        woodUpgradeRequirement = 15;
-                        stoneUpgradeRequirement = 45;
-                        oreUpgradeRequirement = 10;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 3;
                         break;
 
                     case 4:
-                        // Upgrade requirement = 110
-                        woodUpgradeRequirement = 20;
-                        stoneUpgradeRequirement = 60;
-                        oreUpgradeRequirement = 20;
-                        steelUpgradeRequirement = 10;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 4;
+                        break;
+
+                    case 5:
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 5;
                         break;
                 }
                 break;
@@ -136,26 +108,19 @@ public class BaseStructureScript : MonoBehaviour {
                 switch (buildingLevel)
                 {
                     case 2:
-                        // Upgrade requirement = 60
-                        woodUpgradeRequirement = 30;
-                        stoneUpgradeRequirement = 20;
-                        oreUpgradeRequirement = 10;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 2;
                         break;
 
                     case 3:
-                        // Upgrade requirement = 95
-                        woodUpgradeRequirement = 45;
-                        stoneUpgradeRequirement = 30;
-                        oreUpgradeRequirement = 15;
-                        steelUpgradeRequirement = 5;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 3;
                         break;
 
                     case 4:
-                        // Upgrade requirement = 130
-                        woodUpgradeRequirement = 60;
-                        stoneUpgradeRequirement = 40;
-                        oreUpgradeRequirement = 20;
-                        steelUpgradeRequirement = 10;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 4;
+                        break;
+
+                    case 5:
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 5;
                         break;
                 }
                 break;
@@ -164,27 +129,19 @@ public class BaseStructureScript : MonoBehaviour {
                 switch (buildingLevel)
                 {
                     case 2:
-                        // Upgrade requirement = 80
-                        woodUpgradeRequirement = 30;
-                        stoneUpgradeRequirement = 10;
-                        oreUpgradeRequirement = 30;
-                        steelUpgradeRequirement = 10;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 2;
                         break;
 
                     case 3:
-                        // Upgrade requirement = 120
-                        woodUpgradeRequirement = 45;
-                        stoneUpgradeRequirement = 15;
-                        oreUpgradeRequirement = 45;
-                        steelUpgradeRequirement = 15;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 3;
                         break;
 
                     case 4:
-                        // Upgrade requirement = 160
-                        woodUpgradeRequirement = 60;
-                        stoneUpgradeRequirement = 20;
-                        oreUpgradeRequirement = 60;
-                        steelUpgradeRequirement = 20;
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 4;
+                        break;
+
+                    case 5:
+                        GetComponent<ProductionStructureScript>().buildingResourceProduction = 5;
                         break;
                 }
                 break;

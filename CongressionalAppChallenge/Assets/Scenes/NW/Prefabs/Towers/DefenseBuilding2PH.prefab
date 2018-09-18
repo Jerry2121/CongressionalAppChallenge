@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4265755780969090}
   - component: {fileID: 212398805923661234}
   - component: {fileID: 58801327523064690}
+  - component: {fileID: 114849742639076712}
   m_Layer: 0
   m_Name: DefenseBuilding2PH
   m_TagString: Untagged
@@ -56,6 +57,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &114849742639076712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933295609071086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd38bf3ef05ec534f8a198eb25333bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
+  buildingLevel: 0
+  buildingID: 0
+  woodUpgradeRequirement: 0
+  stoneUpgradeRequirement: 0
+  oreUpgradeRequirement: 0
+  steelUpgradeRequirement: 0
+  upgradeAvailable: 0
 --- !u!212 &212398805923661234
 SpriteRenderer:
   m_ObjectHideFlags: 1

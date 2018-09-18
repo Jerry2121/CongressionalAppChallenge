@@ -143,8 +143,8 @@ public class Tile_Scripts : MonoBehaviour {
     public void SpawnBuilding(GameObject buildingType, int recievedBuildingID)
     {
         Instantiate(buildingType, GetComponent<Transform>());
-        buildingType.GetComponent<BaseStructureScript>().GameManager = GameManager;
         buildingType.transform.position = new Vector3(0, 0, 5);
+        childStructure = buildingType;
         spaceOccupied = true;
         buildingID = recievedBuildingID;
     }
