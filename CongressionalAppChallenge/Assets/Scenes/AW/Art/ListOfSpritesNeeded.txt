@@ -4,7 +4,7 @@ Buildings
 -Mine**
 -Forge/Blacksmith
 -Townhall**
--House
+-House**
 -Wall*
 -Archer Tower**
 -Fire Tower
