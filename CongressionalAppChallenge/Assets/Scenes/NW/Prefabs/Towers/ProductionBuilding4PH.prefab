@@ -74,7 +74,7 @@ MonoBehaviour:
   resourceID: 0
   buildingResourceProduction: 0
   timer: 0
-  waveActive: 1
+  waveActive: 0
 --- !u!114 &114980533498090090
 MonoBehaviour:
   m_ObjectHideFlags: 1

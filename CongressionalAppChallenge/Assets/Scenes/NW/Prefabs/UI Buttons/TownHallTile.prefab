@@ -105,6 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f132e645f3730f3419bdaf36fcf97d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
+  resourceID: 0
+  buildingResourceProduction: 0
+  timer: 0
+  waveActive: 0
 --- !u!114 &114910665598093728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13acd21165f82de4d9ba542ed6104e56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfc85d4c3f398ed42aa3ed1503463435, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
