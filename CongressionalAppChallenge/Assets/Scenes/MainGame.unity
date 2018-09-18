@@ -3137,6 +3137,46 @@ Prefab:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114472401895247114, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: stoneNeeded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114472401895247114, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: woodNeeded
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114288199447726944, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: woodNeeded
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207704473991202, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: woodNeeded
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207704473991202, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: stoneNeeded
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114763445864562072, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: oreNeeded
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114763445864562072, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: woodNeeded
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114763445864562072, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: stoneNeeded
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da786f8e51bd3ef46b9e73b77709bb76, type: 2}
   m_IsPrefabAsset: 0

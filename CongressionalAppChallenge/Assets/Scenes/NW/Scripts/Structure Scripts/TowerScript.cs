@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour {
 
-    private List<GameObject> enemiesInRange;
+    private List<GameObject> enemiesInRange = new List<GameObject>();
 
     private GameObject towerTarget;
 
@@ -12,6 +12,7 @@ public class TowerScript : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Enemies")
         {
+            Debug.Log("Adding enemy to list");
             enemiesInRange.Add(collision.gameObject);
         }
     }
@@ -26,6 +27,9 @@ public class TowerScript : MonoBehaviour {
 
     void Update()
     {
-        //towerTarget = enemiesInRange[0];
+        if (enemiesInRange.Count >= 1)
+        {
+            towerTarget = enemiesInRange[0];
+        }
     }
 }

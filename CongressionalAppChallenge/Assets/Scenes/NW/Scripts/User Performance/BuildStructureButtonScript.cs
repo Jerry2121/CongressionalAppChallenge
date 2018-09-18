@@ -7,8 +7,8 @@ public class BuildStructureButtonScript : MonoBehaviour {
 
     public GameObject GameManager;
 
-    public int stoneNeeded;
     public int woodNeeded;
+    public int stoneNeeded;    
     public int oreNeeded;
     public int steelNeeded;
 
