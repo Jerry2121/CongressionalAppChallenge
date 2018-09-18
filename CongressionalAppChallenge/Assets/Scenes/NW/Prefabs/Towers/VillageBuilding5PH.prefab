@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4191230810902360}
   - component: {fileID: 212605508477811718}
   - component: {fileID: 58400402042686678}
-  - component: {fileID: 114917599921501272}
   m_Layer: 0
   m_Name: VillageBuilding5PH
   m_TagString: Untagged
@@ -57,17 +56,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
---- !u!114 &114917599921501272
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1746319917760992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f73310d30b29184da5c48c7e00c46fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212605508477811718
 SpriteRenderer:
   m_ObjectHideFlags: 1

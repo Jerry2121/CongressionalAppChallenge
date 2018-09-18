@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212995271731601740}
   - component: {fileID: 58118964912077408}
   - component: {fileID: 114027966514836312}
+  - component: {fileID: 114998564379336704}
   m_Layer: 0
   m_Name: AttackBuilding1PH
   m_TagString: Untagged
@@ -68,6 +69,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f73310d30b29184da5c48c7e00c46fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114998564379336704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1029278982227840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd38bf3ef05ec534f8a198eb25333bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
+  buildingLevel: 1
+  buildingID: 31
+  upgradeAvailable: 0
 --- !u!212 &212995271731601740
 SpriteRenderer:
   m_ObjectHideFlags: 1

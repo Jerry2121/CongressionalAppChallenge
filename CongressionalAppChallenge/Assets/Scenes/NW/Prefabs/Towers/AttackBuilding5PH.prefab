@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212399774869121316}
   - component: {fileID: 58595912959024536}
   - component: {fileID: 114511767067943194}
+  - component: {fileID: 114003823515316610}
   m_Layer: 0
   m_Name: AttackBuilding5PH
   m_TagString: Untagged
@@ -57,6 +58,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &114003823515316610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667420101550608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd38bf3ef05ec534f8a198eb25333bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 1733655284807348, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+    type: 2}
+  buildingLevel: 1
+  buildingID: 35
+  upgradeAvailable: 0
 --- !u!114 &114511767067943194
 MonoBehaviour:
   m_ObjectHideFlags: 1

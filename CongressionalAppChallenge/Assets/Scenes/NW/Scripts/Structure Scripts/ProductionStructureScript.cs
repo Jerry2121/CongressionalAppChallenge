@@ -9,16 +9,19 @@ public class ProductionStructureScript : MonoBehaviour {
     public int resourceID;
     public int buildingResourceProduction;
 
+
     public float timer;
-    
-    public bool waveActive;
+
+    private void Start()
+    {
+        GameManager = GameObject.Find("GameManager");
+    }
 
     void Update()
     {
-        if (waveActive)
-        {   
+        if ( GameObject.Find("GameManager").GetComponent<GameManagerScript>().canSpawnNextWave)
+        {
             timer += Time.deltaTime;
-            GameManager = GetComponent<BaseStructureScript>().GameManager;
             if (timer >= 1.0f)
             {
                 switch (resourceID)
