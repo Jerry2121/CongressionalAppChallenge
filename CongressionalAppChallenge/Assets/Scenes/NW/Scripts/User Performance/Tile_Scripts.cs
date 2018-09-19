@@ -142,9 +142,9 @@ public class Tile_Scripts : MonoBehaviour {
 
     public void SpawnBuilding(GameObject buildingType, int recievedBuildingID)
     {
-        Instantiate(buildingType, GetComponent<Transform>());
-        buildingType.transform.position = new Vector3(0, 0, 5);
-        childStructure = buildingType;
+        GameObject foo = Instantiate(buildingType, GetComponent<Transform>());
+        foo.transform.position = new Vector3(0, 0, 5);
+        childStructure = foo;
         spaceOccupied = true;
         buildingID = recievedBuildingID;
     }

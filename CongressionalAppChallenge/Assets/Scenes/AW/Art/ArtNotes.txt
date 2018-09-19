@@ -2,7 +2,7 @@ Type - Color - Middle Color Hex Code
 Attack - Red - #ba1e1e
 Defense - Orange -
 Resources - Light Grey - #6f6f6f
-Production - Dark Grey -
+Production - Dark Grey - #4a4746
 Civilization - Blue - #002fe0
 
 Other Colors
