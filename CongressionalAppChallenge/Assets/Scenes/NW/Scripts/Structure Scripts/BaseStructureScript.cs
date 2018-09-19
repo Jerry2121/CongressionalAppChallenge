@@ -17,8 +17,13 @@ public class BaseStructureScript : MonoBehaviour {
 
     void Start()
     {
-        buildingLevel = 1;
         GameManager = GameObject.Find("GameManager");
+
+        buildingLevel = 1;
+        woodUpgradeRequirement = 0;
+        stoneUpgradeRequirement = 0;
+        oreUpgradeRequirement = 0;
+        steelUpgradeRequirement = 0;
 
         switch (buildingID)
         {
@@ -27,6 +32,7 @@ public class BaseStructureScript : MonoBehaviour {
                 GetComponent<ProductionStructureScript>().buildingResourceProduction = 1;
                 // Upgrade requirement = 10
                 woodUpgradeRequirement = 10;
+                Debug.Log("Wood Required to Upgrade: " + woodUpgradeRequirement);
                 break;
 
             case 12:
@@ -58,7 +64,7 @@ public class BaseStructureScript : MonoBehaviour {
         }
     }
 
-    void LevelUpBuilding()
+    public void LevelUpBuilding()
     {
         switch (buildingID)
         {

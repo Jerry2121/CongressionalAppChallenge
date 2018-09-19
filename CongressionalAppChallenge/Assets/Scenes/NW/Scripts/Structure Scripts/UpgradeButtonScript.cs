@@ -19,7 +19,7 @@ public class UpgradeButtonScript : MonoBehaviour {
             GetComponent<Button>().interactable = true;
         }
 
-        else
+        else if (TilesBase.GetComponent<UpgradeStructureScript>().upgradeAvailable == false)
         {
             GetComponent<Button>().interactable = false;
         }
