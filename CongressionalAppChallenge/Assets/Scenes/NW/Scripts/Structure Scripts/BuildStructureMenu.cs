@@ -62,7 +62,6 @@ public class BuildStructureMenu : MonoBehaviour {
     {
         upgradeStructureMenu.SetActive(true);
         disableUpgradeMenu = true;
-        Debug.Log("This doesn't work right now. Try later!");
     }
 
     // int buttonType

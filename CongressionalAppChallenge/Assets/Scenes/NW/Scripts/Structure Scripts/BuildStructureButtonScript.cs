@@ -7,6 +7,8 @@ public class BuildStructureButtonScript : MonoBehaviour {
 
     public GameObject GameManager;
 
+    public int buildingID;
+
     public int woodNeeded;
     public int stoneNeeded;    
     public int oreNeeded;
@@ -22,7 +24,6 @@ public class BuildStructureButtonScript : MonoBehaviour {
             canBuildStructure = false;
             GetComponent<Button>().interactable = false;
             return;
-            
         }
 
         else
