@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BuildStructureButtonScript : MonoBehaviour {
 
     public GameObject GameManager;
+    public GameObject SelectedTile;
 
     public int buildingID;
 
@@ -26,8 +27,57 @@ public class BuildStructureButtonScript : MonoBehaviour {
             return;
         }
 
-        else
+        else if (GameManager.GetComponent<GameManagerScript>().selectedTile != null)
         {
+            SelectedTile = GameManager.GetComponent<GameManagerScript>().selectedTile;
+
+            switch (buildingID)
+            {
+                case 11:
+                    if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y).GetComponent<Tile_Scripts>().spaceOccupied ||
+                            GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1)).GetComponent<Tile_Scripts>().spaceOccupied ||
+                                GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1)).GetComponent<Tile_Scripts>().spaceOccupied)
+                    {
+                        canBuildStructure = false;
+                        return;
+                    }
+
+                    break;
+
+                case 12:
+                    if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y).GetComponent<Tile_Scripts>().spaceOccupied ||
+                            GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1)).GetComponent<Tile_Scripts>().spaceOccupied ||
+                                GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1)).GetComponent<Tile_Scripts>().spaceOccupied)
+                    {
+                        canBuildStructure = false;
+                        return;
+                    }
+
+                    break;
+
+                case 13:
+                    if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y).GetComponent<Tile_Scripts>().spaceOccupied ||
+                            GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1)).GetComponent<Tile_Scripts>().spaceOccupied ||
+                                GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1)).GetComponent<Tile_Scripts>().spaceOccupied)
+                    {
+                        canBuildStructure = false;
+                        return;
+                    }
+
+                    break;
+
+                case 14:
+                    if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y).GetComponent<Tile_Scripts>().spaceOccupied ||
+                            GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1)).GetComponent<Tile_Scripts>().spaceOccupied ||
+                                GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1)).GetComponent<Tile_Scripts>().spaceOccupied)
+                    {
+                        canBuildStructure = false;
+                        return;
+                    }
+
+                    break;
+            }
+
             canBuildStructure = true;
             GetComponent<Button>().interactable = true;
         }
