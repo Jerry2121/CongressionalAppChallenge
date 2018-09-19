@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58118964912077408}
   - component: {fileID: 114027966514836312}
   - component: {fileID: 114998564379336704}
+  - component: {fileID: 61114944128914240}
   m_Layer: 0
   m_Name: AttackBuilding1PH
   m_TagString: Untagged
@@ -58,6 +59,31 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!61 &61114944128914240
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1029278982227840}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &114027966514836312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,6 +109,10 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   buildingLevel: 1
   buildingID: 31
+  woodUpgradeRequirement: 0
+  stoneUpgradeRequirement: 0
+  oreUpgradeRequirement: 0
+  steelUpgradeRequirement: 0
   upgradeAvailable: 0
 --- !u!212 &212995271731601740
 SpriteRenderer:

@@ -19,7 +19,7 @@ public class ProductionStructureScript : MonoBehaviour {
 
     void Update()
     {
-        if ( GameObject.Find("GameManager").GetComponent<GameManagerScript>().canSpawnNextWave)
+        if ( GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft > 0 )
         {
             timer += Time.deltaTime;
             if (timer >= 1.0f)
@@ -36,27 +36,27 @@ public class ProductionStructureScript : MonoBehaviour {
                         break;
 
                     case 2:
-                        if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= 999)
+                        if (GameManager.GetComponent<GameManagerScript>().stoneAcquired >= 999)
                         {
-                            GameManager.GetComponent<GameManagerScript>().woodAcquired = 999;
+                            GameManager.GetComponent<GameManagerScript>().stoneAcquired = 999;
                             return;
                         }
                         GameManager.GetComponent<GameManagerScript>().stoneAcquired += buildingResourceProduction;
                         break;
 
                     case 3:
-                        if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= 999)
+                        if (GameManager.GetComponent<GameManagerScript>().oreAcquired >= 999)
                         {
-                            GameManager.GetComponent<GameManagerScript>().woodAcquired = 999;
+                            GameManager.GetComponent<GameManagerScript>().oreAcquired = 999;
                             return;
                         }
                         GameManager.GetComponent<GameManagerScript>().oreAcquired += buildingResourceProduction;
                         break;
 
                     case 4:
-                        if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= 999)
+                        if (GameManager.GetComponent<GameManagerScript>().steelAcquired >= 999)
                         {
-                            GameManager.GetComponent<GameManagerScript>().woodAcquired = 999;
+                            GameManager.GetComponent<GameManagerScript>().steelAcquired = 999;
                             return;
                         }
                         GameManager.GetComponent<GameManagerScript>().steelAcquired += buildingResourceProduction;

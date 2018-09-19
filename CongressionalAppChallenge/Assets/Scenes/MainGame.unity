@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d85845bc0c98e4982e8edc0903676d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilesBase: {fileID: 0}
+  TilesBase: {fileID: 0}
 --- !u!114 &4477490 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114754772524917668, guid: da786f8e51bd3ef46b9e73b77709bb76,
@@ -281,7 +281,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnerLeft
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1145,7 +1145,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnerBot
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1173,7 +1173,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnerRight
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1386,6 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 1644777511}
+  selectedStructure: {fileID: 0}
   SelectedTile: {fileID: 0}
   MenuCanvas: {fileID: 803648708}
   upgradeAvailable: 0
@@ -1887,7 +1888,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnerTop
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3339,7 +3340,7 @@ Prefab:
     - target: {fileID: 114288199447726944, guid: da786f8e51bd3ef46b9e73b77709bb76,
         type: 2}
       propertyPath: woodNeeded
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114207704473991202, guid: da786f8e51bd3ef46b9e73b77709bb76,
         type: 2}
@@ -3365,6 +3366,29 @@ Prefab:
         type: 2}
       propertyPath: stoneNeeded
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224653860083805916, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740936456525974, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590426908162458, guid: da786f8e51bd3ef46b9e73b77709bb76, type: 2}
+      propertyPath: m_Name
+      value: BuildSawmillButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472560257308966, guid: da786f8e51bd3ef46b9e73b77709bb76, type: 2}
+      propertyPath: m_Name
+      value: BuildQuarryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 114288199447726944, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: stoneNeeded
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da786f8e51bd3ef46b9e73b77709bb76, type: 2}
