@@ -5,7 +5,7 @@ using UnityEngine;
 public class camerahandler1 : MonoBehaviour
 {
 
-    private static readonly float PanSpeed = 7f;
+    private static readonly float PanSpeed = 7.0f;
     private static readonly float ZoomSpeedTouch = 1.0f;
     private static readonly float ZoomSpeedMouse = 0.5f;
 
