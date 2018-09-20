@@ -26,7 +26,11 @@ public class GameManagerScript : MonoBehaviour {
     [Space(25)]
     public float cooldownTimer;
     [Space(25)]
-    public int HP;
+    public int TownHallHP;
+    public int ProductionStuctureHP;
+    public int VillageStuctureHP;
+    public int TowerStuctureHP;
+    public int DefenseStructureHP;
     public int stoneAcquired;
     public int woodAcquired;
     public int oreAcquired;
@@ -46,14 +50,14 @@ public class GameManagerScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        HPText.GetComponent<TextMeshProUGUI>().text = "HP: " + HP;
+        HPText.GetComponent<TextMeshProUGUI>().text = "HP: " + TownHallHP;
         WoodText.GetComponent<TextMeshProUGUI>().text = "Wood: " + woodAcquired;
         StoneText.GetComponent<TextMeshProUGUI>().text = "Stone: " + stoneAcquired;
         OreText.GetComponent<TextMeshProUGUI>().text = "Ore: " + oreAcquired;
         SteelText.GetComponent<TextMeshProUGUI>().text = "Steel: " + steelAcquired;
-        if (HP >= 100)
+        if (TownHallHP >= 100)
         {
-            HP = 100;
+            TownHallHP = 100;
         }
         if (woodAcquired >= 999)
         {

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4680690217566034}
   - component: {fileID: 212143629837541626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite_Q2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4408095259462144}
   - component: {fileID: 212814030498473088}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite_Q3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4228807995500852}
   - component: {fileID: 212345671396554576}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite_Q4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4437605832206690}
   - component: {fileID: 212520349233719336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite_Q1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,8 @@ GameObject:
   - component: {fileID: 114980533498090090}
   - component: {fileID: 114065908786681324}
   - component: {fileID: 61228591525505458}
-  m_Layer: 0
+  - component: {fileID: 114059735582597792}
+  m_Layer: 10
   m_Name: ProductionBuilding4PH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,6 +188,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114059735582597792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841891351842666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af26cc895594e394ab805ef919f331a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!114 &114065908786681324
 MonoBehaviour:
   m_ObjectHideFlags: 1

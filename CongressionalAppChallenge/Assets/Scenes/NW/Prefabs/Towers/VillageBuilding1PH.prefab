@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 58554181198062502}
   - component: {fileID: 114107851877504370}
   - component: {fileID: 61914154125191778}
-  m_Layer: 0
+  - component: {fileID: 114340228986446024}
+  m_Layer: 11
   m_Name: VillageBuilding1PH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +103,18 @@ MonoBehaviour:
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
   upgradeAvailable: 0
+--- !u!114 &114340228986446024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475069355914694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a389b9f5bc9ec4092b2420549c4faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!212 &212284013596050532
 SpriteRenderer:
   m_ObjectHideFlags: 1

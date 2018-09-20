@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 58103199725344812}
   - component: {fileID: 114822632467191338}
   - component: {fileID: 61783878529553710}
-  m_Layer: 0
+  - component: {fileID: 114614268397785152}
+  m_Layer: 11
   m_Name: VillageBuilding6PH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +84,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114614268397785152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1074566103765210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a389b9f5bc9ec4092b2420549c4faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!114 &114822632467191338
 MonoBehaviour:
   m_ObjectHideFlags: 1

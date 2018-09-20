@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 212398805923661234}
   - component: {fileID: 114849742639076712}
   - component: {fileID: 61895928322247412}
-  m_Layer: 0
+  - component: {fileID: 114550924380441328}
+  m_Layer: 13
   m_Name: DefenseBuilding2PH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,6 +68,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114550924380441328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933295609071086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53cd21085aae0a4eaf7aee6a5db13a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!114 &114849742639076712
 MonoBehaviour:
   m_ObjectHideFlags: 1

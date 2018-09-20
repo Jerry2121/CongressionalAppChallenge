@@ -30,4 +30,31 @@ public class EnemyChase : MonoBehaviour {
         home = false;
         GetComponent<Rigidbody2D>().velocity = moveDirection * chaseSpeed;
 	}
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
+            GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
+            collision.gameObject.GetComponent<HealthProduction>().hp--;
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.layer == 11)
+        {
+            GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
+            collision.gameObject.GetComponent<HealthVillage>().hp--;
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.layer == 12)
+        {
+            GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
+            collision.gameObject.GetComponent<HealthTowers>().hp--;
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.layer == 13)
+        {
+            GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
+            collision.gameObject.GetComponent<HealthDefense>().hp--;
+            Destroy(this.gameObject);
+        }
+    }
 }

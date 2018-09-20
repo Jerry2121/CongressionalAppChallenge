@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 114155349534096810}
   - component: {fileID: 114841671665015804}
   - component: {fileID: 61009795452577642}
-  m_Layer: 0
+  - component: {fileID: 114576801638725042}
+  m_Layer: 12
   m_Name: AttackBuilding4PH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,6 +96,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f73310d30b29184da5c48c7e00c46fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114576801638725042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1857181412827884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c234bdfcd14b4469a9a5ba4d7103b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!114 &114841671665015804
 MonoBehaviour:
   m_ObjectHideFlags: 1

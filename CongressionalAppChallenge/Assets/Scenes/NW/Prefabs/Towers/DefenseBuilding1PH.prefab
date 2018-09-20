@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 212977498578839914}
   - component: {fileID: 114046345439516362}
   - component: {fileID: 61213310791217474}
-  m_Layer: 0
+  - component: {fileID: 114522976610437176}
+  m_Layer: 13
   m_Name: DefenseBuilding1PH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,6 +87,18 @@ MonoBehaviour:
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
   upgradeAvailable: 0
+--- !u!114 &114522976610437176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524405195838412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53cd21085aae0a4eaf7aee6a5db13a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!212 &212977498578839914
 SpriteRenderer:
   m_ObjectHideFlags: 1

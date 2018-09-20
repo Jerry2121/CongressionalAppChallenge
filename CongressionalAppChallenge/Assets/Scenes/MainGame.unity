@@ -2836,7 +2836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera_GameObject: {fileID: 9632962}
-  xMax: -18.85
+  xMax: 18.85
   yMax: 12.04
 --- !u!1 &1711179668
 GameObject:

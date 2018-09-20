@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4075294127402808}
   - component: {fileID: 212153273778825350}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite_Q3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4116951661873006}
   - component: {fileID: 212948512410699758}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite_Q4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4366936810049916}
   - component: {fileID: 212717153343293244}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite_Q1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,8 @@ GameObject:
   - component: {fileID: 114180075007315462}
   - component: {fileID: 114677760805432718}
   - component: {fileID: 61121662485636656}
-  m_Layer: 0
+  - component: {fileID: 114968187377530580}
+  m_Layer: 10
   m_Name: ProductionBuilding2PH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4653762407190214}
   - component: {fileID: 212530320663533362}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite_Q2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,6 +223,18 @@ MonoBehaviour:
   resourceID: 0
   buildingResourceProduction: 4
   timer: 0
+--- !u!114 &114968187377530580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447096250244252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af26cc895594e394ab805ef919f331a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!212 &212153273778825350
 SpriteRenderer:
   m_ObjectHideFlags: 1

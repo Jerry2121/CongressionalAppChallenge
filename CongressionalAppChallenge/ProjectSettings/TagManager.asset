@@ -19,10 +19,10 @@ TagManager:
   - 
   - Enemies
   - TileBase
-  - Camera
-  - Area
-  - 
-  - 
+  - ProductionStructure
+  - VillageStructure
+  - TowersStructure
+  - DefenseStructure
   - 
   - 
   - 

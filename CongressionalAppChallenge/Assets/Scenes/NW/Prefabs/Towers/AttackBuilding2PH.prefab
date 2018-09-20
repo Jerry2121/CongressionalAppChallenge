@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 114888219927577986}
   - component: {fileID: 114470241115846878}
   - component: {fileID: 61002779520578302}
-  m_Layer: 0
+  - component: {fileID: 114828675258706726}
+  m_Layer: 12
   m_Name: AttackBuilding2PH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,6 +105,18 @@ MonoBehaviour:
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
   upgradeAvailable: 0
+--- !u!114 &114828675258706726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023408871715754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c234bdfcd14b4469a9a5ba4d7103b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!114 &114888219927577986
 MonoBehaviour:
   m_ObjectHideFlags: 1
