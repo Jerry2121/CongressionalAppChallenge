@@ -2536,6 +2536,31 @@ Prefab:
       propertyPath: HP
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: TownHallHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: ProductionStuctureHP
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: VillageStuctureHP
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: TowerStuctureHP
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: DefenseStructureHP
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f82fbb73ef135c40837159ec9aa0ae4, type: 2}
   m_IsPrefabAsset: 0
