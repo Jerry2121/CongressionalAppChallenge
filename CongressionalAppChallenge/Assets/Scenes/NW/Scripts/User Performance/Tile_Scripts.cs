@@ -121,23 +121,26 @@ public class Tile_Scripts : MonoBehaviour {
     public void SpawnTownHall()
     {
 
-        Instantiate(townHallPrefab, GetComponent<Transform>());
-        townHallPrefab.transform.position = new Vector3 (0.5f, 0.5f, 0);
+        GameObject TownHall = Instantiate(townHallPrefab, GetComponent<Transform>());
         spaceOccupied = true;
         buildingID = -1;
+        childStructure = TownHall;
 
         GameObject tempTile;
-        tempTile = GameObject.Find("Tile(" + (originalLocation.x + 1) + ", " + originalLocation.y + ")");
+        tempTile = GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + gameObject.transform.position.y + ")");
         tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
         tempTile.GetComponent<Tile_Scripts>().buildingID = -1;
+        tempTile.GetComponent<Tile_Scripts>().childStructure = TownHall;
 
-        tempTile = GameObject.Find("Tile(" + originalLocation.x + ", " + (originalLocation.y + 1) + ")");
+        tempTile = GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + (gameObject.transform.position.y + 1) + ")");
         tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
         tempTile.GetComponent<Tile_Scripts>().buildingID = -1;
+        tempTile.GetComponent<Tile_Scripts>().childStructure = TownHall;
 
-        tempTile = GameObject.Find("Tile(" + (originalLocation.x + 1) + ", " + (originalLocation.y + 1) + ")");
+        tempTile = GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + (gameObject.transform.position.y + 1) + ")");
         tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
         tempTile.GetComponent<Tile_Scripts>().buildingID = -1;
+        tempTile.GetComponent<Tile_Scripts>().childStructure = TownHall;
     }
 
     public void SpawnBuilding(GameObject buildingType, int recievedBuildingID)
@@ -146,6 +149,87 @@ public class Tile_Scripts : MonoBehaviour {
         childStructure = structure;
         spaceOccupied = true;
         buildingID = recievedBuildingID;
+
+        GameObject tempTile;
+        GameObject SelectedTile = GameManager.GetComponent<GameManagerScript>().selectedTile;
+        switch (buildingID)
+        {
+            case 11:
+                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 11;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                tempTile = GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 11;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 11;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                break;
+
+            case 12:
+                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 12;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                tempTile = GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 12;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 12;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                break;
+
+            case 13:
+                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 13;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                tempTile = GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 13;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 13;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                // structure.GetComponent<Transform>().position = new Vector2(0.5f, 0.5f);
+
+                break;
+
+            case 14:
+                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 14;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                tempTile = GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 14;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")");
+                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+                tempTile.GetComponent<Tile_Scripts>().buildingID = 14;
+                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+                // structure.GetComponent<Transform>().position = new Vector2(0.5f, 0.5f);
+
+                break;
+        }
     }
 
     public void ShowTilePlacement()

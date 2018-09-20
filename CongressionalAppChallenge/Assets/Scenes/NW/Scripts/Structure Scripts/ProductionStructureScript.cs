@@ -19,7 +19,7 @@ public class ProductionStructureScript : MonoBehaviour {
 
     void Update()
     {
-        if ( GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft > 0 )
+        if ( GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft > 0)
         {
             timer += Time.deltaTime;
             if (timer >= 1.0f)

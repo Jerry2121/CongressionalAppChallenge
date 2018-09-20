@@ -32,7 +32,6 @@ public class BaseStructureScript : MonoBehaviour {
                 GetComponent<ProductionStructureScript>().buildingResourceProduction = 1;
                 // Upgrade requirement = 10
                 woodUpgradeRequirement = 10;
-                Debug.Log("Wood Required to Upgrade: " + woodUpgradeRequirement);
                 break;
 
             case 12:
