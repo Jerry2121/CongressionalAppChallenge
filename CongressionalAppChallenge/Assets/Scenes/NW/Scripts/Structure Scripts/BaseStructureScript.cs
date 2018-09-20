@@ -60,6 +60,14 @@ public class BaseStructureScript : MonoBehaviour {
                 oreUpgradeRequirement = 15;
                 steelUpgradeRequirement = 5;
                 break;
+
+            case 15:
+                // There will be a couple of 'GetComponent's here to grab tower properties like damage
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+                break;
         }
     }
 

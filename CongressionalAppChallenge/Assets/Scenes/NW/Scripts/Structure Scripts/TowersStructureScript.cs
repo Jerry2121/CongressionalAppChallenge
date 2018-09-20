@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerScript : MonoBehaviour {
+public class TowersStructureScript : MonoBehaviour {
 
     private List<GameObject> enemiesInRange = new List<GameObject>();
 
