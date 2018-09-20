@@ -5,7 +5,7 @@ Buildings
 -Forge/Blacksmith**
 -Townhall**
 -House**
--Wall*
+-Wall**
 -Archer Tower**
 -Fire Tower
 -Catapult
