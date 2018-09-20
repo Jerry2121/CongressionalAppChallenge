@@ -32,7 +32,6 @@ public class BaseStructureScript : MonoBehaviour {
                 GetComponent<ProductionStructureScript>().buildingResourceProduction = 1;
                 // Upgrade requirement = 10
                 woodUpgradeRequirement = 10;
-                Debug.Log("Wood Required to Upgrade: " + woodUpgradeRequirement);
                 break;
 
             case 12:
@@ -60,6 +59,14 @@ public class BaseStructureScript : MonoBehaviour {
                 stoneUpgradeRequirement = 5;
                 oreUpgradeRequirement = 15;
                 steelUpgradeRequirement = 5;
+                break;
+
+            case 15:
+                // There will be a couple of 'GetComponent's here to grab tower properties like damage
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
                 break;
         }
     }

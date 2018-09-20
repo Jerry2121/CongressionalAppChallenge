@@ -140,6 +140,32 @@ public class UpgradeStructureScript : MonoBehaviour {
                         break;
                 }
                 break;
+
+            case 31:
+                switch (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel)
+                {
+                    case 2:
+                        // Upgrade requirement = 100
+                        selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement = 30;
+                        selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement = 70;
+                        break;
+
+                    case 3:
+                        // Upgrade requirement = 170
+                        selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement = 45;
+                        selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement = 105;
+                        selectedStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement = 20;
+                        break;
+
+                    case 4:
+                        // Upgrade requirement = 265
+                        selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement = 60;
+                        selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement = 140;
+                        selectedStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement = 40;
+                        selectedStructure.GetComponent<BaseStructureScript>().steelUpgradeRequirement = 25;
+                        break;
+                }
+                break;
         }
 
         selectedStructure.GetComponent<BaseStructureScript>().LevelUpBuilding();

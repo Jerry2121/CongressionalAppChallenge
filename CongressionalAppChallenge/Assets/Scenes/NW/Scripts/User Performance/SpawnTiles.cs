@@ -34,7 +34,7 @@ public class SpawnTiles : MonoBehaviour {
                 tilePrefab.GetComponent<Tile_Scripts>().GameManager = GameManager;
                 tilePrefab.GetComponent<Tile_Scripts>().menuCanvas = menuCanvas;
 
-                if (ix == 0 && iy == 0 && !townHallSpawned)
+                if (ix == -1 && iy == 0 && !townHallSpawned)
                 {
                     townHallParent = tilePrefab;
 

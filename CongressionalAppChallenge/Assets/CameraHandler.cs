@@ -7,14 +7,12 @@ public class CameraHandler : MonoBehaviour
 
     public GameObject camera_GameObject;
 
+    public float xMax = 18.85f;
+    public float yMax = 12.04f;
     Vector2 StartPosition;
     Vector2 DragStartPosition;
     Vector2 DragNewPosition;
     Vector2 Finger0Position;
-    Vector3 maxCameraMove = new Vector3(-14.5f, 9.5f, 0);
-    private static readonly float[] BoundsX = new float[] { -14.5f, 14.5f };
-    private static readonly float[] BoundsY = new float[] { -9.5f, 9.5f };
-        private static readonly float[] ZoomBounds = new float[] { 1f, 5f };
     float DistanceBetweenFingers;
     bool isZooming;
 
@@ -32,49 +30,20 @@ public class CameraHandler : MonoBehaviour
             {
                 if (!isZooming)
                 {
-                    Vector3 pos = transform.position;
-                    pos.x = Mathf.Clamp(transform.position.x, BoundsX[0], BoundsX[1]);
-                    // pos.z = Mathf.Clamp(transform.position.z, BoundsZ[0], BoundsZ[1]);
-                    pos.y = Mathf.Clamp(transform.position.y, BoundsY[0], BoundsY[1]);
-                    transform.position = pos;
                     if (Input.GetTouch(0).phase == TouchPhase.Moved)
                     {
                         Vector2 NewPosition = GetWorldPosition();
                         Vector2 PositionDifference = NewPosition - StartPosition;
                         camera_GameObject.transform.Translate(-PositionDifference);
-                       /* if(Mathf.Abs(camera_GameObject.transform.position.x) > maxCameraMove.x)
-                        {
-                            var foo = camera_GameObject.transform.position;
-                            if (camera_GameObject.transform.position.x < 0)
-                            {
-                                foo.x = -maxCameraMove.x;
-                            }
-                            else
-                            {
-                                foo.x = maxCameraMove.x;
-                            }
-                            camera_GameObject.transform.position = foo;
-                        }
-                        if (Mathf.Abs(camera_GameObject.transform.position.y) > maxCameraMove.y)
-                        {
-                            var foo = camera_GameObject.transform.position;
-                            if (camera_GameObject.transform.position.y < 0)
-                            {
-                                foo.y = -maxCameraMove.y;
-                            }
-                            else
-                            {
-                                foo.y = maxCameraMove.y;
-                            }
-                            camera_GameObject.transform.position = foo;
-                        }*/
+                        float x = Mathf.Clamp(camera_GameObject.transform.position.x, -xMax, xMax);
+                        float y = Mathf.Clamp(camera_GameObject.transform.position.y, -yMax, yMax);
+                        camera_GameObject.transform.position = new Vector3(x, y, camera_GameObject.transform.position.z);
                     }
                     StartPosition = GetWorldPosition();
                 }
             }
             else if (Input.touchCount == 2)
-            {
-                ZoomCamera(0, DistanceBetweenFingers);
+            { 
                 if (Input.GetTouch(1).phase == TouchPhase.Moved)
                 {
                     isZooming = true;
@@ -82,11 +51,22 @@ public class CameraHandler : MonoBehaviour
                     DragNewPosition = GetWorldPositionOfFinger(1);
                     Vector2 PositionDifference = DragNewPosition - DragStartPosition;
 
-                    if (Vector2.Distance(DragNewPosition, Finger0Position) < DistanceBetweenFingers)
+                    if (Vector2.Distance(DragNewPosition, Finger0Position) < DistanceBetweenFingers && camera_GameObject.GetComponent<Camera>().orthographicSize <= 5)
+                    {
                         camera_GameObject.GetComponent<Camera>().orthographicSize += (PositionDifference.magnitude);
-
-                    if (Vector2.Distance(DragNewPosition, Finger0Position) >= DistanceBetweenFingers)
+                        if (camera_GameObject.GetComponent<Camera>().orthographicSize >= 5)
+                        {
+                            camera_GameObject.GetComponent<Camera>().orthographicSize = 5;
+                        }
+                    }
+                    if (Vector2.Distance(DragNewPosition, Finger0Position) >= DistanceBetweenFingers && camera_GameObject.GetComponent<Camera>().orthographicSize >= 1)
+                    {
                         camera_GameObject.GetComponent<Camera>().orthographicSize -= (PositionDifference.magnitude);
+                        if (camera_GameObject.GetComponent<Camera>().orthographicSize <= 1)
+                        {
+                            camera_GameObject.GetComponent<Camera>().orthographicSize = 1;
+                        }
+                    }
 
                     DistanceBetweenFingers = Vector2.Distance(DragNewPosition, Finger0Position);
                 }
@@ -94,16 +74,6 @@ public class CameraHandler : MonoBehaviour
                 Finger0Position = GetWorldPositionOfFinger(0);
             }
         }
-    }
-
-    void ZoomCamera(float offset, float speed)
-    {
-        if (offset == 0)
-        {
-            return;
-        }
-        GetComponent<Camera>().orthographicSize = Mathf.Clamp(GetComponent<Camera>().orthographicSize - (offset * speed), ZoomBounds[0], ZoomBounds[1]);
-        // cam.fieldOfView = Mathf.Clamp(cam.fieldOfView - (offset * speed), ZoomBounds[0], ZoomBounds[1]);
     }
 
     Vector2 GetWorldPosition()

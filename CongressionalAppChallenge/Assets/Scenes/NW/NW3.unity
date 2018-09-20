@@ -113,6 +113,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4477488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1385530399967898, guid: da786f8e51bd3ef46b9e73b77709bb76,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767587187}
+--- !u!114 &4477489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4477488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d85845bc0c98e4982e8edc0903676d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TilesBase: {fileID: 0}
+--- !u!114 &4477490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114754772524917668, guid: da786f8e51bd3ef46b9e73b77709bb76,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767587187}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &4477492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4477488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 4477490}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 691991227}
+        m_MethodName: UpgradeBuilding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &9632962
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,8 +198,7 @@ GameObject:
   - component: {fileID: 9632965}
   - component: {fileID: 9632964}
   - component: {fileID: 9632963}
-  - component: {fileID: 9632966}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Player
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -191,18 +265,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9632966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 9632962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3bfae3aa52e9bf44a8bd1f778c534e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera_GameObject: {fileID: 9632962}
 --- !u!1 &101081555 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1522599726391248, guid: f8f5caf053b3569468b91b5e011a6fe0,
@@ -219,7 +281,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnerLeft
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1023,6 +1085,37 @@ Prefab:
       propertyPath: m_Name
       value: WaveButtonText
       objectReference: {fileID: 0}
+    - target: {fileID: 114215280321839008, guid: f8f5caf053b3569468b91b5e011a6fe0,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ec61e4d5705268449afdb3a9df530ab8,
+        type: 3}
+    - target: {fileID: 114215280321839008, guid: f8f5caf053b3569468b91b5e011a6fe0,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334503969649348, guid: f8f5caf053b3569468b91b5e011a6fe0,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334503969649348, guid: f8f5caf053b3569468b91b5e011a6fe0,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334503969649348, guid: f8f5caf053b3569468b91b5e011a6fe0,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334503969649348, guid: f8f5caf053b3569468b91b5e011a6fe0,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8f5caf053b3569468b91b5e011a6fe0, type: 2}
   m_IsPrefabAsset: 0
@@ -1052,7 +1145,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnerBot
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1080,7 +1173,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnerRight
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1213,6 +1306,90 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 683459096}
   m_Script: {fileID: 11500000, guid: 778db0d9bdb16ab4eac08fa264e29221, type: 3}
+--- !u!1 &686100583 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1999676672618698, guid: da786f8e51bd3ef46b9e73b77709bb76,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767587187}
+--- !u!114 &686100585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114073779466353522, guid: da786f8e51bd3ef46b9e73b77709bb76,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767587187}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &686100587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686100583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 686100585}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!1 &691991224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1256434824887384, guid: 37348d8c729ff8b459ac3d64cc2323b1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1435347321}
+--- !u!114 &691991227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 691991224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5389ec31de68914191607776e9bda84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 1644777511}
+  selectedStructure: {fileID: 0}
+  SelectedTile: {fileID: 0}
+  MenuCanvas: {fileID: 803648708}
+  upgradeAvailable: 0
 --- !u!1 &796876527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,7 +1888,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnerTop
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3149,6 +3326,89 @@ Prefab:
         type: 2}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114472401895247114, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: stoneNeeded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114472401895247114, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: woodNeeded
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114288199447726944, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: woodNeeded
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207704473991202, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: woodNeeded
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207704473991202, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: stoneNeeded
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114763445864562072, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: oreNeeded
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114763445864562072, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: woodNeeded
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114763445864562072, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: stoneNeeded
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224653860083805916, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740936456525974, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590426908162458, guid: da786f8e51bd3ef46b9e73b77709bb76, type: 2}
+      propertyPath: m_Name
+      value: BuildSawmillButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472560257308966, guid: da786f8e51bd3ef46b9e73b77709bb76, type: 2}
+      propertyPath: m_Name
+      value: BuildQuarryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 114288199447726944, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: stoneNeeded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114472401895247114, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: buildingID
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114288199447726944, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: buildingID
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114207704473991202, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: buildingID
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114763445864562072, guid: da786f8e51bd3ef46b9e73b77709bb76,
+        type: 2}
+      propertyPath: buildingID
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da786f8e51bd3ef46b9e73b77709bb76, type: 2}
