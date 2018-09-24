@@ -14,7 +14,7 @@ Buildings
 Units
 -Melee Unit (swordsman**, rogue)
 -Ranged Unit (archer*, mage)
--Boss Unit(s) (templar)
+-Boss Unit(s) (templar**)
 
 Other
 -Ground* (grass)
