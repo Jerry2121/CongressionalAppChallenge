@@ -5,15 +5,8 @@ using UnityEngine;
 public class HealthProduction : MonoBehaviour {
     public int hp;
 
-    public List<GameObject> parentTiles;
-
     // Use this for initialization
     void Start () {
-        parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + gameObject.transform.position.y + ")"));
-        parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + gameObject.transform.position.y + ")"));
-        parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + (gameObject.transform.position.y + 1) + ")"));
-        parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + (gameObject.transform.position.y + 1) + ")"));
-
         hp = GameObject.Find("GameManager").GetComponent<GameManagerScript>().ProductionStuctureHP;
 	}
 	
@@ -21,10 +14,10 @@ public class HealthProduction : MonoBehaviour {
 	void Update () {
 		if (hp <= 0)
         {
-            for (int i = 0; i < parentTiles.Count; i++)
+            for (int i = 0; i < GetComponent<BaseStructureScript>().parentTiles.Count; i++)
             {
-                parentTiles[i].GetComponent<Tile_Scripts>().buildingID = 0;
-                parentTiles[i].GetComponent<Tile_Scripts>().spaceOccupied = false;
+                GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().buildingID = 0;
+                GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().spaceOccupied = false;
             }
 
             Destroy(this.gameObject);

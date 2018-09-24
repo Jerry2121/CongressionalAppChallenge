@@ -9,11 +9,19 @@ public class BaseStructureScript : MonoBehaviour {
     public int buildingLevel;
     public int buildingID;
 
+    public int woodReturned;
+    public int stoneReturned;
+    public int oreReturned;
+    public int steelReturned;
+
     public int woodUpgradeRequirement;
     public int stoneUpgradeRequirement;
     public int oreUpgradeRequirement;
     public int steelUpgradeRequirement;
+
     public bool upgradeAvailable;
+
+    public List<GameObject> parentTiles;
 
     void Start()
     {
@@ -32,6 +40,14 @@ public class BaseStructureScript : MonoBehaviour {
                 GetComponent<ProductionStructureScript>().buildingResourceProduction = 1;
                 // Upgrade requirement = 10
                 woodUpgradeRequirement = 10;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + gameObject.transform.position.y + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + gameObject.transform.position.y + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + (gameObject.transform.position.y + 1) + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + (gameObject.transform.position.y + 1) + ")"));
+
                 break;
 
             case 12:
@@ -40,6 +56,14 @@ public class BaseStructureScript : MonoBehaviour {
                 // Upgrade requirement = 20
                 woodUpgradeRequirement = 5;
                 stoneUpgradeRequirement = 15;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + gameObject.transform.position.y + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + gameObject.transform.position.y + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + (gameObject.transform.position.y + 1) + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + (gameObject.transform.position.y + 1) + ")"));
+
                 break;
 
             case 13:
@@ -49,6 +73,14 @@ public class BaseStructureScript : MonoBehaviour {
                 woodUpgradeRequirement = 15;
                 stoneUpgradeRequirement = 10;
                 oreUpgradeRequirement = 5;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + gameObject.transform.position.y + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + gameObject.transform.position.y + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + (gameObject.transform.position.y + 1) + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + (gameObject.transform.position.y + 1) + ")"));
+
                 break;
 
             case 14:
@@ -59,39 +91,226 @@ public class BaseStructureScript : MonoBehaviour {
                 stoneUpgradeRequirement = 5;
                 oreUpgradeRequirement = 15;
                 steelUpgradeRequirement = 5;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + gameObject.transform.position.y + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + gameObject.transform.position.y + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + (gameObject.transform.position.y + 1) + ")"));
+                parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + (gameObject.transform.position.y + 1) + ")"));
+
                 break;
 
-            case 15:
+            case 21:
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 22:
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 23:
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 24:
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 25:
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 26:
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 31:
                 // There will be a couple of 'GetComponent's here to grab tower properties like damage
 
                 // Upgrade requirement = 50;
                 woodUpgradeRequirement = 15;
                 stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 32:
+                // There will be a couple of 'GetComponent's here to grab tower properties like damage
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 33:
+                // There will be a couple of 'GetComponent's here to grab tower properties like damage
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 34:
+                // There will be a couple of 'GetComponent's here to grab tower properties like damage
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 35:
+                // There will be a couple of 'GetComponent's here to grab tower properties like damage
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 41:
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 42:
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
+                break;
+
+            case 43:
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 15;
+                stoneUpgradeRequirement = 35;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+
                 break;
         }
     }
 
-    public void LevelUpBuilding()
+    public void BuildingLevelAnalysis()
     {
         switch (buildingID)
         {
             case 11:
                 switch (buildingLevel)
                 {
+                    case 1:
+                        woodReturned += 3;
+                        break;
+
                     case 2:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 2;
+                        woodReturned += 5;
                         break;
 
                     case 3:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 3;
+                        woodReturned += 10;
+                        stoneReturned += 3;
                         break;
 
                     case 4:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 4;
+                        woodReturned += 15;
+                        stoneReturned += 5;
+                        oreReturned += 3;
                         break;
 
                     case 5:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 5;
+                        woodReturned += 20;
+                        stoneReturned += 8;
+                        oreReturned += 5;
+                        steelReturned += 3;
                         break;
                 }
                 break;
@@ -99,20 +318,35 @@ public class BaseStructureScript : MonoBehaviour {
             case 12:
                 switch (buildingLevel)
                 {
+                    case 1:
+                        woodReturned += 5;
+                        break;
+
                     case 2:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 2;
+                        woodReturned += 3;
+                        stoneReturned += 8;
                         break;
 
                     case 3:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 3;
+                        woodReturned += 5;
+                        woodReturned += 15;
                         break;
 
                     case 4:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 4;
+                        woodReturned += 8;
+                        stoneReturned += 23;
+                        oreReturned += 5;
                         break;
 
                     case 5:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 5;
+                        woodReturned += 10;
+                        stoneReturned += 30;
+                        oreReturned += 10;
+                        steelReturned += 5;
                         break;
                 }
                 break;
@@ -120,20 +354,39 @@ public class BaseStructureScript : MonoBehaviour {
             case 13:
                 switch (buildingLevel)
                 {
+                    case 1:
+                        woodReturned += 8;
+                        stoneReturned += 3;
+                        break;
+
                     case 2:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 2;
+                        woodReturned += 8;
+                        stoneReturned += 5;
+                        oreReturned += 3;
                         break;
 
                     case 3:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 3;
+                        woodReturned += 15;
+                        stoneReturned += 10;
+                        oreReturned += 5;
                         break;
 
                     case 4:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 4;
+                        woodReturned += 23;
+                        stoneReturned += 15;
+                        oreReturned += 8;
+                        steelReturned += 3;
                         break;
 
                     case 5:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 5;
+                        woodReturned += 30;
+                        stoneReturned += 20;
+                        oreReturned += 10;
+                        steelReturned += 5;
                         break;
                 }
                 break;
@@ -141,20 +394,42 @@ public class BaseStructureScript : MonoBehaviour {
             case 14:
                 switch (buildingLevel)
                 {
+                    case 1:
+                        woodReturned += 8;
+                        stoneReturned += 3;
+                        oreReturned += 5;
+                        break;
+
                     case 2:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 2;
+                        woodReturned += 8;
+                        stoneReturned += 3;
+                        oreReturned += 8;
+                        steelReturned += 3;
                         break;
 
                     case 3:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 3;
+                        woodReturned += 15;
+                        stoneReturned += 5;
+                        oreReturned += 15;
+                        steelReturned += 5;
                         break;
 
                     case 4:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 4;
+                        woodReturned += 23;
+                        stoneReturned += 8;
+                        oreReturned += 23;
+                        steelReturned += 8;
                         break;
 
                     case 5:
                         GetComponent<ProductionStructureScript>().buildingResourceProduction = 5;
+                        woodReturned += 30;
+                        stoneReturned += 10;
+                        oreReturned += 30;
+                        steelReturned += 10;
                         break;
                 }
                 break;

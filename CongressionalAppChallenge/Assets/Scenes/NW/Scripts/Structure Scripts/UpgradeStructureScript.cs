@@ -14,7 +14,6 @@ public class UpgradeStructureScript : MonoBehaviour {
 
     void Update()
     {
-
         UpgradeCheck();
     }
 
@@ -168,7 +167,7 @@ public class UpgradeStructureScript : MonoBehaviour {
                 break;
         }
 
-        selectedStructure.GetComponent<BaseStructureScript>().LevelUpBuilding();
+        selectedStructure.GetComponent<BaseStructureScript>().BuildingLevelAnalysis();
 
         GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().ShowTilePlacement();
         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
