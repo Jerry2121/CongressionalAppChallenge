@@ -31,4 +31,9 @@ public class LevelChanger : MonoBehaviour {
         FadeToLevel(0);
         Time.timeScale = 1;
     }
+    public void GameOver()
+    {
+        FadeToLevel(2);
+        Time.timeScale = 1;
+    }
 }

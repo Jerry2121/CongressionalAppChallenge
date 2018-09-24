@@ -9,6 +9,8 @@ public class GameManagerScript : MonoBehaviour {
     public GameObject menuCanvas;
     public GameObject Hammer;
     public GameObject X;
+    public GameObject BGMusic;
+    public GameObject WaveMusic;
     [Space(25)]
     public GameObject HPText;
     public GameObject WoodText;
@@ -50,6 +52,10 @@ public class GameManagerScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (TownHallHP <= 0)
+        {
+            GameObject.Find("LevelChanger").GetComponent<LevelChanger>().GameOver();
+        }
         HPText.GetComponent<TextMeshProUGUI>().text = "HP: " + TownHallHP;
         WoodText.GetComponent<TextMeshProUGUI>().text = "Wood: " + woodAcquired;
         StoneText.GetComponent<TextMeshProUGUI>().text = "Stone: " + stoneAcquired;
@@ -83,11 +89,19 @@ public class GameManagerScript : MonoBehaviour {
         }
         else if (canSpawnNextWave == true)
         {
+            BGMusic.GetComponent<AudioSource>().mute = true;
+            BGMusic.SetActive(false);
+            WaveMusic.GetComponent<AudioSource>().mute = false;
+            WaveMusic.SetActive(true);
             WaveButtonText.SetActive(false);
             WaveButton.SetActive(false);
         }
         if (canSpawnNextWave == false && GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft <= 0)
         {
+            BGMusic.GetComponent<AudioSource>().mute = false;
+            BGMusic.SetActive(true);
+            WaveMusic.GetComponent<AudioSource>().mute = true;
+            WaveMusic.SetActive(false);
             WaveButtonText.SetActive(true);
             WaveButton.SetActive(true);
         }
