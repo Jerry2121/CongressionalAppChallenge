@@ -13,7 +13,7 @@ Buildings
 
 Units
 -Melee Unit (swordsman**, rogue)
--Ranged Unit (archer*, mage)
+-Ranged Unit (archer**, mage)
 -Boss Unit(s) (templar**)
 
 Other
