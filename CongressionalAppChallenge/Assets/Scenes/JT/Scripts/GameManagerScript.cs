@@ -19,6 +19,9 @@ public class GameManagerScript : MonoBehaviour {
     public GameObject SteelText;
     public GameObject WaveButtonText;
     public GameObject WaveButton;
+    public GameObject HUD;
+    public GameObject MusicEnabledIcon;
+    public GameObject MusicDisabledIcon;
     public Sprite StartWaveBG;
     public Sprite NextWaveBG;
     [Space(25)]
@@ -37,6 +40,7 @@ public class GameManagerScript : MonoBehaviour {
     public int woodAcquired;
     public int oreAcquired;
     public int steelAcquired;
+    private int ranCode;
     [Space(25)]
     Image myImageComponent;
 
@@ -46,7 +50,18 @@ public class GameManagerScript : MonoBehaviour {
         canSpawnNextWave = false;
         isFirstInstance = true;
         editMode = false;
+        ranCode = 0;
         myImageComponent = WaveButton.GetComponent<Image>();
+        if (PlayerPrefs.GetInt("MusicEnabled") == 1)
+        {
+            MusicEnabledIcon.SetActive(true);
+            MusicDisabledIcon.SetActive(false);
+        }
+        else
+        {
+            MusicEnabledIcon.SetActive(false);
+            MusicDisabledIcon.SetActive(true);
+        }
         //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit mode";
     }
 
@@ -55,6 +70,18 @@ public class GameManagerScript : MonoBehaviour {
         if (TownHallHP <= 0)
         {
             GameObject.Find("LevelChanger").GetComponent<LevelChanger>().GameOver();
+        }
+        if (Time.timeScale == 0 && HUD.GetComponent<HUDController>().Paused == true && PlayerPrefs.GetInt("MusicEnabled") == 1)
+        {
+            ranCode = 0;
+            BGMusic.GetComponent<AudioSource>().Pause();
+            WaveMusic.GetComponent<AudioSource>().Pause();
+        }
+        else if (Time.timeScale == 1 && HUD.GetComponent<HUDController>().Paused == false && ranCode == 0 && PlayerPrefs.GetInt("MusicEnabled") == 1)
+        {
+            BGMusic.GetComponent<AudioSource>().Play();
+            WaveMusic.GetComponent<AudioSource>().Play();
+            ranCode = 1;
         }
         HPText.GetComponent<TextMeshProUGUI>().text = "HP: " + TownHallHP;
         WoodText.GetComponent<TextMeshProUGUI>().text = "Wood: " + woodAcquired;
@@ -89,14 +116,15 @@ public class GameManagerScript : MonoBehaviour {
         }
         else if (canSpawnNextWave == true)
         {
-            BGMusic.GetComponent<AudioSource>().mute = true;
-            BGMusic.SetActive(false);
-            WaveMusic.GetComponent<AudioSource>().mute = false;
-            WaveMusic.SetActive(true);
             WaveButtonText.SetActive(false);
             WaveButton.SetActive(false);
         }
-        if (canSpawnNextWave == false && GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft <= 0)
+        if (canSpawnNextWave == false && GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft <= 0 && PlayerPrefs.GetInt("MusicEnabled") == 0)
+        {
+            WaveButtonText.SetActive(true);
+            WaveButton.SetActive(true);
+        }
+        else if (canSpawnNextWave == false && GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft <= 0 && PlayerPrefs.GetInt("MusicEnabled") == 1)
         {
             BGMusic.GetComponent<AudioSource>().mute = false;
             BGMusic.SetActive(true);
@@ -104,6 +132,13 @@ public class GameManagerScript : MonoBehaviour {
             WaveMusic.SetActive(false);
             WaveButtonText.SetActive(true);
             WaveButton.SetActive(true);
+        }
+        else if (canSpawnNextWave && GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft > 0 && PlayerPrefs.GetInt("MusicEnabled") == 1)
+        {
+            BGMusic.GetComponent<AudioSource>().mute = true;
+            BGMusic.SetActive(false);
+            WaveMusic.GetComponent<AudioSource>().mute = false;
+            WaveMusic.SetActive(true);
         }
         if (canSpawnNextWave && isFirstInstance)
         {
@@ -147,5 +182,17 @@ public class GameManagerScript : MonoBehaviour {
             Destroy(GameObject.Find("temporaryUI"));
             menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
         }
+    }
+    public void MusicEnable()
+    {
+        PlayerPrefs.SetInt("MusicEnabled", 1);
+        MusicEnabledIcon.SetActive(true);
+        MusicDisabledIcon.SetActive(false);
+    }
+    public void MusicDisable()
+    {
+        PlayerPrefs.SetInt("MusicEnabled", 0);
+        MusicEnabledIcon.SetActive(false);
+        MusicDisabledIcon.SetActive(true);
     }
 }

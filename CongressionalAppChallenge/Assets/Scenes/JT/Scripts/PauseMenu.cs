@@ -18,7 +18,6 @@ public class PauseMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -31,6 +30,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1;
         HUDcanvas.gameObject.SetActive(true);
         pausecanvas.gameObject.SetActive(false);
+        GameObject.Find("HUD").GetComponent<HUDController>().Paused = false;
     }
     //Button to open Quit Options (Are you sure)
     public void QuitButtonCanvas()
@@ -47,6 +47,7 @@ public class PauseMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
+        GameObject.Find("HUD").GetComponent<HUDController>().Paused = false;
     }
     public void QuitNoButton()
     {

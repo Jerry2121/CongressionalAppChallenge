@@ -14,10 +14,11 @@ public class HUDController : MonoBehaviour {
     public GameObject ResumeButton;
     public GameObject QuitButton;
     public GameObject Title;
+    public bool Paused;
 
     // Use this for initialization
     void Start () {
-		
+        Paused = false;
 	}
 	
 	// Update is called once per frame
@@ -26,6 +27,7 @@ public class HUDController : MonoBehaviour {
 	}
     public void Pause()
     {
+        Paused = true;
         Time.timeScale = 0;
         HUDcanvas.gameObject.SetActive(false);
         pausecanvas.gameObject.SetActive(true);
