@@ -18,6 +18,7 @@ Units
 
 Other
 -Ground* (grass)
+-projectiles (arrows, other tower stuff)
 
 *required
 **mostly finished
