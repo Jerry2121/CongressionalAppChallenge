@@ -40,7 +40,7 @@ public class GameManagerScript : MonoBehaviour {
     public int woodAcquired;
     public int oreAcquired;
     public int steelAcquired;
-    private int ranCode;
+    public int ranCode;
     [Space(25)]
     Image myImageComponent;
 
@@ -56,8 +56,9 @@ public class GameManagerScript : MonoBehaviour {
         {
             MusicEnabledIcon.SetActive(true);
             MusicDisabledIcon.SetActive(false);
+            BGMusic.GetComponent<AudioSource>().Play();
         }
-        else
+        else if (PlayerPrefs.GetInt("MusicEnabled") == 0) 
         {
             MusicEnabledIcon.SetActive(false);
             MusicDisabledIcon.SetActive(true);
@@ -77,10 +78,17 @@ public class GameManagerScript : MonoBehaviour {
             BGMusic.GetComponent<AudioSource>().Pause();
             WaveMusic.GetComponent<AudioSource>().Pause();
         }
-        else if (Time.timeScale == 1 && HUD.GetComponent<HUDController>().Paused == false && ranCode == 0 && PlayerPrefs.GetInt("MusicEnabled") == 1)
+        if (Time.timeScale == 1 && HUD.GetComponent<HUDController>().Paused == false && ranCode == 0 && PlayerPrefs.GetInt("MusicEnabled") == 1)
         {
-            BGMusic.GetComponent<AudioSource>().Play();
-            WaveMusic.GetComponent<AudioSource>().Play();
+            if (GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft <= 0)
+            {
+                BGMusic.GetComponent<AudioSource>().Play();
+            }
+            else if (GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft > 0)
+            {
+                //BGMusic.GetComponent<AudioSource>().Play();
+                WaveMusic.GetComponent<AudioSource>().Play();
+            }
             ranCode = 1;
         }
         HPText.GetComponent<TextMeshProUGUI>().text = "HP: " + TownHallHP;
@@ -133,7 +141,7 @@ public class GameManagerScript : MonoBehaviour {
             WaveButtonText.SetActive(true);
             WaveButton.SetActive(true);
         }
-        else if (canSpawnNextWave && GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft > 0 && PlayerPrefs.GetInt("MusicEnabled") == 1)
+        if (canSpawnNextWave && GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft > 0 && PlayerPrefs.GetInt("MusicEnabled") == 1)
         {
             BGMusic.GetComponent<AudioSource>().mute = true;
             BGMusic.SetActive(false);
@@ -155,8 +163,14 @@ public class GameManagerScript : MonoBehaviour {
     }
     public void NextWaveButton()
     {
+        ranCode = 0;
         canSpawnNextWave = true;
         GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft = 25;
+        if (!WaveMusic.GetComponent<AudioSource>().isPlaying && PlayerPrefs.GetInt("MusicEnabled") == 1)
+        {
+            WaveMusic.GetComponent<AudioSource>().Play();
+            BGMusic.GetComponent<AudioSource>().Stop();
+        }
         cooldownTimer = 0;
     }
 
