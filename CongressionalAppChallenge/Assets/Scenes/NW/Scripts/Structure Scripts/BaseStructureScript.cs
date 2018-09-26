@@ -6,6 +6,9 @@ public class BaseStructureScript : MonoBehaviour {
 
     public GameObject GameManager;
 
+    public int hpMax;
+    public int hp;
+
     public int buildingLevel;
     public int buildingID;
 
