@@ -245,7 +245,6 @@ public class Tile_Scripts : MonoBehaviour {
             }
             return;
         }
-        
 
         if (GameManager.GetComponent<GameManagerScript>().editMode == true && spaceOccupied == false)
         {

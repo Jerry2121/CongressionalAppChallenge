@@ -1480,7 +1480,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 691991228}
-        m_MethodName: DestroyStructure
+        m_MethodName: PlayerCheckFunction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

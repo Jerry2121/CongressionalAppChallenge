@@ -72,7 +72,8 @@ public class BuildStructureMenu : MonoBehaviour {
     public void PlayerCheckCancel()
     {
         playerCheckMenu.SetActive(false);
-        MenuHardFalse();
+        GameManager.GetComponent<GameManagerScript>().selectedTile = null;
+        MenuDisplayFunction();
     }
 
     public void PlayerCheckFunction()
@@ -206,8 +207,7 @@ public class BuildStructureMenu : MonoBehaviour {
             case "destroyStructure":
                 GameObject.Find("TilesBase").GetComponent<DestroyStructureScript>().DestroyStructure();
                 break;
-        }
-    
+        }    
     }
 
     // int buttonType
@@ -245,6 +245,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 productionStructuresMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 12:
@@ -252,6 +253,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 productionStructuresMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 13:
@@ -259,6 +261,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 productionStructuresMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 14:
@@ -266,6 +269,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 productionStructuresMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 21:
@@ -273,6 +277,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 villageStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 22:
@@ -280,6 +285,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 villageStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 23:
@@ -287,6 +293,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 villageStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 24:
@@ -294,6 +301,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 villageStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 25:
@@ -301,12 +309,14 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 villageStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 26:
                 buildStructureType = 26;
                 villageStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 31:
@@ -314,6 +324,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 attackStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 32:
@@ -321,6 +332,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 attackStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 33:
@@ -328,6 +340,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 attackStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 34:
@@ -335,6 +348,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 attackStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 35:
@@ -342,6 +356,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 attackStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 41:
@@ -349,6 +364,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 defenseStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 42:
@@ -356,6 +372,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 defenseStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
             case 43:
@@ -363,6 +380,7 @@ public class BuildStructureMenu : MonoBehaviour {
                 actionType = "buildStructure";
                 defenseStructureMenu.SetActive(false);
                 playerCheckMenu.SetActive(true);
+                buildStructureMenu.SetActive(false);
                 break;
 
                 // These are our Village Type building buttons

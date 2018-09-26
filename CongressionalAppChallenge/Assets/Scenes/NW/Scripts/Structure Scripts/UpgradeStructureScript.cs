@@ -21,6 +21,7 @@ public class UpgradeStructureScript : MonoBehaviour {
     {
         MenuCanvas.GetComponent<BuildStructureMenu>().upgradeStructureMenu.SetActive(false);
         MenuCanvas.GetComponent<BuildStructureMenu>().playerCheckMenu.SetActive(true);
+        MenuCanvas.GetComponent<BuildStructureMenu>().buildStructureMenu.SetActive(false);
         MenuCanvas.GetComponent<BuildStructureMenu>().actionType = "upgradeStructure";
     }
 
