@@ -178,6 +178,7 @@ public class UpgradeStructureScript : MonoBehaviour {
 
         GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().ShowTilePlacement();
         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
+        MenuCanvas.GetComponent<BuildStructureMenu>().playerCheckMenu.SetActive(false);
         MenuCanvas.GetComponent<BuildStructureMenu>().upgradeStructureMenu.SetActive(false);
     }
 

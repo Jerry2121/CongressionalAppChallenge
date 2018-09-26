@@ -10,6 +10,13 @@ public class DestroyStructureScript : MonoBehaviour {
     public GameObject SelectedTile;
     public GameObject MenuCanvas;
 
+    public void PlayerCheckFunction()
+    {
+        MenuCanvas.GetComponent<BuildStructureMenu>().upgradeStructureMenu.SetActive(false);
+        MenuCanvas.GetComponent<BuildStructureMenu>().playerCheckMenu.SetActive(true);
+        MenuCanvas.GetComponent<BuildStructureMenu>().actionType = "destroyStructure";
+    }
+
     public void DestroyStructure()
     {
         selectedStructure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure;
@@ -28,6 +35,8 @@ public class DestroyStructureScript : MonoBehaviour {
         GameManager.GetComponent<GameManagerScript>().stoneAcquired += selectedStructure.GetComponent<BaseStructureScript>().stoneReturned;
         GameManager.GetComponent<GameManagerScript>().oreAcquired += selectedStructure.GetComponent<BaseStructureScript>().oreReturned;
         GameManager.GetComponent<GameManagerScript>().steelAcquired += selectedStructure.GetComponent<BaseStructureScript>().steelReturned;
+
+        MenuCanvas.GetComponent<BuildStructureMenu>().playerCheckMenu.SetActive(false);
 
         Destroy(selectedStructure);
     }

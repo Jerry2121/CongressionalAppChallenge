@@ -71,6 +71,7 @@ public class BuildStructureMenu : MonoBehaviour {
 
     public void PlayerCheckCancel()
     {
+        playerCheckMenu.SetActive(false);
         MenuHardFalse();
     }
 
