@@ -45,7 +45,6 @@ public class SpawnTiles : MonoBehaviour {
         }
 
         townHallParent.GetComponent<Tile_Scripts>().SpawnTownHall();
-        Debug.Log(townHallParent.name);
 
         menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
     }

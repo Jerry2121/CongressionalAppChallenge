@@ -12,7 +12,7 @@ public class TowersStructureScript : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Enemies")
         {
-            Debug.Log("Adding enemy to list");
+            //Debug.Log("Adding enemy to list");
             enemiesInRange.Add(collision.gameObject);
         }
     }

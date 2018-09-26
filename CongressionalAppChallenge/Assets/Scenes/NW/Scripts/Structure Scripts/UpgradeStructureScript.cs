@@ -35,7 +35,6 @@ public class UpgradeStructureScript : MonoBehaviour {
         GameManager.GetComponent<GameManagerScript>().steelAcquired -= selectedStructure.GetComponent<BaseStructureScript>().steelUpgradeRequirement;
 
         selectedStructure.GetComponent<BaseStructureScript>().buildingLevel++;
-        Debug.Log(selectedStructure.GetComponent<BaseStructureScript>().buildingLevel);
 
         switch (selectedStructure.GetComponent<BaseStructureScript>().buildingID)
         {

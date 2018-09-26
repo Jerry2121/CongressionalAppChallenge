@@ -64,7 +64,6 @@ public class SpawnerControl : MonoBehaviour {
     private IEnumerator SpawnEnemies(int enemies, int myWave, Vector3 spawn)
     {
         log++;
-        Debug.Log("IEnumerator Started " + log + " times");
         int myWaveCount = myWave;
         int count = 0;
         waveCount++;
@@ -99,7 +98,6 @@ public class SpawnerControl : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("The Wave Count Number is... " + waveCount);
         SpawnTime += Time.deltaTime;
         if (SpawnTime >= 3.2 && GetComponent<GameManagerScript>().canSpawnNextWave == true)
         {
@@ -141,7 +139,6 @@ public class SpawnerControl : MonoBehaviour {
 	}
     public void RandomWave ()
     {
-        Debug.Log("Random Initalized");
         //SS1
         GameObject e1 = Enemy1;
         d2 = Random.Range(1, 6);

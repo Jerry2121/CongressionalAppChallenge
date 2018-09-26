@@ -30,7 +30,6 @@ public class BuildStructureMenu : MonoBehaviour {
 
     public void MenuDisplayFunction()
     {
-        Debug.Log("We're running the MenuDisplayFunction!");
         defenseStructureMenu.SetActive(false);
         attackStructureMenu.SetActive(false);
         villageStructureMenu.SetActive(false);
@@ -42,7 +41,6 @@ public class BuildStructureMenu : MonoBehaviour {
             buildStructureMenu.SetActive(false);
             return;
         }
-        Debug.Log("Build structure = " + !buildStructureMenuActive + " and selected tile != null = " + (GameManager.GetComponent<GameManagerScript>().selectedTile != null));
         if (!buildStructureMenuActive && GameManager.GetComponent<GameManagerScript>().selectedTile != null)
         {
             buildStructureMenu.SetActive(true);
@@ -215,7 +213,6 @@ public class BuildStructureMenu : MonoBehaviour {
     // 11 = Quarry ; 12 = Sawmill ; 13 = Mine ; 14 = Forge
    public void MenuButtonClick(int buttonType)
     {
-        Debug.Log("A build mode menu button has been pressed!");
 
         switch (buttonType)
         {

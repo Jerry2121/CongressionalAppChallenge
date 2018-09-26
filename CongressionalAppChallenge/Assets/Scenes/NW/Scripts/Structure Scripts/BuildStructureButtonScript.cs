@@ -38,7 +38,6 @@ public class BuildStructureButtonScript : MonoBehaviour {
                             GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied ||
                                 GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied)
                     {
-                        Debug.Log("Can't place this structure");
                         GetComponent<Button>().interactable = false;
                         return;
                     }

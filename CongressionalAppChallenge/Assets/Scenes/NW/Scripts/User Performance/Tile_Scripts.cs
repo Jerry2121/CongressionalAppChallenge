@@ -61,12 +61,10 @@ public class Tile_Scripts : MonoBehaviour {
     {
         if (EventSystem.current.IsPointerOverGameObject() || IsPointerOverUIObject())
         {
-            Debug.Log("Aaron is veryvery smart");
             return;
         }
         if (GameManager.GetComponent<GameManagerScript>().editMode == false)
         {
-            Debug.Log("editMode isn't active!");
             return;
         }
 
@@ -87,32 +85,26 @@ public class Tile_Scripts : MonoBehaviour {
         {
 
             case 0:
-                Debug.Log("This is an empty tile");
                 menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
                 break;
 
             case 11:
-                Debug.Log("This is an occupied tile; buildingType = ID-11, Quarry");
                 menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                 break;
 
             case 12:
-                Debug.Log("This is an occupied tile; buildingType = ID-12, Sawmill");
                 menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                 break;
 
             case 13:
-                Debug.Log("This is an occupied tile; buildingType = ID-13, Mine");
                 menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                 break;
 
             case 14:
-                Debug.Log("This is an occupied tile; buildingType = ID-14, Forge");
                 menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                 break;
 
             case -1:
-                Debug.Log("This is your town hall");
                 menuCanvas.GetComponent<BuildStructureMenu>().MenuHardFalse();
                 break;
         }
@@ -260,7 +252,7 @@ public class Tile_Scripts : MonoBehaviour {
 
         else
         {
-            Debug.Log("Something's amiss here...");
+            //Debug.Log("Something's amiss here...");
         }
     }
 }
