@@ -21,7 +21,7 @@ public class TowerAttack : MonoBehaviour
 
     private float startFireRate;
     private Transform target;
-    private EnemyHP targetEnemy;
+    private EnemyHP targetEnemyHP;
     private float fireCountdown = 0f;
 
     // Use this for initialization
@@ -33,6 +33,16 @@ public class TowerAttack : MonoBehaviour
 
     void UpdateTarget()
     {
+        //if you already have a target in range, do nothing and keep attacking it
+        if (target != null)
+        {
+            float currentTargetDistance = Vector2.Distance(transform.position, target.transform.position);
+            if(currentTargetDistance <= range)
+            {
+                return;
+            }
+        }
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
@@ -50,7 +60,7 @@ public class TowerAttack : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
-            targetEnemy = nearestEnemy.GetComponent<EnemyHP>();
+            targetEnemyHP = nearestEnemy.GetComponent<EnemyHP>();
         }
         else
             target = null;
@@ -104,7 +114,7 @@ public class TowerAttack : MonoBehaviour
 
     void Laser()
     {
-        targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemyHP.TakeDamage(damageOverTime * Time.deltaTime);
         //targetEnemy.Slow(slowAmount);
 
         if (!lineRenderer.enabled)
