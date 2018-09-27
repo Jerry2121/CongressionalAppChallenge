@@ -71,11 +71,11 @@ public class TowerAttack : MonoBehaviour
     void Update()
     {
         //see if the enemy is in map bounds
-        /*if(target.Whatever.isInRange == false)
+        if(target.gameObject.GetComponent<EnemyChase>().cannotAttack)
         {
             return;
         }
-        */
+        
 
         if (target == null)
         {
