@@ -107,68 +107,8 @@ public class BaseStructureScript : MonoBehaviour {
             case 21:
 
                 // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
-            case 22:
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
-            case 23:
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
-            case 24:
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
-            case 25:
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
-            case 26:
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
+                woodUpgradeRequirement = 35;
+                stoneUpgradeRequirement = 15;
 
                 BuildingLevelAnalysis();
 
@@ -189,83 +129,7 @@ public class BaseStructureScript : MonoBehaviour {
 
                 break;
 
-            case 32:
-                // There will be a couple of 'GetComponent's here to grab tower properties like damage
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
-            case 33:
-                // There will be a couple of 'GetComponent's here to grab tower properties like damage
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
-            case 34:
-                // There will be a couple of 'GetComponent's here to grab tower properties like damage
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
-            case 35:
-                // There will be a couple of 'GetComponent's here to grab tower properties like damage
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
             case 41:
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
-            case 42:
-
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
-
-                BuildingLevelAnalysis();
-
-                parentTiles.Add(gameObject);
-
-                break;
-
-            case 43:
 
                 // Upgrade requirement = 50;
                 woodUpgradeRequirement = 15;

@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: d70646542a0261e4a9b57e1298180e22
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - GameManager: {instanceID: 0}
+  - wallSprite_Base: {instanceID: 0}
+  - wallSprite_Cross: {instanceID: 0}
+  - wallSprite_CrossLeft: {instanceID: 0}
+  - wallSprite_CrossUp: {instanceID: 0}
+  - wallSprite_CrossRight: {instanceID: 0}
+  - wallSprite_CrossDown: {instanceID: 0}
+  - wallSprite_CornerA: {fileID: 21300008, guid: 80f0152735995ee4fb4db15fc622809a,
+      type: 3}
+  - wallSprite_CornerB: {instanceID: 0}
+  - wallSprite_CornerC: {instanceID: 0}
+  - wallSprite_CornerD: {instanceID: 0}
+  - wallSprite_Hori: {instanceID: 0}
+  - wallSprite_Verti: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

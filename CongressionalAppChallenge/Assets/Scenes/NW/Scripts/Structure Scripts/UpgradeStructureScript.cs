@@ -39,6 +39,11 @@ public class UpgradeStructureScript : MonoBehaviour {
         switch (selectedStructure.GetComponent<BaseStructureScript>().buildingID)
         {
             case 11:
+                for (int i = 0; i < selectedStructure.GetComponent<BaseStructureScript>().parentTiles.Count; i++)
+                {
+                    selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().staticPriorityValue += 10;
+                }
+
                 switch (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel)
                 {
                     case 2:
@@ -65,6 +70,11 @@ public class UpgradeStructureScript : MonoBehaviour {
                 break;
 
             case 12:
+                for (int i = 0; i < selectedStructure.GetComponent<BaseStructureScript>().parentTiles.Count; i++)
+                {
+                    selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().staticPriorityValue += 8;
+                }
+
                 switch (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel)
                 {
                     case 2:
@@ -91,6 +101,11 @@ public class UpgradeStructureScript : MonoBehaviour {
                 break;
 
             case 13:
+                for (int i = 0; i < selectedStructure.GetComponent<BaseStructureScript>().parentTiles.Count; i++)
+                {
+                    selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().staticPriorityValue += 6;
+                }
+
                 switch (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel)
                 {
                     case 2:
@@ -119,6 +134,11 @@ public class UpgradeStructureScript : MonoBehaviour {
                 break;
 
             case 14:
+                for (int i = 0; i < selectedStructure.GetComponent<BaseStructureScript>().parentTiles.Count; i++)
+                {
+                    selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().staticPriorityValue += 4;
+                }
+
                 switch (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel)
                 {
                     case 2:
@@ -147,7 +167,38 @@ public class UpgradeStructureScript : MonoBehaviour {
                 }
                 break;
 
+            case 21:
+                SelectedTile.GetComponent<Tile_Scripts>().staticPriorityValue += 5;
+
+                switch (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel)
+                {
+                    case 2:
+                        // Upgrade requirement = 100
+                        selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement = 70;
+                        selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement = 30;
+                        break;
+
+                    case 3:
+                        // Upgrade requirement = 175
+                        selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement = 115;
+                        selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement = 45;
+                        selectedStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement = 15;
+                        break;
+
+                    case 4:
+                        // Upgrade requirement = 255
+                        selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement = 150;
+                        selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement = 60;
+                        selectedStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement = 30;
+                        selectedStructure.GetComponent<BaseStructureScript>().steelUpgradeRequirement = 15;
+                        break;
+                }
+                
+                break;
+
             case 31:
+                SelectedTile.GetComponent<Tile_Scripts>().staticPriorityValue += 15;
+
                 switch (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel)
                 {
                     case 2:
@@ -197,9 +248,9 @@ public class UpgradeStructureScript : MonoBehaviour {
                 }
 
                 else if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement &&
-                        GameManager.GetComponent<GameManagerScript>().stoneAcquired >= selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement &&
-                            GameManager.GetComponent<GameManagerScript>().oreAcquired >= selectedStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement &&
-                                GameManager.GetComponent<GameManagerScript>().steelAcquired >= selectedStructure.GetComponent<BaseStructureScript>().steelUpgradeRequirement)
+                            GameManager.GetComponent<GameManagerScript>().stoneAcquired >= selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement &&
+                                GameManager.GetComponent<GameManagerScript>().oreAcquired >= selectedStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement &&
+                                    GameManager.GetComponent<GameManagerScript>().steelAcquired >= selectedStructure.GetComponent<BaseStructureScript>().steelUpgradeRequirement)
                 {
                     upgradeAvailable = true;
                 }
