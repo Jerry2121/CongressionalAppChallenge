@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: aeb49bb5863df9b4dae7155e0d1279ec
   - enabled: 1
-    path: Assets/Scenes/AW/TestGame.unity
-    guid: 4d2c8603f945e614ea1056d2fadc6445
+    path: Assets/Scenes/MainGame.unity
+    guid: 89d275b2859cc0a40bedd77993caad19
   - enabled: 1
     path: Assets/Scenes/LooseGame.unity
     guid: 10261d9a48dc5ba4c89fcc12605dfee3

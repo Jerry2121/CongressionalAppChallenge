@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 114651265025357758}
   - component: {fileID: 61832920135763772}
   - component: {fileID: 114910665598093728}
+  - component: {fileID: 61436583762669982}
   m_Layer: 8
   m_Name: TownHallTile
   m_TagString: Base
@@ -163,6 +164,31 @@ Transform:
   m_Father: {fileID: 4278409481270680}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61436583762669982
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1641856209188398}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.48396337, y: 0.5053456}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.7590606, y: 2.9514985}
+  m_EdgeRadius: 0
 --- !u!61 &61832920135763772
 BoxCollider2D:
   m_ObjectHideFlags: 1
