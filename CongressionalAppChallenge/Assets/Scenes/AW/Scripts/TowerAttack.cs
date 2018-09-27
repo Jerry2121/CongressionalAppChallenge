@@ -70,11 +70,7 @@ public class TowerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //see if the enemy is in map bounds
-        if(target.gameObject.GetComponent<EnemyChase>().cannotAttack)
-        {
-            return;
-        }
+
         
 
         if (target == null)
@@ -87,6 +83,12 @@ public class TowerAttack : MonoBehaviour
                 }
 
             }
+            return;
+        }
+
+        //see if the enemy is in map bounds
+        if(target.gameObject.GetComponent<EnemyChase>().cannotAttack)
+        {
             return;
         }
 
