@@ -31,7 +31,8 @@ public class WallSpriteChanger : MonoBehaviour {
     void Start()
     {
         GameManager = GameObject.Find("GameManager");
-        // GameManager.GetComponent<GameManagerScript>().WallTiles.Add(gameObject);
+        GameManager.GetComponent<GameManagerScript>().WallTiles.Add(gameObject);
+        NeighboringWallCheck();
     }
 
     public void NeighboringWallCheck()

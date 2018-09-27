@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70646542a0261e4a9b57e1298180e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
   wallSprite_Base: {fileID: 21300000, guid: b2eaea1f556298546b3387e9fef11783, type: 3}
   wallSprite_Cross: {fileID: 21300002, guid: b2eaea1f556298546b3387e9fef11783, type: 3}
   wallSprite_CrossLeft: {fileID: 21300010, guid: b2eaea1f556298546b3387e9fef11783,
@@ -119,6 +120,14 @@ MonoBehaviour:
   wallSprite_CornerB: {fileID: 21300004, guid: 80f0152735995ee4fb4db15fc622809a, type: 3}
   wallSprite_CornerC: {fileID: 21300006, guid: 80f0152735995ee4fb4db15fc622809a, type: 3}
   wallSprite_CornerD: {fileID: 21300010, guid: 80f0152735995ee4fb4db15fc622809a, type: 3}
+  wallSprite_HoriCapRight: {fileID: 21300004, guid: 0f3979f7277931343af3ed2dfacaf5a6,
+    type: 3}
+  wallSprite_HoriCapLeft: {fileID: 21300006, guid: 0f3979f7277931343af3ed2dfacaf5a6,
+    type: 3}
+  wallSprite_VertiCapUp: {fileID: 21300000, guid: 0f3979f7277931343af3ed2dfacaf5a6,
+    type: 3}
+  wallSprite_VertiCapDown: {fileID: 21300002, guid: 0f3979f7277931343af3ed2dfacaf5a6,
+    type: 3}
   wallSprite_Hori: {fileID: 21300000, guid: 80f0152735995ee4fb4db15fc622809a, type: 3}
   wallSprite_Verti: {fileID: 21300002, guid: 80f0152735995ee4fb4db15fc622809a, type: 3}
 --- !u!114 &114522976610437176

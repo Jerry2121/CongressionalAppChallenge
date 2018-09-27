@@ -43,6 +43,8 @@ public class GameManagerScript : MonoBehaviour {
     public int ranCode;
     [Space(25)]
     Image myImageComponent;
+    [Space(25)]
+    public List<GameObject> WallTiles;
 
 
     // Use this for initialization
@@ -210,5 +212,13 @@ public class GameManagerScript : MonoBehaviour {
         PlayerPrefs.SetInt("MusicEnabled", 0);
         MusicEnabledIcon.SetActive(false);
         MusicDisabledIcon.SetActive(true);
+    }
+
+    public void WallCheckFunction()
+    {
+        for (int i = 0; i < WallTiles.Count; i++)
+        {
+            WallTiles[i].GetComponent<WallSpriteChanger>().NeighboringWallCheck();
+        }
     }
 }

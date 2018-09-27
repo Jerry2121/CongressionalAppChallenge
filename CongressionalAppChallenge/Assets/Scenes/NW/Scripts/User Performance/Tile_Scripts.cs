@@ -281,7 +281,7 @@ public class Tile_Scripts : MonoBehaviour {
             case 41:
                 structure.GetComponent<BaseStructureScript>().hpMax = GameManager.GetComponent<GameManagerScript>().DefenseStructureHP;
                 staticPriorityValue += 1;
-                // GameManager.GetComponent<GameManagerScript>().WallCheckFunction();
+                GameManager.GetComponent<GameManagerScript>().WallCheckFunction();
                 break;
         }
     }
