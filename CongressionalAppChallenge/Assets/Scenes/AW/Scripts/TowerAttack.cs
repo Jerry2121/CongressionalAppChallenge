@@ -21,7 +21,7 @@ public class TowerAttack : MonoBehaviour
 
     private float startFireRate;
     private Transform target;
-    //private Enemy targetEnemy;
+    private EnemyHP targetEnemy;
     private float fireCountdown = 0f;
 
     // Use this for initialization
@@ -50,7 +50,7 @@ public class TowerAttack : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
-            //targetEnemy = nearestEnemy.GetComponent<Enemy>();
+            targetEnemy = nearestEnemy.GetComponent<EnemyHP>();
         }
         else
             target = null;
@@ -97,7 +97,7 @@ public class TowerAttack : MonoBehaviour
 
     void Laser()
     {
-        //targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
         //targetEnemy.Slow(slowAmount);
 
         if (!lineRenderer.enabled)
@@ -112,6 +112,14 @@ public class TowerAttack : MonoBehaviour
 
     void Shoot()
     {
+        if(bulletPrefab == null)
+        {
+            Debug.LogError("TOWERATTACK -- SHOOT: You haven't given tower " + gameObject + " a bullet prefab!");
+            return;
+        }
+
+
+
         //Spawn on top of tower sprite
         GameObject bulletGO = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
         //spawn below
