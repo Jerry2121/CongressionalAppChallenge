@@ -21,6 +21,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if the target is already dead, destroy the bullet
         if (target == null)
         {
             Destroy(gameObject);
@@ -44,6 +45,7 @@ public class Bullet : MonoBehaviour
     {
         //GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
         //Destroy(effectIns, .5f);
+
 
         if (explosionRadius > 0)
         {

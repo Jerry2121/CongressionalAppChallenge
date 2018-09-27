@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4131604232346148}
   - component: {fileID: 114400164246344998}
   - component: {fileID: 114411192973498740}
+  - component: {fileID: 114193449665299766}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -41,6 +42,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114193449665299766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733655284807348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bfae3aa52e9bf44a8bd1f778c534e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera_GameObject: {fileID: 0}
+  xMax: 18.85
+  yMax: 12.04
 --- !u!114 &114400164246344998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -56,6 +71,8 @@ MonoBehaviour:
   menuCanvas: {fileID: 0}
   Hammer: {fileID: 0}
   X: {fileID: 0}
+  BGMusic: {fileID: 0}
+  WaveMusic: {fileID: 0}
   HPText: {fileID: 0}
   WoodText: {fileID: 0}
   StoneText: {fileID: 0}
@@ -63,17 +80,25 @@ MonoBehaviour:
   SteelText: {fileID: 0}
   WaveButtonText: {fileID: 0}
   WaveButton: {fileID: 0}
+  HUD: {fileID: 0}
+  MusicEnabledIcon: {fileID: 0}
+  MusicDisabledIcon: {fileID: 0}
   StartWaveBG: {fileID: 21300000, guid: ec61e4d5705268449afdb3a9df530ab8, type: 3}
   NextWaveBG: {fileID: 21300002, guid: ec61e4d5705268449afdb3a9df530ab8, type: 3}
   canSpawnNextWave: 0
   isFirstInstance: 0
   editMode: 0
   cooldownTimer: 0
-  HP: 100
+  TownHallHP: 100
+  ProductionStuctureHP: 5
+  VillageStuctureHP: 5
+  TowerStuctureHP: 5
+  DefenseStructureHP: 5
   stoneAcquired: 100
   woodAcquired: 100
   oreAcquired: 100
   steelAcquired: 100
+  ranCode: 0
 --- !u!114 &114411192973498740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,9 +114,9 @@ MonoBehaviour:
   SpawnerLeft: {fileID: 0}
   SpawnerRight: {fileID: 0}
   SpawnerBot: {fileID: 0}
-  Enemy1: {fileID: 1625940490435442, guid: b91fd9ec49dcf3e4b87c2ed9b8417fae, type: 2}
+  Enemy1: {fileID: 1625940490435442, guid: bce288daa2b280044a4faa51fbb72dec, type: 2}
   Enemy2: {fileID: 1625940490435442, guid: 5f0abffa67fa49f48a5a2673838e2cd1, type: 2}
-  Enemy3: {fileID: 1336370272244178, guid: 1698c9c9aede9c3498b65c5cc805ff36, type: 2}
+  Enemy3: {fileID: 1413487808738946, guid: 839fe0583d0b10d4fbcec2cea7155b79, type: 2}
   Enemy4: {fileID: 1843917499119642, guid: e7927b1fa11c7ed40b2e0620e00cd2cf, type: 2}
   Enemy5: {fileID: 1843917499119642, guid: f0c9b23827242c54b8c9610967ddedce, type: 2}
   SpawnTime: 0

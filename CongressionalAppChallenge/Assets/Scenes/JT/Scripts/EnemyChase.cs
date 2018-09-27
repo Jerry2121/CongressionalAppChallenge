@@ -7,6 +7,7 @@ public class EnemyChase : MonoBehaviour {
 	public GameObject target;
 	public float chaseSpeed = 2.0f;
 	private bool home = true;
+    public bool cannotAttack;
 	private Vector3 homePos;
 
 	private Vector2 moveDirection;
@@ -16,7 +17,7 @@ public class EnemyChase : MonoBehaviour {
 
 	void Start () {
 		homePos = transform.position;
-        
+        cannotAttack = false;
 
     }
 	
@@ -55,6 +56,25 @@ public class EnemyChase : MonoBehaviour {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
             collision.gameObject.GetComponent<HealthDefense>().hp--;
             Destroy(this.gameObject);
+        }
+    }
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Base")
+        {
+            chaseSpeed = 0;
+        }
+        else
+        {
+            chaseSpeed = 2.0f;
+        }
+        if(collision.gameObject.tag == "OutsideBarrier")
+        {
+            cannotAttack = true;
+        }
+        else
+        {
+            cannotAttack = false;
         }
     }
 }

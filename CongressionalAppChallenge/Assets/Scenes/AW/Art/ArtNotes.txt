@@ -10,5 +10,7 @@ Building Walls - Greyish - #79877a
 Building Doors - Brown - #673018
 Light - Yellow - #eedd82
 
+Thing to do when there's time
+ - Add grass or other ground beneath buildings
 
 Light Source is from Above and front right
