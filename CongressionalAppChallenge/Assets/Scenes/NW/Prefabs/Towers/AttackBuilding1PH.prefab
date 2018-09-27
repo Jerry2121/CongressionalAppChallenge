@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114998564379336704}
   - component: {fileID: 61114944128914240}
   - component: {fileID: 114200777459052028}
+  - component: {fileID: 114790932253836042}
   m_Layer: 12
   m_Name: AttackBuilding1PH
   m_TagString: Untagged
@@ -108,6 +109,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
+  parentTile: {fileID: 0}
+--- !u!114 &114790932253836042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1029278982227840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1768022650f545340abb4f0487759c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  fireRate: 1
+  enemyTag: Enemies
+  useConstantDamage: 0
+  damageOverTime: 30
+  slowAmount: 0.5
+  lineRenderer: {fileID: 0}
+  bulletPrefab: {fileID: 1050848121283270, guid: b1104345d9dfd004188f43252f0a5273,
+    type: 2}
 --- !u!114 &114998564379336704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,14 +141,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd38bf3ef05ec534f8a198eb25333bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
+  GameManager: {fileID: 1733655284807348, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+    type: 2}
+  hpMax: 0
+  hp: 0
   buildingLevel: 1
   buildingID: 31
+  woodReturned: 0
+  stoneReturned: 0
+  oreReturned: 0
+  steelReturned: 0
   woodUpgradeRequirement: 0
   stoneUpgradeRequirement: 0
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
   upgradeAvailable: 0
+  parentTiles: []
 --- !u!212 &212995271731601740
 SpriteRenderer:
   m_ObjectHideFlags: 1

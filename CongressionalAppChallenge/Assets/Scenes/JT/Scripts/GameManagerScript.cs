@@ -62,6 +62,8 @@ public class GameManagerScript : MonoBehaviour {
         {
             MusicEnabledIcon.SetActive(false);
             MusicDisabledIcon.SetActive(true);
+            BGMusic.GetComponent<AudioSource>().Stop();
+            WaveMusic.GetComponent<AudioSource>().Stop();
         }
         //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit mode";
     }
