@@ -9,8 +9,9 @@ public class EnemyChase : MonoBehaviour {
 	private bool home = true;
     public bool cannotAttack;
 	private Vector3 homePos;
+    private Animator animator;
 
-	private Vector2 moveDirection;
+    private Vector2 moveDirection;
 
 	public float maxMoveDistance = 10.0f;
 	public float chaseTriggerDistance = 1.0f;
@@ -18,6 +19,7 @@ public class EnemyChase : MonoBehaviour {
 	void Start () {
 		homePos = transform.position;
         cannotAttack = false;
+        animator = GetComponent<Animator>();
 
     }
 	
@@ -62,11 +64,16 @@ public class EnemyChase : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Base")
         {
+            if (this.gameObject.layer == 15)
+            {
+                animator.SetBool("Attack", true);
+            }
             chaseSpeed = 0;
         }
         else
         {
             chaseSpeed = 2.0f;
+            animator.SetBool("Attack", false);
         }
         if(collision.gameObject.tag == "OutsideBarrier")
         {

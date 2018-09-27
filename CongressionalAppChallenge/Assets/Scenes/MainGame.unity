@@ -3574,11 +3574,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114193449665299766, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
-        type: 2}
-      propertyPath: camera_GameObject
-      value: 
-      objectReference: {fileID: 9632962}
     - target: {fileID: 114411192973498740, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
         type: 2}
       propertyPath: SpawnerTop
@@ -3599,6 +3594,11 @@ Prefab:
       propertyPath: SpawnerBot
       value: 
       objectReference: {fileID: 534834808}
+    - target: {fileID: 114193449665299766, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: camera_GameObject
+      value: 
+      objectReference: {fileID: 9632962}
     - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
         type: 2}
       propertyPath: menuCanvas
