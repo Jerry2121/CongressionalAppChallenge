@@ -115,14 +115,14 @@ public class WallSpriteChanger : MonoBehaviour {
         }
 
         // If the neighboring tiles below and above are occupied with walls
-        else if (GameObject.Find("Tile(" + (transform.position.x + 1) + ", " + (transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().buildingID == 41 &&
-                        GameObject.Find("Tile(" + (transform.position.x - 1) + ", " + (transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().buildingID == 41)
+        else if (GameObject.Find("Tile(" + (transform.position.x) + ", " + (transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().buildingID == 41 &&
+                        GameObject.Find("Tile(" + (transform.position.x) + ", " + (transform.position.y - 1) + ")").GetComponent<Tile_Scripts>().buildingID == 41)
         {
             GetComponent<SpriteRenderer>().sprite = wallSprite_Verti;
         }
 
         // If the neighboring tile to the left is occupied with a wall
-        else if (GameObject.Find("Tile(" + (transform.position.x - 1) + ", " + (transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().buildingID == 41)
+        else if (GameObject.Find("Tile(" + (transform.position.x - 1) + ", " + (transform.position.y) + ")").GetComponent<Tile_Scripts>().buildingID == 41)
         {
             GetComponent<SpriteRenderer>().sprite = wallSprite_HoriCapLeft;
         }

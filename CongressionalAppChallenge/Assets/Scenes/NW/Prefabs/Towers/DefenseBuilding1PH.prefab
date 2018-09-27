@@ -120,9 +120,9 @@ MonoBehaviour:
   wallSprite_CornerB: {fileID: 21300004, guid: 80f0152735995ee4fb4db15fc622809a, type: 3}
   wallSprite_CornerC: {fileID: 21300006, guid: 80f0152735995ee4fb4db15fc622809a, type: 3}
   wallSprite_CornerD: {fileID: 21300010, guid: 80f0152735995ee4fb4db15fc622809a, type: 3}
-  wallSprite_HoriCapRight: {fileID: 21300004, guid: 0f3979f7277931343af3ed2dfacaf5a6,
+  wallSprite_HoriCapRight: {fileID: 21300006, guid: 0f3979f7277931343af3ed2dfacaf5a6,
     type: 3}
-  wallSprite_HoriCapLeft: {fileID: 21300006, guid: 0f3979f7277931343af3ed2dfacaf5a6,
+  wallSprite_HoriCapLeft: {fileID: 21300004, guid: 0f3979f7277931343af3ed2dfacaf5a6,
     type: 3}
   wallSprite_VertiCapUp: {fileID: 21300000, guid: 0f3979f7277931343af3ed2dfacaf5a6,
     type: 3}
