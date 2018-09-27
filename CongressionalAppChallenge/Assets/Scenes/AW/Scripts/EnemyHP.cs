@@ -41,7 +41,7 @@ public class EnemyHP : MonoBehaviour
 
     void Die()
     {
-        Debug.Log(this + "has died");
+        GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft--;
         isDead = true;
         //GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         //Destroy(effect, .5f);
