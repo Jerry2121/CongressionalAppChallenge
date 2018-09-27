@@ -60,6 +60,13 @@ public class TowerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //see if the enemy is in map bounds
+        /*if(target.Whatever.isInRange == false)
+        {
+            return;
+        }
+        */
+
         if (target == null)
         {
             if (useConstantDamage)
