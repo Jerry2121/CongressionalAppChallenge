@@ -33,11 +33,12 @@ public class TowerAttack : MonoBehaviour
 
     void UpdateTarget()
     {
-        //if you already have a target in range, do nothing and keep attacking it
+        //if you already have a target, see if its in range and attackable
         if (target != null)
         {
             float currentTargetDistance = Vector2.Distance(transform.position, target.transform.position);
-            if(currentTargetDistance <= range)
+            //if the target is in range and can be attacked, keep attacking it
+            if(currentTargetDistance <= range && target.gameObject.GetComponent<EnemyChase>().cannotAttack == false)
             {
                 return;
             }
@@ -70,8 +71,6 @@ public class TowerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
 
         if (target == null)
         {
