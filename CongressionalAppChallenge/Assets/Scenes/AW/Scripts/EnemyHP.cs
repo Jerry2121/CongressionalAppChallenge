@@ -6,13 +6,17 @@ public class EnemyHP : MonoBehaviour
 
     //so slowing knows what to set speed back to
     //public float startSpeed = 10f;
-    public float startHealth = 100;
-    //[HideInInspector]
-    public float health;
-    public int value = 25;
+    [SerializeField]
+    private float startHealth = 100;
+    [HideInInspector]
+    private float health;
+    [SerializeField]
+    private int value = 25;
+
     //public GameObject deathEffect;
     [Header("Unity Stuff")]
-    public Image healthBar;
+    [SerializeField]
+    private Image healthBar;
 
     [HideInInspector]
     //public float speed;
@@ -36,7 +40,7 @@ public class EnemyHP : MonoBehaviour
 
     public void Slow(float _percent)
     {
-        Debug.LogError("EnemyHP Slow -- This function is unfinished!");
+        Debug.LogError("EnemyHP -- Slow: This function is unfinished!");
         //speed = startSpeed * (1 - _percent);
     }
 

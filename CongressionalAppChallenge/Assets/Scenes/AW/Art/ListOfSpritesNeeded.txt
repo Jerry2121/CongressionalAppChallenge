@@ -1,6 +1,6 @@
 Buildings
 -Sawmill/Trees**
--Quarry
+-Quarry**
 -Mine**
 -Forge/Blacksmith**
 -Townhall**

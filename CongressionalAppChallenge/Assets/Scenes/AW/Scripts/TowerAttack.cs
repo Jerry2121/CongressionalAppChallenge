@@ -4,17 +4,26 @@ public class TowerAttack : MonoBehaviour
 {
 
     [Header("General")]
-    public float range = 5f;
+    [SerializeField]
+    private float range = 5f;
 
     [Header("Use Bullets (default)")]
-    public float fireRate = 1f;
-    public string enemyTag = "Enemy";
+    [SerializeField]
+    private float fireRate = 1f;
+    [SerializeField]
+    private string enemyTag = "Enemy";
 
     [Header("Use Constant Damage")]
-    public bool useConstantDamage = false;
-    public int damageOverTime = 30;
-    public float slowAmount = .5f;
-    public LineRenderer lineRenderer;
+    [SerializeField]
+    private bool useConstantDamage = false;
+    [SerializeField]
+    bool slowsEnemies = false;
+    [SerializeField]
+    private int damageOverTime = 30;
+    [SerializeField]
+    private float slowAmount = .5f;
+    [SerializeField]
+    private LineRenderer lineRenderer;
 
     [Header("Unity Setup")]
     public GameObject bulletPrefab;
@@ -115,9 +124,12 @@ public class TowerAttack : MonoBehaviour
     void Laser()
     {
         targetEnemyHP.TakeDamage(damageOverTime * Time.deltaTime);
-        //targetEnemy.Slow(slowAmount);
+        if (slowsEnemies)
+        {
+            targetEnemyHP.Slow(slowAmount);
+        }
 
-        if (!lineRenderer.enabled)
+        if (lineRenderer.enabled == false)
         {
             lineRenderer.enabled = true;
         }
@@ -134,9 +146,7 @@ public class TowerAttack : MonoBehaviour
             Debug.LogError("TOWERATTACK -- SHOOT: You haven't given tower " + gameObject + " a bullet prefab!");
             return;
         }
-
-
-
+        
         //Spawn on top of tower sprite
         GameObject bulletGO = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
         //spawn below
