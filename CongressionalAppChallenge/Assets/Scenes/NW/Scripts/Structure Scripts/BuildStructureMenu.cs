@@ -114,6 +114,8 @@ public class BuildStructureMenu : MonoBehaviour {
 
                     case 21:
                         GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[4], 21);
+                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= 10;
+                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= 10;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
@@ -150,6 +152,8 @@ public class BuildStructureMenu : MonoBehaviour {
 
                     case 31:
                         GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[10], 31);
+                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= 10;
+                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= 10;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
@@ -180,6 +184,7 @@ public class BuildStructureMenu : MonoBehaviour {
 
                     case 41:
                         GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(BuildingTypes[15], 41);
+                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= 12;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;

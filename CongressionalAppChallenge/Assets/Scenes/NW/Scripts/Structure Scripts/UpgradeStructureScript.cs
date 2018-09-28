@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UpgradeStructureScript : MonoBehaviour {
 
@@ -10,11 +11,79 @@ public class UpgradeStructureScript : MonoBehaviour {
     public GameObject SelectedTile;
     public GameObject MenuCanvas;
 
+    public GameObject WoodRequirement;
+    public GameObject StoneRequirement;
+    public GameObject OreRequirement;
+    public GameObject SteelRequirement;
+
+    public GameObject WoodReturned;
+    public GameObject StoneReturned;
+    public GameObject OreReturned;
+    public GameObject SteelReturned;
+
     public bool upgradeAvailable;
 
     void Update()
     {
         UpgradeCheck();
+        //Upgrade Requirements and updates the text for it.
+        if (GameManager.GetComponent<GameManagerScript>().selectedTile != null && GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure != null)
+        {
+            if (GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement > 0)
+            {
+                WoodRequirement.GetComponent<TextMeshProUGUI>().text = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement + " Wood";
+                StoneRequirement.SetActive(false);
+                OreRequirement.SetActive(false);
+                SteelRequirement.SetActive(false);
+                if (GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement > 0)
+                {
+                    StoneRequirement.SetActive(true);
+                    StoneRequirement.GetComponent<TextMeshProUGUI>().text = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement + " Stone";
+                    OreRequirement.SetActive(false);
+                    SteelRequirement.SetActive(false);
+                    if (GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement > 0)
+                    {
+                        OreRequirement.SetActive(true);
+                        OreRequirement.GetComponent<TextMeshProUGUI>().text = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement + " Ore";
+                        SteelRequirement.SetActive(false);
+                        if (GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().steelUpgradeRequirement > 0)
+                        {
+                            SteelRequirement.SetActive(true);
+                            SteelRequirement.GetComponent<TextMeshProUGUI>().text = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().steelUpgradeRequirement + " Steel";
+                        }
+                    }
+                }
+            }
+        }
+        //Returned Materials from Destoryed Structures if player decides to destory a building.
+        if (GameManager.GetComponent<GameManagerScript>().selectedTile != null && GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure != null)
+        {
+            if (GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().woodReturned > 0)
+            {
+                WoodReturned.GetComponent<TextMeshProUGUI>().text = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().woodReturned + " Wood";
+                StoneReturned.SetActive(false);
+                OreReturned.SetActive(false);
+                SteelReturned.SetActive(false);
+                if (GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().stoneReturned > 0)
+                {
+                    StoneReturned.SetActive(true);
+                    StoneReturned.GetComponent<TextMeshProUGUI>().text = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().stoneReturned + " Stone";
+                    OreReturned.SetActive(false);
+                    SteelReturned.SetActive(false);
+                    if (GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().oreReturned > 0)
+                    {
+                        OreReturned.SetActive(true);
+                        OreReturned.GetComponent<TextMeshProUGUI>().text = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().oreReturned + " Ore";
+                        SteelReturned.SetActive(false);
+                        if (GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().steelReturned > 0)
+                        {
+                            SteelReturned.SetActive(true);
+                            SteelReturned.GetComponent<TextMeshProUGUI>().text = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure.GetComponent<BaseStructureScript>().steelReturned + " Steel";
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public void PlayerCheckFunction()
