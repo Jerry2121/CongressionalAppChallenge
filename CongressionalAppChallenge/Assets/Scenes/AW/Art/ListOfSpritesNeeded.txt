@@ -10,6 +10,7 @@ Buildings
 -Fire Tower
 -Catapult
 -Cannon
+-Ice Tower
 
 Units
 -Melee Unit (swordsman**, rogue)

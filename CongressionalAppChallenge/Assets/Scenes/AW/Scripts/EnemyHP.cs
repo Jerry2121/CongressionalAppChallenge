@@ -51,7 +51,7 @@ public class EnemyHP : MonoBehaviour
 
         //GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         //Destroy(effect, .5f);
-        
+        Debug.Log(gameObject + "has died");
         Destroy(gameObject);
     }
 }
