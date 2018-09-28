@@ -313,10 +313,6 @@ MonoBehaviour:
   panSpeed: 20
   panBorderThickness: 20
   panLimit: {x: 20, y: 20}
-  zoomSpeed: 4
-  smoothSpeed: 2
-  minOrtho: 1
-  maxOrtho: 20
 --- !u!1 &81449114
 GameObject:
   m_ObjectHideFlags: 0
@@ -25889,6 +25885,7 @@ MonoBehaviour:
   oreAcquired: 100
   steelAcquired: 100
   ranCode: 0
+  WallTiles: []
 --- !u!1 &1998386712 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1744431228536150, guid: 01057831dc833794585f1b48c994ffb4,

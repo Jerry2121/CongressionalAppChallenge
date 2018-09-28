@@ -2,21 +2,23 @@
 
 public class TDCameraController : MonoBehaviour
 {
-
-    public float panSpeed = 20f;
-    public float panBorderThickness = 20f;
-    public Vector2 panLimit;
+    [SerializeField]
+    private float panSpeed = 20f;
+    [SerializeField]
+    private float panBorderThickness = 20f;
+    [SerializeField]
+    private Vector2 panLimit;
 
     //zoom values
-    public float zoomSpeed = 4f;
-    public float smoothSpeed = 2.0f;
-    public float minOrtho = 1.0f;
-    public float maxOrtho = 20.0f;
-    private float targetOrtho;
+    //public float zoomSpeed = 4f;
+    //public float smoothSpeed = 2.0f;
+    //public float minOrtho = 1.0f;
+    //public float maxOrtho = 20.0f;
+    //private float targetOrtho;
 
     void Start()
     {
-        targetOrtho = Camera.main.orthographicSize;
+        //targetOrtho = Camera.main.orthographicSize;
     }
 
     void Update()
@@ -54,17 +56,17 @@ public class TDCameraController : MonoBehaviour
             pos.x -= panSpeed * Time.deltaTime;
         }
 
-        float zoom = Input.GetAxis("Mouse ScrollWheel");
+        /*float zoom = Input.GetAxis("Mouse ScrollWheel");
         if (zoom != 0.0f)
         {
             targetOrtho -= zoom * zoomSpeed;
             targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
         }
-        Camera.main.orthographicSize = Mathf.MoveTowards(Camera.main.orthographicSize, targetOrtho, smoothSpeed * Time.deltaTime);
+        Camera.main.orthographicSize = Mathf.MoveTowards(Camera.main.orthographicSize, targetOrtho, smoothSpeed * Time.deltaTime);*/
         #endregion
 #else
         #region Mobile Camera Controls
-        if (Input.touchCount == 2)
+        /*if (Input.touchCount == 2)
         {
             Touch touchZero = Input.GetTouch(0);
             Touch touchOne = Input.GetTouch(1);
@@ -81,7 +83,7 @@ public class TDCameraController : MonoBehaviour
             targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
             Camera.main.orthographicSize = Mathf.MoveTowards(Camera.main.orthographicSize, targetOrtho, smoothSpeed * Time.deltaTime);
             return;
-        }
+        }*/
 
         if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
