@@ -2,11 +2,14 @@
 
 public class Bullet : MonoBehaviour
 {
-
-    public int damage = 50;
-    public float speed = 70f;
-    public GameObject impactEffect;
-    public float explosionRadius = 0f;
+    [SerializeField]
+    private int damage = 50;
+    [SerializeField]
+    private float speed = 70f;
+    //[SerializeField]
+    //public GameObject impactEffect;
+    [SerializeField]
+    private float explosionRadius = 0f;
 
     private bool hitTarget;
     private string enemyTag = "Enemies";
