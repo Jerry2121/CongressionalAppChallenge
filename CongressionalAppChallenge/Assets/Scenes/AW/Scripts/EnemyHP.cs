@@ -36,6 +36,7 @@ public class EnemyHP : MonoBehaviour
 
     public void Slow(float _percent)
     {
+        Debug.LogError("EnemyHP Slow -- This function is unfinished!");
         //speed = startSpeed * (1 - _percent);
     }
 
@@ -43,10 +44,10 @@ public class EnemyHP : MonoBehaviour
     {
         GameObject.FindWithTag("Base").GetComponent<TownHallScript>().Enemiesleft--;
         isDead = true;
+
         //GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         //Destroy(effect, .5f);
-
-
+        
         Destroy(gameObject);
     }
 }
