@@ -20,6 +20,7 @@ public class HealthDefense : MonoBehaviour {
         {
             parentTile.GetComponent<Tile_Scripts>().buildingID = 0;
             parentTile.GetComponent<Tile_Scripts>().spaceOccupied = false;
+            GameObject.Find("GameManager").GetComponent<GameManagerScript>().WallTiles.Remove(gameObject);
 
             Destroy(this.gameObject);
         }
