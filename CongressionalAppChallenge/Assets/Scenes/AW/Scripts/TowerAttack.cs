@@ -30,7 +30,7 @@ public class TowerAttack : MonoBehaviour
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         startFireRate = fireRate;
     }
-
+    //this will run every 0.5 seconds
     void UpdateTarget()
     {
         //if you already have a target, see if its in range and attackable
