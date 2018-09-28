@@ -3489,9 +3489,9 @@ MonoBehaviour:
   SpawnerLeft: {fileID: 200382083}
   SpawnerRight: {fileID: 594617135}
   SpawnerBot: {fileID: 534834808}
-  Enemy1: {fileID: 1625940490435442, guid: b91fd9ec49dcf3e4b87c2ed9b8417fae, type: 2}
+  Enemy1: {fileID: 1625940490435442, guid: bce288daa2b280044a4faa51fbb72dec, type: 2}
   Enemy2: {fileID: 1625940490435442, guid: 5f0abffa67fa49f48a5a2673838e2cd1, type: 2}
-  Enemy3: {fileID: 1413487808738946, guid: 9d2bef110b306c943bc7c6f4b7e05cf8, type: 2}
+  Enemy3: {fileID: 1336370272244178, guid: 1698c9c9aede9c3498b65c5cc805ff36, type: 2}
   Enemy4: {fileID: 1843917499119642, guid: e7927b1fa11c7ed40b2e0620e00cd2cf, type: 2}
   Enemy5: {fileID: 1843917499119642, guid: f0c9b23827242c54b8c9610967ddedce, type: 2}
   SpawnTime: 0
