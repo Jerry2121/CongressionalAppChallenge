@@ -90,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336370272244178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.686805, y: -7.560274, z: 0}
+  m_LocalPosition: {x: 2.3186178, y: -6.864718, z: 0}
   m_LocalScale: {x: 0.5427269, y: 0.59596497, z: 1}
   m_Children:
   - {fileID: 224250372955583286}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.491}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.491}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -188,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1641856209188398, guid: cef25fa0f86041e459a30c547cec21e5, type: 2}
   chaseSpeed: 2
+  cannotAttack: 0
   maxMoveDistance: 10
   chaseTriggerDistance: 1
 --- !u!114 &114441854349805906
@@ -223,7 +224,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 100
-  health: 0
   value: 25
   healthBar: {fileID: 114668891468578350}
 --- !u!114 &114668891468578350
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38377282, g: 1, b: 0.08823532, a: 0.547}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.547}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
