@@ -11,7 +11,7 @@ public class TowerAttack : MonoBehaviour
     [SerializeField]
     private float fireRate = 1f;
     [SerializeField]
-    private string enemyTag = "Enemy";
+    private string enemyTag = "Enemies";
 
     [Header("Use Constant Damage")]
     [SerializeField]

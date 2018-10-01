@@ -6,19 +6,21 @@ public class Bullet : MonoBehaviour
     private int damage = 50;
     [SerializeField]
     private float speed = 70f;
+    [SerializeField]
+    private bool towerBullet = true;
     //[SerializeField]
     //public GameObject impactEffect;
     [SerializeField]
     private float explosionRadius = 0f;
 
     private bool hitTarget;
-    private string enemyTag = "Enemies";
+    private string targetTag;
     private Transform target;
 
-    public void Seek(Transform _target, string _enemyTag)
+    public void Seek(Transform _target, string _targetTag)
     {
         target = _target;
-        enemyTag = _enemyTag;
+        targetTag = _targetTag;
     }
 
     // Update is called once per frame
@@ -66,17 +68,26 @@ public class Bullet : MonoBehaviour
 
         foreach (Collider2D col in hitColliders)
         {
-            if (col.tag == enemyTag)
+            if (col.tag == targetTag)
                 Damage(col.transform);
         }
         Destroy(gameObject);
     }
 
-    void Damage(Transform _enemy)
+    void Damage(Transform _target)
     {
-        EnemyHP enemy = _enemy.GetComponent<EnemyHP>();
-        if (enemy != null)
-            enemy.TakeDamage(damage);
+        if (towerBullet)
+        {
+            EnemyHP enemyTarget = _target.GetComponent<EnemyHP>();
+            if (enemyTarget != null)
+                enemyTarget.TakeDamage(damage);
+        }
+        else
+        {
+            StructureHP structureTarget = _target.GetComponent<StructureHP>();
+            if (structureTarget != null)
+                structureTarget.TakeDamage(damage);
+        }
         Destroy(gameObject);
     }
 
