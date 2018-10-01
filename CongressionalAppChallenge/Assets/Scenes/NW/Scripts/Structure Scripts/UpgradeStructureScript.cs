@@ -96,6 +96,7 @@ public class UpgradeStructureScript : MonoBehaviour {
 
     public void UpgradeBuilding()
     {
+        SelectedTile = GameManager.GetComponent<GameManagerScript>().selectedTile;
         selectedStructure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure;
 
         GameManager.GetComponent<GameManagerScript>().woodAcquired -= selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement;
