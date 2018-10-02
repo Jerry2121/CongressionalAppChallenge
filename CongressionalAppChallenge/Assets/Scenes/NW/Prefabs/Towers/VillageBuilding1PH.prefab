@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 58554181198062502}
   - component: {fileID: 114107851877504370}
   - component: {fileID: 61914154125191778}
-  - component: {fileID: 114340228986446024}
+  - component: {fileID: 114558644308637614}
   m_Layer: 11
   m_Name: VillageBuilding1PH
   m_TagString: Untagged
@@ -110,7 +110,7 @@ MonoBehaviour:
   steelUpgradeRequirement: 0
   upgradeAvailable: 0
   parentTiles: []
---- !u!114 &114340228986446024
+--- !u!114 &114558644308637614
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,10 +118,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1475069355914694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14a389b9f5bc9ec4092b2420549c4faf, type: 3}
+  m_Script: {fileID: 11500000, guid: 3be5e12bdadc77f4a9bc9c1dc7271f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  healthBar: {fileID: 0}
+  isVillageStructure: 1
+  isTowerStructure: 0
+  isProductionStructure: 0
+  isDefenseStructure: 0
+  multiTileBuilding: 1
   parentTile: {fileID: 0}
 --- !u!212 &212284013596050532
 SpriteRenderer:

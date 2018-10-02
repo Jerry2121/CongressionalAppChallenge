@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 114027966514836312}
   - component: {fileID: 114998564379336704}
   - component: {fileID: 61114944128914240}
-  - component: {fileID: 114200777459052028}
   - component: {fileID: 114790932253836042}
+  - component: {fileID: 114876297066969196}
   m_Layer: 12
   m_Name: AttackBuilding1PH
   m_TagString: Untagged
@@ -97,19 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f73310d30b29184da5c48c7e00c46fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114200777459052028
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1029278982227840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c234bdfcd14b4469a9a5ba4d7103b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  parentTile: {fileID: 0}
 --- !u!114 &114790932253836042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,11 +112,30 @@ MonoBehaviour:
   fireRate: 1
   enemyTag: Enemies
   useConstantDamage: 0
+  slowsEnemies: 0
   damageOverTime: 30
   slowAmount: 0.5
   lineRenderer: {fileID: 0}
   bulletPrefab: {fileID: 1050848121283270, guid: b1104345d9dfd004188f43252f0a5273,
     type: 2}
+--- !u!114 &114876297066969196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1029278982227840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be5e12bdadc77f4a9bc9c1dc7271f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  isVillageStructure: 0
+  isTowerStructure: 1
+  isProductionStructure: 0
+  isDefenseStructure: 0
+  multiTileBuilding: 1
+  parentTile: {fileID: 0}
 --- !u!114 &114998564379336704
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 58494264184183914}
   - component: {fileID: 114184987302869978}
   - component: {fileID: 61781217206607544}
-  - component: {fileID: 114753180168324108}
+  - component: {fileID: 114541531322767996}
   m_Layer: 11
   m_Name: VillageBuilding3PH
   m_TagString: Untagged
@@ -96,14 +96,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 0}
+  hpMax: 0
+  hp: 0
   buildingLevel: 0
   buildingID: 0
+  woodReturned: 0
+  stoneReturned: 0
+  oreReturned: 0
+  steelReturned: 0
   woodUpgradeRequirement: 0
   stoneUpgradeRequirement: 0
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
   upgradeAvailable: 0
---- !u!114 &114753180168324108
+  parentTiles: []
+--- !u!114 &114541531322767996
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,10 +118,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1093620431832628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14a389b9f5bc9ec4092b2420549c4faf, type: 3}
+  m_Script: {fileID: 11500000, guid: 3be5e12bdadc77f4a9bc9c1dc7271f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  healthBar: {fileID: 0}
+  isVillageStructure: 1
+  isTowerStructure: 0
+  isProductionStructure: 0
+  isDefenseStructure: 0
+  multiTileBuilding: 1
+  parentTile: {fileID: 0}
 --- !u!212 &212777606444329042
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114065908786681324}
   - component: {fileID: 61228591525505458}
   - component: {fileID: 114059735582597792}
+  - component: {fileID: 114360334367742464}
   m_Layer: 10
   m_Name: ProductionBuilding4PH
   m_TagString: Untagged
@@ -125,6 +126,24 @@ MonoBehaviour:
   resourceID: 4
   buildingResourceProduction: 1
   timer: 0
+--- !u!114 &114360334367742464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841891351842666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be5e12bdadc77f4a9bc9c1dc7271f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  isVillageStructure: 0
+  isTowerStructure: 0
+  isProductionStructure: 1
+  isDefenseStructure: 0
+  multiTileBuilding: 0
+  parentTile: {fileID: 0}
 --- !u!114 &114980533498090090
 MonoBehaviour:
   m_ObjectHideFlags: 1

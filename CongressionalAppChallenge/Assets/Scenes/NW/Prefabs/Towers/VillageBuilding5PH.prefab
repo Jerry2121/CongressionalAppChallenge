@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 58400402042686678}
   - component: {fileID: 114316255598083470}
   - component: {fileID: 61391725977091698}
-  - component: {fileID: 114065110945642314}
+  - component: {fileID: 114820460745459530}
   m_Layer: 11
   m_Name: VillageBuilding5PH
   m_TagString: Untagged
@@ -84,18 +84,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114065110945642314
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1746319917760992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14a389b9f5bc9ec4092b2420549c4faf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
 --- !u!114 &114316255598083470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,13 +96,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 0}
+  hpMax: 0
+  hp: 0
   buildingLevel: 0
   buildingID: 0
+  woodReturned: 0
+  stoneReturned: 0
+  oreReturned: 0
+  steelReturned: 0
   woodUpgradeRequirement: 0
   stoneUpgradeRequirement: 0
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
   upgradeAvailable: 0
+  parentTiles: []
+--- !u!114 &114820460745459530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746319917760992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be5e12bdadc77f4a9bc9c1dc7271f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  isVillageStructure: 1
+  isTowerStructure: 0
+  isProductionStructure: 0
+  isDefenseStructure: 0
+  multiTileBuilding: 1
+  parentTile: {fileID: 0}
 --- !u!212 &212605508477811718
 SpriteRenderer:
   m_ObjectHideFlags: 1

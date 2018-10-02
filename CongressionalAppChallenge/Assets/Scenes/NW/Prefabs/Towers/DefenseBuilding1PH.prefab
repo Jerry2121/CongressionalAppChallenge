@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212977498578839914}
   - component: {fileID: 114046345439516362}
   - component: {fileID: 61213310791217474}
-  - component: {fileID: 114522976610437176}
   - component: {fileID: 114148330409211556}
+  - component: {fileID: 114005781318542284}
   m_Layer: 13
   m_Name: DefenseBuilding1PH
   m_TagString: Untagged
@@ -69,6 +69,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114005781318542284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524405195838412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be5e12bdadc77f4a9bc9c1dc7271f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  isVillageStructure: 0
+  isTowerStructure: 0
+  isProductionStructure: 0
+  isDefenseStructure: 1
+  multiTileBuilding: 1
+  parentTile: {fileID: 0}
 --- !u!114 &114046345439516362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,19 +148,6 @@ MonoBehaviour:
     type: 3}
   wallSprite_Hori: {fileID: 21300000, guid: 80f0152735995ee4fb4db15fc622809a, type: 3}
   wallSprite_Verti: {fileID: 21300002, guid: 80f0152735995ee4fb4db15fc622809a, type: 3}
---- !u!114 &114522976610437176
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1524405195838412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b53cd21085aae0a4eaf7aee6a5db13a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  parentTile: {fileID: 0}
 --- !u!212 &212977498578839914
 SpriteRenderer:
   m_ObjectHideFlags: 1

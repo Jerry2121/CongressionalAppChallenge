@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 114180075007315462}
   - component: {fileID: 114677760805432718}
   - component: {fileID: 61121662485636656}
-  - component: {fileID: 114968187377530580}
+  - component: {fileID: 114727707782549312}
   m_Layer: 10
   m_Name: ProductionBuilding2PH
   m_TagString: Untagged
@@ -230,7 +230,7 @@ MonoBehaviour:
   resourceID: 0
   buildingResourceProduction: 4
   timer: 0
---- !u!114 &114968187377530580
+--- !u!114 &114727707782549312
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,10 +238,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1447096250244252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af26cc895594e394ab805ef919f331a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3be5e12bdadc77f4a9bc9c1dc7271f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  healthBar: {fileID: 0}
+  isVillageStructure: 0
+  isTowerStructure: 0
+  isProductionStructure: 1
+  isDefenseStructure: 0
+  multiTileBuilding: 1
+  parentTile: {fileID: 0}
 --- !u!212 &212153273778825350
 SpriteRenderer:
   m_ObjectHideFlags: 1

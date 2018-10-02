@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114511767067943194}
   - component: {fileID: 114003823515316610}
   - component: {fileID: 61337341551567736}
-  - component: {fileID: 114757058893503464}
+  - component: {fileID: 114480464853684526}
   m_Layer: 12
   m_Name: AttackBuilding5PH
   m_TagString: Untagged
@@ -98,13 +98,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManager: {fileID: 1733655284807348, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
     type: 2}
+  hpMax: 0
+  hp: 0
   buildingLevel: 1
   buildingID: 35
+  woodReturned: 0
+  stoneReturned: 0
+  oreReturned: 0
+  steelReturned: 0
   woodUpgradeRequirement: 0
   stoneUpgradeRequirement: 0
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
   upgradeAvailable: 0
+  parentTiles: []
+--- !u!114 &114480464853684526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667420101550608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be5e12bdadc77f4a9bc9c1dc7271f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  isVillageStructure: 0
+  isTowerStructure: 1
+  isProductionStructure: 0
+  isDefenseStructure: 0
+  multiTileBuilding: 1
+  parentTile: {fileID: 0}
 --- !u!114 &114511767067943194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,18 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f73310d30b29184da5c48c7e00c46fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114757058893503464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1667420101550608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c234bdfcd14b4469a9a5ba4d7103b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
 --- !u!212 &212399774869121316
 SpriteRenderer:
   m_ObjectHideFlags: 1
