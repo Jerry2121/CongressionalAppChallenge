@@ -6,6 +6,7 @@ public class EnemyChase : MonoBehaviour {
 	// Use this for initialization
 	public GameObject target;
 	public float chaseSpeed = 2.0f;
+    public int damage = 1;
 	private bool home = true;
     public bool cannotAttack;
 	private Vector3 homePos;
@@ -38,33 +39,33 @@ public class EnemyChase : MonoBehaviour {
         if (collision.gameObject.layer == 10)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
-            collision.gameObject.GetComponent<HealthProduction>().hp--;
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+            Destroy(gameObject);
         }
         if (collision.gameObject.layer == 11)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
-            collision.gameObject.GetComponent<HealthVillage>().hp--;
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+            Destroy(gameObject);
         }
         if (collision.gameObject.layer == 12)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
-            collision.gameObject.GetComponent<HealthTowers>().hp--;
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+            Destroy(gameObject);
         }
         if (collision.gameObject.layer == 13)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
-            collision.gameObject.GetComponent<HealthDefense>().hp--;
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Base")
         {
-            if (this.gameObject.layer == 15)
+            if (gameObject.layer == 15)
             {
                 animator.SetBool("Attack", true);
             }

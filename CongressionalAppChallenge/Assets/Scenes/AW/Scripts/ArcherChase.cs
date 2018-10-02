@@ -4,15 +4,18 @@ using System.Collections;
 public class ArcherChase : MonoBehaviour {
 
     [SerializeField]
-    private float range = 5f;
-    [SerializeField]
 	private float movementSpeed = 2.0f;
+    [SerializeField]
+    private float range = 5f;
     [SerializeField]
     private float fireRate = 1f;
     [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
     private string enemyTag = "Structure";
+    [SerializeField]
+    private int collisionDamage = 1;
+
 
 	public GameObject target;
 
@@ -65,7 +68,7 @@ public class ArcherChase : MonoBehaviour {
         }
         animator.SetBool("Attack", true);
         GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-        //Spawn on top of tower sprite
+        //Spawn on top of Archer sprite
         GameObject bulletGO = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
         //spawn below
         //GameObject bulletGO = Instantiate(bulletPrefab, transform.position, transform.rotation);
@@ -80,26 +83,26 @@ public class ArcherChase : MonoBehaviour {
         if (collision.gameObject.layer == 10)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
-            collision.gameObject.GetComponent<HealthProduction>().hp--;
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<StructureHP>().TakeDamage(collisionDamage);
+            Destroy(gameObject);
         }
-        if (collision.gameObject.layer == 11)
+        else if (collision.gameObject.layer == 11)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
-            collision.gameObject.GetComponent<HealthVillage>().hp--;
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<StructureHP>().TakeDamage(collisionDamage);
+            Destroy(gameObject);
         }
-        if (collision.gameObject.layer == 12)
+        else if (collision.gameObject.layer == 12)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
-            collision.gameObject.GetComponent<HealthTowers>().hp--;
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<StructureHP>().TakeDamage(collisionDamage);
+            Destroy(gameObject);
         }
-        if (collision.gameObject.layer == 13)
+        else if (collision.gameObject.layer == 13)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
-            collision.gameObject.GetComponent<HealthDefense>().hp--;
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<StructureHP>().TakeDamage(collisionDamage);
+            Destroy(gameObject);
         }
     }
     public void OnTriggerStay2D(Collider2D collision)
