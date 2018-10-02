@@ -93,7 +93,6 @@ public class Tile_Scripts : MonoBehaviour {
 
         switch (buildingID)
         {
-
             case 0:
                 menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
                 break;

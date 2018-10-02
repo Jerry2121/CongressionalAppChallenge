@@ -12,6 +12,7 @@ public class EnemyHP : MonoBehaviour
     private float health;
     [SerializeField]
     private int value = 25;
+    public GameObject HealthbarCanvas;
 
     //public GameObject deathEffect;
     [Header("Unity Stuff")]
@@ -28,6 +29,17 @@ public class EnemyHP : MonoBehaviour
     {
         //speed = startSpeed;
         health = startHealth;
+    }
+    private void Update()
+    {
+        if (health >= startHealth)
+        {
+            HealthbarCanvas.SetActive(false);
+        }
+        else
+        {
+            HealthbarCanvas.SetActive(true);
+        }
     }
 
     public void TakeDamage(float _amount)

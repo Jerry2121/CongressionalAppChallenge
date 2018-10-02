@@ -25,6 +25,7 @@ public class BuildStructureMenu : MonoBehaviour {
 
     public void MenuHardFalse()
     {
+        upgradeStructureMenu.SetActive(false);
         buildStructureMenu.SetActive(false);
     }
 

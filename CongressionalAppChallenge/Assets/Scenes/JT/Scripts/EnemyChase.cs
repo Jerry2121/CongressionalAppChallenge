@@ -71,10 +71,13 @@ public class EnemyChase : MonoBehaviour {
             }
             chaseSpeed = 0;
         }
+        else if (gameObject.layer == 15)
+        {
+            animator.SetBool("Attack", false);
+        }
         else
         {
             chaseSpeed = 2.0f;
-            animator.SetBool("Attack", false);
         }
         if(collision.gameObject.tag == "OutsideBarrier")
         {

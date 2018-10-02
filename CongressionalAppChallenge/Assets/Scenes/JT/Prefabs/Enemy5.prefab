@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 100
   value: 25
+  HealthbarCanvas: {fileID: 1287269935309538}
   healthBar: {fileID: 114403574745940622}
 --- !u!114 &114403574745940622
 MonoBehaviour:
@@ -212,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1641856209188398, guid: cef25fa0f86041e459a30c547cec21e5, type: 2}
   chaseSpeed: 2
+  damage: 1
   cannotAttack: 0
   maxMoveDistance: 10
   chaseTriggerDistance: 1

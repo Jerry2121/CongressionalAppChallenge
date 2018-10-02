@@ -5,6 +5,7 @@ public class StructureHP : MonoBehaviour
 {
     [SerializeField]
     private Image healthBar;
+    public GameObject HealthBarCanvas;
     //public GameObject deathEffect;
 
 
@@ -34,6 +35,7 @@ public class StructureHP : MonoBehaviour
 
     void Start()
     {
+        HealthBarCanvas.SetActive(false);
         parentTile = GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + gameObject.transform.position.y + ")");
 
         if (isVillageStructure)
@@ -48,6 +50,17 @@ public class StructureHP : MonoBehaviour
             Debug.LogError("StructureHP -- Start: " + gameObject + "has not had it's tower type set!");
 
         health = startHealth;
+    }
+    public void Update()
+    {
+        if (health >= startHealth)
+        {
+            HealthBarCanvas.SetActive(false);
+        }
+        else
+        {
+            HealthBarCanvas.SetActive(true);
+        }
     }
 
     public void TakeDamage(float _amount)

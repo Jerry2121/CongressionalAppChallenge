@@ -307,7 +307,6 @@ public class UpgradeStructureScript : MonoBehaviour {
     {
         if (GameManager.GetComponent<GameManagerScript>().selectedTile != null)
         {
-
             if (GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure != null)
             {
                 selectedStructure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure;
@@ -315,6 +314,10 @@ public class UpgradeStructureScript : MonoBehaviour {
                 if (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel > 4)
                 {
                     upgradeAvailable = false;
+                }
+                else if (GameObject.FindWithTag("Base"))
+                {
+                    return;
                 }
 
                 else if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement &&
