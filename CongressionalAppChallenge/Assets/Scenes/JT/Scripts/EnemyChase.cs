@@ -36,24 +36,28 @@ public class EnemyChase : MonoBehaviour {
 	}
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        //Production Structure
         if (collision.gameObject.layer == 10)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
             collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        //Village Structure
         if (collision.gameObject.layer == 11)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
             collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        //Tower Structure
         if (collision.gameObject.layer == 12)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
             collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        //Defense Structure
         if (collision.gameObject.layer == 13)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;

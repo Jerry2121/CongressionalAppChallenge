@@ -315,10 +315,6 @@ public class UpgradeStructureScript : MonoBehaviour {
                 {
                     upgradeAvailable = false;
                 }
-                else if (GameObject.FindWithTag("Base"))
-                {
-                    return;
-                }
 
                 else if (GameManager.GetComponent<GameManagerScript>().woodAcquired >= selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement &&
                             GameManager.GetComponent<GameManagerScript>().stoneAcquired >= selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement &&
