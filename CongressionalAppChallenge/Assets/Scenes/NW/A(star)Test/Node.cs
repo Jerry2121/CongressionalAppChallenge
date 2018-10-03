@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-public class Node : IHeapItem<Node> {
+public class Node : IHeapItem<Node>
+{
 
     public bool walkable;
     public Vector3 worldPosition;
@@ -34,11 +34,11 @@ public class Node : IHeapItem<Node> {
     {
         get
         {
-            return HeapIndex;
+            return heapIndex;
         }
         set
         {
-            HeapIndex = value;
+            heapIndex = value;
         }
     }
 

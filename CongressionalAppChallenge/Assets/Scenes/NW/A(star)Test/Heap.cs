@@ -9,7 +9,7 @@ public class Heap<T> where T : IHeapItem<T> {
     int currentItemCount;
 
     public Heap(int maxHeapSize)
-    {
+    {   
         items = new T[maxHeapSize];
     }
 
@@ -111,9 +111,9 @@ public class Heap<T> where T : IHeapItem<T> {
     {
         items[itemA.HeapIndex] = itemB;
         items[itemB.HeapIndex] = itemA;
-        int itemIndex = itemA.HeapIndex;
+        int itemAIndex = itemA.HeapIndex;
         itemA.HeapIndex = itemB.HeapIndex;
-        itemB.HeapIndex = itemIndex;
+        itemB.HeapIndex = itemAIndex;
     }
 }
 
