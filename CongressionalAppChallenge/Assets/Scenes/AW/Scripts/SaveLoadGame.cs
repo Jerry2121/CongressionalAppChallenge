@@ -9,9 +9,10 @@ public class SaveLoadGame : MonoBehaviour
 
     List<GameTilesInfo> gameTilesInfoList;
 
-    //Save the player info out to a binary file
+    //Save the tile info out to a binary file
     public void SaveTiles()
     {
+        Debug.Log("SaveTiles");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/GameTiles.dat", FileMode.OpenOrCreate);
 
@@ -34,7 +35,11 @@ public class SaveLoadGame : MonoBehaviour
 
             SetSavedTiles();
         }
-        Debug.Log("No saved games found");
+        else
+        {
+            Debug.Log("No saved games found");
+        }
+
     }
     public void TestSaveThing()
     {
@@ -49,6 +54,7 @@ public class SaveLoadGame : MonoBehaviour
                 {
                     //add to the list
                     GameObject tile_GO = GameObject.Find("Tile(" + j + ", " + i + ")");
+                    Debug.Log(tile_GO);
                     GameTilesInfo gTI = tile_GO.GetComponent<Tile_Scripts>().Save();
                     gameTilesInfoList.Add(gTI);
 
@@ -62,7 +68,7 @@ public class SaveLoadGame : MonoBehaviour
 
     public void SetSavedTiles()
     {
-        for (int i = 0; i <= gameTilesInfoList.Count; i++)
+        for (int i = 0; i < gameTilesInfoList.Count; i++)
         {
             GameTilesInfo gTI = gameTilesInfoList[i];
             GameObject tile = GameObject.Find(gTI.tileName);

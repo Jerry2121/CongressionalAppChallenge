@@ -8,7 +8,7 @@ public class SaveLoadHighestScore : MonoBehaviour
 {
     public int highScore = 0;
 
-    //Save the player info out to a binary file
+    //Save the score info out to a binary file
     public void Save(int _highScore)
     {
         highScore = _highScore;
