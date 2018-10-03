@@ -201,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 100
   value: 25
+  HealthbarCanvas: {fileID: 0}
   healthBar: {fileID: 114622413297232288}
 --- !u!114 &114205756308782718
 MonoBehaviour:
@@ -229,13 +230,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1732738193949578}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c69f3fd65bbf2e4dbeeb2d1db66f2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1641856209188398, guid: cef25fa0f86041e459a30c547cec21e5, type: 2}
   chaseSpeed: 2
+  damage: 1
   cannotAttack: 0
   maxMoveDistance: 10
   chaseTriggerDistance: 1

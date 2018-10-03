@@ -1,0 +1,6 @@
+What will need to be saved:
+
+High Score*
+
+Buildings: Health, Level, 
+Tiles(check if is baseTile): Building,

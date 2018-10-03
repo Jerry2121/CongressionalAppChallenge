@@ -15,6 +15,7 @@ public class Tile_Scripts : MonoBehaviour {
     public Sprite EmptyTileIndicator;
     public GameObject childStructure;
     public Vector2 originalLocation;
+    public bool baseTile;
     public bool spaceOccupied;
     private int rancode;
     //public bool clicked;
@@ -27,6 +28,9 @@ public class Tile_Scripts : MonoBehaviour {
 
     // Building IDs: 0 - Empty, 1 - Town Hall, 2 - Quarry, 3 - Sawmill, 4 - Mine, 5 - Forge, 
     public int buildingID;
+
+    public int buildingHP;
+    public int buildingLevel;
 
     void Start()
     {
@@ -136,6 +140,7 @@ public class Tile_Scripts : MonoBehaviour {
 
         GameObject TownHall = Instantiate(townHallPrefab, GetComponent<Transform>());
         spaceOccupied = true;
+        baseTile = true;
         buildingID = -1;
         childStructure = TownHall;
 
@@ -160,6 +165,7 @@ public class Tile_Scripts : MonoBehaviour {
     {
         GameObject structure = Instantiate(buildingType, GetComponent<Transform>());
         childStructure = structure;
+        baseTile = true;
         spaceOccupied = true;
         buildingID = recievedBuildingID;
 
@@ -299,4 +305,17 @@ public class Tile_Scripts : MonoBehaviour {
             //Debug.Log("Something's amiss here...");
         }
     }
+
+    public GameTilesInfo Save()
+    {
+        GameTilesInfo gTI = new GameTilesInfo();
+
+        gTI.tileName = gameObject.name;
+        gTI.buildingID = buildingID;
+        gTI.buildingHP = buildingHP;
+        gTI.buildingLevel = buildingLevel;
+
+        return gTI;
+    }
+
 }
