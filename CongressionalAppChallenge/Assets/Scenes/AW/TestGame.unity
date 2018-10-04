@@ -23564,7 +23564,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1644777516}
-        m_MethodName: Load
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24116,6 +24116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5c4f259e282374c808d6496c2434f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSavesDirectoryPath: /GameState
 --- !u!114 &1705786347 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114218375207250514, guid: da786f8e51bd3ef46b9e73b77709bb76,
@@ -25838,7 +25839,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1644777516}
-        m_MethodName: TestSaveThing
+        m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
