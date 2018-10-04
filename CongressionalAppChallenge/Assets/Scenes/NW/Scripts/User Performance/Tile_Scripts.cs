@@ -31,6 +31,7 @@ public class Tile_Scripts : MonoBehaviour {
     public int buildingTypeID;
     public float buildingHP;
     public int buildingLevel;
+    public bool isLoading;
 
     void Start()
     {
@@ -47,7 +48,7 @@ public class Tile_Scripts : MonoBehaviour {
     {
         if (childStructure != null && buildingID != -1)
         {
-            activePriorityValue = staticPriorityValue * Mathf.RoundToInt(childStructure.GetComponent<BaseStructureScript>().hp / childStructure.GetComponent<BaseStructureScript>().hpMax);
+            //activePriorityValue = staticPriorityValue * Mathf.RoundToInt(childStructure.GetComponent<BaseStructureScript>().hp / childStructure.GetComponent<BaseStructureScript>().hpMax);
         }
 
         if (GameManager.GetComponent<GameManagerScript>().editMode)
@@ -222,23 +223,25 @@ public class Tile_Scripts : MonoBehaviour {
 
         if (buildingID == 11 || buildingID == 12 || buildingID == 13)
         {
-            tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")");
+
+            tempTile = GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + gameObject.transform.position.y + ")");
             tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
             tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
             tempTile.GetComponent<Tile_Scripts>().buildingID = buildingID;
             tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
 
-            tempTile = GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")");
+            tempTile = GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + (gameObject.transform.position.y + 1) + ")");
             tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
             tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
             tempTile.GetComponent<Tile_Scripts>().buildingID = buildingID;
             tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
 
-            tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")");
+            tempTile = GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + (gameObject.transform.position.y + 1) + ")");
             tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
             tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
             tempTile.GetComponent<Tile_Scripts>().buildingID = buildingID;
             tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+            
         }
 
 

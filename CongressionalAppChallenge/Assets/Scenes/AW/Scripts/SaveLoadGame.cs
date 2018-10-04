@@ -80,6 +80,7 @@ public class SaveLoadGame : MonoBehaviour
             tile_Scripts.buildingHP = gTI.buildingHP;
             tile_Scripts.buildingLevel = gTI.buildingLevel;
 
+            tile_Scripts.isLoading = true;
             tile_Scripts.SpawnBuilding(gTI.buildingTypeID, gTI.buildingID);
         }
     }

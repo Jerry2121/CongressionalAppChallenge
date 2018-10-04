@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 114027966514836312}
   - component: {fileID: 114998564379336704}
   - component: {fileID: 61114944128914240}
-  - component: {fileID: 114200777459052028}
   - component: {fileID: 114035096508441850}
+  - component: {fileID: 114237914179213974}
   m_Layer: 12
   m_Name: AttackBuilding1PH 1
   m_TagString: Untagged
@@ -39,7 +39,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1029278982227840}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -112,12 +112,13 @@ MonoBehaviour:
   fireRate: 1
   enemyTag: Enemies
   useConstantDamage: 0
+  slowsEnemies: 0
   damageOverTime: 30
   slowAmount: 0.5
   lineRenderer: {fileID: 0}
   bulletPrefab: {fileID: 1050848121283270, guid: b1104345d9dfd004188f43252f0a5273,
     type: 2}
---- !u!114 &114200777459052028
+--- !u!114 &114237914179213974
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,10 +126,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1029278982227840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c234bdfcd14b4469a9a5ba4d7103b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3be5e12bdadc77f4a9bc9c1dc7271f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  healthBar: {fileID: 0}
+  HealthBarCanvas: {fileID: 0}
+  isVillageStructure: 0
+  isTowerStructure: 1
+  isFireTowerStructure: 0
+  isProductionStructure: 0
+  isDefenseStructure: 0
+  multiTileBuilding: 1
   parentTile: {fileID: 0}
 --- !u!114 &114998564379336704
 MonoBehaviour:
@@ -141,7 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd38bf3ef05ec534f8a198eb25333bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
+  GameManager: {fileID: 1733655284807348, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+    type: 2}
   hpMax: 0
   hp: 0
   buildingLevel: 1

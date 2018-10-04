@@ -25669,7 +25669,7 @@ Prefab:
         type: 2}
       propertyPath: BuildingTypes.Array.data[10]
       value: 
-      objectReference: {fileID: 1029278982227840, guid: 9fe055c4757f22e4d88c083373dc9211,
+      objectReference: {fileID: 1029278982227840, guid: 10875ae5ad0e4b842a1db64d556c8897,
         type: 2}
     - target: {fileID: 224437724169951360, guid: da786f8e51bd3ef46b9e73b77709bb76,
         type: 2}
@@ -26352,6 +26352,7 @@ MonoBehaviour:
   ProductionStuctureHP: 5
   VillageStuctureHP: 5
   TowerStuctureHP: 5
+  FireTowerStructureHP: 0
   DefenseStructureHP: 5
   stoneAcquired: 100
   woodAcquired: 100
