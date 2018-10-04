@@ -2,5 +2,12 @@ What will need to be saved:
 
 High Score*
 
+GameState:
+
 Buildings: Health, Level, 
-Tiles(check if is baseTile): Building,
+Tiles(check if is baseTile): Building, 
+
+Town Hall:
+
+Waves:
+
