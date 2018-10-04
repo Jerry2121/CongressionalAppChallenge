@@ -244,9 +244,7 @@ public class Tile_Scripts : MonoBehaviour {
             
         }
 
-
-
-
+        GameObject.Find("A*").GetComponent<Grid>().CreateGrid();
     }
 
     public void ShowTilePlacement()

@@ -53,7 +53,6 @@ public class Grid : MonoBehaviour
                 //bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
                 bool walkable = true;
                 GameObject tile = GameObject.Find("Tile(" + (x - 25) + ", " + (y - 15) + ")");
-                Debug.Log(tile.name);
                 if (tile != null)
                 {
                     if (tile.GetComponent<Tile_Scripts>().spaceOccupied)
@@ -78,6 +77,36 @@ public class Grid : MonoBehaviour
             }
         }
     }
+
+    /*
+    public void UpdateGrid()
+    {
+        GameObject tile = GameObject.Find("GameManager").GetComponent<GameManagerScript>().selectedTile;
+
+        Vector3 worldPoint = tile.transform.position;
+        bool walkable = true;
+        
+
+        if (tile.GetComponent<Tile_Scripts>().spaceOccupied)
+        {
+            walkable = false;
+        }
+
+        int movementPenalty = 0;
+
+        if (walkable)
+        {
+            Ray ray = new Ray(worldPoint + Vector3.up * 50, Vector3.down);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100, walkableMask))
+            {
+                walkableRegionsDictionary.TryGetValue(hit.collider.gameObject.layer, out movementPenalty);
+            }
+        }
+
+        grid[Mathf.RoundToInt(tile.transform.position.x), Mathf.RoundToInt(tile.transform.position.y)] = new Node(walkable, tile.transform.position, Mathf.RoundToInt(tile.transform.position.x), Mathf.RoundToInt(tile.transform.position.y), movementPenalty);
+    }
+    */
 
     public List<Node> GetNeighbors(Node node)
     {
