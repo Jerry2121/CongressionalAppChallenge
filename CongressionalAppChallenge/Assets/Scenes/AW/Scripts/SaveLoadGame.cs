@@ -12,7 +12,6 @@ public class SaveLoadGame : MonoBehaviour
     //Save the tile info out to a binary file
     public void SaveTiles()
     {
-        Debug.Log("SaveTiles");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/GameTiles.dat", FileMode.OpenOrCreate);
 
@@ -33,7 +32,7 @@ public class SaveLoadGame : MonoBehaviour
             GameTilesInfoList myLoadedInfo = (GameTilesInfoList)bf.Deserialize(file);
             gameTilesInfoList = myLoadedInfo.gameTileInfoList;
 
-            SetSavedTiles();
+            SetLoadedTiles();
         }
         else
         {
@@ -54,10 +53,12 @@ public class SaveLoadGame : MonoBehaviour
                 {
                     //add to the list
                     GameObject tile_GO = GameObject.Find("Tile(" + j + ", " + i + ")");
-                    Debug.Log(tile_GO);
-                    GameTilesInfo gTI = tile_GO.GetComponent<Tile_Scripts>().Save();
-                    gameTilesInfoList.Add(gTI);
-
+                    if (tile_GO.GetComponent<Tile_Scripts>().buildingID != -1)
+                    {
+                        Debug.Log(tile_GO);
+                        GameTilesInfo gTI = tile_GO.GetComponent<Tile_Scripts>().Save();
+                        gameTilesInfoList.Add(gTI);
+                    }
                 }
             }
         }
@@ -66,7 +67,7 @@ public class SaveLoadGame : MonoBehaviour
 
     }
 
-    public void SetSavedTiles()
+    public void SetLoadedTiles()
     {
         for (int i = 0; i < gameTilesInfoList.Count; i++)
         {
@@ -79,6 +80,7 @@ public class SaveLoadGame : MonoBehaviour
             tile_Scripts.buildingHP = gTI.buildingHP;
             tile_Scripts.buildingLevel = gTI.buildingLevel;
 
+            tile_Scripts.SpawnBuilding(gTI.buildingTypeID, gTI.buildingID);
         }
     }
 
@@ -88,7 +90,8 @@ public class GameTilesInfo
 {
     public string tileName;
     public int buildingID;
-    public int buildingHP;
+    public int buildingTypeID;
+    public float buildingHP;
     public int buildingLevel;
 }
 [System.Serializable]

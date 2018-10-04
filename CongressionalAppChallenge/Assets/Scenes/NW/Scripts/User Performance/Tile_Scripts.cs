@@ -28,8 +28,8 @@ public class Tile_Scripts : MonoBehaviour {
 
     // Building IDs: 0 - Empty, 1 - Town Hall, 2 - Quarry, 3 - Sawmill, 4 - Mine, 5 - Forge, 
     public int buildingID;
-
-    public int buildingHP;
+    public int buildingTypeID;
+    public float buildingHP;
     public int buildingLevel;
 
     void Start()
@@ -161,8 +161,11 @@ public class Tile_Scripts : MonoBehaviour {
         tempTile.GetComponent<Tile_Scripts>().childStructure = TownHall;
     }
 
-    public void SpawnBuilding(GameObject buildingType, int recievedBuildingID)
+    public void SpawnBuilding(int buildingTypeIndex, int recievedBuildingID)
     {
+        buildingTypeID = buildingTypeIndex;
+        GameObject buildingType = GameObject.Find("MenuCanvas").GetComponent<BuildStructureMenu>().BuildingTypes[buildingTypeIndex];
+
         GameObject structure = Instantiate(buildingType, GetComponent<Transform>());
         childStructure = structure;
         baseTile = true;
@@ -177,23 +180,6 @@ public class Tile_Scripts : MonoBehaviour {
                 structure.GetComponent<BaseStructureScript>().hpMax = GameManager.GetComponent<GameManagerScript>().ProductionStuctureHP;
                 staticPriorityValue += 10;
 
-                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")");
-                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
-                tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
-                tempTile.GetComponent<Tile_Scripts>().buildingID = 11;
-                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
-
-                tempTile = GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")");
-                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
-                tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
-                tempTile.GetComponent<Tile_Scripts>().buildingID = 11;
-                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
-
-                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")");
-                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
-                tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
-                tempTile.GetComponent<Tile_Scripts>().buildingID = 11;
-                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
 
                 break;
 
@@ -201,49 +187,11 @@ public class Tile_Scripts : MonoBehaviour {
                 structure.GetComponent<BaseStructureScript>().hpMax = GameManager.GetComponent<GameManagerScript>().ProductionStuctureHP;
                 staticPriorityValue += 9;
 
-                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")");
-                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
-                tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
-                tempTile.GetComponent<Tile_Scripts>().buildingID = 12;
-                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
-
-                tempTile = GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")");
-                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
-                tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
-                tempTile.GetComponent<Tile_Scripts>().buildingID = 12;
-                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
-
-                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")");
-                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
-                tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
-                tempTile.GetComponent<Tile_Scripts>().buildingID = 12;
-                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
-
                 break;
 
             case 13:
                 structure.GetComponent<BaseStructureScript>().hpMax = GameManager.GetComponent<GameManagerScript>().ProductionStuctureHP;
                 staticPriorityValue += 8;
-
-                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")");
-                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
-                tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
-                tempTile.GetComponent<Tile_Scripts>().buildingID = 13;
-                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
-
-                tempTile = GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")");
-                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
-                tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
-                tempTile.GetComponent<Tile_Scripts>().buildingID = 13;
-                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
-
-                tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")");
-                tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
-                tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
-                tempTile.GetComponent<Tile_Scripts>().buildingID = 13;
-                tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
-
-                // structure.GetComponent<Transform>().position = new Vector2(0.5f, 0.5f);
 
                 break;
 
@@ -271,6 +219,31 @@ public class Tile_Scripts : MonoBehaviour {
                 GameManager.GetComponent<GameManagerScript>().WallCheckFunction();
                 break;
         }
+
+        if (buildingID == 11 || buildingID == 12 || buildingID == 13)
+        {
+            tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")");
+            tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+            tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
+            tempTile.GetComponent<Tile_Scripts>().buildingID = buildingID;
+            tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+            tempTile = GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")");
+            tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+            tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
+            tempTile.GetComponent<Tile_Scripts>().buildingID = buildingID;
+            tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+
+            tempTile = GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")");
+            tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
+            tempTile.GetComponent<Tile_Scripts>().staticPriorityValue += 10;
+            tempTile.GetComponent<Tile_Scripts>().buildingID = buildingID;
+            tempTile.GetComponent<Tile_Scripts>().childStructure = structure;
+        }
+
+
+
+
     }
 
     public void ShowTilePlacement()
@@ -308,12 +281,17 @@ public class Tile_Scripts : MonoBehaviour {
 
     public GameTilesInfo Save()
     {
+        Debug.Log("Tile_Scripts -- Save");
+
         GameTilesInfo gTI = new GameTilesInfo();
 
         gTI.tileName = gameObject.name;
         gTI.buildingID = buildingID;
-        gTI.buildingHP = buildingHP;
-        gTI.buildingLevel = buildingLevel;
+        gTI.buildingTypeID = buildingTypeID;
+        gTI.buildingHP = childStructure.GetComponent<StructureHP>().Health;
+        Debug.Log("Tile_Scripts -- Save: buildingHP = " + childStructure.GetComponent<StructureHP>().Health);
+
+        gTI.buildingLevel = childStructure.GetComponent<BaseStructureScript>().buildingLevel;
 
         return gTI;
     }

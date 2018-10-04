@@ -23,7 +23,10 @@ public class StructureHP : MonoBehaviour
     [SerializeField]
     private bool multiTileBuilding = true;
     
-    private float health;
+    public float Health
+    {
+        get; protected set;
+    }
     public GameObject parentTile;
     private float startHealth = 100;
 
@@ -49,11 +52,11 @@ public class StructureHP : MonoBehaviour
         else
             Debug.LogError("StructureHP -- Start: " + gameObject + "has not had it's tower type set!");
 
-        health = startHealth;
+        Health = startHealth;
     }
     public void Update()
     {
-        if (health >= startHealth)
+        if (Health >= startHealth)
         {
             HealthBarCanvas.SetActive(false);
         }
@@ -65,11 +68,11 @@ public class StructureHP : MonoBehaviour
 
     public void TakeDamage(float _amount)
     {
-        health -= _amount;
+        Health -= _amount;
         if(healthBar != null)
-            healthBar.fillAmount = health / startHealth;
+            healthBar.fillAmount = Health / startHealth;
 
-        if (health <= 0 && !isDestroyed)
+        if (Health <= 0 && !isDestroyed)
             Die();
     }
     void Die()
@@ -83,12 +86,15 @@ public class StructureHP : MonoBehaviour
             {
                 GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().buildingID = 0;
                 GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().spaceOccupied = false;
+                if (GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().baseTile)
+                    GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().baseTile = false;
             }
         }
         else
         {
             parentTile.GetComponent<Tile_Scripts>().buildingID = 0;
             parentTile.GetComponent<Tile_Scripts>().spaceOccupied = false;
+            parentTile.GetComponent<Tile_Scripts>().baseTile = false;
         }
 
         if (isDefenseStructure)
