@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4948644292933056}
   - component: {fileID: 212569839998336006}
   - component: {fileID: 114156012629483458}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ArcherArrowBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

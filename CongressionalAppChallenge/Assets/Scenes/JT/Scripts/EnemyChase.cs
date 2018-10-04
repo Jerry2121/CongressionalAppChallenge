@@ -11,6 +11,7 @@ public class EnemyChase : MonoBehaviour {
     public bool cannotAttack;
 	private Vector3 homePos;
     private Animator animator;
+    public float timer;
 
     private Vector2 moveDirection;
 
@@ -26,20 +27,21 @@ public class EnemyChase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		Vector3 playerPosition = GameObject.Find("TownHallTile(Clone)").transform.position;
+        timer += Time.deltaTime;
+        Vector3 playerPosition = GameObject.Find("TownHallTile(Clone)").transform.position;
 		moveDirection = new Vector2 (0 - transform.position.x, 0 - transform.position.y);
 
         moveDirection.Normalize();
         home = false;
         GetComponent<Rigidbody2D>().velocity = moveDirection * chaseSpeed;
 	}
-    public void OnCollisionEnter2D(Collision2D collision)
+   /* public void OnCollisionEnter2D(Collision2D collision)
     {
         //Production Structure
         if (collision.gameObject.layer == 10)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
+            Debug.Log("EnemyChase: Enemiesleft--");
             collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
             Destroy(gameObject);
         }
@@ -47,6 +49,7 @@ public class EnemyChase : MonoBehaviour {
         if (collision.gameObject.layer == 11)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
+            Debug.Log("EnemyChase: Enemiesleft--");
             collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
             Destroy(gameObject);
         }
@@ -54,6 +57,7 @@ public class EnemyChase : MonoBehaviour {
         if (collision.gameObject.layer == 12)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
+            Debug.Log("EnemyChase: Enemiesleft--");
             collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
             Destroy(gameObject);
         }
@@ -61,45 +65,67 @@ public class EnemyChase : MonoBehaviour {
         if (collision.gameObject.layer == 13)
         {
             GameObject.Find("TownHallTile(Clone)").GetComponent<TownHallScript>().Enemiesleft--;
+            Debug.Log("EnemyChase: Enemiesleft--");
             collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
             Destroy(gameObject);
         }
-    }
+    }*/
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Base")
+        chaseSpeed = 0;
+        if (collision.gameObject.tag == "Base")
         {
             //Enemies 1 (Templar)
-            if (gameObject.layer == 8)
+            if (collision.GetComponent<Collider2D>().gameObject.layer == 8)
             {
-                animator.SetBool("Attack", true);
+                if (timer >= 2)
+                {
+                    animator.SetBool("Attack", true);
+                    GameObject.Find("GameManager").GetComponent<GameManagerScript>().ModifyTownHallHP(-damage);
+                    timer = 0;
+                }
             }
+            else
+            {
+                animator.SetBool("Attack", false);
+                chaseSpeed = 2.0f;
+            }
+        }
+        if (collision.gameObject.layer == 13)
+        {
             //Enemies 2 (DarkSwordsman)
-            if (gameObject.layer == 14)
+            if (timer >= 1)
             {
                 animator.SetBool("Attack", true);
+                collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+                timer = 0;
             }
-            //Enemies 3 (Swordsman)
-            if (gameObject.layer == 15)
-            {
-                animator.SetBool("Attack", true);
-            }
-            chaseSpeed = 0;
         }
-        //Enemies 1 (Templar)
-        else if (gameObject.layer == 8)
+        else
         {
             animator.SetBool("Attack", false);
+            chaseSpeed = 2.0f;
         }
-        // Enemies 2 (DarkSwordsman)
-        else if (gameObject.layer == 14)
+        //Enemies 2 (DarkSwordsman)
+        if (collision.gameObject.layer == 14 && timer >= 1)
+        {
+            Debug.Log("Foo");
+            animator.SetBool("Attack", true);
+            collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+            timer = 0;
+        }
+        else
         {
             animator.SetBool("Attack", false);
-        }
+            chaseSpeed = 2.0f;
+            }
         //Enemies 3 (Swordsman)
-        else if (gameObject.layer == 15)
+        if (collision.gameObject.layer == 15 && timer >= 1)
         {
-            animator.SetBool("Attack", false);
+            Debug.Log("Foo");
+            animator.SetBool("Attack", true);
+            collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+            timer = 0;
         }
         else
         {

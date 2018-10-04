@@ -5,13 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 
 public class GameManagerScript : MonoBehaviour {
+    [Header("UI Management")]
     public GameObject selectedTile;
     public GameObject menuCanvas;
     public GameObject Hammer;
     public GameObject X;
-    public GameObject BGMusic;
-    public GameObject WaveMusic;
-    [Space(25)]
     public GameObject HPText;
     public GameObject WoodText;
     public GameObject StoneText;
@@ -22,15 +20,20 @@ public class GameManagerScript : MonoBehaviour {
     public GameObject HUD;
     public GameObject MusicEnabledIcon;
     public GameObject MusicDisabledIcon;
+    public GameObject BGMusic;
+    public GameObject WaveMusic;
     public Sprite StartWaveBG;
     public Sprite NextWaveBG;
     [Space(25)]
+    [Header("Booleans")]
     public bool canSpawnNextWave;
     public bool isFirstInstance;
     public bool editMode;
     [Space(25)]
+    [Header("Floats")]
     public float cooldownTimer;
     [Space(25)]
+    [Header("Integers")]
     public int TownHallHP;
     public int ProductionStuctureHP;
     public int VillageStuctureHP;
@@ -46,6 +49,10 @@ public class GameManagerScript : MonoBehaviour {
     Image myImageComponent;
     [Space(25)]
     public List<GameObject> WallTiles;
+    [Space(25)]
+    [Header("Cheats")]
+    public bool InfiniteHealth;
+    public bool InfiniteResources;
 
 
     // Use this for initialization
@@ -73,6 +80,17 @@ public class GameManagerScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (InfiniteHealth)
+        {
+            TownHallHP = 100;
+        }
+        if (InfiniteResources)
+        {
+            woodAcquired = 999;
+            stoneAcquired = 999;
+            oreAcquired = 999;
+            steelAcquired = 999;
+        }
         if (TownHallHP <= 0)
         {
             GameObject.Find("LevelChanger").GetComponent<LevelChanger>().GameOver();
@@ -221,5 +239,9 @@ public class GameManagerScript : MonoBehaviour {
         {
             WallTiles[i].GetComponent<WallSpriteChanger>().NeighboringWallCheck();
         }
+    }
+    public void ModifyTownHallHP(int mod)
+    {
+        TownHallHP += mod;
     }
 }

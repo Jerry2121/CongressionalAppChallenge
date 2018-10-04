@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
     private bool hitTarget;
     private string targetTag;
     private Transform target;
+    private bool TownHall;
 
     public void Seek(Transform _target, string _targetTag)
     {
@@ -82,6 +83,11 @@ public class Bullet : MonoBehaviour
             if (enemyTarget != null)
                 enemyTarget.TakeDamage(damage);
         }
+        else if (TownHall)
+        {
+            GameObject.Find("GameManager").GetComponent<GameManagerScript>().TownHallHP -= damage;
+            TownHall = false;
+        }
         else
         {
             StructureHP structureTarget = _target.GetComponent<StructureHP>();
@@ -90,11 +96,16 @@ public class Bullet : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Base")
+        {
+            TownHall = true;
+        }
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
-
 }
