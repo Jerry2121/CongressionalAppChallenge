@@ -128,6 +128,18 @@ public class BaseStructureScript : MonoBehaviour {
                 parentTiles.Add(gameObject);
 
                 break;
+            case 32:
+                // There will be a couple of 'GetComponent's here to grab tower properties like damage
+
+                // Upgrade requirement = 50;
+                woodUpgradeRequirement = 25;
+                stoneUpgradeRequirement = 35;
+                oreUpgradeRequirement = 13;
+
+                BuildingLevelAnalysis();
+
+                parentTiles.Add(gameObject);
+                break;
 
             case 41:
 

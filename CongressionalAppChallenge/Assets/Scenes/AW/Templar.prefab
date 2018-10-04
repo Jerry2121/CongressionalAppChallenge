@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224513996122349274}
   - component: {fileID: 222771086828449590}
   - component: {fileID: 114059177323351508}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224978249423093826}
   - component: {fileID: 222777226614274274}
   - component: {fileID: 114622413297232288}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,8 +59,8 @@ GameObject:
   - component: {fileID: 114253102277251568}
   - component: {fileID: 95286830776549670}
   - component: {fileID: 114157215527077226}
-  m_Layer: 14
-  m_Name: EnemySwordsmanDark
+  m_Layer: 8
+  m_Name: Templar
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 223551143958715034}
   - component: {fileID: 114205756308782718}
   - component: {fileID: 114990172759490742}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ Animator:
   m_GameObject: {fileID: 1732738193949578}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a1898b0dc3162b849a48dde31b56a0b7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 15da7514729ea1846aad84696cdfb55b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -201,11 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 100
   value: 25
-<<<<<<< HEAD
   HealthbarCanvas: {fileID: 1950979600343184}
-=======
-  HealthbarCanvas: {fileID: 0}
->>>>>>> a2e8eb9f46c1c701fffba430ab7a6cb8a948e586
   healthBar: {fileID: 114622413297232288}
 --- !u!114 &114205756308782718
 MonoBehaviour:
@@ -323,7 +319,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300002, guid: a4abdbcdd16a9d44b8ac6f3a4bb7ef32, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 30f1919748e78a34b86ee99d298c38c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

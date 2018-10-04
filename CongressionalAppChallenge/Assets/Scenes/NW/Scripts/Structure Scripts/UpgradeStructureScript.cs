@@ -236,7 +236,7 @@ public class UpgradeStructureScript : MonoBehaviour {
                         break;
                 }
                 break;
-
+                //Village
             case 21:
                 SelectedTile.GetComponent<Tile_Scripts>().staticPriorityValue += 5;
 
@@ -265,7 +265,7 @@ public class UpgradeStructureScript : MonoBehaviour {
                 }
                 
                 break;
-
+                //Attack Tower 1
             case 31:
                 SelectedTile.GetComponent<Tile_Scripts>().staticPriorityValue += 15;
 
@@ -290,6 +290,33 @@ public class UpgradeStructureScript : MonoBehaviour {
                         selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement = 140;
                         selectedStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement = 40;
                         selectedStructure.GetComponent<BaseStructureScript>().steelUpgradeRequirement = 25;
+                        break;
+                }
+                break;
+            case 32:
+                SelectedTile.GetComponent<Tile_Scripts>().staticPriorityValue += 20;
+                switch (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel)
+                {
+                    case 2:
+                        // Upgrade requirement = 100
+                        selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement = 35;
+                        selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement = 45;
+                        selectedStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement = 15;
+                        break;
+
+                    case 3:
+                        // Upgrade requirement = 170
+                        selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement = 60;
+                        selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement = 90;
+                        selectedStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement = 100;
+                        break;
+
+                    case 4:
+                        // Upgrade requirement = 265
+                        selectedStructure.GetComponent<BaseStructureScript>().woodUpgradeRequirement = 130;
+                        selectedStructure.GetComponent<BaseStructureScript>().stoneUpgradeRequirement = 160;
+                        selectedStructure.GetComponent<BaseStructureScript>().oreUpgradeRequirement = 120;
+                        selectedStructure.GetComponent<BaseStructureScript>().steelUpgradeRequirement = 30;
                         break;
                 }
                 break;
