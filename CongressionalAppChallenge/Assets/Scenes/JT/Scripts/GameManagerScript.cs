@@ -35,6 +35,7 @@ public class GameManagerScript : MonoBehaviour {
     public int ProductionStuctureHP;
     public int VillageStuctureHP;
     public int TowerStuctureHP;
+    public int FireTowerStructureHP;
     public int DefenseStructureHP;
     public int stoneAcquired;
     public int woodAcquired;

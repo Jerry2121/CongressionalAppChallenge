@@ -120,6 +120,9 @@ public class Tile_Scripts : MonoBehaviour {
             case 31:
                 menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                 break;
+            case 32:
+                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
+                break;
 
             case 41:
                 menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
@@ -257,6 +260,10 @@ public class Tile_Scripts : MonoBehaviour {
             case 31:
                 structure.GetComponent<BaseStructureScript>().hpMax = GameManager.GetComponent<GameManagerScript>().TowerStuctureHP;
                 staticPriorityValue += 25;
+                break;
+            case 32:
+                structure.GetComponent<BaseStructureScript>().hpMax = GameManager.GetComponent<GameManagerScript>().FireTowerStructureHP;
+                staticPriorityValue += 30;
                 break;
 
             case 41:

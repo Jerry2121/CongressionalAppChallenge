@@ -69,12 +69,34 @@ public class EnemyChase : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Base")
         {
+            //Enemies 1 (Templar)
+            if (gameObject.layer == 8)
+            {
+                animator.SetBool("Attack", true);
+            }
+            //Enemies 2 (DarkSwordsman)
+            if (gameObject.layer == 14)
+            {
+                animator.SetBool("Attack", true);
+            }
+            //Enemies 3 (Swordsman)
             if (gameObject.layer == 15)
             {
                 animator.SetBool("Attack", true);
             }
             chaseSpeed = 0;
         }
+        //Enemies 1 (Templar)
+        else if (gameObject.layer == 8)
+        {
+            animator.SetBool("Attack", false);
+        }
+        // Enemies 2 (DarkSwordsman)
+        else if (gameObject.layer == 14)
+        {
+            animator.SetBool("Attack", false);
+        }
+        //Enemies 3 (Swordsman)
         else if (gameObject.layer == 15)
         {
             animator.SetBool("Attack", false);

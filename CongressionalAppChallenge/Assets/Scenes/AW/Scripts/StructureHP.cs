@@ -15,6 +15,8 @@ public class StructureHP : MonoBehaviour
     [SerializeField]
     private bool isTowerStructure;
     [SerializeField]
+    private bool isFireTowerStructure;
+    [SerializeField]
     private bool isProductionStructure;
     [SerializeField]
     private bool isDefenseStructure;
@@ -42,6 +44,8 @@ public class StructureHP : MonoBehaviour
             startHealth = GameObject.Find("GameManager").GetComponent<GameManagerScript>().VillageStuctureHP;
         else if (isTowerStructure)
             startHealth = GameObject.Find("GameManager").GetComponent<GameManagerScript>().TowerStuctureHP;
+        else if (isFireTowerStructure)
+            startHealth = GameObject.Find("GameManager").GetComponent<GameManagerScript>().FireTowerStructureHP;
         else if (isProductionStructure)
             startHealth = GameObject.Find("GameManager").GetComponent<GameManagerScript>().ProductionStuctureHP;
         else if (isDefenseStructure)
