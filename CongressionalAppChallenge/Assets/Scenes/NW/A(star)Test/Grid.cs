@@ -65,6 +65,16 @@ public class Grid : MonoBehaviour
 
                 if (walkable)
                 {
+                    int tileBuildingID = tile.GetComponent<Tile_Scripts>().buildingID;
+                    if (tileBuildingID == 31 || tileBuildingID == 32)
+                    {
+                        for (int i = Mathf.RoundToInt(tile.transform.position.x); i <)
+                    }
+                }
+
+                /*
+                if (walkable)
+                {
                     Ray ray = new Ray(worldPoint + Vector3.up * 50, Vector3.down);
                     RaycastHit hit;
                     if (Physics.Raycast(ray, out hit, 100, walkableMask))
@@ -72,6 +82,7 @@ public class Grid : MonoBehaviour
                         walkableRegionsDictionary.TryGetValue(hit.collider.gameObject.layer, out movementPenalty);
                     }
                 }
+                */
 
                 grid[x, y] = new Node(walkable, worldPoint, x, y, movementPenalty);
             }
