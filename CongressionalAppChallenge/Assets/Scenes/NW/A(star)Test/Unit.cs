@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour {
+public class Unit : MonoBehaviour
+{
 
     public Transform target;
     public float speed = 20;
@@ -13,7 +14,7 @@ public class Unit : MonoBehaviour {
     {
         PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
     }
-    
+
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
     {
         if (pathSuccessful)

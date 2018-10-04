@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Heap<T> where T : IHeapItem<T> {
+public class Heap<T> where T : IHeapItem<T>
+{
 
     T[] items;
     int currentItemCount;
 
     public Heap(int maxHeapSize)
-    {   
+    {
         items = new T[maxHeapSize];
     }
 

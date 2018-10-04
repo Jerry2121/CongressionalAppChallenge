@@ -9,6 +9,7 @@ public class SpawnTiles : MonoBehaviour {
     bool townHallSpawned = false;
     public GameObject emptyTilePrefab;
 
+    public GameObject aStar;
     public GameObject GameManager;
     public GameObject menuCanvas;
 
@@ -45,6 +46,8 @@ public class SpawnTiles : MonoBehaviour {
         }
 
         townHallParent.GetComponent<Tile_Scripts>().SpawnTownHall();
+
+        aStar.GetComponent<Grid>().CreateGrid();
 
         menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
     }

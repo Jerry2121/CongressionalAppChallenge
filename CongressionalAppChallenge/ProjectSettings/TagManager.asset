@@ -41,7 +41,7 @@ TagManager:
   - 
   - 
   - Unwalkable
-  - 
+  - TowerRange
   m_SortingLayers:
   - name: Default
     uniqueID: 0

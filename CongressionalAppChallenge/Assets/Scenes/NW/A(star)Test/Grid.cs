@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid : MonoBehaviour {
+public class Grid : MonoBehaviour
+{
 
     public bool displayGridGizmos;
     public LayerMask unwalkableMask;
     public Vector2 gridWorldSize;
     public float nodeRadius;
+    public TerrainType[] walkableRegions;
+    LayerMask walkableMask;
+    Dictionary<int, int> walkableRegionsDictionary = new Dictionary<int, int>();
+
     Node[,] grid;
 
     float nodeDiameter;
@@ -18,7 +23,13 @@ public class Grid : MonoBehaviour {
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
-        CreateGrid();
+
+        foreach (TerrainType region in walkableRegions)
+        {
+            walkableMask.value = walkableMask | region.terrainMask.value;
+            walkableRegionsDictionary.Add((int)Mathf.Log(region.terrainMask.value, 2), region.terrainPenalty);
+        }
+        // CreateGrid();
     }
 
     public int MaxSize
@@ -29,7 +40,7 @@ public class Grid : MonoBehaviour {
         }
     }
 
-    void CreateGrid()
+    public void CreateGrid()
     {
         grid = new Node[gridSizeX, gridSizeY];
         Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.up * gridWorldSize.y / 2;
@@ -39,8 +50,31 @@ public class Grid : MonoBehaviour {
             for (int y = 0; y < gridSizeY; y++)
             {
                 Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.up * (y * nodeDiameter + nodeRadius);
-                bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
-                grid[x, y] = new Node(walkable, worldPoint, x,y);
+                //bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
+                bool walkable = true;
+                GameObject tile = GameObject.Find("Tile(" + (x - 25) + ", " + (y - 15) + ")");
+                Debug.Log(tile.name);
+                if (tile != null)
+                {
+                    if (tile.GetComponent<Tile_Scripts>().spaceOccupied)
+                    {
+                        walkable = false;
+                    }
+                }
+
+                int movementPenalty = 0;
+
+                if (walkable)
+                {
+                    Ray ray = new Ray(worldPoint + Vector3.up * 50, Vector3.down);
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit, 100, walkableMask))
+                    {
+                        walkableRegionsDictionary.TryGetValue(hit.collider.gameObject.layer, out movementPenalty);
+                    }
+                }
+
+                grid[x, y] = new Node(walkable, worldPoint, x, y, movementPenalty);
             }
         }
     }
@@ -62,7 +96,7 @@ public class Grid : MonoBehaviour {
                 if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
                 {
                     neighbors.Add(grid[checkX, checkY]);
-                } 
+                }
             }
         }
 
@@ -84,15 +118,22 @@ public class Grid : MonoBehaviour {
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
+        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 0));
 
-        if (grid != null && displayGridGizmos)            
+        if (grid != null && displayGridGizmos)
         {
             foreach (Node n in grid)
             {
                 Gizmos.color = (n.walkable) ? Color.white : Color.red;
-                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter-.1f));
+                Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
             }
         }
+    }
+
+    [System.Serializable]
+    public class TerrainType
+    {
+        public LayerMask terrainMask;
+        public int terrainPenalty;
     }
 }
