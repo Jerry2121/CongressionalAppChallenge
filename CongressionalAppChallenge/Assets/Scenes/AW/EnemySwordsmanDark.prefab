@@ -201,7 +201,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 100
   value: 25
+<<<<<<< HEAD
   HealthbarCanvas: {fileID: 1950979600343184}
+=======
+  HealthbarCanvas: {fileID: 0}
+>>>>>>> a2e8eb9f46c1c701fffba430ab7a6cb8a948e586
   healthBar: {fileID: 114622413297232288}
 --- !u!114 &114205756308782718
 MonoBehaviour:
