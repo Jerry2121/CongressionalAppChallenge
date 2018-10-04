@@ -15,11 +15,49 @@ public class EnemyChase : MonoBehaviour {
 
     private Vector2 moveDirection;
 
-	public float maxMoveDistance = 10.0f;
+    Vector3[] path;
+    int targetIndex;
+
+    public float maxMoveDistance = 10.0f;
 	public float chaseTriggerDistance = 1.0f;
 
-	void Start () {
-		homePos = transform.position;
+    public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
+    {
+        if (pathSuccessful)
+        {
+            path = newPath;
+            targetIndex = 0;
+            StopCoroutine("FollowPath");
+            StartCoroutine("FollowPath");
+        }
+    }
+
+    IEnumerator FollowPath()
+    {
+        Vector3 currentWaypoint = path[0];
+
+        while (true)
+        {
+            if (transform.position == currentWaypoint)
+            {
+                targetIndex++;
+                if (targetIndex >= path.Length)
+                {
+                    yield break;
+                }
+                currentWaypoint = path[targetIndex];
+            }
+
+            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, chaseSpeed * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    void Start () {
+        target = GameObject.Find("TownHallTile(Clone)");
+        PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
+
+        homePos = transform.position;
         cannotAttack = false;
         animator = GetComponent<Animator>();
 
@@ -27,6 +65,8 @@ public class EnemyChase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        /*
         timer += Time.deltaTime;
         Vector3 playerPosition = GameObject.Find("TownHallTile(Clone)").transform.position;
 		moveDirection = new Vector2 (0 - transform.position.x, 0 - transform.position.y);
@@ -34,6 +74,8 @@ public class EnemyChase : MonoBehaviour {
         moveDirection.Normalize();
         home = false;
         GetComponent<Rigidbody2D>().velocity = moveDirection * chaseSpeed;
+        */
+
 	}
    /* public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -138,6 +180,27 @@ public class EnemyChase : MonoBehaviour {
         else
         {
             cannotAttack = false;
+        }
+    }
+
+    public void OnDrawGizmos()
+    {
+        if (path != null)
+        {
+            for (int i = targetIndex; i < path.Length; i++)
+            {
+                Gizmos.color = Color.black;
+                Gizmos.DrawCube(path[i], Vector3.one);
+
+                if (i == targetIndex)
+                {
+                    Gizmos.DrawLine(transform.position, path[i]);
+                }
+                else
+                {
+                    Gizmos.DrawLine(path[i - 1], path[i]);
+                }
+            }
         }
     }
 }

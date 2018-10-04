@@ -20,6 +20,8 @@ public class Tile_Scripts : MonoBehaviour {
     private int rancode;
     //public bool clicked;
 
+    public int penaltyValue;
+
     public int staticPriorityValue;
     public int activePriorityValue;
 
@@ -35,6 +37,7 @@ public class Tile_Scripts : MonoBehaviour {
 
     void Start()
     {
+        penaltyValue = 0;
         staticPriorityValue = 1;
 
         rancode = 0;
@@ -42,7 +45,13 @@ public class Tile_Scripts : MonoBehaviour {
         ShowTilePlacement();
     }
 
-
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 12)
+        {
+            penaltyValue += 5;
+        }
+    }
 
     void Update()
     {
