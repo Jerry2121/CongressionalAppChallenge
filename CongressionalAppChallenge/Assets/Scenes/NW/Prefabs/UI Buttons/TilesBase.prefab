@@ -53,4 +53,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   y_size: 30
   x_size: 50
-  tilePrefab: {fileID: 1865359902332118, guid: fc0257bb59df00c4db8e96230038e077, type: 2}
+  emptyTilePrefab: {fileID: 0}
+  aStar: {fileID: 0}
+  GameManager: {fileID: 0}
+  menuCanvas: {fileID: 0}
+  townHallParent: {fileID: 0}
+  townHallParentLoc: {x: 0, y: 0, z: 0}
+  townHallPrefab: {fileID: 0}
