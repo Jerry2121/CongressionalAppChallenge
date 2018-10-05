@@ -244,4 +244,31 @@ public class GameManagerScript : MonoBehaviour {
     {
         TownHallHP += mod;
     }
+
+    public GameManagerInfo Save()
+    {
+        GameManagerInfo gMI = new GameManagerInfo();
+
+        gMI.townHallHP = TownHallHP;
+        gMI.wood = woodAcquired;
+        gMI.stone = stoneAcquired;
+        gMI.ore = oreAcquired;
+        gMI.steel = steelAcquired;
+
+        gMI.waveCount = gameObject.GetComponent<SpawnerControl>().waveCount;
+
+        return gMI;
+    }
+
+    public void Load (GameManagerInfo _gMI)
+    {
+        TownHallHP = _gMI.townHallHP;
+        woodAcquired = _gMI.wood;
+        stoneAcquired = _gMI.stone;
+        oreAcquired = _gMI.ore;
+        steelAcquired = _gMI.steel;
+
+        gameObject.GetComponent<SpawnerControl>().waveCount = _gMI.waveCount;
+    }
+
 }

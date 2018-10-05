@@ -253,7 +253,7 @@ public class Tile_Scripts : MonoBehaviour {
             
         }
 
-        GameObject.Find("A*").GetComponent<Grid>().CreateGrid();
+        //GameObject.Find("A*").GetComponent<Grid>().CreateGrid();
     }
 
     public void ShowTilePlacement()
@@ -299,11 +299,20 @@ public class Tile_Scripts : MonoBehaviour {
         gTI.buildingID = buildingID;
         gTI.buildingTypeID = buildingTypeID;
         gTI.buildingHP = childStructure.GetComponent<StructureHP>().Health;
-        Debug.Log("Tile_Scripts -- Save: buildingHP = " + childStructure.GetComponent<StructureHP>().Health);
 
         gTI.buildingLevel = childStructure.GetComponent<BaseStructureScript>().buildingLevel;
 
         return gTI;
+    }
+
+    public void Load(GameTilesInfo _gTI)
+    {
+        buildingID = _gTI.buildingID;
+        buildingHP = _gTI.buildingHP;
+        buildingLevel = _gTI.buildingLevel;
+
+        isLoading = true;
+        SpawnBuilding(_gTI.buildingTypeID, _gTI.buildingID);
     }
 
 }

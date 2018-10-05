@@ -15,7 +15,7 @@ public class SaveLoadHighestScore : MonoBehaviour
 
         BinaryFormatter bf = new BinaryFormatter();
 
-        FileStream file = File.Open(Application.persistentDataPath + "/HighScore.cac", FileMode.OpenOrCreate);
+        FileStream file = File.Open(Application.persistentDataPath + "/HighScore.cas", FileMode.OpenOrCreate);
         HighScoreInfo myInfo = new HighScoreInfo();
 
         //put what ever you're saving as myInfo.whatever
@@ -25,10 +25,10 @@ public class SaveLoadHighestScore : MonoBehaviour
     }
     public int Load()
     {
-        if (File.Exists(Application.persistentDataPath + "/HighScore.cac"))
+        if (File.Exists(Application.persistentDataPath + "/HighScore.cas"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/HighScore.cac", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/HighScore.cas", FileMode.Open);
             HighScoreInfo myLoadedInfo = (HighScoreInfo)bf.Deserialize(file);
             highScore = myLoadedInfo.highScore;
         }
