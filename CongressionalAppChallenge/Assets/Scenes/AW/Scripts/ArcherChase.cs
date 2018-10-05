@@ -18,7 +18,10 @@ public class ArcherChase : MonoBehaviour {
     private float timer;
 
 
-	public GameObject target;
+    Vector3[] path;
+    int targetIndex;
+
+    public GameObject target;
 
     public bool cannotAttack;
 
@@ -27,7 +30,43 @@ public class ArcherChase : MonoBehaviour {
     private Vector2 moveDirection;
 
     private float fireCountdown = 0f;
+
+
+    public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
+    {
+        if (pathSuccessful)
+        {
+            path = newPath;
+            targetIndex = 0;
+            StopCoroutine("FollowPath");
+            StartCoroutine("FollowPath");
+        }
+    }
+
+    IEnumerator FollowPath()
+    {
+        Vector3 currentWaypoint = path[0];
+
+        while (true)
+        {
+            if (transform.position == currentWaypoint)
+            {
+                targetIndex++;
+                if (targetIndex >= path.Length)
+                {
+                    yield break;
+                }
+                currentWaypoint = path[targetIndex];
+            }
+
+            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, movementSpeed * Time.deltaTime);
+            yield return null;
+        }
+    }
+
     void Start () {
+        target = GameObject.Find("TownHallTile(Clone)");
+        PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
         cannotAttack = false;
         animator = GetComponent<Animator>();
 

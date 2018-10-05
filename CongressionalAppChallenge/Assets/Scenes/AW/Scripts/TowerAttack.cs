@@ -47,9 +47,19 @@ public class TowerAttack : MonoBehaviour
         {
             float currentTargetDistance = Vector2.Distance(transform.position, target.transform.position);
             //if the target is in range and can be attacked, keep attacking it
-            if(currentTargetDistance <= range && target.gameObject.GetComponent<EnemyChase>().cannotAttack == false)
+            if(target.GetComponent<EnemyChase>() != null)
             {
-                return;
+                if (currentTargetDistance <= range && target.gameObject.GetComponent<EnemyChase>().cannotAttack == false)
+                {
+                    return;
+                }
+            }
+            if (target.GetComponent<ArcherChase>() != null)
+            {
+                if (currentTargetDistance <= range && target.gameObject.GetComponent<ArcherChase>().cannotAttack == false)
+                {
+                    return;
+                }
             }
         }
 

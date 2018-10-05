@@ -56,7 +56,7 @@ public class Grid : MonoBehaviour
                 if (tile != null)
                 {
                     if (tile.GetComponent<Tile_Scripts>().spaceOccupied)
-                    {
+                    {                        
                         walkable = false;
                     }
                 }
