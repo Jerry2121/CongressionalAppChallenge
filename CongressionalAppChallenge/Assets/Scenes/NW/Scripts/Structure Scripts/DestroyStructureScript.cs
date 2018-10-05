@@ -40,6 +40,8 @@ public class DestroyStructureScript : MonoBehaviour {
 
         MenuCanvas.GetComponent<BuildStructureMenu>().playerCheckMenu.SetActive(false);
 
+        GameObject.Find("A*").GetComponent<Grid>().CreateGrid();
+
         Destroy(selectedStructure);
     }
 

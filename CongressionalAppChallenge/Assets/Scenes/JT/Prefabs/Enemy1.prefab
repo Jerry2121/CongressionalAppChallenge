@@ -126,7 +126,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00032824025, y: 0}
@@ -147,6 +147,7 @@ MonoBehaviour:
   chaseSpeed: 2
   damage: 1
   cannotAttack: 0
+  timer: 0
   maxMoveDistance: 10
   chaseTriggerDistance: 1
 --- !u!114 &114473661586063660
