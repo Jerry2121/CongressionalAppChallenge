@@ -10,16 +10,11 @@ public class StructureHP : MonoBehaviour
 
 
     [Header("Building Type")]
-    [SerializeField]
-    private bool isVillageStructure;
-    [SerializeField]
-    private bool isTowerStructure;
-    [SerializeField]
-    private bool isFireTowerStructure;
-    [SerializeField]
-    private bool isProductionStructure;
-    [SerializeField]
-    private bool isDefenseStructure;
+    public bool isVillageStructure;
+    public bool isTowerStructure;
+    public bool isFireTowerStructure;
+    public bool isProductionStructure;
+    public bool isDefenseStructure;
 
     [Header("For Production Buildings")]
     [SerializeField]

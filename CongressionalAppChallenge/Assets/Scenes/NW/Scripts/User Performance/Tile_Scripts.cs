@@ -14,6 +14,9 @@ public class Tile_Scripts : MonoBehaviour {
     public GameObject GameManager;
     public Sprite EmptyTileIndicator;
     public GameObject childStructure;
+
+    public GameObject towerRadius;
+
     public Vector2 originalLocation;
     public bool baseTile;
     public bool spaceOccupied;
@@ -43,18 +46,38 @@ public class Tile_Scripts : MonoBehaviour {
         rancode = 0;
         originalLocation = gameObject.transform.position;
         ShowTilePlacement();
-    }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 12)
+        if (GetComponentInChildren<TownHallScript>() != null)
         {
-            penaltyValue += 5;
+            penaltyValue += 0;
         }
     }
 
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log(collision.GetComponent<Collider2D>().name);
+    }
     void Update()
     {
+        if (GetComponentInChildren<StructureHP>() != null)
+        {
+            if (GetComponentInChildren<StructureHP>().isFireTowerStructure == true)
+            {
+                penaltyValue = 999;
+            }
+            if (GetComponentInChildren<StructureHP>().isTowerStructure == true)
+            {
+                penaltyValue = 999;
+            }
+            if (GetComponentInChildren<StructureHP>().isProductionStructure == true)
+            {
+                penaltyValue = 1;
+            }
+            if (GetComponentInChildren<StructureHP>().isDefenseStructure == true)
+            {
+                penaltyValue = 2;
+            }
+        }
         if (childStructure != null && buildingID != -1)
         {
             //activePriorityValue = staticPriorityValue * Mathf.RoundToInt(childStructure.GetComponent<BaseStructureScript>().hp / childStructure.GetComponent<BaseStructureScript>().hpMax);
@@ -221,6 +244,10 @@ public class Tile_Scripts : MonoBehaviour {
             case 31:
                 structure.GetComponent<BaseStructureScript>().hpMax = GameManager.GetComponent<GameManagerScript>().TowerStuctureHP;
                 staticPriorityValue += 25;
+
+                //GameObject towerRadiusEffector = Instantiate(towerRadius, GetComponent<Transform>());
+                // towerRadiusEffector.transform.position =  new Vector3(transform.position.x, transform.position.y, -5);
+
                 break;
 
             case 41:
@@ -253,7 +280,7 @@ public class Tile_Scripts : MonoBehaviour {
             
         }
 
-        //GameObject.Find("A*").GetComponent<Grid>().CreateGrid();
+        GameObject.Find("A*").GetComponent<Grid>().CreateGrid();
     }
 
     public void ShowTilePlacement()
