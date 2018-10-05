@@ -73,6 +73,7 @@ public class Tile_Scripts : MonoBehaviour {
     }
     void Update()
     {
+        /*
         if (GetComponentInChildren<StructureHP>() != null)
         {
             if (GetComponentInChildren<StructureHP>().isFireTowerStructure == true)
@@ -96,6 +97,7 @@ public class Tile_Scripts : MonoBehaviour {
         {
             //activePriorityValue = staticPriorityValue * Mathf.RoundToInt(childStructure.GetComponent<BaseStructureScript>().hp / childStructure.GetComponent<BaseStructureScript>().hpMax);
         }
+        */
 
         if (GameManager.GetComponent<GameManagerScript>().editMode)
         {
