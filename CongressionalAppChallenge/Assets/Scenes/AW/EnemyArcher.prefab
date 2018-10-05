@@ -83,7 +83,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4189662444407214
 Transform:
   m_ObjectHideFlags: 1
@@ -91,8 +91,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1531960558784210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.5767756, y: 2.6293125, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.547028, y: 2.531214, z: 1}
   m_Children:
   - {fileID: 224702115557816784}
   m_Father: {fileID: 0}
@@ -254,7 +254,7 @@ MonoBehaviour:
     type: 2}
   enemyTag: Structure
   collisionDamage: 1
-  target: {fileID: 1641856209188398, guid: cef25fa0f86041e459a30c547cec21e5, type: 2}
+  target: {fileID: 0}
   cannotAttack: 0
 --- !u!114 &114767406546434656
 MonoBehaviour:
