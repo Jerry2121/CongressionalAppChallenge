@@ -29,6 +29,12 @@ public class DestroyStructureScript : MonoBehaviour {
             selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().staticPriorityValue = 1;
         }
 
+        GameObject towerRadiusEffector = Instantiate(GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().towerRadius, GetComponent<Transform>());
+        towerRadiusEffector.transform.position = new Vector3(transform.position.x, transform.position.y, -5);
+        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().towerAction = true;
+
+        Destroy(towerRadiusEffector, 0.1f);
+
         GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().ShowTilePlacement();
         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
         MenuCanvas.GetComponent<BuildStructureMenu>().upgradeStructureMenu.SetActive(false);

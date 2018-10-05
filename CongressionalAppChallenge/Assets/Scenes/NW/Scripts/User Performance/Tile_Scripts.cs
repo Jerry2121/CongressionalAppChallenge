@@ -15,6 +15,9 @@ public class Tile_Scripts : MonoBehaviour {
     public Sprite EmptyTileIndicator;
     public GameObject childStructure;
 
+    // True = tower was built
+    // false = tower was destroyed
+    public bool towerAction;
     public GameObject towerRadius;
 
     public Vector2 originalLocation;
@@ -53,9 +56,20 @@ public class Tile_Scripts : MonoBehaviour {
         }
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.GetComponent<Collider2D>().name);
+
+        if (collision.gameObject.layer == 12 && towerAction)
+        {
+            penaltyValue += 999;
+        }
+
+        else if (collision.gameObject.layer == 12 && !towerAction)
+        {
+            penaltyValue -= 999;
+        }
+
     }
     void Update()
     {
@@ -245,8 +259,11 @@ public class Tile_Scripts : MonoBehaviour {
                 structure.GetComponent<BaseStructureScript>().hpMax = GameManager.GetComponent<GameManagerScript>().TowerStuctureHP;
                 staticPriorityValue += 25;
 
-                //GameObject towerRadiusEffector = Instantiate(towerRadius, GetComponent<Transform>());
-                // towerRadiusEffector.transform.position =  new Vector3(transform.position.x, transform.position.y, -5);
+                GameObject towerRadiusEffector = Instantiate(towerRadius, GetComponent<Transform>());
+                towerRadiusEffector.transform.position =  new Vector3(transform.position.x, transform.position.y, -5);
+                towerAction = true;
+
+                Destroy(towerRadiusEffector, 0.1f);
 
                 break;
 
