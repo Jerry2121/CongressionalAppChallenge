@@ -38,10 +38,10 @@ GameObject:
   - component: {fileID: 4274122066998110}
   - component: {fileID: 212242468678457816}
   - component: {fileID: 50648796683436352}
-  - component: {fileID: 61034063474349960}
   - component: {fileID: 114425805580708698}
   - component: {fileID: 95572941883677332}
   - component: {fileID: 114882894711653810}
+  - component: {fileID: 58352549011147182}
   m_Layer: 14
   m_Name: EnemySwordsman 3
   m_TagString: Enemies
@@ -118,8 +118,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61034063474349960
-BoxCollider2D:
+--- !u!58 &58352549011147182
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -131,18 +131,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.33333334, y: 0.33333334}
-    newSize: {x: 0.33333334, y: 0.33333334}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33333334, y: 0.33333334}
-  m_EdgeRadius: 0
+  m_Radius: 0.16666667
 --- !u!95 &95572941883677332
 Animator:
   serializedVersion: 3
@@ -216,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  chaseSpeed: 0
+  chaseSpeed: 2
   damage: 1
   cannotAttack: 0
   timer: 0
