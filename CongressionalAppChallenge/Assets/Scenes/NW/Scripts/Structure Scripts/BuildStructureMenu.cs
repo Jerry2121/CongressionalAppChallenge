@@ -31,11 +31,14 @@ public class BuildStructureMenu : MonoBehaviour {
 
     public void MenuDisplayFunction()
     {
+        playerCheckMenu.SetActive(false);
         defenseStructureMenu.SetActive(false);
         attackStructureMenu.SetActive(false);
         villageStructureMenu.SetActive(false);
         productionStructuresMenu.SetActive(false);
-        playerCheckMenu.SetActive(false);
+        structureTypeSelectMenu.SetActive(false);
+        upgradeStructureMenu.SetActive(false);
+        buildStructureMenu.SetActive(false);
 
         if (GameManager.GetComponent<GameManagerScript>().editMode == false)
         {
