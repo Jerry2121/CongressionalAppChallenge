@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Tile_Scripts : MonoBehaviour {
 
     public GameObject townHallPrefab;
+    public GameObject spawnerPathChecker;
 
     public GameObject menuCanvas;
     public bool runMenudisplay;
@@ -207,6 +208,10 @@ public class Tile_Scripts : MonoBehaviour {
     {
 
         GameObject TownHall = Instantiate(townHallPrefab, GetComponent<Transform>());
+
+        spawnerPathChecker = GameObject.Find("SpawnerTop");
+        spawnerPathChecker.GetComponent<SpawnerPathCheck>().target = TownHall.transform;
+
         spaceOccupied = true;
         baseTile = true;
         buildingID = -1;
@@ -227,6 +232,8 @@ public class Tile_Scripts : MonoBehaviour {
         tempTile.GetComponent<Tile_Scripts>().spaceOccupied = true;
         tempTile.GetComponent<Tile_Scripts>().buildingID = -1;
         tempTile.GetComponent<Tile_Scripts>().childStructure = TownHall;
+
+        
     }
 
     public void SpawnBuilding(int buildingTypeIndex, int recievedBuildingID)

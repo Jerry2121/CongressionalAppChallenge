@@ -20,14 +20,14 @@ public class BuildStructureButtonScript : MonoBehaviour {
     void Update()
     {
         if (GameManager.GetComponent<GameManagerScript>().stoneAcquired < stoneNeeded || GameManager.GetComponent<GameManagerScript>().woodAcquired < woodNeeded ||
-            GameManager.GetComponent<GameManagerScript>().oreAcquired < oreNeeded || GameManager.GetComponent<GameManagerScript>().steelAcquired < steelNeeded)
+            GameManager.GetComponent<GameManagerScript>().oreAcquired < oreNeeded || GameManager.GetComponent<GameManagerScript>().steelAcquired < steelNeeded || !GameObject.Find("SpawnerTop").GetComponent<SpawnerPathCheck>().foundPathOut)
         {
             canBuildStructure = false;
             GetComponent<Button>().interactable = false;
             return;
         }
 
-        else if (GameManager.GetComponent<GameManagerScript>().selectedTile != null)
+        else if (GameManager.GetComponent<GameManagerScript>().selectedTile != null && GameObject.Find("SpawnerTop").GetComponent<SpawnerPathCheck>().foundPathOut)
         {
             SelectedTile = GameManager.GetComponent<GameManagerScript>().selectedTile;
 

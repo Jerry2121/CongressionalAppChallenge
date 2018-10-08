@@ -15,7 +15,7 @@ public class EnemyChase : MonoBehaviour {
 
     private Vector2 moveDirection;
 
-    Vector3[] path;
+    public Vector3[] path;
     int targetIndex;
 
     public float maxMoveDistance = 10.0f;
