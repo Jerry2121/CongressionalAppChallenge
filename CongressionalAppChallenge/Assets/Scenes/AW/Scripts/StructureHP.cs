@@ -96,6 +96,15 @@ public class StructureHP : MonoBehaviour
             parentTile.GetComponent<Tile_Scripts>().baseTile = false;
         }
 
+        if (isTowerStructure || isFireTowerStructure)
+        {
+            GameObject.Find("GameManager").GetComponent<GameManagerScript>().towerAction = false;
+            GameObject towerRadiusEffector = Instantiate(GameObject.Find("GameManager").GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().towerRadius, GetComponent<Transform>());
+            towerRadiusEffector.transform.position = new Vector3(transform.position.x, transform.position.y, -5);            
+
+            Destroy(towerRadiusEffector, 0.1f);
+        }
+
         if (isDefenseStructure)
             GameObject.Find("GameManager").GetComponent<GameManagerScript>().WallTiles.Remove(gameObject);
 

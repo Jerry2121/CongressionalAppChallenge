@@ -1,0 +1,27 @@
+
+
+- Names
+
+- Name of the app
+
+- Clearly explain the purpose of the app (Students should do this in one, clear sentence)
+	- Learning to make games for the mobile market
+
+- Explain the app’s target audience (who the app is intended for?)
+	- The mobile market, iOS and Android
+
+- The tools and coding languages used to create the app
+	- Unity Development Engine
+	- Microsoft Visual Studio
+	- C#
+
+- Show how the app works
+
+- Talk about saving and A*
+	-We serialized data into a binary formatter and saved it in an encrypted folder on the hard drive
+
+- Things to show
+	- Saving
+	-UI
+
+- 1-3 minutes long

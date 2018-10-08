@@ -30,7 +30,11 @@ public class GameManagerScript : MonoBehaviour {
     public bool canSpawnNextWave;
     public bool isFirstInstance;
     public bool editMode;
+<<<<<<< HEAD
     public bool ran;
+=======
+    public bool towerAction;
+>>>>>>> 8a44fffb3c6ea0c1bb1562635609a521bc7d8c56
     [Space(25)]
     [Header("Floats")]
     public float cooldownTimer;
