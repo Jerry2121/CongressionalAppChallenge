@@ -97,7 +97,10 @@ public class StructureHP : MonoBehaviour
         }
 
         if (isDefenseStructure)
+        {
             GameObject.Find("GameManager").GetComponent<GameManagerScript>().WallTiles.Remove(gameObject);
+            GameObject.Find("GameManager").GetComponent<GameManagerScript>().WallCheckFunction();
+        }
 
         //GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         //Destroy(effect, .5f);

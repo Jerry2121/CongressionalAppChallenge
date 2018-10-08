@@ -6,91 +6,31 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveLoadGame : MonoBehaviour
 {
+
+    public static SaveLoadGame instance = null;
+
     [SerializeField]
     private string gameSavesDirectoryPath = "/GameState";
-
 
     List<GameTilesInfo> gameTilesInfoList;
 
     GameManagerInfo gameManagerInfo;
 
+    public bool Loading { get; protected set; }
+
     void Start()
     {
+
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+
         gameManagerInfo = new GameManagerInfo();
     }
-
-    //Save the tile info out to a binary file
-    public void SaveTiles()
-    {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + gameSavesDirectoryPath + "/GameTiles.cas", FileMode.OpenOrCreate);
-
-        GameTilesInfoList myInfo = new GameTilesInfoList();
-
-        //put what ever you're saving as myInfo.whatever
-        myInfo.gameTileInfoList = gameTilesInfoList;
-        bf.Serialize(file, myInfo);
-        file.Close();
-    }
-
-    public void SaveGameManager()
-    {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + gameSavesDirectoryPath + "/GameManager.cas", FileMode.OpenOrCreate);
-
-        GameManagerInfo myInfo = new GameManagerInfo();
-
-        //put what ever you're saving as myInfo.whatever
-        myInfo.townHallHP = gameManagerInfo.townHallHP;
-        myInfo.wood = gameManagerInfo.wood;
-        myInfo.stone = gameManagerInfo.stone;
-        myInfo.ore = gameManagerInfo.ore;
-        myInfo.steel = gameManagerInfo.steel;
-        myInfo.waveCount = gameManagerInfo.waveCount;
-        
-        bf.Serialize(file, myInfo);
-        file.Close();
-    }
-    public void LoadGame()
-    {
-
-        if (File.Exists(Application.persistentDataPath + gameSavesDirectoryPath + "/GameTiles.cas"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + gameSavesDirectoryPath +  "/GameTiles.cas", FileMode.Open);
-            GameTilesInfoList myLoadedTileInfo = (GameTilesInfoList)bf.Deserialize(file);
-            gameTilesInfoList = myLoadedTileInfo.gameTileInfoList;
-            
-            if(File.Exists(Application.persistentDataPath + gameSavesDirectoryPath + "/GameManager.cas"))
-            {
-                bf = new BinaryFormatter();
-                file = File.Open(Application.persistentDataPath + gameSavesDirectoryPath + "/GameManager.cas", FileMode.Open);
-                GameManagerInfo myLoadedGameManagerInfo = (GameManagerInfo)bf.Deserialize(file);
-
-                gameManagerInfo.townHallHP = myLoadedGameManagerInfo.townHallHP;
-                gameManagerInfo.wood = myLoadedGameManagerInfo.wood;
-                gameManagerInfo.stone = myLoadedGameManagerInfo.stone;
-                gameManagerInfo.ore = myLoadedGameManagerInfo.ore;
-                gameManagerInfo.steel = myLoadedGameManagerInfo.steel;
-
-                SetLoadedTiles();
-
-                gameObject.GetComponent<GameManagerScript>().Load(gameManagerInfo);
-
-            }
-            else
-            {
-                Debug.LogError("SaveLoadGame -- LoadGame: Tile were saved but the GameManager file cannot be found!");
-                return;
-            }
-        }
-        else
-        {
-            Debug.Log("No saved tiles found");
-        }
-
-    }
-
+    //called from GameManagerScript
     public void SaveGame()
     {
         GameObject townHall_GO = GameObject.Find("TownHallTile(Clone)");
@@ -100,17 +40,17 @@ public class SaveLoadGame : MonoBehaviour
             return;
         }
         //If the Directory doesn't exist, then create the folder
-        if(!Directory.Exists(Application.persistentDataPath + gameSavesDirectoryPath))
+        if (!Directory.Exists(Application.persistentDataPath + gameSavesDirectoryPath))
             Directory.CreateDirectory(Application.persistentDataPath + gameSavesDirectoryPath);
 
         //Ga through and save tiles
         gameTilesInfoList = new List<GameTilesInfo>();
 
-        for(int i = -15; i < 15; i++)
+        for (int i = -15; i < 15; i++)
         {
-            for(int j = -25; j < 25; j++)
+            for (int j = -25; j < 25; j++)
             {
-                if(GameObject.Find("Tile(" + j + ", " + i + ")").GetComponent<Tile_Scripts>().baseTile)
+                if (GameObject.Find("Tile(" + j + ", " + i + ")").GetComponent<Tile_Scripts>().baseTile)
                 {
                     //add to the list
                     GameObject tile_GO = GameObject.Find("Tile(" + j + ", " + i + ")");
@@ -127,12 +67,90 @@ public class SaveLoadGame : MonoBehaviour
         SaveTiles();
 
         //Save the Game Manager
-        gameManagerInfo = gameObject.GetComponent<GameManagerScript>().Save();
+        gameManagerInfo = GameObject.Find("GameManager").GetComponent<GameManagerScript>().SaveGameManager();
 
         SaveGameManager();
     }
 
-    public void SetLoadedTiles()
+    public void LoadGame()
+    {
+        GameObject.Find("LevelChanger").GetComponent<LevelChanger>().FadeToLevel(4);
+
+        Loading = true;
+    }
+
+    //Save the tile info out to a binary file
+    private void SaveTiles()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + gameSavesDirectoryPath + "/GameTiles.cas", FileMode.OpenOrCreate);
+
+        GameTilesInfoList myInfo = new GameTilesInfoList();
+
+        //put what ever you're saving as myInfo.whatever
+        myInfo.gameTileInfoList = gameTilesInfoList;
+        bf.Serialize(file, myInfo);
+        file.Close();
+    }
+
+    private void SaveGameManager()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Application.persistentDataPath + gameSavesDirectoryPath + "/GameManager.cas", FileMode.OpenOrCreate);
+
+        GameManagerInfo myInfo = new GameManagerInfo();
+
+        //put what ever you're saving as myInfo.whatever
+        myInfo.townHallHP = gameManagerInfo.townHallHP;
+        myInfo.wood = gameManagerInfo.wood;
+        myInfo.stone = gameManagerInfo.stone;
+        myInfo.ore = gameManagerInfo.ore;
+        myInfo.steel = gameManagerInfo.steel;
+        myInfo.waveCount = gameManagerInfo.waveCount;
+
+        bf.Serialize(file, myInfo);
+        file.Close();
+    }
+    //called from GameManagerScript
+    public void LoadGameState()
+    {
+        if (File.Exists(Application.persistentDataPath + gameSavesDirectoryPath + "/GameTiles.cas"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + gameSavesDirectoryPath + "/GameTiles.cas", FileMode.Open);
+            GameTilesInfoList myLoadedTileInfo = (GameTilesInfoList)bf.Deserialize(file);
+            gameTilesInfoList = myLoadedTileInfo.gameTileInfoList;
+            file.Close();
+
+            if (File.Exists(Application.persistentDataPath + gameSavesDirectoryPath + "/GameManager.cas"))
+            {
+                bf = new BinaryFormatter();
+                file = File.Open(Application.persistentDataPath + gameSavesDirectoryPath + "/GameManager.cas", FileMode.Open);
+                GameManagerInfo myLoadedGameManagerInfo = (GameManagerInfo)bf.Deserialize(file);
+
+                gameManagerInfo.townHallHP = myLoadedGameManagerInfo.townHallHP;
+                gameManagerInfo.wood = myLoadedGameManagerInfo.wood;
+                gameManagerInfo.stone = myLoadedGameManagerInfo.stone;
+                gameManagerInfo.ore = myLoadedGameManagerInfo.ore;
+                gameManagerInfo.steel = myLoadedGameManagerInfo.steel;
+
+                SetLoadedTiles();
+
+                GameObject.Find("GameManager").GetComponent<GameManagerScript>().Load(gameManagerInfo);
+                file.Close();
+            }
+            else
+            {
+                Debug.LogError("SaveLoadGame -- LoadGame: Tile were saved but the GameManager file cannot be found!");
+            }
+        }
+        else
+        {
+            Debug.Log("No saved tiles found");
+        }
+    }
+
+    private void SetLoadedTiles()
     {
         //Wipe all current tiles
         for (int i = -15; i < 15; i++)
@@ -157,14 +175,7 @@ public class SaveLoadGame : MonoBehaviour
         
         }
     }
-    public void SetGameManager()
-    {
-        GameManagerScript gMS = gameObject.GetComponent<GameManagerScript>();
-
-    }
 }
-
-
 
 [System.Serializable]
 public class GameTilesInfo

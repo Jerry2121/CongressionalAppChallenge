@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AW/TestGame.unity
     guid: 4d2c8603f945e614ea1056d2fadc6445
+  - enabled: 1
+    path: Assets/Scenes/AW/MainMenu 1.unity
+    guid: 69e4745afbc72264aa71ea0a3b49b5c9
+  - enabled: 1
+    path: Assets/Scenes/AW/MainGameAWTest.unity
+    guid: d5d596ffacef8f441862ee1bc49f1376
   m_configObjects: {}

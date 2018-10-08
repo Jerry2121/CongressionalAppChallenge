@@ -76,6 +76,7 @@ public class GameManagerScript : MonoBehaviour {
             WaveMusic.GetComponent<AudioSource>().Stop();
         }
         //editModeButton.GetComponent<TextMeshPro>().text = "Enter \n Edit mode";
+        CheckIfLoading();
     }
 
     // Update is called once per frame
@@ -245,7 +246,7 @@ public class GameManagerScript : MonoBehaviour {
         TownHallHP += mod;
     }
 
-    public GameManagerInfo Save()
+    public GameManagerInfo SaveGameManager()
     {
         GameManagerInfo gMI = new GameManagerInfo();
 
@@ -269,6 +270,33 @@ public class GameManagerScript : MonoBehaviour {
         steelAcquired = _gMI.steel;
 
         gameObject.GetComponent<SpawnerControl>().waveCount = _gMI.waveCount;
+    }
+
+    private void CheckIfLoading()
+    {
+        if (GameObject.Find("SaveLoadManager").GetComponent<SaveLoadGame>() != null)
+        {
+            if (GameObject.Find("SaveLoadManager").GetComponent<SaveLoadGame>().Loading)
+            {
+                GameObject.Find("SaveLoadManager").GetComponent<SaveLoadGame>().LoadGameState();
+            }
+        }
+        else
+        {
+            Debug.LogError("GameManagerScript -- CheckIfLoading: The SaveLoadGame script was not found. It should be on the SaveLoadManager");
+        }
+    }
+
+    public void SaveGame()
+    {
+        if (GameObject.Find("SaveLoadManager").GetComponent<SaveLoadGame>() != null)
+        {
+            GameObject.Find("SaveLoadManager").GetComponent<SaveLoadGame>().SaveGame();
+        }
+        else
+        {
+            Debug.LogError("GameManagerScript -- SaveGame: The SaveLoadGame script was not found. It should be on the SaveLoadManager");
+        }
     }
 
 }
