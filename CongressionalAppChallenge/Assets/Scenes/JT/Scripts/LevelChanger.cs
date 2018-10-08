@@ -33,7 +33,8 @@ public class LevelChanger : MonoBehaviour {
     }
     public void GameOver()
     {
-        FadeToLevel(2);
-        Time.timeScale = 1;
+        FadeToLevel(1);
+        Time.timeScale = 0;
     }
+  
 }
