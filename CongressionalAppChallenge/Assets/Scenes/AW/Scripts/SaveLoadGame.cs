@@ -6,6 +6,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveLoadGame : MonoBehaviour
 {
+    [SerializeField]
+    private int sceneToLoadIndex = 1;
 
     public static SaveLoadGame instance = null;
 
@@ -74,7 +76,7 @@ public class SaveLoadGame : MonoBehaviour
 
     public void LoadGame()
     {
-        GameObject.Find("LevelChanger").GetComponent<LevelChanger>().FadeToLevel(4);
+        GameObject.Find("LevelChanger").GetComponent<LevelChanger>().FadeToLevel(sceneToLoadIndex);
 
         Loading = true;
     }

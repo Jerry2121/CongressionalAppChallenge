@@ -235,12 +235,6 @@ RectTransform:
   m_AnchoredPosition: {x: -57.600006, y: -54.1}
   m_SizeDelta: {x: 90.630005, y: 90.29001}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &93575201 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114159678450528088, guid: 7aab0c402ee57fb4bb2cb4455cf09782,
-    type: 2}
-  m_PrefabInternal: {fileID: 651510294}
-  m_Script: {fileID: 11500000, guid: db5c4f259e282374c808d6496c2434f3, type: 3}
 --- !u!1 &109817728
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +770,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114159678450528088, guid: 7aab0c402ee57fb4bb2cb4455cf09782,
+        type: 2}
+      propertyPath: sceneToLoadIndex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aab0c402ee57fb4bb2cb4455cf09782, type: 2}
   m_IsPrefabAsset: 0
@@ -924,7 +923,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 93575201}
+      - m_Target: {fileID: 1787213010}
         m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:

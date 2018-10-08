@@ -26,6 +26,10 @@ public class LevelChanger : MonoBehaviour {
     {
         FadeToLevel(1);
     }
+    public void LoadGame()
+    {
+        GameObject.Find("SaveLoadManager").GetComponent<SaveLoadGame>().LoadGame();
+    }
     public void QuitMenu()
     {
         FadeToLevel(0);
