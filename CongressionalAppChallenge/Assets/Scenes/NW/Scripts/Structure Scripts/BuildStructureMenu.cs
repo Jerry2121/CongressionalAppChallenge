@@ -71,10 +71,20 @@ public class BuildStructureMenu : MonoBehaviour {
         disableUpgradeMenu = true;
     }
 
-    public void PlayerCheckCancel()
+    public void playerCancel()
     {
+        buildStructureMenu.SetActive(false);
+        upgradeStructureMenu.SetActive(false);
+        structureTypeSelectMenu.SetActive(false);
+        productionStructuresMenu.SetActive(false);
+        villageStructureMenu.SetActive(false);
+        attackStructureMenu.SetActive(false);
+        defenseStructureMenu.SetActive(false);
+
+        // MAIN
         playerCheckMenu.SetActive(false);
-        GameManager.GetComponent<GameManagerScript>().selectedTile = null;
+
+    GameManager.GetComponent<GameManagerScript>().selectedTile = null;
         MenuDisplayFunction();
     }
 
@@ -220,7 +230,7 @@ public class BuildStructureMenu : MonoBehaviour {
     // int buttonType
     // 1 = OpenProductionStructuresMenu ; 2 = OpenVillageStructureMenu ; 3 = OpenAttackStructureMenu ; 4 = OpenDefenseStructureMenu
     // 11 = Quarry ; 12 = Sawmill ; 13 = Mine ; 14 = Forge
-   public void MenuButtonClick(int buttonType)
+    public void MenuButtonClick(int buttonType)
     {
 
         switch (buttonType)

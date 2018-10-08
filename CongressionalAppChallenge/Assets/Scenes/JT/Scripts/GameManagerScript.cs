@@ -83,6 +83,10 @@ public class GameManagerScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (selectedTile != null)
+        {
+            selectedTile.GetComponent<Tile_Scripts>().selectedTileUpdate();
+        }
         if (InfiniteHealth)
         {
             TownHallHP = 100;

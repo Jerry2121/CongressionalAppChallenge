@@ -8,6 +8,7 @@ public class Tile_Scripts : MonoBehaviour {
     public GameObject townHallPrefab;
 
     public GameObject menuCanvas;
+    public bool runMenudisplay;
 
     //public bool selectedTile;
 
@@ -38,6 +39,8 @@ public class Tile_Scripts : MonoBehaviour {
     public int buildingLevel;
     public bool isLoading;
 
+    public float timer;
+
     void Start()
     {
         penaltyValue = 0;
@@ -57,15 +60,74 @@ public class Tile_Scripts : MonoBehaviour {
     {
         if (collision.gameObject.layer == 28 && GameManager.GetComponent<GameManagerScript>().towerAction)
         {
-            penaltyValue += 999;
+            penaltyValue += 50;
         }
 
         else if (collision.gameObject.layer == 28 && !GameManager.GetComponent<GameManagerScript>().towerAction)
         {
-            penaltyValue -= 999;
+            penaltyValue -= 50;
         }
 
     }
+
+    // This acts like update, but only when I am selected
+    public void selectedTileUpdate()
+    {
+        timer += Time.deltaTime;
+
+        if (timer >= .08f && runMenudisplay)
+        {
+
+            switch (buildingID)
+            {
+                case 0:
+                    menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
+                    runMenudisplay = false;
+                    break;
+
+                case 11:
+                    menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
+                    runMenudisplay = false;
+                    break;
+
+                case 12:
+                    menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
+                    runMenudisplay = false;
+                    break;
+
+                case 13:
+                    menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
+                    runMenudisplay = false;
+                    break;
+
+                case 14:
+                    menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
+                    runMenudisplay = false;
+                    break;
+
+                case 21:
+                    menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
+                    runMenudisplay = false;
+                    break;
+
+                case 31:
+                    menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
+                    runMenudisplay = false;
+                    break;
+
+                case 41:
+                    menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
+                    runMenudisplay = false;
+                    break;
+
+                case -1:
+                    menuCanvas.GetComponent<BuildStructureMenu>().MenuHardFalse();
+                    GameManager.GetComponent<GameManagerScript>().selectedTile = null;
+                    break;
+            }
+        }
+    }
+
     void Update()
     {
         /*
@@ -130,7 +192,6 @@ public class Tile_Scripts : MonoBehaviour {
         {
             GameManager.GetComponent<GameManagerScript>().selectedTile = gameObject;
         }
-
         else if (GameManager.GetComponent<GameManagerScript>().selectedTile != null)
         {
             GameManager.GetComponent<GameManagerScript>().selectedTile = null;
@@ -139,44 +200,7 @@ public class Tile_Scripts : MonoBehaviour {
             return;
         }
 
-        switch (buildingID)
-        {
-            case 0:
-                menuCanvas.GetComponent<BuildStructureMenu>().MenuDisplayFunction();
-                break;
-
-            case 11:
-                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
-                break;
-
-            case 12:
-                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
-                break;
-
-            case 13:
-                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
-                break;
-
-            case 14:
-                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
-                break;
-
-            case 21:
-                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
-                break;
-
-            case 31:
-                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
-                break;
-
-            case 41:
-                menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
-                break;
-
-            case -1:
-                menuCanvas.GetComponent<BuildStructureMenu>().MenuHardFalse();
-                break;
-        }
+        runMenudisplay = true;
     }
 
     public void SpawnTownHall()
