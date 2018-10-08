@@ -18,7 +18,6 @@ public class GameManagerScript : MonoBehaviour {
     public GameObject WaveButtonText;
     public GameObject WaveButton;
     public GameObject HUD;
-    public GameObject gameoverobject;
     public GameObject MusicEnabledIcon;
     public GameObject MusicDisabledIcon;
     public GameObject BGMusic;
@@ -94,11 +93,9 @@ public class GameManagerScript : MonoBehaviour {
             oreAcquired = 999;
             steelAcquired = 999;
         }
-        if (TownHallHP <= 0 || ran)
+        if (TownHallHP <= 0)
         {
             GameObject.Find("LevelChanger").GetComponent<LevelChanger>().GameOver();
-            gameoverobject.SetActive(true);
-            ran = true;
         }
         if (Time.timeScale == 0 && HUD.GetComponent<HUDController>().Paused == true && PlayerPrefs.GetInt("MusicEnabled") == 1)
         {
