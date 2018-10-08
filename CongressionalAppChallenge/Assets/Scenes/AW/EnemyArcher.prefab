@@ -38,10 +38,10 @@ GameObject:
   - component: {fileID: 4189662444407214}
   - component: {fileID: 212748030063211890}
   - component: {fileID: 50327433955962092}
-  - component: {fileID: 61921144835345202}
   - component: {fileID: 95219463879025104}
   - component: {fileID: 114767406546434656}
   - component: {fileID: 114502907499265476}
+  - component: {fileID: 58163824598823720}
   m_Layer: 16
   m_Name: EnemyArcher
   m_TagString: Enemies
@@ -117,9 +117,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &61921144835345202
-BoxCollider2D:
+  m_Constraints: 4
+--- !u!58 &58163824598823720
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -131,18 +131,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.33333334, y: 0.33333334}
-    newSize: {x: 0.33333334, y: 0.33333334}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33333334, y: 0.33333334}
-  m_EdgeRadius: 0
+  m_Radius: 0.16666667
 --- !u!95 &95219463879025104
 Animator:
   serializedVersion: 3

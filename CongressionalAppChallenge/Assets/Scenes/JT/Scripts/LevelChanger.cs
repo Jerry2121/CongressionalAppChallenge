@@ -36,4 +36,5 @@ public class LevelChanger : MonoBehaviour {
         FadeToLevel(2);
         Time.timeScale = 1;
     }
+  
 }

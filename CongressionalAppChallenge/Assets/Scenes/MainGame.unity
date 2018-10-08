@@ -3196,6 +3196,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01057831dc833794585f1b48c994ffb4, type: 2}
   m_IsPrefabAsset: 0
+--- !u!95 &1337079453 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95158312393063366, guid: 1e136b21858925048a57d3aa3439faa6,
+    type: 2}
+  m_PrefabInternal: {fileID: 683459096}
 --- !u!1001 &1435347321
 Prefab:
   m_ObjectHideFlags: 0
@@ -3613,7 +3618,7 @@ Prefab:
         type: 2}
       propertyPath: Enemy2
       value: 
-      objectReference: {fileID: 1413487808738946, guid: bc661bf2f0f3a6b4180367d42a6d0b00,
+      objectReference: {fileID: 1413487808738946, guid: 5e9f2c7bb88b7f94cbf5d727113e3bad,
         type: 2}
     - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
         type: 2}
@@ -3623,6 +3628,28 @@ Prefab:
     - target: {fileID: 114411192973498740, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
         type: 2}
       propertyPath: Enemy1
+      value: 
+      objectReference: {fileID: 1732738193949578, guid: 11738663bf1e2b7448d04df952545011,
+        type: 2}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1337079453}
+    - target: {fileID: 114400164246344998, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: gameoverobject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114411192973498740, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: Enemy3
+      value: 
+      objectReference: {fileID: 1413487808738946, guid: bc661bf2f0f3a6b4180367d42a6d0b00,
+        type: 2}
+    - target: {fileID: 114411192973498740, guid: 5f82fbb73ef135c40837159ec9aa0ae4,
+        type: 2}
+      propertyPath: Enemy5
       value: 
       objectReference: {fileID: 1732738193949578, guid: 11738663bf1e2b7448d04df952545011,
         type: 2}

@@ -97,10 +97,7 @@ public class BaseStructureScript : MonoBehaviour {
 
                 BuildingLevelAnalysis();
 
-                parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + gameObject.transform.position.y + ")"));
-                parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + gameObject.transform.position.y + ")"));
-                parentTiles.Add(GameObject.Find("Tile(" + gameObject.transform.position.x + ", " + (gameObject.transform.position.y + 1) + ")"));
-                parentTiles.Add(GameObject.Find("Tile(" + (gameObject.transform.position.x + 1) + ", " + (gameObject.transform.position.y + 1) + ")"));
+                parentTiles.Add(gameObject);
 
                 break;
 
@@ -143,9 +140,9 @@ public class BaseStructureScript : MonoBehaviour {
 
             case 41:
 
-                // Upgrade requirement = 50;
-                woodUpgradeRequirement = 15;
-                stoneUpgradeRequirement = 35;
+                // Upgrade requirement = 29;
+                woodUpgradeRequirement = 5;
+                stoneUpgradeRequirement = 24;
 
                 BuildingLevelAnalysis();
 

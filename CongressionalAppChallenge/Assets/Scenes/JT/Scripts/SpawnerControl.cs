@@ -94,6 +94,7 @@ public class SpawnerControl : MonoBehaviour {
         }
         Spawn = false;
         count = 0;
+        PlayerPrefs.SetInt("WaveCountNum", waveCount);
     }
 
 	// Update is called once per frame

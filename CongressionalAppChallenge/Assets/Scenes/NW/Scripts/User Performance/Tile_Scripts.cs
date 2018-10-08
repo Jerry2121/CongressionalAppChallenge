@@ -15,9 +15,6 @@ public class Tile_Scripts : MonoBehaviour {
     public Sprite EmptyTileIndicator;
     public GameObject childStructure;
 
-    // True = tower was built
-    // false = tower was destroyed
-    public bool towerAction;
     public GameObject towerRadius;
 
     public Vector2 originalLocation;
@@ -58,14 +55,12 @@ public class Tile_Scripts : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.GetComponent<Collider2D>().name);
-
-        if (collision.gameObject.layer == 12 && towerAction)
+        if (collision.gameObject.layer == 28 && GameManager.GetComponent<GameManagerScript>().towerAction)
         {
             penaltyValue += 999;
         }
 
-        else if (collision.gameObject.layer == 12 && !towerAction)
+        else if (collision.gameObject.layer == 28 && !GameManager.GetComponent<GameManagerScript>().towerAction)
         {
             penaltyValue -= 999;
         }
@@ -223,6 +218,9 @@ public class Tile_Scripts : MonoBehaviour {
 
         GameObject tempTile;
         GameObject SelectedTile = GameManager.GetComponent<GameManagerScript>().selectedTile;
+
+        GameObject towerRadiusEffector;
+
         switch (buildingID)
         {
             case 11:
@@ -261,9 +259,21 @@ public class Tile_Scripts : MonoBehaviour {
                 structure.GetComponent<BaseStructureScript>().hpMax = GameManager.GetComponent<GameManagerScript>().TowerStuctureHP;
                 staticPriorityValue += 25;
 
-                GameObject towerRadiusEffector = Instantiate(towerRadius, GetComponent<Transform>());
-                towerRadiusEffector.transform.position =  new Vector3(transform.position.x, transform.position.y, -5);
-                towerAction = true;
+                GameManager.GetComponent<GameManagerScript>().towerAction = true;
+                towerRadiusEffector = Instantiate(towerRadius, GetComponent<Transform>());
+                Debug.Log(towerRadiusEffector.transform.position);                
+
+                Destroy(towerRadiusEffector, 0.1f);
+
+                break;
+
+            case 32:
+                structure.GetComponent<BaseStructureScript>().hpMax = GameManager.GetComponent<GameManagerScript>().TowerStuctureHP;
+                staticPriorityValue += 25;
+
+                GameManager.GetComponent<GameManagerScript>().towerAction = true;
+                towerRadiusEffector = Instantiate(towerRadius, GetComponent<Transform>());
+                Debug.Log(towerRadiusEffector.transform.position);                
 
                 Destroy(towerRadiusEffector, 0.1f);
 
