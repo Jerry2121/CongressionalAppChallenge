@@ -22,6 +22,7 @@ public class BaseStructureScript : MonoBehaviour {
     public int oreUpgradeRequirement;
     public int steelUpgradeRequirement;
 
+    public int maxBuildingLevel = 4;
     public bool upgradeAvailable;
 
     public List<GameObject> parentTiles;

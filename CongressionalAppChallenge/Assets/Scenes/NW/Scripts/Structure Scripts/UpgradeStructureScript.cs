@@ -362,7 +362,7 @@ public class UpgradeStructureScript : MonoBehaviour {
             {
                 selectedStructure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure;
 
-                if (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel > 4)
+                if (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel > selectedStructure.GetComponent<BaseStructureScript>().maxBuildingLevel)
                 {
                     upgradeAvailable = false;
                 }
