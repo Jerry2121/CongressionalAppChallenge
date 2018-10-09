@@ -36,7 +36,7 @@ public class Unit : MonoBehaviour
 
         else if (!pathSuccessful)
         {
-            GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
+            /*GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
             float dist = 1000;
             for(int i = 0; i < structures.Length; i++)
             {
@@ -47,6 +47,7 @@ public class Unit : MonoBehaviour
                 }
 
             }
+            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);*/
         }
     }
 

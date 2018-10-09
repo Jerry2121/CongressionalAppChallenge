@@ -22,6 +22,7 @@ public class ArcherChase : MonoBehaviour {
     int targetIndex;
 
     public GameObject target;
+    public GameObject townBase;
 
     public bool cannotAttack;
 
@@ -40,6 +41,22 @@ public class ArcherChase : MonoBehaviour {
             targetIndex = 0;
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
+        }
+
+        else if (!pathSuccessful)
+        {
+            GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
+            float dist = 1000;
+            for (int i = 0; i < structures.Length; i++)
+            {
+                if ((structures[i].transform.position - transform.position).magnitude < dist)
+                {
+                    target = structures[i];
+                    dist = (target.transform.position - transform.position).magnitude;
+                }
+
+            }
+            PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
         }
     }
 
@@ -77,8 +94,10 @@ public class ArcherChase : MonoBehaviour {
         //If there is no target, target the town hall
         if (target == null)
         {
-            target = GameObject.Find("TownHallTile(Clone)");
+            target = townBase;
+            PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
         }
+
         float targetDistance = Vector2.Distance(transform.position, target.transform.position);
         if (targetDistance <= range)
         {

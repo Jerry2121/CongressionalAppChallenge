@@ -18,6 +18,7 @@ public class Pathfinding : MonoBehaviour
 
     public void StartFindPath(Vector3 startPos, Vector3 targetPos)
     {
+        
         StartCoroutine(FindPath(startPos, targetPos));
     }
 
@@ -76,6 +77,7 @@ public class Pathfinding : MonoBehaviour
             waypoints = RetracePath(startNode, targetNode);
         }
         requestManager.FinishedProcessingPath(waypoints, pathSuccess);
+        //yield return null;
 
     }
 

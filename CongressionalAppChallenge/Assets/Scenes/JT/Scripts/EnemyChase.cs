@@ -5,7 +5,8 @@ public class EnemyChase : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject target;
-	public float chaseSpeed = 2.0f;
+    public GameObject townBase;
+    public float chaseSpeed = 2.0f;
     public int damage = 1;
 	private bool home = true;
     public bool cannotAttack;
@@ -29,6 +30,22 @@ public class EnemyChase : MonoBehaviour {
             targetIndex = 0;
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
+        }
+
+        else if (!pathSuccessful)
+        {
+            /*GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
+            float dist = 1000;
+            for (int i = 0; i < structures.Length; i++)
+            {
+                if ((structures[i].transform.position - transform.position).magnitude < dist)
+                {
+                    target = structures[i];
+                    dist = (target.transform.position - transform.position).magnitude;
+                }
+
+            }
+            PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);*/
         }
     }
 
@@ -58,13 +75,34 @@ public class EnemyChase : MonoBehaviour {
         PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
 
         homePos = transform.position;
+        townBase = target;
         cannotAttack = false;
         animator = GetComponent<Animator>();
+
+
+        GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
+        float dist = 1000;
+        for (int i = 0; i < structures.Length; i++)
+        {
+            if ((structures[i].transform.position - transform.position).magnitude < dist)
+            {
+                target = structures[i];
+                dist = (target.transform.position - transform.position).magnitude;
+            }
+
+        }
+        PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
 
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (target == null)
+        {
+            target = townBase;
+            PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
+        }
 
         /*
         timer += Time.deltaTime;
@@ -76,7 +114,7 @@ public class EnemyChase : MonoBehaviour {
         GetComponent<Rigidbody2D>().velocity = moveDirection * chaseSpeed;
         */
 
-	}
+    }
    /* public void OnCollisionEnter2D(Collision2D collision)
     {
         //Production Structure
