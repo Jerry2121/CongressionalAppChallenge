@@ -34,9 +34,19 @@ public class BuildStructureButtonScript : MonoBehaviour {
             switch (buildingID)
             {
                 case 11:
-                    if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")").GetComponent<Tile_Scripts>().spaceOccupied ||
+                    if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")") != null &&
+                            GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")") != null &&
+                                GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")") != null)
+                    {
+                        if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")").GetComponent<Tile_Scripts>().spaceOccupied ||
                             GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied ||
                                 GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied)
+                        {
+                            GetComponent<Button>().interactable = false;
+                            return;
+                        }
+                    }
+                    else
                     {
                         GetComponent<Button>().interactable = false;
                         return;
@@ -45,9 +55,19 @@ public class BuildStructureButtonScript : MonoBehaviour {
                     break;
 
                 case 12:
-                    if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")").GetComponent<Tile_Scripts>().spaceOccupied ||
+                    if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")") != null &&
+                            GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")") != null &&
+                                GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")") != null)
+                    {
+                        if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")").GetComponent<Tile_Scripts>().spaceOccupied ||
                             GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied ||
                                 GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied)
+                        {
+                            GetComponent<Button>().interactable = false;
+                            return;
+                        }
+                    }
+                    else
                     {
                         GetComponent<Button>().interactable = false;
                         return;
@@ -56,9 +76,19 @@ public class BuildStructureButtonScript : MonoBehaviour {
                     break;
 
                 case 13:
-                    if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")").GetComponent<Tile_Scripts>().spaceOccupied ||
+                    if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")") != null &&
+                            GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")") != null &&
+                                GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")") != null)
+                    {
+                        if (GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + SelectedTile.transform.position.y + ")").GetComponent<Tile_Scripts>().spaceOccupied ||
                             GameObject.Find("Tile(" + SelectedTile.transform.position.x + ", " + (SelectedTile.transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied ||
                                 GameObject.Find("Tile(" + (SelectedTile.transform.position.x + 1) + ", " + (SelectedTile.transform.position.y + 1) + ")").GetComponent<Tile_Scripts>().spaceOccupied)
+                        {
+                            GetComponent<Button>().interactable = false;
+                            return;
+                        }
+                    }
+                    else
                     {
                         GetComponent<Button>().interactable = false;
                         return;

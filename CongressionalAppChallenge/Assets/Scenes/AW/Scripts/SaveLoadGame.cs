@@ -192,6 +192,7 @@ public class GameTilesInfo
 public class GameTilesInfoList{
 
     public List<GameTilesInfo> gameTileInfoList;
+    
 }
 [System.Serializable]
 public class GameManagerInfo
