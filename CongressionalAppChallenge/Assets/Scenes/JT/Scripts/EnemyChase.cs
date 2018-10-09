@@ -127,20 +127,35 @@ public class EnemyChase : MonoBehaviour {
                     timer = 0;
                 }
             }
-            else
+            if (collision.gameObject.layer == 13)
             {
-                animator.SetBool("Attack", false);
-                chaseSpeed = 2.0f;
+                //Enemies 2 (DarkSwordsman)
+                if (timer >= 2)
+                {
+                    animator.SetBool("Attack", true);
+                    GameObject.Find("GameManager").GetComponent<GameManagerScript>().ModifyTownHallHP(-damage);
+                    timer = 0;
+                }
             }
-        }
-        if (collision.gameObject.layer == 13)
-        {
             //Enemies 2 (DarkSwordsman)
-            if (timer >= 1)
+            if (collision.gameObject.layer == 14)
             {
-                animator.SetBool("Attack", true);
-                collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
-                timer = 0;
+                if (timer >= 2)
+                {
+                    animator.SetBool("Attack", true);
+                    GameObject.Find("GameManager").GetComponent<GameManagerScript>().ModifyTownHallHP(-damage);
+                    timer = 0;
+                }
+            }
+            //Enemies 3 (Swordsman)
+            if (collision.gameObject.layer == 15 && timer >= 1)
+            {
+                if (timer >= 2)
+                {
+                    animator.SetBool("Attack", true);
+                    GameObject.Find("GameManager").GetComponent<GameManagerScript>().ModifyTownHallHP(-damage);
+                    timer = 0;
+                }
             }
         }
         else
@@ -148,31 +163,8 @@ public class EnemyChase : MonoBehaviour {
             animator.SetBool("Attack", false);
             chaseSpeed = 2.0f;
         }
-        //Enemies 2 (DarkSwordsman)
-        if (collision.gameObject.layer == 14 && timer >= 1)
-        {
-            Debug.Log("Foo");
-            animator.SetBool("Attack", true);
-            collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
-            timer = 0;
-        }
-        else
-        {
-            animator.SetBool("Attack", false);
-            chaseSpeed = 2.0f;
-            }
-        //Enemies 3 (Swordsman)
-        if (collision.gameObject.layer == 15 && timer >= 1)
-        {
-            Debug.Log("Foo");
-            animator.SetBool("Attack", true);
-            collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
-            timer = 0;
-        }
-        else
-        {
-            chaseSpeed = 2.0f;
-        }
+
+
         if(collision.gameObject.tag == "OutsideBarrier")
         {
             cannotAttack = true;
