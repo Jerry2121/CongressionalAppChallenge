@@ -115,14 +115,16 @@ public class Tile_Scripts : MonoBehaviour {
                     menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                     runMenudisplay = false;
                     break;
-
+                case 32:
+                    menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
+                    runMenudisplay = false;
+                    break;
                 case 41:
                     menuCanvas.GetComponent<BuildStructureMenu>().UpgradeStructureFunction();
                     runMenudisplay = false;
                     break;
 
                 case -1:
-                    menuCanvas.GetComponent<BuildStructureMenu>().MenuHardFalse();
                     GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                     break;
             }
@@ -209,8 +211,8 @@ public class Tile_Scripts : MonoBehaviour {
 
         GameObject TownHall = Instantiate(townHallPrefab, GetComponent<Transform>());
 
-        spawnerPathChecker = GameObject.Find("SpawnerTop");
-        spawnerPathChecker.GetComponent<SpawnerPathCheck>().target = TownHall.transform;
+        //spawnerPathChecker = GameObject.Find("SpawnerTop");
+        //spawnerPathChecker.GetComponent<SpawnerPathCheck>().target = TownHall.transform;
 
         spaceOccupied = true;
         baseTile = true;

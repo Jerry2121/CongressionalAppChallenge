@@ -290,6 +290,7 @@ public class UpgradeStructureScript : MonoBehaviour {
                         break;
                 }
                 break;
+                //FIRE TOWER
             case 32:
                 SelectedTile.GetComponent<Tile_Scripts>().staticPriorityValue += 20;
                 switch (selectedStructure.GetComponent<BaseStructureScript>().buildingLevel)

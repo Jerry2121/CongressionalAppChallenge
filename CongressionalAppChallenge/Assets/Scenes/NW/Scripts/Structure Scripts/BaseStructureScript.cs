@@ -313,6 +313,76 @@ public class BaseStructureScript : MonoBehaviour {
                         break;
                 }
                 break;
+
+            case 21:
+                switch (buildingLevel)
+                {
+                    case 1:
+                        woodReturned += 4;
+                        stoneReturned += 4;
+                        break;
+
+                    case 2:
+                        woodReturned += 35;
+                        stoneReturned += 14;
+                        break;
+
+                    case 3:
+                        woodReturned += 55;
+                        stoneReturned += 20;
+                        oreReturned += 6;
+                        break;
+
+                    case 4:
+                        woodReturned += 75;
+                        stoneReturned += 29;
+                        oreReturned += 13;
+                        steelReturned += 4;
+                        break;
+
+                    case 5:
+                        woodReturned += 95;
+                        stoneReturned += 39;
+                        oreReturned += 20;
+                        steelReturned += 12;
+                        break;
+                }
+                break;
+            case 31:
+                switch (buildingLevel)
+                {
+                    case 1:
+                        woodReturned += 4;
+                        stoneReturned += 4;
+                        break;
+
+                    case 2:
+                        woodReturned += 16;
+                        stoneReturned += 20;
+                        oreReturned += 4;
+                        break;
+
+                    case 3:
+                        woodReturned += 29;
+                        stoneReturned += 42;
+                        oreReturned += 45;
+                        break;
+
+                    case 4:
+                        woodReturned += 52;
+                        stoneReturned += 75;
+                        oreReturned += 55;
+                        steelReturned += 13;
+                        break;
+
+                    case 5:
+                        woodReturned += 70;
+                        stoneReturned += 85;
+                        oreReturned += 75;
+                        steelReturned += 16;
+                        break;
+                }
+                break;
         }
     }
 }
