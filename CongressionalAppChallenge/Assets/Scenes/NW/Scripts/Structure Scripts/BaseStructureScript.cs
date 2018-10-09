@@ -145,7 +145,7 @@ public class BaseStructureScript : MonoBehaviour {
             case 41:
 
                 // Upgrade requirement = 29;
-                woodUpgradeRequirement = 5;
+                woodUpgradeRequirement = 3;
                 stoneUpgradeRequirement = 24;
 
                 BuildingLevelAnalysis();
