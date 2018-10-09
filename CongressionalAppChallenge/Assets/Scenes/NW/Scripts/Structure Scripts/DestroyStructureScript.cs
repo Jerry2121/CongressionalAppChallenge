@@ -33,9 +33,9 @@ public class DestroyStructureScript : MonoBehaviour {
             }
         }
 
-        selectedStructure.GetComponentInParent<BaseStructureScript>().GetComponent<Tile_Scripts>().buildingID = 0;
-        selectedStructure.GetComponentInParent<BaseStructureScript>().GetComponent<Tile_Scripts>().spaceOccupied = false;
-        selectedStructure.GetComponentInParent<BaseStructureScript>().GetComponent<Tile_Scripts>().staticPriorityValue = 1;
+        selectedStructure.GetComponentInParent<Tile_Scripts>().buildingID = 0;
+        selectedStructure.GetComponentInParent<Tile_Scripts>().spaceOccupied = false;
+        selectedStructure.GetComponentInParent<Tile_Scripts>().staticPriorityValue = 1;
         GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().ShowTilePlacement();
         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
         MenuCanvas.GetComponent<BuildStructureMenu>().upgradeStructureMenu.SetActive(false);
