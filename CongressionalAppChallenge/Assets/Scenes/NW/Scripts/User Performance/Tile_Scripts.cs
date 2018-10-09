@@ -402,6 +402,11 @@ public class Tile_Scripts : MonoBehaviour {
 
         isLoading = true;
         SpawnBuilding(_gTI.buildingTypeID, _gTI.buildingID);
+
+        childStructure.GetComponent<BaseStructureScript>().loadedBuilding = true;
+        childStructure.GetComponent<BaseStructureScript>().buildingLevel = buildingLevel;
+        Debug.Log(childStructure.GetComponent<BaseStructureScript>().buildingLevel);
+        childStructure.GetComponent<BaseStructureScript>().BuildingLevelAnalysis();
     }
 
 }

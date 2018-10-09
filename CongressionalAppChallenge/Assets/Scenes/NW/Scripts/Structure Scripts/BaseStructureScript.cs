@@ -24,14 +24,17 @@ public class BaseStructureScript : MonoBehaviour {
 
     public int maxBuildingLevel = 4;
     public bool upgradeAvailable;
+    [HideInInspector]
+    public bool loadedBuilding;
 
     public List<GameObject> parentTiles;
 
     void Start()
     {
         GameManager = GameObject.Find("GameManager");
-
-        buildingLevel = 1;
+        if(loadedBuilding == false)
+            buildingLevel = 1;
+        Debug.Log("BaseStructureScript -- Start");
         woodUpgradeRequirement = 0;
         stoneUpgradeRequirement = 0;
         oreUpgradeRequirement = 0;
