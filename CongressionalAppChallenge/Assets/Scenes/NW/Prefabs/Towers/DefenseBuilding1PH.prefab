@@ -184,14 +184,15 @@ MonoBehaviour:
   hp: 0
   buildingLevel: 1
   buildingID: 41
-  woodReturned: 0
-  stoneReturned: 0
+  woodReturned: 1
+  stoneReturned: 5
   oreReturned: 0
   steelReturned: 0
   woodUpgradeRequirement: 0
   stoneUpgradeRequirement: 0
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
+  maxBuildingLevel: 4
   upgradeAvailable: 0
   parentTiles: []
 --- !u!114 &114060831609242468
