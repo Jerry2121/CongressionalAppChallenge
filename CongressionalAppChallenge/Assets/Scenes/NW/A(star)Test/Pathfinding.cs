@@ -43,7 +43,7 @@ public class Pathfinding : MonoBehaviour
                 Node currentNode = openSet.RemoveFirst();
                 closedSet.Add(currentNode);
 
-                if (currentNode == targetNode)
+                if (currentNode == targetNode || (currentNode.worldPosition - targetNode.worldPosition).magnitude < 2)
                 {
                     pathSuccess = true;
                     break;

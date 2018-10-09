@@ -209,8 +209,8 @@ public class Tile_Scripts : MonoBehaviour {
 
         GameObject TownHall = Instantiate(townHallPrefab, GetComponent<Transform>());
 
-        spawnerPathChecker = GameObject.Find("SpawnerTop");
-        spawnerPathChecker.GetComponent<SpawnerPathCheck>().target = TownHall.transform;
+        //spawnerPathChecker = GameObject.Find("SpawnerTop");
+        //spawnerPathChecker.GetComponent<SpawnerPathCheck>().target = TownHall.transform;
 
         spaceOccupied = true;
         baseTile = true;
