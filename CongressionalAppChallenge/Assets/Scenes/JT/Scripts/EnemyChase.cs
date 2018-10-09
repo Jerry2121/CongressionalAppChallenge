@@ -34,7 +34,7 @@ public class EnemyChase : MonoBehaviour {
 
         else if (!pathSuccessful)
         {
-            /*GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
+            GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
             float dist = 1000;
             for (int i = 0; i < structures.Length; i++)
             {
@@ -45,7 +45,7 @@ public class EnemyChase : MonoBehaviour {
                 }
 
             }
-            PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);*/
+            PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
         }
     }
 
@@ -73,7 +73,6 @@ public class EnemyChase : MonoBehaviour {
     void Start () {
         target = GameObject.Find("TownHallTile(Clone)");
         PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
-
         homePos = transform.position;
         townBase = target;
         cannotAttack = false;
