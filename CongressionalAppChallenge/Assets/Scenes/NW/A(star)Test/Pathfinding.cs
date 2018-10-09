@@ -18,7 +18,7 @@ public class Pathfinding : MonoBehaviour
 
     public void StartFindPath(Vector3 startPos, Vector3 targetPos)
     {
-        
+
         StartCoroutine(FindPath(startPos, targetPos));
     }
 
@@ -31,6 +31,7 @@ public class Pathfinding : MonoBehaviour
         Node startNode = grid.NodeFromWorldPoint(startPos);
         Node targetNode = grid.NodeFromWorldPoint(targetPos);
         targetNode.walkable = true;
+
         if (startNode.walkable && targetNode.walkable)
         {
             Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
@@ -42,7 +43,7 @@ public class Pathfinding : MonoBehaviour
                 Node currentNode = openSet.RemoveFirst();
                 closedSet.Add(currentNode);
 
-                if (currentNode == targetNode || (currentNode.worldPosition - targetNode.worldPosition).magnitude < 2)
+                if (currentNode == targetNode)
                 {
                     pathSuccess = true;
                     break;
@@ -73,7 +74,6 @@ public class Pathfinding : MonoBehaviour
         yield return null;
         if (pathSuccess)
         {
-            Debug.Log("success");
             waypoints = RetracePath(startNode, targetNode);
         }
         requestManager.FinishedProcessingPath(waypoints, pathSuccess);
@@ -107,7 +107,7 @@ public class Pathfinding : MonoBehaviour
             //Vector2 directionNew = new Vector2(path[i - 1].gridX - path[i].gridX, path[i - 1].gridY - path[i].gridY);
             //if (directionNew != directionOld)
             //{
-                waypoints.Add(path[i].worldPosition);
+            waypoints.Add(path[i].worldPosition);
             //}
             //directionOld = directionNew;
         }

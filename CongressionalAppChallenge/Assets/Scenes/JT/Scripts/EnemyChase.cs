@@ -78,20 +78,6 @@ public class EnemyChase : MonoBehaviour {
         cannotAttack = false;
         animator = GetComponent<Animator>();
 
-
-        GameObject[] structures = GameObject.FindGameObjectsWithTag("Structure");
-        float dist = 1000;
-        for (int i = 0; i < structures.Length; i++)
-        {
-            if ((structures[i].transform.position - transform.position).magnitude < dist)
-            {
-                target = structures[i];
-                dist = (target.transform.position - transform.position).magnitude;
-            }
-
-        }
-        PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
-
     }
 	
 	// Update is called once per frame
