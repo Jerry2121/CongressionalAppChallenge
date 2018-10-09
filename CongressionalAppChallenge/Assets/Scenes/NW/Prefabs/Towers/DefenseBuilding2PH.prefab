@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114759482059601202}
   m_Layer: 13
   m_Name: DefenseBuilding2PH
-  m_TagString: Untagged
+  m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,8 +80,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  HealthBarCanvas: {fileID: 0}
   isVillageStructure: 0
   isTowerStructure: 0
+  isFireTowerStructure: 0
   isProductionStructure: 0
   isDefenseStructure: 1
   multiTileBuilding: 1
@@ -110,6 +112,7 @@ MonoBehaviour:
   stoneUpgradeRequirement: 0
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
+  maxBuildingLevel: 4
   upgradeAvailable: 0
   parentTiles: []
 --- !u!212 &212398805923661234

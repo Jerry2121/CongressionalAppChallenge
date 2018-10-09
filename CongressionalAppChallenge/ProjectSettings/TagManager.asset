@@ -9,6 +9,7 @@ TagManager:
   - EmptyTile
   - Enemies
   - OutsideBarrier
+  - Structure
   layers:
   - Default
   - TransparentFX

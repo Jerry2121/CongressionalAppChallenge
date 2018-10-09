@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114876297066969196}
   m_Layer: 12
   m_Name: AttackBuilding1PH
-  m_TagString: Untagged
+  m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,6 +277,7 @@ MonoBehaviour:
   HealthBarCanvas: {fileID: 1311725176553206}
   isVillageStructure: 0
   isTowerStructure: 1
+  isFireTowerStructure: 0
   isProductionStructure: 0
   isDefenseStructure: 0
   multiTileBuilding: 1
@@ -306,6 +307,7 @@ MonoBehaviour:
   stoneUpgradeRequirement: 0
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
+  maxBuildingLevel: 4
   upgradeAvailable: 0
   parentTiles: []
 --- !u!212 &212995271731601740

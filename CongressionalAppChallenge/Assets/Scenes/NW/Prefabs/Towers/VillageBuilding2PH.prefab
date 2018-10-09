@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114646666467453582}
   m_Layer: 11
   m_Name: VillageBuilding2PH
-  m_TagString: Untagged
+  m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
   stoneUpgradeRequirement: 0
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
+  maxBuildingLevel: 4
   upgradeAvailable: 0
   parentTiles: []
 --- !u!114 &114646666467453582
@@ -122,8 +123,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  HealthBarCanvas: {fileID: 0}
   isVillageStructure: 1
   isTowerStructure: 0
+  isFireTowerStructure: 0
   isProductionStructure: 0
   isDefenseStructure: 0
   multiTileBuilding: 1
