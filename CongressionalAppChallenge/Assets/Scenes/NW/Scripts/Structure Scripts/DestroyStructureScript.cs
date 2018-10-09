@@ -21,14 +21,21 @@ public class DestroyStructureScript : MonoBehaviour {
     public void DestroyStructure()
     {
         selectedStructure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().childStructure;
-
-        for (int i = 0; i < selectedStructure.GetComponent<BaseStructureScript>().parentTiles.Count; i++)
+        if (GameObject.Find("GameManager").GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().buildingID == 11 ||
+                GameObject.Find("GameManager").GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().buildingID == 12 ||
+                    GameObject.Find("GameManager").GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().buildingID == 13)
         {
-            selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().buildingID = 0;
-            selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().spaceOccupied = false;
-            selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().staticPriorityValue = 1;
+            for (int i = 0; i < selectedStructure.GetComponent<BaseStructureScript>().parentTiles.Count; i++)
+            {
+                selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().buildingID = 0;
+                selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().spaceOccupied = false;
+                selectedStructure.GetComponent<BaseStructureScript>().parentTiles[i].GetComponent<Tile_Scripts>().staticPriorityValue = 1;
+            }
         }
 
+        selectedStructure.GetComponentInParent<BaseStructureScript>().GetComponent<Tile_Scripts>().buildingID = 0;
+        selectedStructure.GetComponentInParent<BaseStructureScript>().GetComponent<Tile_Scripts>().spaceOccupied = false;
+        selectedStructure.GetComponentInParent<BaseStructureScript>().GetComponent<Tile_Scripts>().staticPriorityValue = 1;
         GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().ShowTilePlacement();
         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
         MenuCanvas.GetComponent<BuildStructureMenu>().upgradeStructureMenu.SetActive(false);
