@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114533402097808676}
   m_Layer: 10
   m_Name: ProductionBuilding1PH
-  m_TagString: Untagged
+  m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,6 +265,7 @@ MonoBehaviour:
   stoneUpgradeRequirement: 0
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
+  maxBuildingLevel: 4
   upgradeAvailable: 0
   parentTiles: []
 --- !u!114 &114443885494379548
@@ -309,6 +310,7 @@ MonoBehaviour:
   HealthBarCanvas: {fileID: 1663902194837812}
   isVillageStructure: 0
   isTowerStructure: 0
+  isFireTowerStructure: 0
   isProductionStructure: 1
   isDefenseStructure: 0
   multiTileBuilding: 1

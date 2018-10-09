@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 61079984423229852}
   m_Layer: 13
   m_Name: DefenseBuilding1PH
-  m_TagString: Untagged
+  m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,6 +192,7 @@ MonoBehaviour:
   stoneUpgradeRequirement: 0
   oreUpgradeRequirement: 0
   steelUpgradeRequirement: 0
+  maxBuildingLevel: 4
   upgradeAvailable: 0
   parentTiles: []
 --- !u!114 &114060831609242468
