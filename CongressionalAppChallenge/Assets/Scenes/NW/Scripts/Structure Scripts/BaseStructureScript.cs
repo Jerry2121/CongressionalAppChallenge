@@ -6,6 +6,11 @@ public class BaseStructureScript : MonoBehaviour {
 
     public GameObject GameManager;
 
+    public int woodCost;
+    public int stoneCost;
+    public int oreCost;
+    public int steelCost;
+
     public int hpMax;
     public int hp;
 

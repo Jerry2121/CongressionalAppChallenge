@@ -238,7 +238,7 @@ public class Tile_Scripts : MonoBehaviour {
         
     }
 
-    public void SpawnBuilding(int buildingTypeIndex, int recievedBuildingID)
+    public GameObject SpawnBuilding(int buildingTypeIndex, int recievedBuildingID)
     {
         buildingTypeID = buildingTypeIndex;
         GameObject buildingType = GameObject.Find("MenuCanvas").GetComponent<BuildStructureMenu>().BuildingTypes[buildingTypeIndex];
@@ -343,6 +343,8 @@ public class Tile_Scripts : MonoBehaviour {
         }
 
         GameObject.Find("A*").GetComponent<Grid>().CreateGrid();
+
+        return structure;
     }
 
     public void ShowTilePlacement()
