@@ -90,131 +90,133 @@ public class BuildStructureMenu : MonoBehaviour {
 
     public void PlayerCheckFunction()
     {
+        GameObject structure;
+
         switch (actionType)
         {
             case "buildStructure":
                 switch (buildStructureType)
                 {
                     case 11:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(0, 11);
-                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= 5;
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(0, 11);
+                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= structure.GetComponent<BaseStructureScript>().woodCost;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 12:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(1, 12);
-                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= 10;
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(1, 12);
+                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= structure.GetComponent<BaseStructureScript>().woodCost;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 13:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(2, 13);
-                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= 15;
-                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= 5;
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(2, 13);
+                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= structure.GetComponent<BaseStructureScript>().woodCost;
+                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= structure.GetComponent<BaseStructureScript>().stoneCost;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 14:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(3, 14);
-                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= 15;
-                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= 5;
-                        GameManager.GetComponent<GameManagerScript>().oreAcquired -= 10;
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(3, 14);
+                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= structure.GetComponent<BaseStructureScript>().woodCost;
+                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= structure.GetComponent<BaseStructureScript>().stoneCost;
+                        GameManager.GetComponent<GameManagerScript>().oreAcquired -= structure.GetComponent<BaseStructureScript>().oreCost;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 21:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(4, 21);
-                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= 10;
-                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= 10;
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(4, 21);
+                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= structure.GetComponent<BaseStructureScript>().woodCost;
+                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= structure.GetComponent<BaseStructureScript>().stoneCost;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 22:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(5, 22);
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(5, 22);
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 23:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(6, 23);
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(6, 23);
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 24:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(7, 24);
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(7, 24);
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 25:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(8, 25);
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(8, 25);
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 26:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(9, 26);
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(9, 26);
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 31:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(10, 31);
-                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= 10;
-                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= 10;
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(10, 31);
+                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= structure.GetComponent<BaseStructureScript>().woodCost;
+                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= structure.GetComponent<BaseStructureScript>().stoneCost;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 32:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(11, 32);
-                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= 10;
-                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= 10;
-                        GameManager.GetComponent<GameManagerScript>().oreAcquired -= 10;
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(11, 32);
+                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= structure.GetComponent<BaseStructureScript>().woodCost;
+                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= structure.GetComponent<BaseStructureScript>().stoneCost;
+                        GameManager.GetComponent<GameManagerScript>().oreAcquired -= structure.GetComponent<BaseStructureScript>().oreCost;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 33:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(12, 33);
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(12, 33);
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 34:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(13, 34);
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(13, 34);
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 35:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(14, 35);
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(14, 35);
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 41:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(15, 41);
-                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= 6;
-                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= 12;
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(15, 41);
+                        GameManager.GetComponent<GameManagerScript>().woodAcquired -= structure.GetComponent<BaseStructureScript>().woodCost;
+                        GameManager.GetComponent<GameManagerScript>().stoneAcquired -= structure.GetComponent<BaseStructureScript>().stoneCost;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 42:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(16, 42);
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(16, 42);
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
 
                     case 43:
-                        GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(17, 43);
+                        structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(17, 43);
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
