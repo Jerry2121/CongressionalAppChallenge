@@ -775,7 +775,7 @@ Prefab:
     - target: {fileID: 114159678450528088, guid: 7aab0c402ee57fb4bb2cb4455cf09782,
         type: 2}
       propertyPath: sceneToLoadIndex
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aab0c402ee57fb4bb2cb4455cf09782, type: 2}
@@ -1803,6 +1803,11 @@ Prefab:
         type: 2}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114793468293215862, guid: 1e136b21858925048a57d3aa3439faa6,
+        type: 2}
+      propertyPath: gameLevel
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e136b21858925048a57d3aa3439faa6, type: 2}

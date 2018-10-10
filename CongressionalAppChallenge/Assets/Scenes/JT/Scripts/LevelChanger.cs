@@ -5,6 +5,8 @@ public class LevelChanger : MonoBehaviour {
 
     public Animator animator;
 
+    public int gameLevel = 1;
+
     public int LevelToLoad;
 
 	// Update is called once per frame
@@ -24,7 +26,7 @@ public class LevelChanger : MonoBehaviour {
     }
     public void Play()
     {
-        FadeToLevel(1);
+        FadeToLevel(gameLevel);
     }
     public void LoadGame()
     {
