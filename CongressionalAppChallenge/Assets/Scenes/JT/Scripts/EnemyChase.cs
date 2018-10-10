@@ -85,6 +85,7 @@ public class EnemyChase : MonoBehaviour {
 
         if (target == null)
         {
+            Debug.Log("TESTINGTESTING");
             chaseSpeed = 2.0f;
             animator.SetBool("Attack", false);
             target = townBase;
@@ -141,7 +142,7 @@ public class EnemyChase : MonoBehaviour {
     }*/
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Base")
+        if (collision.gameObject.tag == "Base" && collision.gameObject == target)
         {
             chaseSpeed = 0;
             //Enemies 1 (Templar)
@@ -196,7 +197,7 @@ public class EnemyChase : MonoBehaviour {
             //}
         }
 
-        if (collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == 10 && collision.gameObject == target)
         {
             chaseSpeed = 0;
             //Enemies 1 (Templar)
@@ -251,7 +252,7 @@ public class EnemyChase : MonoBehaviour {
             //}
         }
 
-        if (collision.gameObject.layer == 11)
+        if (collision.gameObject.layer == 11 && collision.gameObject == target)
         {
             chaseSpeed = 0;
             //Enemies 1 (Templar)
@@ -305,7 +306,7 @@ public class EnemyChase : MonoBehaviour {
             }
             //}
         }
-        if (collision.gameObject.layer == 12)
+        if (collision.gameObject.layer == 12 && collision.gameObject == target)
         {
             chaseSpeed = 0;
             //Enemies 1 (Templar)
@@ -359,7 +360,7 @@ public class EnemyChase : MonoBehaviour {
                 }
             //}
         }
-        if (collision.gameObject.layer == 13)
+        if (collision.gameObject.layer == 13 && collision.gameObject == target)
         {
             chaseSpeed = 0;
             //Enemies 1 (Templar)

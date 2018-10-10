@@ -121,7 +121,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2470953, y: 1.2146418}
+  m_Size: {x: 1.8, y: 1.8}
   m_EdgeRadius: 0
 --- !u!61 &61213310791217474
 BoxCollider2D:
@@ -167,6 +167,7 @@ MonoBehaviour:
   isProductionStructure: 0
   isDefenseStructure: 1
   multiTileBuilding: 1
+  Health: 0
   parentTile: {fileID: 0}
 --- !u!114 &114046345439516362
 MonoBehaviour:
