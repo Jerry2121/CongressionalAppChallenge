@@ -253,6 +253,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 0}
+  woodCost: 5
+  stoneCost: 10
+  oreCost: 5
+  steelCost: 0
   hpMax: 0
   hp: 0
   buildingLevel: 1
@@ -267,6 +271,7 @@ MonoBehaviour:
   steelUpgradeRequirement: 0
   maxBuildingLevel: 4
   upgradeAvailable: 0
+  loadedBuilding: 0
   parentTiles: []
 --- !u!114 &114168216739986314
 MonoBehaviour:
