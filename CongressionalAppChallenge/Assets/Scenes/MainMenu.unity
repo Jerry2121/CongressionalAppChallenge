@@ -289,7 +289,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: The Ultimate Tower Defense Experience!
+  m_text: 'Civilization Defense
+
+    Unlimited'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 8b29aaa3eec7468097ff07adfcf29ac9, type: 2}
@@ -357,10 +359,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 28.625624, z: -51.456646, w: -97.32712}
   m_textInfo:
     textComponent: {fileID: 0}
-    characterCount: 38
+    characterCount: 30
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 2
     pageCount: 1
@@ -1026,7 +1028,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'Tower Defense.
 
-    Alpha 0.8'
+    Release 1.0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1094,7 +1096,7 @@ MonoBehaviour:
   m_margin: {x: -24.828762, y: 0, z: 25.763035, w: -12.404438}
   m_textInfo:
     textComponent: {fileID: 1213222383}
-    characterCount: 24
+    characterCount: 26
     spriteCount: 0
     spaceCount: 3
     wordCount: 5
