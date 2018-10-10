@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 61228591525505458}
   - component: {fileID: 114059735582597792}
   - component: {fileID: 114360334367742464}
+  - component: {fileID: 61556456777732432}
   m_Layer: 10
   m_Name: ProductionBuilding4PH
   m_TagString: Structure
@@ -151,6 +152,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.96919405, y: 0.9650049}
+  m_EdgeRadius: 0
+--- !u!61 &61556456777732432
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841891351842666}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017574668, y: -0.021302938}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1546576, y: 1.1569676}
   m_EdgeRadius: 0
 --- !u!114 &114059735582597792
 MonoBehaviour:

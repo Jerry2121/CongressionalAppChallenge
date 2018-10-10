@@ -85,7 +85,10 @@ public class EnemyChase : MonoBehaviour {
 
         if (target == null)
         {
+            chaseSpeed = 2.0f;
+            animator.SetBool("Attack", false);
             target = townBase;
+            path = new Vector3[0];
             PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
         }
 
@@ -138,11 +141,11 @@ public class EnemyChase : MonoBehaviour {
     }*/
     public void OnTriggerStay2D(Collider2D collision)
     {
-        chaseSpeed = 0;
         if (collision.gameObject.tag == "Base")
         {
+            chaseSpeed = 0;
             //Enemies 1 (Templar)
-            if (collision.GetComponent<Collider2D>().gameObject.layer == 8)
+            /*if (collision.GetComponent<Collider2D>().gameObject.layer == 8)
             {
                 if (timer >= 1)
                 {
@@ -151,7 +154,7 @@ public class EnemyChase : MonoBehaviour {
                     timer = 0;
                 }
             }
-            if (collision.gameObject.layer == 13)
+            if (collision.gameObject.layer == 14)
             {
                 //Enemies 2 (DarkSwordsman)
                 if (timer >= 1)
@@ -162,7 +165,7 @@ public class EnemyChase : MonoBehaviour {
                 }
             }
             //Enemies 2 (DarkSwordsman)
-            if (collision.gameObject.layer == 14)
+            if (collision.gameObject.layer == 15)
             {
                 if (timer >= 1)
                 {
@@ -172,7 +175,7 @@ public class EnemyChase : MonoBehaviour {
                 }
             }
             //Enemies 3 (Swordsman)
-            if (collision.gameObject.layer == 15 && timer >= 1)
+            if (collision.gameObject.layer == 16)
             {
                 if (timer >= 1)
                 {
@@ -181,15 +184,238 @@ public class EnemyChase : MonoBehaviour {
                     timer = 0;
                 }
             }
+            //Enemies 3 (Swordsman)
+            if (collision.gameObject.layer == 17)
+            {*/
+            if (timer >= 1)
+            {
+                animator.SetBool("Attack", true);
+                GameObject.Find("GameManager").GetComponent<GameManagerScript>().ModifyTownHallHP(-damage);
+                timer = 0;
+            }
+            //}
         }
-        else
+
+        if (collision.gameObject.layer == 10)
         {
-            animator.SetBool("Attack", false);
-            chaseSpeed = 2.0f;
+            chaseSpeed = 0;
+            //Enemies 1 (Templar)
+            /*if (gameObject.GetComponent<Collider2D>().gameObject.layer == 8)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(1);
+                    timer = 0;
+                }
+            }
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 14)
+            {
+                //Enemies 2 (DarkSwordsman)
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(2);
+                    timer = 0;
+                }
+            }
+            //Enemies 2 (DarkSwordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 15)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(3);
+                    timer = 0;
+                }
+            }
+            //Enemies 3 (Swordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 16)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(4);
+                    timer = 0;
+                }
+            }
+            //Enemies 3 (Swordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 17)
+            {*/
+            if (timer >= 1)
+            {
+                animator.SetBool("Attack", true);
+                collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+                timer = 0;
+            }
+            //}
+        }
+
+        if (collision.gameObject.layer == 11)
+        {
+            chaseSpeed = 0;
+            //Enemies 1 (Templar)
+            /*if (gameObject.GetComponent<Collider2D>().gameObject.layer == 8)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(1);
+                    timer = 0;
+                }
+            }
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 14)
+            {
+                //Enemies 2 (DarkSwordsman)
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(2);
+                    timer = 0;
+                }
+            }
+            //Enemies 2 (DarkSwordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 15)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(3);
+                    timer = 0;
+                }
+            }
+            //Enemies 3 (Swordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 16)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(4);
+                    timer = 0;
+                }
+            }
+            //Enemies 3 (Swordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 17)
+            {*/
+            if (timer >= 1)
+            {
+                animator.SetBool("Attack", true);
+                collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+                timer = 0;
+            }
+            //}
+        }
+        if (collision.gameObject.layer == 12)
+        {
+            chaseSpeed = 0;
+            //Enemies 1 (Templar)
+            /*if (gameObject.GetComponent<Collider2D>().gameObject.layer == 8)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(1);
+                    timer = 0;
+                }
+            }
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 14)
+            {
+                //Enemies 2 (DarkSwordsman)
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(2);
+                    timer = 0;
+                }
+            }
+            //Enemies 2 (DarkSwordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 15)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(3);
+                    timer = 0;
+                }
+            }
+            //Enemies 3 (Swordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 16)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(4);
+                    timer = 0;
+                }
+            }
+            //Enemies 3 (Swordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 17)
+            {*/
+            if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+                    timer = 0;
+                }
+            //}
+        }
+        if (collision.gameObject.layer == 13)
+        {
+            chaseSpeed = 0;
+            //Enemies 1 (Templar)
+            /*if (gameObject.GetComponent<Collider2D>().gameObject.layer == 8)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(1);
+                    timer = 0;
+                }
+            }
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 14)
+            {
+                //Enemies 2 (DarkSwordsman)
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(2);
+                    timer = 0;
+                }
+            }
+            //Enemies 2 (DarkSwordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 15)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(3);
+                    timer = 0;
+                }
+            }
+            //Enemies 3 (Swordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 16)
+            {
+                if (timer >= 1)
+                {
+                    animator.SetBool("Attack", true);
+                    collision.gameObject.GetComponent<StructureHP>().TakeDamage(4);
+                    timer = 0;
+                }
+            }
+            //Enemies 3 (Swordsman)
+            if (gameObject.GetComponent<Collider2D>().gameObject.layer == 17)
+            {*/
+            if (timer >= 1)
+            {
+                animator.SetBool("Attack", true);
+                collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
+                timer = 0;
+            }
+            //}
         }
 
 
-        if(collision.gameObject.tag == "OutsideBarrier")
+        if (collision.gameObject.tag == "OutsideBarrier")
         {
             cannotAttack = true;
         }
@@ -197,11 +423,6 @@ public class EnemyChase : MonoBehaviour {
         {
             cannotAttack = false;
         }
-    }
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        animator.SetBool("Attack", false);
-        chaseSpeed = 2.0f;
     }
 
     public void OnDrawGizmos()

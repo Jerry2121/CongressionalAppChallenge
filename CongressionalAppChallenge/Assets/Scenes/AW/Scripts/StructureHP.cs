@@ -19,11 +19,11 @@ public class StructureHP : MonoBehaviour
     [Header("For Production Buildings")]
     [SerializeField]
     private bool multiTileBuilding = true;
-    
-    public float Health
-    {
+    [SerializeField]
+    public float Health;
+    /*{
         get; protected set;
-    }
+    }*/
     public GameObject parentTile;
     private float startHealth = 100;
 
@@ -115,6 +115,7 @@ public class StructureHP : MonoBehaviour
         //Destroy(effect, .5f);
 
         Debug.Log(gameObject + "has been destroyed");
+        GameObject.Find("A*").GetComponent<Grid>().CreateGrid();
         Destroy(gameObject);
     }
 }
