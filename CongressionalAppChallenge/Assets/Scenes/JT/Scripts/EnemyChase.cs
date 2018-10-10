@@ -89,8 +89,9 @@ public class EnemyChase : MonoBehaviour {
             PathRequestManager.RequestPath(transform.position, target.transform.position, OnPathFound);
         }
 
-        /*
+        
         timer += Time.deltaTime;
+        /*
         Vector3 playerPosition = GameObject.Find("TownHallTile(Clone)").transform.position;
 		moveDirection = new Vector2 (0 - transform.position.x, 0 - transform.position.y);
 
@@ -143,7 +144,7 @@ public class EnemyChase : MonoBehaviour {
             //Enemies 1 (Templar)
             if (collision.GetComponent<Collider2D>().gameObject.layer == 8)
             {
-                if (timer >= 2)
+                if (timer >= 1)
                 {
                     animator.SetBool("Attack", true);
                     GameObject.Find("GameManager").GetComponent<GameManagerScript>().ModifyTownHallHP(-damage);
@@ -153,7 +154,7 @@ public class EnemyChase : MonoBehaviour {
             if (collision.gameObject.layer == 13)
             {
                 //Enemies 2 (DarkSwordsman)
-                if (timer >= 2)
+                if (timer >= 1)
                 {
                     animator.SetBool("Attack", true);
                     GameObject.Find("GameManager").GetComponent<GameManagerScript>().ModifyTownHallHP(-damage);
@@ -163,7 +164,7 @@ public class EnemyChase : MonoBehaviour {
             //Enemies 2 (DarkSwordsman)
             if (collision.gameObject.layer == 14)
             {
-                if (timer >= 2)
+                if (timer >= 1)
                 {
                     animator.SetBool("Attack", true);
                     GameObject.Find("GameManager").GetComponent<GameManagerScript>().ModifyTownHallHP(-damage);
@@ -173,7 +174,7 @@ public class EnemyChase : MonoBehaviour {
             //Enemies 3 (Swordsman)
             if (collision.gameObject.layer == 15 && timer >= 1)
             {
-                if (timer >= 2)
+                if (timer >= 1)
                 {
                     animator.SetBool("Attack", true);
                     GameObject.Find("GameManager").GetComponent<GameManagerScript>().ModifyTownHallHP(-damage);
@@ -196,6 +197,11 @@ public class EnemyChase : MonoBehaviour {
         {
             cannotAttack = false;
         }
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        animator.SetBool("Attack", false);
+        chaseSpeed = 2.0f;
     }
 
     public void OnDrawGizmos()
