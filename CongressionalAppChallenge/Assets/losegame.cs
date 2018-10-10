@@ -13,6 +13,6 @@ public class losegame : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-            WaveCountText.GetComponent<TextMeshProUGUI>().text = "You got to wave: " + PlayerPrefs.GetInt("WaveCountNum");
+        WaveCountText.GetComponent<TextMeshProUGUI>().text = "You got to wave: " + PlayerPrefs.GetInt("WaveCountNum");
     }
 }

@@ -22,37 +22,4 @@ public class TownHallScript : MonoBehaviour {
             }
         }
     }
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 8)
-        {
-            Enemiesleft--;
-            GameObject.Find("GameManager").GetComponent<GameManagerScript>().TownHallHP--;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.layer == 14)
-        {
-            Enemiesleft--;
-            GameObject.Find("GameManager").GetComponent<GameManagerScript>().TownHallHP = GameObject.Find("GameManager").GetComponent<GameManagerScript>().TownHallHP - 3;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.layer == 15)
-        {
-            Enemiesleft--;
-            GameObject.Find("GameManager").GetComponent<GameManagerScript>().TownHallHP = GameObject.Find("GameManager").GetComponent<GameManagerScript>().TownHallHP - 5;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.layer == 16)
-        {
-            Enemiesleft--;
-            GameObject.Find("GameManager").GetComponent<GameManagerScript>().TownHallHP = GameObject.Find("GameManager").GetComponent<GameManagerScript>().TownHallHP - 7;
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.layer == 17)
-        {
-            Enemiesleft--;
-            GameObject.Find("GameManager").GetComponent<GameManagerScript>().TownHallHP = GameObject.Find("GameManager").GetComponent<GameManagerScript>().TownHallHP - 9;
-            Destroy(collision.gameObject);
-        }
-    }
 }
