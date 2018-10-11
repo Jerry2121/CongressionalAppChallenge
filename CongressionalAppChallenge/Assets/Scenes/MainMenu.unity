@@ -775,7 +775,7 @@ Prefab:
     - target: {fileID: 114159678450528088, guid: 7aab0c402ee57fb4bb2cb4455cf09782,
         type: 2}
       propertyPath: sceneToLoadIndex
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aab0c402ee57fb4bb2cb4455cf09782, type: 2}
@@ -1334,8 +1334,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 74.53998, y: 106.41}
-  m_SizeDelta: {x: 149.08, y: 50}
+  m_AnchoredPosition: {x: 74.53998, y: 121.15}
+  m_SizeDelta: {x: 149.08, y: 79.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1402803143
 MonoBehaviour:
@@ -1809,6 +1809,11 @@ Prefab:
       propertyPath: gameLevel
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114793468293215862, guid: 1e136b21858925048a57d3aa3439faa6,
+        type: 2}
+      propertyPath: loadingText
+      value: 
+      objectReference: {fileID: 1402803143}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e136b21858925048a57d3aa3439faa6, type: 2}
   m_IsPrefabAsset: 0
