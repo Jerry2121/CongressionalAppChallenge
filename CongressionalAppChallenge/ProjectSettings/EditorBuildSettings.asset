@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LooseGame.unity
     guid: 10261d9a48dc5ba4c89fcc12605dfee3
+<<<<<<< HEAD
+=======
+  - enabled: 1
+    path: Assets/Scenes/MainGameDemo.unity
+    guid: 2ba0a128a16136344b70f26657ec168d
+  - enabled: 1
+    path: Assets/Scenes/AW/MainGameAW.unity
+    guid: f2405d02fdf75d8419bb3e18d53c582a
+>>>>>>> c8a23130df9c349ad353bb7c2c6416b71c361392
   m_configObjects: {}
