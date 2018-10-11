@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using TMPro;
 
 public class SaveLoadGame : MonoBehaviour
 {
@@ -76,7 +77,23 @@ public class SaveLoadGame : MonoBehaviour
 
     public void LoadGame()
     {
-        GameObject.Find("LevelChanger").GetComponent<LevelChanger>().FadeToLevel(sceneToLoadIndex);
+
+        LevelChanger levelChanger = GameObject.Find("LevelChanger").GetComponent<LevelChanger>();
+
+        if (File.Exists(Application.persistentDataPath + gameSavesDirectoryPath + "/GameTiles.cas") == false)
+        {
+            Debug.Log("SaveLoadGame -- LoadGame: " + Application.persistentDataPath + gameSavesDirectoryPath + "/GameTiles.cas doesn't exist");
+            levelChanger.loadingText.text = "No Saved Game Found";
+            return;
+        }
+        if (File.Exists(Application.persistentDataPath + gameSavesDirectoryPath + "/GameManager.cas") == false)
+        {
+            Debug.Log("SaveLoadGame -- LoadGame: " + Application.persistentDataPath + gameSavesDirectoryPath + "/GameManager.cas doesn't exist");
+            levelChanger.loadingText.text = "Save Data Corrupted! Save Data cannot be loaded";
+            return;
+        }
+
+        levelChanger.FadeToLevel(sceneToLoadIndex);
 
         Loading = true;
     }
