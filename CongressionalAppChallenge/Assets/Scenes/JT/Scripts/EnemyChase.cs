@@ -85,7 +85,7 @@ public class EnemyChase : MonoBehaviour {
 
         if (target == null)
         {
-            Debug.Log("TESTINGTESTING");
+            //Debug.Log("TESTINGTESTING");
             chaseSpeed = 2.0f;
             animator.SetBool("Attack", false);
             target = townBase;
@@ -144,7 +144,9 @@ public class EnemyChase : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Base" && collision.gameObject == target)
         {
+            Debug.Log("BaseActivated");
             chaseSpeed = 0;
+            animator.SetBool("Attack", true);
             //Enemies 1 (Templar)
             /*if (collision.GetComponent<Collider2D>().gameObject.layer == 8)
             {
@@ -190,7 +192,6 @@ public class EnemyChase : MonoBehaviour {
             {*/
             if (timer >= 1)
             {
-                animator.SetBool("Attack", true);
                 GameObject.Find("GameManager").GetComponent<GameManagerScript>().ModifyTownHallHP(-damage);
                 timer = 0;
             }
@@ -200,6 +201,7 @@ public class EnemyChase : MonoBehaviour {
         if (collision.gameObject.layer == 10 && collision.gameObject == target)
         {
             chaseSpeed = 0;
+            animator.SetBool("Attack", true);
             //Enemies 1 (Templar)
             /*if (gameObject.GetComponent<Collider2D>().gameObject.layer == 8)
             {
@@ -245,7 +247,6 @@ public class EnemyChase : MonoBehaviour {
             {*/
             if (timer >= 1)
             {
-                animator.SetBool("Attack", true);
                 collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
                 timer = 0;
             }
@@ -255,6 +256,7 @@ public class EnemyChase : MonoBehaviour {
         if (collision.gameObject.layer == 11 && collision.gameObject == target)
         {
             chaseSpeed = 0;
+            animator.SetBool("Attack", true);
             //Enemies 1 (Templar)
             /*if (gameObject.GetComponent<Collider2D>().gameObject.layer == 8)
             {
@@ -300,7 +302,6 @@ public class EnemyChase : MonoBehaviour {
             {*/
             if (timer >= 1)
             {
-                animator.SetBool("Attack", true);
                 collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
                 timer = 0;
             }
@@ -309,6 +310,7 @@ public class EnemyChase : MonoBehaviour {
         if (collision.gameObject.layer == 12 && collision.gameObject == target)
         {
             chaseSpeed = 0;
+            animator.SetBool("Attack", true);
             //Enemies 1 (Templar)
             /*if (gameObject.GetComponent<Collider2D>().gameObject.layer == 8)
             {
@@ -354,7 +356,6 @@ public class EnemyChase : MonoBehaviour {
             {*/
             if (timer >= 1)
                 {
-                    animator.SetBool("Attack", true);
                     collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
                     timer = 0;
                 }
@@ -363,6 +364,7 @@ public class EnemyChase : MonoBehaviour {
         if (collision.gameObject.layer == 13 && collision.gameObject == target)
         {
             chaseSpeed = 0;
+            animator.SetBool("Attack", true);
             //Enemies 1 (Templar)
             /*if (gameObject.GetComponent<Collider2D>().gameObject.layer == 8)
             {
@@ -408,7 +410,6 @@ public class EnemyChase : MonoBehaviour {
             {*/
             if (timer >= 1)
             {
-                animator.SetBool("Attack", true);
                 collision.gameObject.GetComponent<StructureHP>().TakeDamage(damage);
                 timer = 0;
             }

@@ -146,6 +146,27 @@ public class GameManagerScript : MonoBehaviour {
         {
             steelAcquired = 999;
         }
+
+        if (TownHallHP <= 0)
+        {
+            TownHallHP = 0;
+        }
+        if (woodAcquired <= 0)
+        {
+            woodAcquired = 0;
+        }
+        if (stoneAcquired <= 0)
+        {
+            stoneAcquired = 0;
+        }
+        if (oreAcquired <= 0)
+        {
+            oreAcquired = 0;
+        }
+        if (steelAcquired <= 0)
+        {
+            steelAcquired = 0;
+        }
         cooldownTimer += Time.deltaTime;
         if (isFirstInstance == true)
         {

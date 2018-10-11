@@ -407,7 +407,7 @@ public class Tile_Scripts : MonoBehaviour {
 
         structure.GetComponent<BaseStructureScript>().loadedBuilding = true;
         structure.GetComponent<BaseStructureScript>().buildingLevel = buildingLevel;
-        Debug.Log(childStructure.GetComponent<BaseStructureScript>().buildingLevel);
+        //Debug.Log(childStructure.GetComponent<BaseStructureScript>().buildingLevel);
         structure.GetComponent<BaseStructureScript>().BuildingLevelAnalysis();
     }
 
