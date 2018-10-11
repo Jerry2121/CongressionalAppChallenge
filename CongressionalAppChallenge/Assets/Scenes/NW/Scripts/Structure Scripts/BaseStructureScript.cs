@@ -39,7 +39,6 @@ public class BaseStructureScript : MonoBehaviour {
         GameManager = GameObject.Find("GameManager");
         if(loadedBuilding == false)
             buildingLevel = 1;
-        Debug.Log("BaseStructureScript -- Start");
         woodUpgradeRequirement = 0;
         stoneUpgradeRequirement = 0;
         oreUpgradeRequirement = 0;

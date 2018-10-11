@@ -114,7 +114,7 @@ public class StructureHP : MonoBehaviour
         //GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         //Destroy(effect, .5f);
 
-        Debug.Log(gameObject + "has been destroyed");
+        //Debug.Log(gameObject + "has been destroyed");
         GameObject.Find("A*").GetComponent<Grid>().CreateGrid();
         Destroy(gameObject);
     }
