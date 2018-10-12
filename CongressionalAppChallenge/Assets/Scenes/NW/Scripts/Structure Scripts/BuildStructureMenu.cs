@@ -116,6 +116,8 @@ public class BuildStructureMenu : MonoBehaviour {
                         structure = GameManager.GetComponent<GameManagerScript>().selectedTile.GetComponent<Tile_Scripts>().SpawnBuilding(2, 13);
                         GameManager.GetComponent<GameManagerScript>().woodAcquired -= structure.GetComponent<BaseStructureScript>().woodCost;
                         GameManager.GetComponent<GameManagerScript>().stoneAcquired -= structure.GetComponent<BaseStructureScript>().stoneCost;
+                        GameManager.GetComponent<GameManagerScript>().oreAcquired -= structure.GetComponent<BaseStructureScript>().oreCost;
+
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
@@ -125,6 +127,7 @@ public class BuildStructureMenu : MonoBehaviour {
                         GameManager.GetComponent<GameManagerScript>().woodAcquired -= structure.GetComponent<BaseStructureScript>().woodCost;
                         GameManager.GetComponent<GameManagerScript>().stoneAcquired -= structure.GetComponent<BaseStructureScript>().stoneCost;
                         GameManager.GetComponent<GameManagerScript>().oreAcquired -= structure.GetComponent<BaseStructureScript>().oreCost;
+                        GameManager.GetComponent<GameManagerScript>().steelAcquired -= structure.GetComponent<BaseStructureScript>().steelCost;
                         MenuDisplayFunction();
                         GameManager.GetComponent<GameManagerScript>().selectedTile = null;
                         break;
