@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.034408808, a: 0.547}
+  m_Color: {r: 0.16420436, g: 0.7735849, b: 0.18571188, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.054581404, a: 0.491}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.491}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -281,6 +281,7 @@ MonoBehaviour:
   isProductionStructure: 0
   isDefenseStructure: 0
   multiTileBuilding: 1
+  Health: 0
   parentTile: {fileID: 0}
 --- !u!114 &114998564379336704
 MonoBehaviour:
