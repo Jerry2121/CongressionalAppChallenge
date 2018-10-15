@@ -304,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1187818143756484
 GameObject:
   m_ObjectHideFlags: 1
@@ -1121,7 +1121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1752147587331904
 GameObject:
   m_ObjectHideFlags: 1
@@ -1224,7 +1224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1792382922008226
 GameObject:
   m_ObjectHideFlags: 1
@@ -1417,7 +1417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1985272814801944
 GameObject:
   m_ObjectHideFlags: 1
@@ -1512,7 +1512,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114949689094662628}
-        m_MethodName: PlayerCheckCancel
+        m_MethodName: playerCancel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2026,7 +2026,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -2421,7 +2421,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -2642,7 +2642,7 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -2981,7 +2981,7 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -3067,9 +3067,9 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   SelectedTile: {fileID: 0}
   buildingID: 13
-  woodNeeded: 15
-  stoneNeeded: 5
-  oreNeeded: 0
+  woodNeeded: 5
+  stoneNeeded: 10
+  oreNeeded: 5
   steelNeeded: 0
   canBuildStructure: 0
 --- !u!114 &114207957442249694
@@ -3240,7 +3240,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -3545,8 +3545,8 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   SelectedTile: {fileID: 0}
   buildingID: 12
-  woodNeeded: 10
-  stoneNeeded: 0
+  woodNeeded: 5
+  stoneNeeded: 15
   oreNeeded: 0
   steelNeeded: 0
   canBuildStructure: 0
@@ -4530,7 +4530,7 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -4858,7 +4858,7 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   SelectedTile: {fileID: 0}
   buildingID: 11
-  woodNeeded: 5
+  woodNeeded: 10
   stoneNeeded: 0
   oreNeeded: 0
   steelNeeded: 0
@@ -5885,7 +5885,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -6326,7 +6326,7 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -7431,8 +7431,8 @@ MonoBehaviour:
   buildingID: 14
   woodNeeded: 15
   stoneNeeded: 5
-  oreNeeded: 10
-  steelNeeded: 0
+  oreNeeded: 15
+  steelNeeded: 15
   canBuildStructure: 0
 --- !u!114 &114770058589351548
 MonoBehaviour:
@@ -7715,7 +7715,7 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -8062,7 +8062,7 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -8204,7 +8204,7 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -8430,7 +8430,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -8572,7 +8572,7 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -8656,10 +8656,10 @@ MonoBehaviour:
   attackStructureMenu: {fileID: 1754957352563810}
   defenseStructureMenu: {fileID: 1140522521078964}
   playerCheckMenu: {fileID: 1401464784333612}
-  buildStructureMenuActive: 0
+  buildStructureMenuActive: 1
   disableUpgradeMenu: 0
-  actionType: 
-  buildStructureType: 0
+  actionType: buildStructure
+  buildStructureType: 12
 --- !u!114 &114951076148857112
 MonoBehaviour:
   m_ObjectHideFlags: 1
